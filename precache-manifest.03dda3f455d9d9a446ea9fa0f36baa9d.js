@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/css/main.dd021cac.chunk.css"
   },
   {
-    "revision": "caf6f36b9496962b2681f56e879dd942",
+    "revision": "ece5ffea2c420e6f25f4ed35a983259c",
     "url": "/queerist-website/index.html"
   }
 ];

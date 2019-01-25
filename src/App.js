@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {Header, Page, Footer} from './components'
+import React, { Component } from 'react'
+import { Header, Page, Footer } from './components'
 
 class App extends Component {
   render() {

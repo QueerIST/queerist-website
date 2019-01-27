@@ -1,4 +1,10 @@
 .navbar {
+	width: 100vw;
+	height: 65px;
+}
+
+.navbar-content {
+	position: fixed;
 	display: flex;
 	justify-content: center;
 	width: 100%;
@@ -6,7 +12,7 @@
 	background-color: var(--pink-color);
 }
 
-.navbar-container {
+.navbar-delimiter {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -56,7 +62,7 @@
 }
 
 @media screen and (min-width: 600px) {
-	.navbar-container {
+	.navbar-delimiter {
 		flex-direction: unset;
 	}
 

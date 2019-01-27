@@ -1,19 +1,15 @@
-:root {
-	--pink-color: #ffbff7;
-}
-
 .navbar {
-	justify-content: center;
 	display: flex;
+	justify-content: center;
 	width: 100%;
 	min-height: 65px;
 	background-color: var(--pink-color);
 }
 
 .navbar-container {
+	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	display: flex;
 	width: 1000px;
 	height: 100%;
 	font-size: 20pt;
@@ -47,14 +43,15 @@
 	justify-content: center;
 }
 
-.navtopside {
-	display: flex;
+.navtop-side {
 	flex: 0 0 10%;
+	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 10px;
 }
 
-.navmenuopen {
+.navmenu-open {
 	display: flex;
 }
 
@@ -63,7 +60,7 @@
 		flex-direction: unset;
 	}
 
-	.navtopside {
+	.navtop-side {
 		display: none;
 	}
 

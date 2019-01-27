@@ -1,5 +1,5 @@
 import React from 'react'
-import './components.css'
+import './header.css'
 
 class Header extends React.Component {
 	constructor() {
@@ -13,20 +13,20 @@ class Header extends React.Component {
 	}
 
 	render() {
-		const classplusname = this.state.openMenu ? " navmenuopen" : ""
+		const menustatus = this.state.openMenu ? " navmenu-open" : ""
 		return (
 			<div className="navbar">
 				<div className="navbar-container">
 					<div className="navtop">
-						<i className="navtopside material-icons" onClick={this.handleClickButton}>menu</i>
+						<i className="navtop-side material-icons" onClick={this.handleClickButton}>menu</i>
 						<a className="navimg">
 							<img src="assets/logo so letras brancas.png"></img>
 						</a>
-						<div className="navtopside"></div>
+						<div className="navtop-side"></div>
 					</div>
-					<a className={"navlink" + classplusname}>Eventos</a>
-					<a className={"navlink" + classplusname}>Projetos</a>
-					<a className={"navlink" + classplusname}>Merch</a>
+					<a className={"navlink" + menustatus}>Eventos</a>
+					<a className={"navlink" + menustatus}>Projetos</a>
+					<a className={"navlink" + menustatus}>Merch</a>
 				</div>
 			</div>
 		)

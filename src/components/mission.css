@@ -1,0 +1,56 @@
+.mission {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.mission-child {
+	flex: 1 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 5% 15%;
+	min-height: 200px;
+}
+
+.mission-text {
+	font-size: 25px;
+}
+
+.mission-button-child {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1;
+}
+
+.mission-button-text {
+	color: var(--blue-color);
+	font-size: 30pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+.mission-button {
+	border-radius: 8px;
+	font-size: 20px;
+	background-color: lightseagreen;
+	color: white;
+	border: none;
+	padding: 10px 40px;
+	text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+	.mission {
+		flex-direction: row;
+	}
+
+	.mission-child {
+		min-height: 300px;
+		margin: 5% 5%;
+	}
+}

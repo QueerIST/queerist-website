@@ -1,13 +1,22 @@
 :root {
   --pink-color: #ffbff7;
   --yellow-color: #fcd418;
+  --blue-color: #2e3192;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
-  width: 100vw;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.clicable {
+  cursor: pointer;
+}
+
+.non-sel {
+  user-select: none;
 }

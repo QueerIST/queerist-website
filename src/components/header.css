@@ -23,7 +23,7 @@
 }
 
 .navlink {
-	flex: 0 1 20%;
+	flex: 0 1 17%; /*flex: 0 1 20%;*/
     display: none;
 	justify-content: center;
 	align-items: center;
@@ -47,6 +47,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex: 0 1 50%;
 }
 
 .navtop-side {

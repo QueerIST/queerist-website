@@ -19,11 +19,11 @@ class Header extends React.Component {
 				<div className="navbar-content">
 					<div className="navbar-delimiter">
 						<div className="navtop">
-							<i className="navtop-side material-icons" onClick={this.handleClickButton}>menu</i>
+							<div className="navtop-side"></div>
 							<a className="navimg">
 								<img src="assets/logo so letras brancas.png" alt="QueerIST logo"></img>
 							</a>
-							<div className="navtop-side"></div>
+							<i className="navtop-side material-icons" onClick={this.handleClickButton}>menu</i>
 						</div>
 						<a className={"navlink" + menustatus}>Eventos</a>
 						<a className={"navlink" + menustatus}>Projetos</a>

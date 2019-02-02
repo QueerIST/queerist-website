@@ -21,7 +21,7 @@ class Header extends React.Component {
 						<div className="navtop">
 							<div className="navtop-side"></div>
 							<a className="navimg">
-								<img src="assets/logo so letras brancas.png" alt="QueerIST logo"></img>
+								<img src="assets/logo so letras brancas.png" alt="QueerIST logo"/>
 							</a>
 							<i className="navtop-side material-icons" onClick={this.handleClickButton}>menu</i>
 						</div>

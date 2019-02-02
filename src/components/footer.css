@@ -16,6 +16,10 @@
 }
 
 .footer-logo {
-	flex: 0 1 auto;
 	height: 100%;
+}
+
+.injected-svg {
+	height: 40px;
+	width: initial;
 }

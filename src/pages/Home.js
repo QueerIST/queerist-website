@@ -1,13 +1,14 @@
 import React from 'react'
-import { Cover, Mission } from '../components'
+import { Cover, Mission, Banners } from '../components'
 
 class Home extends React.Component {
 
 	render() {
 		return (
 			<React.Fragment>
-				<Cover></Cover>
-				<Mission></Mission>
+				<Cover/>
+				<Mission/>
+				<Banners/>
 			</React.Fragment>
 		)
 	}

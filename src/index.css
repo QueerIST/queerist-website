@@ -13,7 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.clicable {
+.clickable {
   cursor: pointer;
 }
 

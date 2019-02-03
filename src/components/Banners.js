@@ -3,7 +3,7 @@ import './banners.css'
 
 function BigBanner() {
 	return (
-		<div className="big-banner banner">
+		<div className="big-banner banner" data-aos="zoom-in">
 			<img src='assets/churrasco.png' alt='churrasco' />
 		</div>
 	)

@@ -44,5 +44,23 @@
 
 .small-banners {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
+
+@media only screen and (min-width: 600px) {
+	/* For tablets */
+	.small-banners {
+		flex-direction: row;
+	}
+
+	.small-banner {
+		flex-direction: row;
+	}
+  }
+  
+  @media only screen and (min-width: 768px) {
+	/* For desktop */
+	.small-banner {
+		flex-direction: column;
+	}
+  }

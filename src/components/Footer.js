@@ -8,13 +8,13 @@ class Footer extends React.Component {
 		return (
 			<footer>
 				<div className="footer-logos">
-					<ReactSVG className="footer-logo" src="assets/facebook.svg" />
-					<ReactSVG className="footer-logo" src="assets/instagram.svg" />
-					<ReactSVG className="footer-logo" src="assets/twitter.svg" />
-					<ReactSVG className="footer-logo" src="assets/github.svg" />
-					<ReactSVG className="footer-logo" src="assets/email.svg" />
+					<a href="https://facebook.com/QueerIST"><ReactSVG className="footer-logo clickable" src="assets/facebook.svg" /></a>
+					<a href="https://instagram.com/Queer.IST"><ReactSVG className="footer-logo clickable" src="assets/instagram.svg" /></a>
+					<a href="https://twitter.com/Queer.IST"><ReactSVG className="footer-logo clickable" src="assets/twitter.svg" /></a>
+					<a href="https://github.com/QueerIST"><ReactSVG className="footer-logo clickable" src="assets/github.svg" /></a>
+					<a href="mailto:queerist.sa@aeist.pt"><ReactSVG className="footer-logo clickable" src="assets/email.svg" /></a>
 				</div>
-				<div className="footer-text"></div>
+				<div className="footer-text"><address></address></div>
 			</footer>
 		)
 	}

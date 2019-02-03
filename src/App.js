@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Header, Page, Footer } from './components'
+import { Header, Pages, Footer } from './components'
 import { BrowserRouter } from 'react-router-dom'
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <React.Fragment>
           <Header />
-          <Page />
+          <Pages />
           <Footer />
         </React.Fragment>
       </BrowserRouter>

@@ -6,7 +6,7 @@ class Footer extends React.Component {
 
 	render() {
 		return (
-			<div className="footer">
+			<footer>
 				<div className="footer-logos">
 					<ReactSVG className="footer-logo" src="assets/facebook.svg" />
 					<ReactSVG className="footer-logo" src="assets/instagram.svg" />
@@ -15,7 +15,7 @@ class Footer extends React.Component {
 					<ReactSVG className="footer-logo" src="assets/email.svg" />
 				</div>
 				<div className="footer-text"></div>
-			</div>
+			</footer>
 		)
 	}
 }

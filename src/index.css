@@ -4,6 +4,10 @@
   --blue-color: #2e3192;
 }
 
+#root {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -11,7 +11,7 @@ function BigBanner() {
 
 function SmallBanner({ link, name, bcolor, tcolor }) {
 	return (
-		<div className="small-banner banner" style={{ backgroundColor: bcolor, color: tcolor }}>
+		<div className="small-banner banner" data-aos="zoom-in" style={{ backgroundColor: bcolor, color: tcolor }}>
 			<h1 className="small-banner-text name">"Faz-te Ouvir"</h1>
 			<h2 className="small-banner-text clarification">Tertúlia</h2>
 			<div className="small-banner-img">

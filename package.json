@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://queerist.github.io/queerist-website",
   "dependencies": {
+    "aos": "^2.3.4",
     "gh-pages": "^2.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './header.css'
 
 class Header extends React.Component {
@@ -20,14 +21,14 @@ class Header extends React.Component {
 					<div className="navbar-delimiter">
 						<div className="navtop">
 							<div className="navtop-side"></div>
-							<a className="navimg">
-								<img src="assets/logo so letras brancas.png" alt="QueerIST logo"/>
-							</a>
+							<NavLink className="navimg" exact to="/">
+								<img src="assets/logo so letras brancas.png" alt="QueerIST logo" />
+							</NavLink>
 							<i className="navtop-side material-icons" onClick={this.handleClickButton}>menu</i>
 						</div>
-						<a className={"navlink" + menustatus}>Eventos</a>
-						<a className={"navlink" + menustatus}>Projetos</a>
-						<a className={"navlink" + menustatus}>Merch</a>
+						<NavLink className={"navlink" + menustatus} to="/events">Eventos</NavLink>
+						<NavLink className={"navlink" + menustatus} to="/projects">Projetos</NavLink>
+						<NavLink className={"navlink" + menustatus} to="/merch">Merch</NavLink>
 					</div>
 				</div>
 			</div>

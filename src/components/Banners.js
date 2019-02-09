@@ -12,10 +12,11 @@ function BigBanner() {
 function SmallBanner({ link, name, bcolor, tcolor, text, subtext }) {
 	return (
 		<div className="small-banner banner" data-aos="zoom-in" style={{ backgroundColor: bcolor, color: tcolor }}>
-			<h2 className="small-banner-text name">{text}</h2>
-			<h3 className="small-banner-text clarification">{subtext}</h3>
-			<div className="small-banner-img">
-				<img src={link} alt='' />
+			<div className="small-banner-content">
+				<div className="small-banner-text">{text}</div>
+				<div className="small-banner-img">
+					<img src={link} alt={text} />
+				</div>
 			</div>
 		</div>
 	)
@@ -40,20 +41,17 @@ class Banners extends React.Component {
 						link='assets/ban1.png'
 						bcolor='#6bcde7'
 						tcolor='white'
-						text='"Faz-te Ouvir"'
-						subtext="Tertúlia" />
+						text='Tertúlia "Faz-te Ouvir"' />
 					<SmallBanner
 						link='assets/ban2.png'
 						bcolor='white'
 						tcolor='black'
-						text=''
-						subtext="PubCrawl" />						
+						text='PubCrawl' />
 					<SmallBanner
 						link='assets/ban3.png'
 						bcolor='#232323'
 						tcolor='white'
-						text='Zero Preconceitos'
-						subtext="Podcast" />
+						text='Zero Preconceitos' />
 				</SmallBanners>
 			</React.Fragment>
 		)

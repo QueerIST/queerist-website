@@ -14,16 +14,21 @@
 }
 
 .small-banner {
-	height: 100%;
+	display: flex;
 	flex: 1 0;
+}
+
+.small-banner-content {
 	display: flex;
 	flex-direction: column;
+	padding: 25px;
 }
 
 .small-banner-img {
 	display: flex;
 	height: 200px;
-	flex: 1 0;
+	padding: 20px;
+	flex: 0 0;
 	justify-content: center;
 	align-items: center;
 	max-width: 100%;
@@ -40,6 +45,7 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	font-size: 23pt;
 }
 
 .small-banners {
@@ -48,19 +54,8 @@
 }
 
 @media only screen and (min-width: 600px) {
-	/* For tablets */
+	/* For tablets and desktop */
 	.small-banners {
 		flex-direction: row;
 	}
-
-	.small-banner {
-		flex-direction: row;
-	}
-  }
-  
-  @media only screen and (min-width: 768px) {
-	/* For desktop */
-	.small-banner {
-		flex-direction: column;
-	}
-  }
+}

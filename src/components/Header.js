@@ -6,11 +6,16 @@ class Header extends React.Component {
 	constructor() {
 		super()
 		this.state = { openMenu: false }
-		this.handleClickButton = this.handleClickButton.bind(this);
+		this.handleClickMenuButton = this.handleClickMenuButton.bind(this);
+		this.handleClickLink = this.handleClickLink.bind(this);
 	}
 
-	handleClickButton() {
+	handleClickMenuButton() {
 		this.setState({ openMenu: !this.state.openMenu })
+	}
+
+	handleClickLink() {
+		this.setState({ openMenu: false })
 	}
 
 	render() {
@@ -21,14 +26,14 @@ class Header extends React.Component {
 					<div className="navbar-delimiter">
 						<div className="navtop">
 							<div className="navtop-side"></div>
-							<NavLink className="navimg" exact to="/">
+							<NavLink className="navimg" exact to="/" onClick={this.handleClickLink}>
 								<img src="assets/logo so letras brancas.png" alt="QueerIST logo" />
 							</NavLink>
-							<i className="navtop-side material-icons" onClick={this.handleClickButton}>menu</i>
+							<i className="navtop-side material-icons" onClick={this.handleClickMenuButton}>menu</i>
 						</div>
-						<NavLink className={"navlink" + menustatus} to="/events">Eventos</NavLink>
-						<NavLink className={"navlink" + menustatus} to="/projects">Projetos</NavLink>
-						<NavLink className={"navlink" + menustatus} to="/merch">Merch</NavLink>
+						<NavLink className={"navlink" + menustatus} to="/events" onClick={this.handleClickLink}>Eventos</NavLink>
+						<NavLink className={"navlink" + menustatus} to="/projects" onClick={this.handleClickLink}>Projetos</NavLink>
+						<NavLink className={"navlink" + menustatus} to="/merch" onClick={this.handleClickLink}>Merch</NavLink>
 					</div>
 				</div>
 			</div>

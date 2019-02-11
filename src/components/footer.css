@@ -10,7 +10,8 @@ footer {
 
 .footer-logos {
 	margin: 25px;
-	width: 500px;
+	max-width: 500px;
+	width: 100%;
 	height: 40px;
 	display: flex;
 	justify-content: space-evenly;

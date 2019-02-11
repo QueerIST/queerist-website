@@ -30,6 +30,7 @@
 	align-items: center;
 	min-height: 65px;
 	color: white;
+	text-decoration: none;
 }
 
 .navimg {
@@ -65,7 +66,7 @@
 }
 
 .active {
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 @media only screen and (min-width: 600px) {

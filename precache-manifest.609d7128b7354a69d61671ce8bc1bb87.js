@@ -4,23 +4,23 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/js/runtime~main.dd739c4a.js"
   },
   {
-    "revision": "78573c957439b54a3887",
-    "url": "/queerist-website/static/js/main.78573c95.chunk.js"
+    "revision": "26e57b47bc37d6a15ad6",
+    "url": "/queerist-website/static/js/main.26e57b47.chunk.js"
   },
   {
     "revision": "a5ed66e9f6515c6b7397",
     "url": "/queerist-website/static/js/1.a5ed66e9.chunk.js"
   },
   {
-    "revision": "78573c957439b54a3887",
-    "url": "/queerist-website/static/css/main.3ddb08e5.chunk.css"
+    "revision": "26e57b47bc37d6a15ad6",
+    "url": "/queerist-website/static/css/main.ea859c6b.chunk.css"
   },
   {
     "revision": "a5ed66e9f6515c6b7397",
     "url": "/queerist-website/static/css/1.e67c06a9.chunk.css"
   },
   {
-    "revision": "6a07804e10dfa412be72f06d3f9a3eef",
+    "revision": "359260fbca8e845218ed0c86774d1554",
     "url": "/queerist-website/index.html"
   }
 ];

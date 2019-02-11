@@ -1,7 +1,7 @@
 import React from 'react'
-import './cover.css'
+import './maincover.css'
 
-class Cover extends React.Component {
+class MainCover extends React.Component {
 	render() {
 		return (
 			<div className="background" style={{backgroundImage: 'url(assets/fundo.png)'}}>
@@ -11,4 +11,4 @@ class Cover extends React.Component {
 	}
 }
 
-export default Cover
+export default MainCover

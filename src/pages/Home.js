@@ -1,12 +1,12 @@
 import React from 'react'
-import { Cover, Mission, Banners, Page } from '../components'
+import { MainCover, Mission, Banners, Page } from '../components'
 
 class Home extends React.Component {
 
 	render() {
 		return (
 			<Page>
-				<Cover />
+				<MainCover />
 				<Mission />
 				<Banners />
 			</Page>

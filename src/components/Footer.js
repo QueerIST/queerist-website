@@ -14,7 +14,13 @@ class Footer extends React.Component {
 					<a href="https://github.com/QueerIST"><ReactSVG className="footer-logo clickable" src="assets/github.svg" /></a>
 					<a href="mailto:queerist.sa@aeist.pt"><ReactSVG className="footer-logo clickable" src="assets/email.svg" /></a>
 				</div>
-				<div className="footer-text"><address></address></div>
+				<div className="footer-text">
+					<address>
+						Encontra-nos pessoalmente no Instituto Superior Técnico!<br/>
+						Av. Rovisco Pais 1,<br/>
+						1049-001 Lisboa
+					</address>
+				</div>
 			</footer>
 		)
 	}

@@ -7,7 +7,7 @@ class PageCover extends React.Component {
 			<React.Fragment>
 				<div className="page-background">
 					<h1>Eventos</h1>
-					<p>Onde te podes divertir e conviver e aprender e informar e educar e tudo e mais.</p>
+					<p>Onde te podes divertir e conviver e aprender e informar e educar e tudo e mais. Vem fazer coisas connosco!</p>
 				</div>
 				<div className="page-image">
 					<img src="assets/tertulia.jpg" />

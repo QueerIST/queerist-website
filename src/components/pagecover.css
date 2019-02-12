@@ -3,21 +3,21 @@
 	flex-direction: column;
 	text-align: center;
 	align-items: center;
+	justify-content: center;
 	width: 100%;
-	padding-top: 65px;
-	height: 200px;
+	height: 500px;
 	color: white;
 	background-color: var(--blue-color);
 }
 
 .page-background p {
-	max-width: 50%;
-	margin: 5px;
+	max-width: 80%;
+	margin: 10px;
 	font-size: 14pt;
 }
 
 .page-background h1 {
-	margin: 5px;
+	margin: 10px;
 	font-size: 30pt;
 }
 
@@ -26,9 +26,31 @@
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	margin-top: -80px;
+	margin-top: 0;
 }
 
 .page-image img {
-	width: 80%;
+	width: 150%;
+}
+
+@media only screen and (min-width: 600px) {
+	/* For tablets and bigger */
+	
+	.page-background {
+		justify-content: unset;
+		padding-top: 20px;
+		height: 200px;
+	}
+	
+	.page-background p {
+		max-width: 60%;
+	}
+	
+	.page-image {
+		margin-top: -4%;
+	}
+	
+	.page-image img {
+		width: 80%;
+	}
 }

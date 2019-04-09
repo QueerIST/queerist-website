@@ -5,6 +5,7 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import './webfontkit/fontstylesheet.css'
 
 AOS.init({
 	once: true

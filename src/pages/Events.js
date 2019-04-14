@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, PageCover, EventTile } from '../components'
+import { Page, PageCover, EventTile, Separator } from '../components'
 
 class Events extends React.Component {
 
@@ -7,6 +7,7 @@ class Events extends React.Component {
 		return (
 			<Page>
 				<PageCover />
+				<Separator />
 				<EventTile />
 			</Page>
 		)

@@ -7,5 +7,6 @@ import PageCover from './PageCover'
 import Mission from './Mission'
 import Banners from './Banners'
 import EventTile from './EventTile'
+import Separator from './Separator'
 
-export { Header, Page, Footer, MainCover, Mission, Banners, Pages, PageCover, EventTile }
+export { Header, Page, Footer, MainCover, Mission, Banners, Pages, PageCover, EventTile, Separator }

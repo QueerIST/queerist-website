@@ -13,7 +13,7 @@ function PageBackground() {
 function PageImage() {
 	return (
 		<div className="page-image">
-			<img src="assets/tertulia.jpg" />
+			<img src="assets/tertulia.jpg" alt="Events" />
 		</div>
 	)
 }

@@ -11,7 +11,7 @@ function EventGalleryItem() {
 	return (
 		<li className="event-gallery-item">
 			<div className="event-gallery-item-img">
-				<img src="assets/terts.jpg" />
+				<img src="assets/terts.jpg" alt="Tertúlia Faz-te Ouvir!" />
 			</div>
 			<div className="event-gallery-item-text">
 				<h3>Faz-te Ouvir!</h3>

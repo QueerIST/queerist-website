@@ -8,5 +8,6 @@ import Mission from './Mission'
 import Banners from './Banners'
 import EventTile from './EventTile'
 import Separator from './Separator'
+import EventGallery from './EventGallery'
 
-export { Header, Page, Footer, MainCover, Mission, Banners, Pages, PageCover, EventTile, Separator }
+export { Header, Page, Footer, MainCover, Mission, Banners, Pages, PageCover, EventTile, Separator, EventGallery }

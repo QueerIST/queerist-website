@@ -1,4 +1,5 @@
 import React from 'react'
+import { EventGallery } from '.'
 import './eventtile.css'
 
 function EventTypeInfo() {
@@ -8,7 +9,7 @@ function EventTypeInfo() {
 				<img src="assets/tertulia.jpg" />
 			</div>
 			<div className="event-type-info-text">
-				<h3>Tertúlias</h3>
+				<h3>Tertúlias Arco-Íris</h3>
 				<p>Sessões de partilha e discussão</p>
 			</div>
 		</div>
@@ -17,7 +18,12 @@ function EventTypeInfo() {
 
 class EventTile extends React.Component {
 	render() {
-		return <EventTypeInfo />
+		return (
+			<React.Fragment>
+				<EventTypeInfo />
+				<EventGallery />
+			</React.Fragment>
+		)
 	}
 }
 

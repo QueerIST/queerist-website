@@ -24,8 +24,9 @@
 }
 
 .event-gallery-item-img img {
-	height: 100%;
+	height: 120px;
 	width: 100%;
+	object-fit: cover;
 }
 
 .event-gallery-item-text {

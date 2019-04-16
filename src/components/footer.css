@@ -22,9 +22,13 @@ footer {
 	height: 100%;
 }
 
-.injected-svg {
+.footer-logo .injected-svg {
 	height: 40px;
 	width: initial;
+}
+
+.footer-logo svg {
+	fill: white;
 }
 
 .footer-text {

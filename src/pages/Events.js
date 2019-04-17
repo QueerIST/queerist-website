@@ -1,18 +1,13 @@
 import React from 'react'
 import { Page, PageCover, EventTile, Separator } from '../components'
 
-class Events extends React.Component {
-
-	render() {
-		return (
-			<Page>
-				<PageCover />
-				<Separator />
-				<EventTile />
-			</Page>
-		)
-	}
-}
+const Events = ({ location }) => (
+	<Page location={location}>
+		<PageCover />
+		<Separator />
+		<EventTile n={0} id="tertulia" bgColor="blue" textColor="white" />
+	</Page>
+)
 
 
 export default Events

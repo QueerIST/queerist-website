@@ -66,17 +66,15 @@ const EventGalleryItem = () => (
 	</li>
 )
 
-class EventGallery extends React.Component {
-	render() {
-		return (
-			<EventGalleryWrap>
-				<EventGalleryItem />
-				<EventGalleryItem />
-				<EventGalleryItem />
-				<EventGalleryItem />
-			</EventGalleryWrap>
-		)
-	}
+function EventGallery({ id }) {
+	return (
+		<EventGalleryWrap id={id}>
+			<EventGalleryItem />
+			<EventGalleryItem />
+			<EventGalleryItem />
+			<EventGalleryItem />
+		</EventGalleryWrap>
+	)
 }
 
 export default EventGallery

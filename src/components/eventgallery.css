@@ -5,7 +5,7 @@
 	margin: 0;
 	padding: 0;
 	justify-content: space-evenly;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .event-gallery-item {
@@ -43,9 +43,31 @@
 }
 
 .event-gallery-item-text p {
-	padding: 0;
+	margin-top: 10px;
 }
 
-/*.event-gallery-item-text h3, .event-gallery-item-text h4 {
-	margin: 0;
-}*/
+.event-gallery-item-launch {
+	display: flex;
+	align-items: center;
+}
+
+.event-gallery-item-launch svg {
+	fill: grey;
+	margin: 2px;
+}
+
+button {
+	padding: unset;
+	color: unset;
+	border: unset;
+	background-color: unset;
+	font: unset;
+}
+
+.toggleGallery {
+	width: 100%;
+}
+
+.toggleGallery svg {
+	width: 100%;
+}

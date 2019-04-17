@@ -19,10 +19,10 @@ function EventTypeInfo() {
 class EventTile extends React.Component {
 	render() {
 		return (
-			<React.Fragment>
+			<div>
 				<EventTypeInfo />
 				<EventGallery />
-			</React.Fragment>
+			</div>
 		)
 	}
 }

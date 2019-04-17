@@ -3,18 +3,17 @@ import { EventGallery } from '.'
 import './eventtile.css'
 
 function EventTypeInfo({ n, bgColor, textColor }) {
-	var dir = n % 2 ? "row" : "row-reverse"
+	var dir = n % 2 ? "left" : "right"
 	return (
-		<div className="event-type-info" style={{
-			backgroundColor: bgColor,
-			color: textColor, flexDirection: dir
+		<div className={"event-type-info " + dir} style={{
+			backgroundColor: bgColor, color: textColor
 		}}>
-			<div className="event-type-info-img">
-				<img src="assets/tertulia.jpg" alt="Tertúlias Arco-Íris" />
-			</div>
 			<div className="event-type-info-text">
 				<h3>Tertúlias Arco-Íris</h3>
 				<p>Sessões de partilha e discussão</p>
+			</div>
+			<div className="event-type-info-img">
+				<img src="assets/tertulia.jpg" alt="Tertúlias Arco-Íris" />
 			</div>
 		</div>
 	)

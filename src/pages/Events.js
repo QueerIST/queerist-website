@@ -1,8 +1,8 @@
 import React from 'react'
 import { Page, PageCover, EventTile, Separator } from '../components'
 
-const Events = ({ location }) => (
-	<Page location={location}>
+const Events = () => (
+	<Page>
 		<PageCover />
 		<Separator />
 		<EventTile n={0} id="tertulia" bgColor="blue" textColor="white" />

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavHashLink as NavLink } from 'react-router-hash-link'
 import './banners.css'
 
 function BigBanner() {
@@ -9,14 +10,21 @@ function BigBanner() {
 	)
 }
 
-function SmallBanner({ link, name, bcolor, tcolor, text, subtext }) {
+function SmallBanner({ link, id, imgLink, bcolor, tcolor, text, subtext }) {
 	return (
 		<div className="small-banner banner" data-aos="zoom-in" style={{ backgroundColor: bcolor, color: tcolor }}>
 			<div className="small-banner-content">
 				<div className="small-banner-text">{text}</div>
 				<div className="small-banner-img">
-					<img src={link} alt={text} />
+					<img src={imgLink} alt={text} />
 				</div>
+				<NavLink className="small-banner-button"
+					style={{
+						borderColor: tcolor, color: tcolor
+					}}
+					to={{
+						pathname: link, hash: '#' + id
+					}}>Ver Tertúlias</NavLink>
 			</div>
 		</div>
 	)
@@ -38,20 +46,25 @@ class Banners extends React.Component {
 				<BigBanner />
 				<SmallBanners>
 					<SmallBanner
-						link='assets/ban1.png'
+						imgLink='assets/ban1.png'
 						bcolor='#6bcde7'
 						tcolor='white'
-						text='Tertúlia "Faz-te Ouvir"' />
+						text='Tertúlia "Faz-te Ouvir"'
+						link="/events"
+						id="tertulia"
+					/>
 					<SmallBanner
-						link='assets/ban2.png'
+						imgLink='assets/ban2.png'
 						bcolor='white'
 						tcolor='black'
-						text='PubCrawl' />
+						text='PubCrawl'
+					/>
 					<SmallBanner
-						link='assets/ban3.png'
+						imgLink='assets/ban3.png'
 						bcolor='#232323'
 						tcolor='white'
-						text='Zero Preconceitos' />
+						text='Zero Preconceitos'
+					/>
 				</SmallBanners>
 			</React.Fragment>
 		)

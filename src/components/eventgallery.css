@@ -57,14 +57,6 @@
 	margin: 2px;
 }
 
-button {
-	padding: unset;
-	color: unset;
-	border: unset;
-	background-color: unset;
-	font: unset;
-}
-
 .toggleGallery {
 	width: 100%;
 }

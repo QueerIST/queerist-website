@@ -11,11 +11,7 @@ class Mission extends React.Component {
 						<button className="mission-button" type="button">Mission Statement</button>
 					</div>
 				</div>
-				<p className="mission-child mission-text">
-					Estimular a discussão e divulgar informação sobre a temática queer,
-					promovendo a inclusão de membros desta comunidade, com o intuito de
-					diminuir a discriminação em função da orientação sexual ou identidade de género.
-				</p>
+				<p className="mission-child mission-text">{this.props.mission}</p>
 			</div>
 		)
 	}

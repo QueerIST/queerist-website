@@ -5,14 +5,14 @@ import { ReactComponent as Expand } from './../svg/expand.svg'
 import { ReactComponent as Collapse } from './../svg/collapse.svg'
 import AnimateHeight from 'react-animate-height'
 
-const Arrow = ({ open }) => (
+const Arrow = ({ open, seeMoreText }) => (
 	open ?
 		(
-			<Collapse /*preserveAspectRatio="none"*/ />
+			<Collapse />
 		) : (
 			<div>
-				<p>Ver todas as tertúlias</p>
-				<Expand /*preserveAspectRatio="none"*/ />
+				<p>{seeMoreText}</p>
+				<Expand />
 			</div>
 		)
 )
@@ -39,40 +39,45 @@ class EventGalleryWrap extends React.Component {
 					</ul>
 				</AnimateHeight>
 				<button onClick={this.toggleGallery} className="toggleGallery">
-					<Arrow open={this.state.open} />
+					<Arrow open={this.state.open} seeMoreText={this.props.seeMoreText} />
 				</button>
 			</React.Fragment >
 		)
 	}
 }
 
-const EventGalleryItem = () => (
+const EventGalleryItem = ({ name, description, date, place, imgLink, link }) => (
 	<li className="event-gallery-item">
 		<div className="event-gallery-item-img">
-			<img src="assets/terts.jpg" alt="Tertúlia Faz-te Ouvir!" />
+			<img src={imgLink} alt={name} />
 		</div>
 		<div className="event-gallery-item-text">
-			<h3>Faz-te Ouvir!</h3>
+			<h3>{name}</h3>
 			<span className="event-gallery-item-launch">
-				<h4>22 nov, 18h @ GA1</h4>
-				<a href="https://www.facebook.com/events/1074556752718680/"><Launch /></a>
+				<h4>{date} @ {place}</h4>
+				<a href={link}><Launch /></a>
 			</span>
-			<p>Sabemos que ao longo dos anos o conceito de família tem evoluído mas
-				de que forma? Quão diferente é a dinâmica familiar de um agregado
-				com pais queer? E como é que pais não queer lidam com as necessidades
-				dos seus filhos queer? Quais são as suas dificuldades e desafios?
-			</p>
+			<p>{description}</p>
 		</div>
 	</li>
 )
 
-function EventGallery({ id }) {
+function EventGallery({ data, seeMoreText }) {
 	return (
-		<EventGalleryWrap id={id}>
-			<EventGalleryItem />
-			<EventGalleryItem />
-			<EventGalleryItem />
-			<EventGalleryItem />
+		<EventGalleryWrap seeMoreText={seeMoreText}>
+			{data.map(
+				(event, i) => (
+					<EventGalleryItem
+						key={i}
+						name={event.name}
+						description={event.description}
+						date={event.date}
+						place={event.place}
+						imgLink={event.img_link}
+						link={event.link}
+					/>
+				)
+			)}
 		</EventGalleryWrap>
 	)
 }

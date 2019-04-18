@@ -1,19 +1,19 @@
 import React from 'react'
 import './pagecover.css'
 
-function PageBackground() {
+function PageBackground({ title, description, bgColor }) {
 	return (
-		<div className="page-background">
-			<h1>Eventos</h1>
-			<p>Onde te podes divertir e conviver e aprender e informar e educar e tudo e mais. Vem fazer coisas connosco!</p>
+		<div className="page-background" style={{ backgroundColor: bgColor }}>
+			<h1>{title}</h1>
+			<p>{description}</p>
 		</div>
 	)
 }
 
-function PageImage() {
+function PageImage({ imgLink, name }) {
 	return (
 		<div className="page-image">
-			<img src="assets/tertulia.jpg" alt="Events" />
+			<img src={imgLink} alt={name} />
 		</div>
 	)
 }
@@ -22,8 +22,15 @@ class PageCover extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<PageBackground />
-				<PageImage />
+				<PageBackground
+					title={this.props.data.title}
+					description={this.props.data.description}
+					bgColor={this.props.data.bg_color}
+				/>
+				<PageImage
+					name={this.props.data.title}
+					imgLink={this.props.data.img_link}
+				/>
 			</React.Fragment>
 		)
 	}

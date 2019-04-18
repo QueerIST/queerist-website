@@ -1,11 +1,15 @@
 import React from 'react'
 import { Page, PageCover, EventTile, Separator } from '../components'
 
-const Events = () => (
+const Events = ({ data }) => (
 	<Page>
-		<PageCover />
+		<PageCover data={data} />
 		<Separator />
-		<EventTile n={0} id="tertulia" bgColor="blue" textColor="white" />
+		{data.events.map(
+			(event, i) => (
+				<EventTile key={i} n={i} data={event} />
+			)
+		)}
 	</Page>
 )
 

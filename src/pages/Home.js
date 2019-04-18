@@ -1,11 +1,11 @@
 import React from 'react'
 import { MainCover, Mission, Banners, Page } from '../components'
 
-const Home = () => (
+const Home = ({ data }) => (
 	<Page>
 		<MainCover />
-		<Mission />
-		<Banners />
+		<Mission mission={data.mission} missionStatement={data.mission_statement} />
+		<Banners data={data.banners} />
 	</Page>
 )
 

@@ -2,29 +2,29 @@ import React from 'react'
 import { NavHashLink as NavLink } from 'react-router-hash-link'
 import './banners.css'
 
-function BigBanner() {
+function BigBanner({ name, imgLink }) {
 	return (
 		<div className="big-banner banner" data-aos="zoom-in">
-			<img src='assets/churrasco.png' alt='churrasco' />
+			<img src={imgLink} alt={name} />
 		</div>
 	)
 }
 
-function SmallBanner({ link, id, imgLink, bcolor, tcolor, text, subtext }) {
+function SmallBanner({ name, imgLink, bgColor, textColor, linkText, linkPage, linkId }) {
 	return (
-		<div className="small-banner banner" data-aos="zoom-in" style={{ backgroundColor: bcolor, color: tcolor }}>
+		<div className="small-banner banner" data-aos="zoom-in" style={{ backgroundColor: bgColor, color: textColor }}>
 			<div className="small-banner-content">
-				<div className="small-banner-text">{text}</div>
+				<div className="small-banner-text">{name}</div>
 				<div className="small-banner-img">
-					<img src={imgLink} alt={text} />
+					<img src={imgLink} alt={name} />
 				</div>
 				<NavLink className="small-banner-button"
 					style={{
-						borderColor: tcolor, color: tcolor
+						borderColor: textColor, color: textColor
 					}}
 					to={{
-						pathname: link, hash: '#' + id
-					}}>Ver Tertúlias</NavLink>
+						pathname: linkPage, hash: '#' + linkId
+					}}>{linkText}</NavLink>
 			</div>
 		</div>
 	)
@@ -43,28 +43,25 @@ class Banners extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<BigBanner />
+				<BigBanner
+					name={this.props.data.big_banner_name}
+					imgLink={this.props.data.big_banner_img_link}
+				/>
 				<SmallBanners>
-					<SmallBanner
-						imgLink='assets/ban1.png'
-						bcolor='#6bcde7'
-						tcolor='white'
-						text='Tertúlia "Faz-te Ouvir"'
-						link="/events"
-						id="tertulia"
-					/>
-					<SmallBanner
-						imgLink='assets/ban2.png'
-						bcolor='white'
-						tcolor='black'
-						text='PubCrawl'
-					/>
-					<SmallBanner
-						imgLink='assets/ban3.png'
-						bcolor='#232323'
-						tcolor='white'
-						text='Zero Preconceitos'
-					/>
+					{this.props.data.small_banners.map(
+						(smallBanner, i) => (
+							<SmallBanner
+								key={i}
+								name={smallBanner.name}
+								imgLink={smallBanner.img_link}
+								bgColor={smallBanner.bg_color}
+								textColor={smallBanner.text_color}
+								linkText={smallBanner.link_text}
+								linkPage={smallBanner.link_page}
+								linkId={smallBanner.link_id}
+							/>
+						)
+					)}
 				</SmallBanners>
 			</React.Fragment>
 		)

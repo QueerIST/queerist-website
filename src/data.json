@@ -1,0 +1,66 @@
+{
+	"main_page": {
+		"mission": "Estimular a discussão e divulgar informação sobre a temática queer, promovendo a inclusão de membros desta comunidade, com o intuito de diminuir a discriminação em função da orientação sexual ou identidade de género.",
+		"mission_statement": "",
+		"banners": {
+			"big_banner_name": "churrasco",
+			"big_banner_img_link": "assets/churrasco.png",
+			"small_banners": [
+				{
+					"name": "Tertúlia \"Faz-te Ouvir\"",
+					"img_link": "assets/ban1.png",
+					"bg_color": "#6bcde7",
+					"text_color": "white",
+					"link_text": "Ver Tertúlias",
+					"link_page": "/events",
+					"link_id": "tertulia"
+				},
+				{
+					"name": "PubCrawl",
+					"img_link": "assets/ban2.png",
+					"bg_color": "white",
+					"text_color": "black",
+					"link_text": "Ver Pubcrawls",
+					"link_page": "/events",
+					"link_id": "pubcrawl"
+				},
+				{
+					"name": "Zero Preconceitos",
+					"img_link": "assets/ban3.png",
+					"bg_color": "#232323",
+					"text_color": "white",
+					"link_text": "Ver Programas",
+					"link_page": "/projects",
+					"link_id": "radio"
+				}
+			]
+		}
+	},
+	"events_page": {
+		"title": "Eventos",
+		"description": "Onde te podes divertir e conviver e aprender e informar e educar e tudo e mais. Vem fazer coisas connosco!",
+		"img_link": "assets/tertulia.jpg",
+		"bg_color": "blue",
+		"events": [
+			{
+				"id": "tertulia",
+				"name": "Tertúlias Arco-Íris",
+				"description": "Sessões de partilha e discussão",
+				"see_more_text": "Ver todas as tertúlias",
+				"img_link": "assets/tertulia.jpg",
+				"bg_color": "blue",
+				"text_color": "white",
+				"happenings": [
+					{
+						"name": "Faz-te Ouvir!",
+						"img_link": "assets/terts.jpg",
+						"date": "22 nov, 18h",
+						"place": "GA1",
+						"description": "Sabemos que ao longo dos anos o conceito de família tem evoluído mas de que forma? Quão diferente é a dinâmica familiar de um agregado com pais queer? E como é que pais não queer lidam com as necessidades dos seus filhos queer? Quais são as suas dificuldades e desafios?",
+						"link": "https://www.facebook.com/events/1074556752718680/"
+					}
+				]
+			}
+		]
+	}
+}

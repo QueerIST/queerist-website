@@ -52,12 +52,219 @@
 				"text_color": "white",
 				"happenings": [
 					{
+						"name": "Casas Arco-Íris",
+						"img_link": "assets/terts.jpg",
+						"date": "13 dez 18, 17h30",
+						"place": "V0.02",
+						"description": "Sabemos que ao longo dos anos o conceito de família tem evoluído mas de que forma? Quão diferente é a dinâmica familiar de um agregado com pais queer? E como é que pais não queer lidam com as necessidades dos seus filhos queer? Quais são as suas dificuldades e desafios?",
+						"link": "https://www.facebook.com/events/298131047703659/"
+					},
+					{
 						"name": "Faz-te Ouvir!",
 						"img_link": "assets/terts.jpg",
-						"date": "22 nov, 18h",
+						"date": "22 nov 18, 18h",
 						"place": "GA1",
-						"description": "Sabemos que ao longo dos anos o conceito de família tem evoluído mas de que forma? Quão diferente é a dinâmica familiar de um agregado com pais queer? E como é que pais não queer lidam com as necessidades dos seus filhos queer? Quais são as suas dificuldades e desafios?",
+						"description": "O ativismo queer é das principais ferramentas que existem para a emancipação e luta na igualdade da comunidade queer, mas qual será a melhor forma de o fazer? Será que as marchas ainda fazem sentido?\nTentaremos responder a estas e várias outras questões sobre a história do ativismo, os movimentos Pride e até sobre que direitos têm atualmente que ser reclamados na nossa próxima tertúlia.",
 						"link": "https://www.facebook.com/events/1074556752718680/"
+					},
+					{
+						"name": "Let's Get In Drag",
+						"img_link": "assets/terts.jpg",
+						"date": "07 mai 18, 17h",
+						"place": "VA4",
+						"description": "Vamos falar sobre transformismo e a performance de género, sobre as suas histórias e origens, importância social ao longo dos tempos e relação com a teoria de género moderna.\nPara isto, contamos com conhecidos performers e estudiosos do tema, que nos vão apresentar a sua experiência e opinião!",
+						"link": "https://www.facebook.com/events/205847710193129/"
+					},
+					{
+						"name": "LGBTQuê",
+						"img_link": "assets/terts.jpg",
+						"date": "10 abr 18, 17h",
+						"place": "V1.10",
+						"description": "LGBTQIA+ é uma sigla que levanta bastantes questões: por um lado, pretende ser inclusiva e representativa, por outro, deixa muitos membros da comunidade pendurados num \"+\".\nÉ com estas questões em mente, que fazemos a nossa 2ª Tertúlia, onde vamos não só tentar respondê-las mas também levantar outras!\nPartindo de cada letra, vamos explorar os seus significados e a necessidade de se utilizar esta sigla para representar um grupo tão rico em pluralidade de identidades e vivências de pessoas.",
+						"link": "https://www.facebook.com/events/416288752150303/"
+					},
+					{
+						"name": "We're Here, We're Queer",
+						"img_link": "assets/terts.jpg",
+						"date": "05 mar 18, 18h",
+						"place": "Anfiteatro Abreu Faro",
+						"description": "Em outubro de 2017, surgiu um dos post mais comentados e polémicos no grupo do IST, relativo à criação do QueerIST. http://bit.ly/PostQueerIST \nTendo em conta esse post, iremos realizar a 1ª Tertúlia sobre a formação do QueerIST!\nOs comos e os porquês irão ser debatidos com o público e também com convidados especiais da ILGA e da rede ex aequo.",
+						"link": "https://www.facebook.com/events/416288752150303/"
+					}
+				]
+			},
+			{
+				"id": "churrasco",
+				"name": "Churrascos Straight or Queer, We All Want Beer",
+				"description": "Bebe",
+				"see_more_text": "Explorar todos os churrascos",
+				"img_link": "assets/tertulia.jpg",
+				"bg_color": "orange",
+				"text_color": "white",
+				"happenings": [
+					{
+						"name": "2º Churrasco",
+						"img_link": "assets/terts.jpg",
+						"date": "05 dez 18, 19h",
+						"place": "Espaço BBQ",
+						"description": "O QueerIST faz um ano! Para o comemorar, junta-te a nós em mais uma edição do nosso épico churrasco :) Vem aproveitar as restantes horas de diversão antes da clausura dos exames para te divertires até te cansares! \nPrometemos uma noite de boa comida e bebida!\nPodes contar com a clássica bifana, mas também teremos alternativas vegan. Cerveja, sangria, shots e bebidas brancas! Traz pessoal contigo e vem experimentar os nossos shots temáticos que serão anunciados em breve!",
+						"link": "https://www.facebook.com/events/211007056464588/"
+					},
+					{
+						"name": "1º Churrasco",
+						"img_link": "assets/terts.jpg",
+						"date": "29 mai 18, 19h",
+						"place": "Espaço BBQ",
+						"description": "Vem aproveitar o pouco tempo que te falta até te fechares a estudar para os exames! Aparece no 1º Churrasco do QueerIST! Prometemos-te uma playlist que fará dançar até os mais tímidos.\nPodes contar com a clássica bifana, mas também  teremos hambúrgueres vegan como alternativa. Cerveja, sangria, shots e bebidas brancas! Arranja alguém e vem experimentar o nosso Pack Shots Arco-Íris, 6 cores, 6 shots, 1 desafio: quantos bebes?",
+						"link": "https://www.facebook.com/events/372094889959942/"
+					}
+				]
+			},
+			{
+				"id": "pubcrawl",
+				"name": "Pubcrawls QueerIST",
+				"description": "Exprorar a noite lisboeta e conhecer novas pessoas",
+				"see_more_text": "Crawl the pubcrawls",
+				"img_link": "assets/tertulia.jpg",
+				"bg_color": "white",
+				"text_color": "black",
+				"happenings": [
+					{
+						"name": "2º Pubcrawl",
+						"img_link": "assets/terts.jpg",
+						"date": "24 nov 18, 21h30",
+						"place": "Praça Luís de Camões",
+						"description": "Se sentes que andas a estudar/trabalhar demais e que precisas da saída mais queer e divertida de sempre, então o dia pelo qual esperavas finalmente chegou!\nO plano é simples: durante a noite, vamos dar-te uma amostra dos melhores bares queer-friendly da cidade. Haverá um bar aberto e várias bebidas incluídas, para além de vários jogos!\nComo se isso não fosse suficiente, quem participar terá incluída entrada no Trumps, indiscutivelmente uma das melhores discotecas LGBT+ da cidade",
+						"link": "https://www.facebook.com/events/327110634748913/"
+					},
+					{
+						"name": "PubCrawl QueerIST + OutCiências",
+						"img_link": "assets/terts.jpg",
+						"date": "07 jul 18, 21h30",
+						"place": "Praça Príncipe Real",
+						"description": "Para terminar o ano em grande, estamos a organizar um PubCrawl, o 1º evento conjunto entre o OutCiências e o Queer IST!\nVai ser o PubCrawl mais divertido e queer a que já foste! Inclui, entre muitas outras coisas maravilhosas, bar aberto e a entrada no Trumps. Não percas esta oportunidade!",
+						"link": "https://www.facebook.com/events/1850191985284416/"
+					},
+					{
+						"name": "1º Pubcrawl",
+						"img_link": "assets/terts.jpg",
+						"date": "17 mai 18, 21h30",
+						"place": "Praça Luís de Camões",
+						"description": "Pensado especialmente em ti para promover o convívio entre membros e amigos do QueerIST e aproximar à vida LGBT+ que existe em Lisboa!\nO plano é simples: durante a noite, vamos visitar diversos bares num percurso em que queremos incluir a melhor amostra de bares queer friendly da cidade. Em cada paragem e bar, vamos beber uma bebida e fazer vários jogos!\nDurante a noite toda, haverá um bar aberto e várias bebidas incluídas!",
+						"link": "https://www.facebook.com/events/256519388227636/"
+					}
+				]
+			},
+			{
+				"id": "cinema",
+				"name": "Cinema Arco-Íris",
+				"description": "Sessões de exibição de filmes",
+				"see_more_text": "Ver todos os filmes exibidos",
+				"img_link": "assets/tertulia.jpg",
+				"bg_color": "brown",
+				"text_color": "white",
+				"happenings": [
+					{
+						"name": "RPDR Season 11 Viewing Party",
+						"img_link": "assets/terts.jpg",
+						"date": "01 mar, 21h",
+						"place": "VA1",
+						"description": "Hey, Kitty Girls! Mais uma temporada de RuPaul's Drag Race está prestes a começar, traz companhia e junta-te a nós na estreia!\nCaso nunca tenhas visto, esta é a altura ideal para te juntares ao fenómeno internacional que é esta competição de drag!",
+						"link": "https://www.facebook.com/events/314740139399128/"
+					},
+					{
+						"name": "The Rocky Horror Picture Show",
+						"img_link": "assets/terts.jpg",
+						"date": "17 jan, 18h",
+						"place": "VA2",
+						"description": "Em parceria com o Diferencial!\nOs namorados Brad e Janet ficam presos numa tempestade com um pneu furado, obrigando-os a procurar abrigo e a descobrir a estranha mansão do Dr. Frank-N-Furter, um cientista bastante peculiar. À medida que vão perdendo a sua inocência e ingenuidade, o casal depara-se com uma casa cheia de personagens intrigantes e, através de danças e canções, Frank-N-Furter revela a sua mais recente criação: ‘Rocky’. \nNo entanto, não nos deixemos enganar pelo tom satírico com que Richard O’Brian e, mais tarde, Jim Sharman nos oferecem esta versão distorcida e revolucionária de clássicos sci-fi e terror, pois ele entra em constante colisão com a séria discussão vivida nos últimos, pelo menos, 44 anos. Abordando pontos como a identidade de género, a liberdade sexual e outras questões relacionadas com a comunidade queer, este aclamado filme revolucionou a abordagem sociológica do cinema – \"a different set of jaws\", indeed",
+						"link": "https://www.facebook.com/events/292887844747455/"
+					},
+					{
+						"name": "Weekend",
+						"img_link": "assets/terts.jpg",
+						"date": "21 nov 18, 21h",
+						"place": "VA1",
+						"description": "Mais uma sessão de cinema do QueerIST, desta vez com um romance queer, Weekend (2011).\nAproveita este momento de descontração depois da primeira ronda de testes (pelo menos para alguns de nós) e traz pessoal contigo. Como sempre, teremos pipocas!!\n\"After a drunken house party with his straight mates, Russell heads out to a gay club. Just before closing time he picks up Glen but what's expected to be just a one-night stand becomes something else, something special.\" - IMDB",
+						"link": "https://www.facebook.com/events/334686703754051/"
+					},
+					{
+						"name": "But I'm a Cheerleader",
+						"img_link": "assets/terts.jpg",
+						"date": "23 out 18, 21h",
+						"place": "VA1",
+						"description": "Nada melhor para começar o ano do que uma boa comédia queer e por isso mesmo iremos passar o filme \"But I'm a Cheerleader\" (1999). \nAparece e traz amigxs que nós aparecemos com as pipocas!\n\"A naive teenager is sent to rehab camp when her straitlaced parents and friends suspect her of being a lesbian.\" - IMDB",
+						"link": "https://www.facebook.com/events/320866441978738/"
+					},
+					{
+						"name": "Tomboy",
+						"img_link": "assets/terts.jpg",
+						"date": "24 abr 18, 21h",
+						"place": "VA3",
+						"description": "Junta-te a nós porque vamos ver o filme \"Tomboy\" (2011), realizado por Céline Sciamma. \n Uma família muda-se para um novo bairro com a filha Laurie, de 10 anos. Esta apresenta-se aos seus novos amigos como um rapaz chamado Mikael.\nA história consiste na convivência da personagem com os seus novos colegas, entre eles Lisa (por quem vem a desenvolver algo mais), e a sua família. É importante também referir o foco dado a questões de identidade de género, nomeadamente a sua relevância nas interações sociais, facto capital se tivermos em conta a idade precoce em que a personagem se depara com este dilema.\nEm suma, o filme remete-nos não para a descoberta do amor, mas sim para uma descoberta natural do verdadeiro “eu” em choque com o socialmente aceite.",
+						"link": "https://www.facebook.com/events/193860507916982/"
+					},
+					{
+						"name": "Paris is Burning",
+						"img_link": "assets/terts.jpg",
+						"date": "21 mar 18, 21h",
+						"place": "VA3",
+						"description": "A 2ª sessão de cinema do QueerIST chegou! Iremos passar o filme \"Paris Is Burning\" (1990). \"A chronicle of New York's drag scene in the 1980s, focusing on balls, voguing and the ambitions and dreams of those who gave the era its warmth and vitality.\"- IMDB",
+						"link": "https://www.facebook.com/events/557170994663082/"
+					},
+					{
+						"name": "Quem foi que te ensinou sobre o amor?",
+						"img_link": "assets/terts.jpg",
+						"date": "21 fev 18, 21h30",
+						"place": "VA3",
+						"description": "O QueerIST traz-te o primeiro momento de cinema queer no IST! Iremos passar o filme \"O Ninho\" (2016). \nBruno não está tão interessado em ser militar. A sua prioridade é reencontrar o seu irmão, que não vê há anos. Ele decide viajar para Porto Alegre para encontrá-lo, mas parece que seu irmão não está na cidade. No entanto, o que parecia ser uma viagem perdida, é na verdade, o início de uma jornada de autoconhecimento. Bruno depara-se com os amigos, as memórias e as situações vividas pelo irmão e, onde menos espera, acaba por encontrar uma família.",
+						"link": "https://www.facebook.com/events/166893427276788/"
+					}
+				]
+			},
+			{
+				"id": "qultura",
+				"name": "Qultura",
+				"description": "Momentos para partilhares e descobrires cultura queer",
+				"see_more_text": "Ver todas as partilhas",
+				"img_link": "assets/tertulia.jpg",
+				"bg_color": "red",
+				"text_color": "white",
+				"happenings": [
+					{
+						"name": "Vês Quem És?",
+						"img_link": "assets/terts.jpg",
+						"date": "29 nov 18, 17h",
+						"place": "Sala QueerIST",
+						"description": "Qual é a representação que vês? Vês-te em filmes? Vês-te na música? Vês-te em livros? Nesta sessão convidamos-te a partilhar as maneiras como te vês ou gostavas de ver na cultura que te rodeia.\nTraz clips de filmes, música, livros ou o que quiseres e vem falar sobre representação nos media, queerbaiting, fetishização gay no mundo de fanfiction, etc.\nHaverá também uma pequena coleção de livros queer (YA, romance, etc). Poderás também deixar no nosso repositório livros teus se quiseres.",
+						"link": "https://www.facebook.com/events/547101252368581/"
+					},
+					{
+						"name": "Partilha Cultural",
+						"img_link": "assets/terts.jpg",
+						"date": "03 mai 18, 17h30",
+						"place": "F3",
+						"description": "Como há histórias que merecem ser contadas, queremos proporcionar-te um evento fora do comum. Terás a oportunidade de descobrir e partilhar experiências culturais naquela que será a 1ª sessão de Qultura do QueerIST!\nTraz o que mais te inspira: livros, revistas, fotografias, pinturas, entre outros. O que importa é que possas partilhar cultura LGBT+ com outras pessoas presentes.\nMesmo que não tragas algo, junta-te a nós e ouve as nossas histórias!",
+						"link": "https://www.facebook.com/events/179825582836781/"
+					}
+				]
+			},
+			{
+				"id": "conferencia",
+				"name": "Conferências",
+				"description": "Conversas",
+				"see_more_text": "Ver todas as conferências relizadas",
+				"img_link": "assets/tertulia.jpg",
+				"bg_color": "grey",
+				"text_color": "white",
+				"happenings": [
+					{
+						"name": "Jovens LGBT e a Sociedade Actual",
+						"img_link": "assets/terts.jpg",
+						"date": "17 mai 18, 18h",
+						"place": "VA4",
+						"description": "É já no próximo dia 17 de Maio que se celebra o Dia Internacional Contra a Homofobia, Bifobia e Transfobia.\nAproveitamos esta data para analisar problemáticas do panorama atual dos direitos LGBTI+ em Portugal, dinamizando uma conferência.\nCom este evento procuramos analisar as iniciativas jovens que atuam dentro da temática LGBTI+ e considerar o seu impacto e receção e discutir a necessidade de educação para a sexualidade. Vamos ainda visitar questões atuais, como a discriminação na saúde e legislação referente à autodeterminação de género.\nPara isso, contamos com a presença de pessoas experientes na área.",
+						"link": "https://www.facebook.com/events/2016960025044996/"
 					}
 				]
 			}

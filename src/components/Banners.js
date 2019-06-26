@@ -4,9 +4,9 @@ import './banners.css'
 
 function BigBanner({ name, imgLink }) {
 	return (
-		<div className="big-banner banner" data-aos="zoom-in">
+		<div className="big-banner banner" /*data-aos="zoom-in"*/>
 			<img src={imgLink} alt={name} />
-		</div>
+		</div >
 	)
 }
 

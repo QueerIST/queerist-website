@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Page = ({ children }) => (
-	<div data-aos="fade-left">
+	<div /*data-aos="fade-left"*/>
 		{children}
 	</div>
 )

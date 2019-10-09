@@ -1,9 +1,10 @@
 import React from 'react'
-import { EventGallery } from '.'
+import { EventGallery, Button } from '.'
+
 import './eventtile.css'
 
 function EventTypeInfo({ n, name, description, imgLink, bgColor, textColor }) {
-	var dir = n % 2 ? "left" : "right"
+	const dir = n % 2 ? "left" : "right"
 	return (
 		<div className={"event-type-info " + dir} style={{
 			backgroundColor: bgColor, color: textColor
@@ -11,6 +12,11 @@ function EventTypeInfo({ n, name, description, imgLink, bgColor, textColor }) {
 			<div className="event-type-info-text">
 				<h3>{name}</h3>
 				<p>{description}</p>
+				<Button>
+					<button className="event-type-info-button">
+						Ver mais
+					</button>
+				</Button>
 			</div>
 			<div className="event-type-info-img">
 				<img src={imgLink} alt={name} />

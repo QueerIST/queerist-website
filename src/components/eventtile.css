@@ -41,3 +41,7 @@
 .event-type-info-text {
 	flex-direction: column;
 }
+
+.event-type-info-button {
+	margin-top: 10%;
+}

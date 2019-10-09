@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavHashLink as NavLink } from 'react-router-hash-link'
+import { Button } from '.';
 import { scrollOptions } from '../helpers'
+
 import './banners.css'
 
 function BigBanner({ name, imgLink }) {
@@ -19,15 +21,19 @@ function SmallBanner({ name, imgLink, bgColor, textColor, linkText, linkPage, li
 				<div className="small-banner-img">
 					<img src={imgLink} alt={name} />
 				</div>
-				<NavLink className="small-banner-button"
-					style={{
-						borderColor: textColor, color: textColor
-					}}
-					to={{
-						pathname: linkPage, hash: '#' + linkId
-					}}
-					scroll={scrollOptions}
-				>{linkText}</NavLink>
+				<Button
+					borderColor={textColor}
+					color={textColor}
+				>
+					<NavLink
+						to={{
+							pathname: linkPage, hash: '#' + linkId
+						}}
+						scroll={scrollOptions}
+					>
+						{linkText}
+					</NavLink>
+				</Button>
 			</div>
 		</div>
 	)

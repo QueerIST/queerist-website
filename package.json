@@ -5,6 +5,7 @@
   "homepage": "https://queerist.github.io/queerist-website",
   "dependencies": {
     "aos": "^2.3.4",
+    "classnames": "^2.2.6",
     "gh-pages": "^2.0.1",
     "react": "^16.7.0",
     "react-animate-height": "^2.0.8",

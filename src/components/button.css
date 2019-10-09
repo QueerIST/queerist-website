@@ -1,0 +1,12 @@
+.block-button {
+	display: flex;
+	border: 2px solid;
+	display: flex;
+	padding: 5px;
+	justify-content: center;
+	text-decoration: none;
+	cursor: pointer;
+	align-items: center;
+	border-radius: 7%;
+	width: 50%;
+}

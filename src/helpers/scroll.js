@@ -30,7 +30,7 @@ function scrollOptions(el) {
 	setTimeout((e) => {
 		window.scrollTo(0, 0);
 		document.documentElement.style.scrollBehavior = 'smooth';
-		el.scrollIntoView({ block: 'end' });
+		el.scrollIntoView({ block: 'center' });
 	}, 0, el)
 }
 

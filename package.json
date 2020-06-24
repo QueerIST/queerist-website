@@ -8,7 +8,6 @@
     "classnames": "^2.2.6",
     "gh-pages": "^2.0.1",
     "react": "^16.7.0",
-    "react-animate-height": "^2.0.8",
     "react-dom": "^16.7.0",
     "react-headroom": "^2.2.8",
     "react-router-dom": "^4.3.1",

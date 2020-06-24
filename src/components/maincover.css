@@ -9,7 +9,7 @@
 	background-size: cover;
 }
 
-.background img {
+.background>img {
 	background-color: white;
 	border-radius: 50%;
 	max-height: 200px;

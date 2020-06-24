@@ -5,7 +5,7 @@
 	overflow: hidden;
 }
 
-.big-banner img {
+.big-banner>img {
 	width: 100%;
 }
 
@@ -36,7 +36,7 @@
 	max-width: 100%;
 }
 
-.small-banner-img img {
+.small-banner-img>img {
 	max-height: 95%;
 	max-width: 100%;
 }

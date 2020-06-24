@@ -28,7 +28,7 @@
 	margin-top: 0;
 }
 
-.page-image img {
+.page-image>img {
 	width: 150%;
 }
 
@@ -45,7 +45,7 @@
 	.page-image {
 		margin-top: -4%;
 	}
-	.page-image img {
+	.page-image>img {
 		width: 80%;
 	}
 }

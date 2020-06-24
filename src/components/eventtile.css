@@ -16,6 +16,18 @@
 	.right {
 		flex-direction: row;
 	}
+	.left .event-type-info-button>svg {
+		transform: rotate(-90deg);
+	}
+	.left .event-type-info-button.open>svg {
+		transform: rotate(90deg);
+	}
+	.right .event-type-info-button>svg {
+		transform: rotate(90deg);
+	}
+	.right .event-type-info-button.open>svg {
+		transform: rotate(-90deg);
+	}
 }
 
 .event-type-info>div {
@@ -57,4 +69,13 @@
 
 .event-type-info-button {
 	margin-top: 10%;
+}
+
+.event-type-info-button>svg {
+	transition: transform 1s;
+	transform: rotate(0deg);
+}
+
+.event-type-info-button.open>svg {
+	transform: rotate(180deg);
 }

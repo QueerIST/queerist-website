@@ -1,20 +1,6 @@
 import React from 'react'
 import './eventgallery.css'
 import { ReactComponent as Launch } from './../svg/launch.svg'
-/*import { ReactComponent as Expand } from './../svg/expand.svg'
-import { ReactComponent as Collapse } from './../svg/collapse.svg'
-
-const Arrow = ({ open, seeMoreText }) => (
-	open ?
-		(
-			<Collapse />
-		) : (
-			<div>
-				<p>{seeMoreText}</p>
-				<Expand />
-			</div>
-		)
-) */
 
 function EventGalleryWrap(props) {
 	const getClassName = () => props.open ? "" : "closed";

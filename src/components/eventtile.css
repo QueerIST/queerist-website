@@ -38,6 +38,12 @@
 	max-width: 100%;
 	min-height: 100%;
 	object-fit: cover;
+	filter: brightness(100%);
+	transition: filter 1s;
+}
+
+.event-type-info-img>img.open {
+	filter: brightness(40%);
 }
 
 .event-type-info-text {
@@ -45,7 +51,7 @@
 	transition: flex 1s;
 }
 
-.event-type-info-text.small {
+.event-type-info-text.open {
 	flex: 1;
 }
 

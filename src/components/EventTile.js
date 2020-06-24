@@ -17,12 +17,12 @@ class EventTypeInfo extends React.Component {
 	render() {
 		const { n, name, description, imgLink, bgColor, textColor, happenings, seeMoreText } = this.props;
 		const dir = n % 2 ? "left" : "right";
-		const flex = this.state.open ? "small" : "";
+		const openClass = this.state.open ? "open" : "";
 		return (
 			<div className={`event-type-info ${dir}`} style={{
 				backgroundColor: bgColor, color: textColor
 			}}>
-				<div className={`event-type-info-text ${flex}`}>
+				<div className={`event-type-info-text ${openClass}`}>
 					<h3>{name}</h3>
 					<p>{description}</p>
 					<Button>
@@ -32,7 +32,7 @@ class EventTypeInfo extends React.Component {
 					</Button>
 				</div>
 				<div className="event-type-info-img">
-					<img src={imgLink} alt={name} />
+					<img className={openClass} src={imgLink} alt={name} />
 					<EventGallery open={this.state.open} data={happenings} />
 				</div>
 			</div>

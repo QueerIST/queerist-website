@@ -1,5 +1,6 @@
 import React from 'react'
 import { EventGallery, Button } from '.'
+import { ReactComponent as Expand } from './../svg/expand.svg'
 
 import './eventtile.css'
 
@@ -26,8 +27,10 @@ class EventTypeInfo extends React.Component {
 					<h3>{name}</h3>
 					<p>{description}</p>
 					<Button>
-						<button onClick={this.toggleGallery} className="event-type-info-button">
-							{seeMoreText}
+						<button onClick={this.toggleGallery} className={`event-type-info-button ${openClass}`}>
+							{dir === "right" ? seeMoreText : null}
+							<Expand fill={textColor} />
+							{dir === "left" ? seeMoreText : null}
 						</button>
 					</Button>
 				</div>

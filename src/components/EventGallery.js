@@ -1,9 +1,8 @@
 import React from 'react'
 import './eventgallery.css'
 import { ReactComponent as Launch } from './../svg/launch.svg'
-import { ReactComponent as Expand } from './../svg/expand.svg'
+/*import { ReactComponent as Expand } from './../svg/expand.svg'
 import { ReactComponent as Collapse } from './../svg/collapse.svg'
-import AnimateHeight from 'react-animate-height'
 
 const Arrow = ({ open, seeMoreText }) => (
 	open ?
@@ -15,35 +14,16 @@ const Arrow = ({ open, seeMoreText }) => (
 				<Expand />
 			</div>
 		)
-)
+) */
 
-class EventGalleryWrap extends React.Component {
+function EventGalleryWrap(props) {
+	const getClassName = () => props.open ? "" : "closed";
 
-	constructor(props) {
-		super(props)
-		this.state = { open: false }
-	}
-
-	toggleGallery = () => {
-		this.setState({ open: !this.state.open })
-	}
-
-	getHeight = (open) => open ? "auto" : '0'
-
-	render() {
-		return (
-			<React.Fragment>
-				<AnimateHeight duration={300} height={this.getHeight(this.state.open)} >
-					<ul className="event-gallery">
-						{this.props.children}
-					</ul>
-				</AnimateHeight>
-				<button onClick={this.toggleGallery} className="toggleGallery">
-					<Arrow open={this.state.open} seeMoreText={this.props.seeMoreText} />
-				</button>
-			</React.Fragment >
-		)
-	}
+	return (
+		<ul className={`event-gallery ${getClassName()}`}>
+			{props.children}
+		</ul>
+	)
 }
 
 const EventGalleryItem = ({ name, description, date, place, imgLink, link }) => (
@@ -62,9 +42,9 @@ const EventGalleryItem = ({ name, description, date, place, imgLink, link }) => 
 	</li>
 )
 
-function EventGallery({ data, seeMoreText }) {
+function EventGallery({ data, open, seeMoreText }) {
 	return (
-		<EventGalleryWrap seeMoreText={seeMoreText}>
+		<EventGalleryWrap open={open} seeMoreText={seeMoreText}>
 			{data.map(
 				(event, i) => (
 					<EventGalleryItem

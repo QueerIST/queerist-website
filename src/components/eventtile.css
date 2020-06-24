@@ -19,7 +19,7 @@
 }
 
 .event-type-info>div {
-	flex: 1 0;
+	flex: 2 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -27,6 +27,7 @@
 }
 
 .event-type-info-img {
+	position: relative;
 	flex-direction: row;
 	overflow: hidden;
 	max-width: 100%;
@@ -35,11 +36,18 @@
 
 .event-type-info-img img {
 	height: 100%;
+	max-width: 100%;
+	min-height: 100%;
 	object-fit: cover;
 }
 
 .event-type-info-text {
 	flex-direction: column;
+	transition: flex 1s;
+}
+
+.event-type-info-text.small {
+	flex: 1;
 }
 
 .event-type-info-button {

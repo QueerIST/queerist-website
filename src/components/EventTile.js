@@ -24,8 +24,8 @@ class EventTypeInfo extends React.Component {
 				backgroundColor: bgColor, color: textColor
 			}}>
 				<div className={`event-type-info-text ${openClass}`}>
-					<h3>{name}</h3>
-					<p>{description}</p>
+					<h3 className="event-type-info-text-text">{name}</h3>
+					<p className="event-type-info-text-desc event-type-info-text-text">{description}</p>
 					<Button>
 						<button onClick={this.toggleGallery} className={`event-type-info-button ${openClass}`}>
 							{dir === "right" ? seeMoreText : null}

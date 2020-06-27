@@ -61,14 +61,23 @@
 .event-type-info-text {
 	flex-direction: column;
 	transition: flex 1s;
+	padding: 3% 0;
 }
 
 .event-type-info-text.open {
 	flex: 1;
 }
 
+.event-type-info-text-text {
+	padding: 0 5%;
+}
+
+.event-type-info-text-desc {
+	flex: 1 1 100%;
+}
+
 .event-type-info-button {
-	margin-top: 10%;
+	margin: 5%;
 }
 
 .event-type-info-button>svg {

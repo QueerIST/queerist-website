@@ -1,15 +1,29 @@
 import React from 'react'
-import { Button } from '.'
+import { NavHashLink as NavLink } from 'react-router-hash-link'
+import { scrollOptions } from '../helpers'
 
 import './textblock.css'
 
 const TextBlockInfo = ({ id, title, text, bgColor, textColor, linkText, linkPage, linkId }) => (
-	<div className="textblock">
+	<div id={id} className="textblock" style={{ backgroundColor: bgColor, color: textColor }}>
 		<div className="textblock-child">
 			<h2 className="textblock-button-child textblock-button-text">{title}</h2>
-			<div className="textblock-button-child">
-				<button className="textblock-button" type="button">{linkText}</button>
-			</div>
+			{linkText &&
+				<div className="textblock-button-child">
+					<button type="button"
+						color={textColor}
+					>
+						{/* Kinda meh*/}
+						<NavLink className="textblock-button"
+							to={{
+								pathname: linkPage, hash: '#' + linkId
+							}}
+							scroll={scrollOptions}
+						>
+							{linkText}
+						</NavLink>
+					</button>
+				</div>}
 		</div>
 		<p className="textblock-child textblock-text">{text}</p>
 	</div>

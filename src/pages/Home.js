@@ -1,10 +1,10 @@
 import React from 'react'
-import { MainCover, Mission, Banners, Page } from '../components'
+import { MainCover, TextBlock, Banners, Page } from '../components'
 
 const Home = ({ data }) => (
 	<Page>
 		<MainCover />
-		<Mission mission={data.mission} missionStatement={data.mission_statement} />
+		<TextBlock data={data.text_block} />
 		<Banners data={data.banners} />
 	</Page>
 )

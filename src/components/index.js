@@ -4,11 +4,11 @@ import Page from './Page'
 import Pages from './Pages'
 import MainCover from './MainCover'
 import PageCover from './PageCover'
-import Mission from './Mission'
+import TextBlock from './TextBlock'
 import Banners from './Banners'
 import EventTile from './EventTile'
 import Separator from './Separator'
 import EventGallery from './EventGallery'
 import Button from './Button'
 
-export { Header, Page, Footer, MainCover, Mission, Banners, Pages, PageCover, EventTile, Separator, EventGallery, Button }
+export { Header, Page, Footer, MainCover, TextBlock, Banners, Pages, PageCover, EventTile, Separator, EventGallery, Button }

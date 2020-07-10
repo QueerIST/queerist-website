@@ -10,19 +10,16 @@ const TextBlockInfo = ({ id, title, text, bgColor, textColor, linkText, linkPage
 			<h2 className="textblock-button-child textblock-button-text">{title}</h2>
 			{linkText &&
 				<div className="textblock-button-child">
-					<button type="button"
+					{/* Kinda meh*/}
+					<NavLink className="textblock-button"
 						color={textColor}
+						to={{
+							pathname: linkPage, hash: '#' + linkId
+						}}
+						scroll={scrollOptions}
 					>
-						{/* Kinda meh*/}
-						<NavLink className="textblock-button"
-							to={{
-								pathname: linkPage, hash: '#' + linkId
-							}}
-							scroll={scrollOptions}
-						>
-							{linkText}
-						</NavLink>
-					</button>
+						{linkText}
+					</NavLink>
 				</div>}
 		</div>
 		<p className="textblock-child textblock-text">{text}</p>

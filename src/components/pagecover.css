@@ -33,6 +33,11 @@
 	height: 100%;
 	object-fit: cover;
 	align-self: center;
+	transition: height 10s;
+}
+
+.page-image img:hover {
+	height: 150%;
 }
 
 .page-image-group {

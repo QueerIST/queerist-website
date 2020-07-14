@@ -51,7 +51,11 @@
 	min-height: 100%;
 	object-fit: cover;
 	filter: brightness(100%);
-	transition: filter 1s;
+	transition: filter 1s, min-height 10s;
+}
+
+.event-type-info-img>img:hover {
+	min-height: 150%;
 }
 
 .event-type-info-img>img.open {

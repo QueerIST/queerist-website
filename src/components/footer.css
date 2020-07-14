@@ -19,15 +19,8 @@ footer {
 }
 
 .footer-logo {
-	height: 100%;
-}
-
-.footer-logo .injected-svg {
 	height: 40px;
 	width: initial;
-}
-
-.footer-logo svg {
 	fill: white;
 }
 

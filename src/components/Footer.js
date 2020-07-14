@@ -1,6 +1,10 @@
 import React from 'react'
+import { ReactComponent as Facebook } from '../svg/facebook.svg'
+import { ReactComponent as Instagram } from '../svg/instagram.svg'
+import { ReactComponent as Twiter } from '../svg/twitter.svg'
+import { ReactComponent as GitHub } from '../svg/github.svg'
+import { ReactComponent as Email } from '../svg/email.svg'
 import './footer.css'
-import ReactSVG from 'react-svg'
 
 class Footer extends React.Component {
 
@@ -8,11 +12,11 @@ class Footer extends React.Component {
 		return (
 			<footer>
 				<div className="footer-logos">
-					<a href="https://facebook.com/QueerIST"><ReactSVG className="footer-logo clickable" src="assets/facebook.svg" /></a>
-					<a href="https://instagram.com/Queer.IST"><ReactSVG className="footer-logo clickable" src="assets/instagram.svg" /></a>
-					<a href="https://twitter.com/QueerIST"><ReactSVG className="footer-logo clickable" src="assets/twitter.svg" /></a>
-					<a href="https://github.com/QueerIST"><ReactSVG className="footer-logo clickable" src="assets/github.svg" /></a>
-					<a href="mailto:queerist.sa@aeist.pt"><ReactSVG className="footer-logo clickable" src="assets/email.svg" /></a>
+					<a href="https://facebook.com/QueerIST"><Facebook className="footer-logo clickable" /></a>
+					<a href="https://instagram.com/Queer.IST"><Instagram className="footer-logo clickable" /></a>
+					<a href="https://twitter.com/QueerIST"><Twiter className="footer-logo clickable" /></a>
+					<a href="https://github.com/QueerIST"><GitHub className="footer-logo clickable" /></a>
+					<a href="mailto:queerist.sa@aeist.pt"><Email className="footer-logo clickable" /></a>
 				</div>
 				<div className="footer-text">
 					<address>

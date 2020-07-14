@@ -19,7 +19,9 @@ function PageImage({ imgLink, name, description, imgBgColor }) {
 						<div className="page-image-child" >
 							<img src={imgLink} alt={name} />
 						</div>
-						<p className="page-image-child" style={{ backgroundColor: imgBgColor }}>{description}</p>
+						<div className="page-image-child" style={{ backgroundColor: imgBgColor }}>
+							<p>{description}</p>
+						</div>
 					</div>
 					:
 					<div className="page-image-group" >

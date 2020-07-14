@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavHashLink as NavLink } from 'react-router-hash-link'
 import { Button } from '.';
-import { scrollOptions } from '../helpers'
+import { scrollOptions, publicPath } from '../helpers'
 
 import './banners.css'
 
 function BigBanner({ name, imgLink }) {
 	return (
 		<div className="big-banner banner" /*data-aos="zoom-in"*/>
-			<img src={imgLink} alt={name} />
+			<img src={publicPath(imgLink)} alt={name} />
 		</div >
 	)
 }
@@ -19,7 +19,7 @@ function SmallBanner({ name, imgLink, bgColor, textColor, linkText, linkPage, li
 			<div className="small-banner-content">
 				<div className="small-banner-text">{name}</div>
 				<div className="small-banner-img">
-					<img src={imgLink} alt={name} />
+					<img src={publicPath(imgLink)} alt={name} />
 				</div>
 				<Button
 					borderColor={textColor}

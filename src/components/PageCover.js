@@ -1,4 +1,5 @@
 import React from 'react'
+import { publicPath } from '../helpers'
 import './pagecover.css'
 
 function PageBackground({ title, description, bgColor, imgBgColor }) {
@@ -17,7 +18,7 @@ function PageImage({ imgLink, name, description, imgBgColor }) {
 				imgBgColor ?
 					<div className="page-image-group" >
 						<div className="page-image-child" >
-							<img src={imgLink} alt={name} />
+							<img src={publicPath(imgLink)} alt={name} />
 						</div>
 						<div className="page-image-child" style={{ backgroundColor: imgBgColor }}>
 							<p>{description}</p>
@@ -25,7 +26,7 @@ function PageImage({ imgLink, name, description, imgBgColor }) {
 					</div>
 					:
 					<div className="page-image-group" >
-						<img src={imgLink} alt={name} />
+						<img src={publicPath(imgLink)} alt={name} />
 					</div>
 			}
 		</div>

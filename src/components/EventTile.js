@@ -1,5 +1,6 @@
 import React from 'react'
 import { EventGallery, Button } from '.'
+import { publicPath } from '../helpers'
 import { ReactComponent as Expand } from './../svg/expand.svg'
 
 import './eventtile.css'
@@ -35,8 +36,7 @@ class EventTypeInfo extends React.Component {
 					</Button>
 				</div>
 				<div className="event-type-info-img">
-					<img className={openClass} src={imgLink} alt={name} />
-					<EventGallery open={this.state.open} data={happenings} />
+					<img className={openClass} src={publicPath(imgLink)} alt={name} />
 				</div>
 			</div>
 		)

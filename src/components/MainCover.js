@@ -1,11 +1,13 @@
 import React from 'react'
+import fundo from '../img/fundo.png';
+import logo from '../img/Cores fundo claro.png';
 import './maincover.css'
 
 class MainCover extends React.Component {
 	render() {
 		return (
-			<div className="background" style={{backgroundImage: 'url(assets/fundo.png)'}}>
-				<img src="assets/Cores fundo claro.png" alt="QueerIST logo"/>
+			<div className="background" style={{ backgroundImage: `url(${fundo})` }}>
+				<img src={logo} alt="QueerIST logo" />
 			</div>
 		)
 	}

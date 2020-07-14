@@ -1,5 +1,6 @@
 import React from 'react'
 import './eventgallery.css'
+import { publicPath } from '../helpers'
 import { ReactComponent as Launch } from './../svg/launch.svg'
 
 function EventGalleryWrap(props) {
@@ -15,7 +16,7 @@ function EventGalleryWrap(props) {
 const EventGalleryItem = ({ name, description, date, place, imgLink, link }) => (
 	<li className="event-gallery-item">
 		<div className="event-gallery-item-img">
-			<img src={imgLink} alt={name} />
+			<img src={publicPath(imgLink)} alt={name} />
 		</div>
 		<div className="event-gallery-item-text">
 			<h3>{name}</h3>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Headroom from 'react-headroom'
+import logo from '../img/logo so letras brancas.png';
 import './header.css'
 
 class Header extends React.Component {
@@ -29,7 +30,7 @@ class Header extends React.Component {
 							<div className="navtop">
 								<div className="navtop-side"></div>
 								<NavLink className="navimg" exact to="/" onClick={this.handleClickLink}>
-									<img src="assets/logo so letras brancas.png" alt="QueerIST logo" />
+									<img src={logo} alt="QueerIST logo" />
 								</NavLink>
 								<i className="navtop-side material-icons" onClick={this.handleClickMenuButton}>menu</i>
 							</div>

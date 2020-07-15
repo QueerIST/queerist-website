@@ -24,7 +24,7 @@ const EventGalleryItem = ({ name, description, date, place, imgLink, link }) => 
 				<h4>{date} @ {place}</h4>
 				<a href={link}><Launch /></a>
 			</span>
-			<p>{description}</p>
+			{/* <p>{description}</p> */}
 		</div>
 	</li>
 )

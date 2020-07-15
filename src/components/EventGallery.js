@@ -4,7 +4,7 @@ import { publicPath } from '../helpers'
 import { ReactComponent as Launch } from './../svg/launch.svg'
 
 function EventGalleryWrap(props) {
-	const getClassName = () => props.open ? "" : "closed";
+	const getClassName = () => props.open ? "" : "closed"
 
 	return (
 		<ul className={`event-gallery ${getClassName()}`}>

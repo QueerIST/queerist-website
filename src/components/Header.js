@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Headroom from 'react-headroom'
-import logo from '../img/logo so letras brancas.png';
+import logo from '../img/logo so letras brancas.png'
 import { ReactComponent as Menu } from '../svg/menu.svg'
 import './header.css'
 

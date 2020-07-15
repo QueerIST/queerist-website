@@ -1,6 +1,6 @@
 import React from 'react'
-import fundo from '../img/fundo.png';
-import logo from '../img/Cores fundo claro.png';
+import fundo from '../img/fundo.png'
+import logo from '../img/Cores fundo claro.png'
 import './maincover.css'
 
 class MainCover extends React.Component {

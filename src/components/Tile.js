@@ -20,8 +20,8 @@ class TileInfo extends React.Component {
 
 	render() {
 		const { n, id, parentPage, name, description, imgLink, bgColor, textColor, happenings, seeMoreText } = this.props;
-		const dir = n % 2 ? "left" : "right";
-		const openClass = this.state.open ? "open" : "";
+		const dir = n % 2 ? "left" : "right"
+		const openClass = this.state.open ? "open" : ""
 		const EventTypeInfoButton = () => parentPage ? (
 			<NavLink
 				className="tile-info-b"

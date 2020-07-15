@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavHashLink as NavLink } from 'react-router-hash-link'
-import { Button } from '.';
+import { Button } from '.'
 import { scrollOptions, publicPath } from '../helpers'
 
 import './banners.css'

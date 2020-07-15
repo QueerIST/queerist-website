@@ -2,25 +2,27 @@ import React from 'react'
 import { publicPath } from '../helpers'
 import './pagecover.css'
 
-function PageBackground({ title, description, bgColor, imgBgColor }) {
+function PageBackground({ name, description, bgColor, textColor, parentPage }) {
 	return (
-		<div className="page-background" style={{ backgroundColor: bgColor }}>
-			<h1>{title}</h1>
-			{!imgBgColor && <p>{description}</p>}
+		<div className="page-background" style={{ backgroundColor: bgColor, color: textColor }}>
+			{parentPage && <h2>{parentPage}</h2>}
+			<h1>{name}</h1>
+			{!parentPage && <p>{description}</p>}
 		</div>
 	)
 }
 
-function PageImage({ imgLink, name, description, imgBgColor }) {
+function PageImage({ imgLink, name, description, imgBgColor, textColor, isSubPage }) {
 	return (
 		<div className="page-image">
 			{
-				imgBgColor ?
+				isSubPage ?
 					<div className="page-image-group" >
 						<div className="page-image-child" >
 							<img src={publicPath(imgLink)} alt={name} />
 						</div>
-						<div className="page-image-child" style={{ backgroundColor: imgBgColor }}>
+						<div className="page-image-child"
+							style={{ backgroundColor: imgBgColor, color: textColor }}>
 							<p>{description}</p>
 						</div>
 					</div>
@@ -38,16 +40,20 @@ class PageCover extends React.Component {
 		return (
 			<React.Fragment>
 				<PageBackground
-					title={this.props.data.title}
+					name={this.props.data.name}
+					parentPage={this.props.parentPage}
 					imgBgColor={this.props.data.img_bg_color}
 					description={this.props.data.description}
 					bgColor={this.props.data.bg_color}
+					textColor={this.props.data.text_color}
 				/>
 				<PageImage
-					name={this.props.data.title}
+					name={this.props.data.name}
+					isSubPage={this.props.parentPage}
 					imgBgColor={this.props.data.img_bg_color}
 					description={this.props.data.description}
 					imgLink={this.props.data.img_link}
+					textColor={this.props.data.text_color}
 				/>
 			</React.Fragment>
 		)

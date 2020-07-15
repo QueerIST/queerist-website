@@ -20,6 +20,13 @@
 	font-size: 30pt;
 }
 
+.page-background h2 {
+	margin: 10px;
+	font-size: 20pt;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
 .page-image {
 	display: flex;
 	flex-direction: column;

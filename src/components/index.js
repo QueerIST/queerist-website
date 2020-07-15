@@ -6,9 +6,9 @@ import MainCover from './MainCover'
 import PageCover from './PageCover'
 import TextBlock from './TextBlock'
 import Banners from './Banners'
-import EventTile from './EventTile'
+import Tile from './Tile'
 import Separator from './Separator'
 import EventGallery from './EventGallery'
 import Button from './Button'
 
-export { Header, Page, Footer, MainCover, TextBlock, Banners, Pages, PageCover, EventTile, Separator, EventGallery, Button }
+export { Header, Page, Footer, MainCover, TextBlock, Banners, Pages, PageCover, Tile, Separator, EventGallery, Button }

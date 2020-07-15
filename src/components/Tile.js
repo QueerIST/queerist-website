@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom'
 import { ReactComponent as Expand } from './../svg/expand.svg'
 // import { ReactComponent as Launch } from './../svg/launch.svg'
 
-import './eventtile.css'
+import './tile.css'
 
-class EventTypeInfo extends React.Component {
+class TileInfo extends React.Component {
 
 	constructor(props) {
 		super(props)
@@ -24,7 +24,7 @@ class EventTypeInfo extends React.Component {
 		const openClass = this.state.open ? "open" : "";
 		const EventTypeInfoButton = () => parentPage ? (
 			<NavLink
-				className="event-type-info-b"
+				className="tile-info-b"
 				to={{
 					pathname: `${parentPage}/${id}`
 				}}>
@@ -34,23 +34,23 @@ class EventTypeInfo extends React.Component {
 		) : (
 				<button
 					onClick={this.toggleGallery}
-					className={`event-type-info-b event-type-info-button ${openClass}`}>
+					className={`tile-info-b tile-info-button ${openClass}`}>
 					{seeMoreText}
 					<Expand fill={textColor} />
 				</button>
 			)
 		return (
-			<div className={`event-type-info ${dir}`} style={{
+			<div className={`tile-info ${dir}`} style={{
 				backgroundColor: bgColor, color: textColor
 			}}>
-				<div className={`event-type-info-text ${openClass}`}>
-					<h3 className="event-type-info-text-text">{name}</h3>
-					<p className="event-type-info-text-desc event-type-info-text-text">{description}</p>
+				<div className={`tile-info-text ${openClass}`}>
+					<h3 className="tile-info-text-text">{name}</h3>
+					<p className="tile-info-text-desc tile-info-text-text">{description}</p>
 					<Button borderColor={textColor} color={textColor}>
 						{EventTypeInfoButton()}
 					</Button>
 				</div>
-				<div className="event-type-info-img">
+				<div className="tile-info-img">
 					<img className={openClass} src={publicPath(imgLink)} alt={name} />
 					{happenings && <EventGallery open={this.state.open} data={happenings} />}
 				</div>
@@ -59,9 +59,9 @@ class EventTypeInfo extends React.Component {
 	}
 }
 
-const EventTile = ({ n, data, parentPage }) => (
+const Tile = ({ n, data, parentPage }) => (
 	<div id={data.id}>
-		<EventTypeInfo
+		<TileInfo
 			n={n}
 			id={data.id}
 			parentPage={parentPage}
@@ -76,4 +76,4 @@ const EventTile = ({ n, data, parentPage }) => (
 	</div>
 )
 
-export default EventTile
+export default Tile

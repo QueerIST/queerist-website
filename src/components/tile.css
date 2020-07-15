@@ -1,4 +1,4 @@
-.event-type-info {
+.tile-info {
 	display: flex;
 	flex-direction: column;
 	height: 600px;
@@ -7,7 +7,7 @@
 
 @media only screen and (min-width: 600px) {
 	/* For tablets and bigger */
-	.event-type-info {
+	.tile-info {
 		height: 400px;
 	}
 	.left {
@@ -16,27 +16,27 @@
 	.right {
 		flex-direction: row;
 	}
-	.left .event-type-info-b {
+	.left .tile-info-b {
 		flex-direction: row-reverse;
 	}
-	.right .event-type-info-b {
+	.right .tile-info-b {
 		flex-direction: row;
 	}
-	.left .event-type-info-button>svg {
+	.left .tile-info-button>svg {
 		transform: rotate(-90deg);
 	}
-	.left .event-type-info-button.open>svg {
+	.left .tile-info-button.open>svg {
 		transform: rotate(90deg);
 	}
-	.right .event-type-info-button>svg {
+	.right .tile-info-button>svg {
 		transform: rotate(90deg);
 	}
-	.right .event-type-info-button.open>svg {
+	.right .tile-info-button.open>svg {
 		transform: rotate(-90deg);
 	}
 }
 
-.event-type-info>div {
+.tile-info>div {
 	flex: 2 0;
 	width: 100%;
 	display: flex;
@@ -44,7 +44,7 @@
 	align-items: center;
 }
 
-.event-type-info-img {
+.tile-info-img {
 	position: relative;
 	flex-direction: row;
 	overflow: hidden;
@@ -52,7 +52,7 @@
 	max-height: 100%;
 }
 
-.event-type-info-img>img {
+.tile-info-img>img {
 	max-width: 100%;
 	min-height: 100%;
 	object-fit: cover;
@@ -60,42 +60,42 @@
 	transition: filter 1s, min-height 10s;
 }
 
-.event-type-info-img>img:hover {
+.tile-info-img>img:hover {
 	min-height: 150%;
 }
 
-.event-type-info-img>img.open {
+.tile-info-img>img.open {
 	filter: brightness(40%);
 }
 
-.event-type-info-text {
+.tile-info-text {
 	flex-direction: column;
 	transition: flex 1s;
 	padding: 3% 0;
 }
 
-.event-type-info-text.open {
+.tile-info-text.open {
 	flex: 1;
 }
 
-.event-type-info-text-text {
+.tile-info-text-text {
 	padding: 0 5%;
 }
 
-.event-type-info-text-desc {
+.tile-info-text-desc {
 	flex: 1 1 100%;
 }
 
-.event-type-info-b {
+.tile-info-b {
 	margin: 5%;
 	display: flex;
 }
 
-.event-type-info-button>svg {
+.tile-info-button>svg {
 	transition: transform 1s;
 	transform: rotate(0deg);
 }
 
-.event-type-info-button.open>svg {
+.tile-info-button.open>svg {
 	transform: rotate(180deg);
 }

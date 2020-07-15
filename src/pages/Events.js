@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, PageCover, EventTile, Separator } from '../components'
+import { Page, PageCover, Tile, Separator } from '../components'
 
 const Events = ({ data }) => (
 	<Page>
@@ -7,7 +7,7 @@ const Events = ({ data }) => (
 		<Separator />
 		{data.events.map(
 			(event, i) => (
-				<EventTile key={i} n={i} data={event} />
+				<Tile key={i} n={i} data={event} />
 			)
 		)}
 	</Page>

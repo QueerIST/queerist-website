@@ -25,7 +25,7 @@
 
 .navlink {
 	flex: 0 1 17%; /*flex: 0 1 20%;*/
-    display: none;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	min-height: 65px;
@@ -35,15 +35,15 @@
 
 .navimg {
 	flex: 1 1 30%;
-    display: flex;
+	display: flex;
 	justify-content: center;
-    align-items: center;
+	align-items: center;
 	min-height: 65px;
 }
 
 .navimg>img {
-    max-height: 38px;
-    max-width: 165px;
+	max-height: 38px;
+	max-width: 165px;
 }
 
 .navtop {
@@ -59,6 +59,7 @@
 	align-items: center;
 	justify-content: center;
 	margin: 10px;
+	fill: white;
 }
 
 .navmenu-open {
@@ -74,11 +75,9 @@
 	.navbar-delimiter {
 		flex-direction: unset;
 	}
-
 	.navtop-side {
 		display: none;
 	}
-
 	.navlink {
 		display: flex;
 	}

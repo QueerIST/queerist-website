@@ -16,6 +16,12 @@
 	.right {
 		flex-direction: row;
 	}
+	.left .event-type-info-b {
+		flex-direction: row-reverse;
+	}
+	.right .event-type-info-b {
+		flex-direction: row;
+	}
 	.left .event-type-info-button>svg {
 		transform: rotate(-90deg);
 	}
@@ -80,8 +86,9 @@
 	flex: 1 1 100%;
 }
 
-.event-type-info-button {
+.event-type-info-b {
 	margin: 5%;
+	display: flex;
 }
 
 .event-type-info-button>svg {

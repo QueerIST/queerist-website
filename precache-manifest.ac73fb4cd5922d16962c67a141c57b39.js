@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/piersans-bold-webfont.fee8fc8e.woff"
   },
   {
-    "revision": "4293c99088353fb6d271",
-    "url": "/queerist-website/static/css/main.52b6f27e.chunk.css"
+    "revision": "d634e89175d15432e847",
+    "url": "/queerist-website/static/css/main.9733b414.chunk.css"
   },
   {
     "revision": "7088c32c0e1e24160b27",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/pier-regular_0-webfont.b1a5fdea.woff"
   },
   {
-    "revision": "135447d1db785df0e32b93b8bfa06daa",
-    "url": "/queerist-website/static/media/piersans-black_0-webfont.135447d1.woff"
-  },
-  {
     "revision": "b974e0aadb17e7679386c7bad572c73d",
     "url": "/queerist-website/static/media/piersans-black_0-webfont.b974e0aa.woff2"
+  },
+  {
+    "revision": "135447d1db785df0e32b93b8bfa06daa",
+    "url": "/queerist-website/static/media/piersans-black_0-webfont.135447d1.woff"
   },
   {
     "revision": "4fff7092dcf035361d5e58227d9e8901",
@@ -76,16 +76,16 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/piersans-blackitalic-webfont.3ee10ded.woff"
   },
   {
-    "revision": "4293c99088353fb6d271",
-    "url": "/queerist-website/static/js/main.999c6c38.chunk.js"
-  },
-  {
-    "revision": "43d28994de65a8cf28752ab52926805d",
-    "url": "/queerist-website/static/media/piersans-bolditalic-webfont.43d28994.woff"
+    "revision": "d634e89175d15432e847",
+    "url": "/queerist-website/static/js/main.08ee692b.chunk.js"
   },
   {
     "revision": "6cb515559100c5a840ac691e83fb738d",
     "url": "/queerist-website/static/media/piersans-bolditalic-webfont.6cb51555.woff2"
+  },
+  {
+    "revision": "43d28994de65a8cf28752ab52926805d",
+    "url": "/queerist-website/static/media/piersans-bolditalic-webfont.43d28994.woff"
   },
   {
     "revision": "7dd9a29974a25da8b7120064be483fe0",
@@ -108,16 +108,16 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/piersans-mediumitalic-webfont.e181e6f0.woff2"
   },
   {
+    "revision": "a3ecdb041c2e484b474167b27659d23b",
+    "url": "/queerist-website/static/media/piersans-lightitalic-webfont.a3ecdb04.woff"
+  },
+  {
     "revision": "c5c332b155cc9deab826e73b8212d0b4",
     "url": "/queerist-website/static/media/pier-bold-italic_0-webfont.c5c332b1.woff"
   },
   {
     "revision": "62fcf6ecfbc1d3a859381845522b7d12",
     "url": "/queerist-website/static/media/piersans-mediumitalic-webfont.62fcf6ec.woff"
-  },
-  {
-    "revision": "a3ecdb041c2e484b474167b27659d23b",
-    "url": "/queerist-website/static/media/piersans-lightitalic-webfont.a3ecdb04.woff"
   },
   {
     "revision": "cc87763b3b36590e22d9695fb5a35a12",
@@ -140,6 +140,10 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/email.c7d69bb5.svg"
   },
   {
+    "revision": "c275e5189ecaabdbfdc5407dc031c28b",
+    "url": "/queerist-website/static/media/menu.c275e518.svg"
+  },
+  {
     "revision": "bb158ab64ed266b995914babb7ecf46a",
     "url": "/queerist-website/static/media/expand.bb158ab6.svg"
   },
@@ -148,7 +152,7 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/css/2.474ed5df.chunk.css"
   },
   {
-    "revision": "a7fcdb207ad89ea50da22a3357fb24df",
+    "revision": "7019b0dc087ba937d0bf7e3cd2352153",
     "url": "/queerist-website/index.html"
   }
 ];

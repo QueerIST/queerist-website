@@ -26,7 +26,7 @@ class TileInfo extends React.Component {
 			<NavLink
 				className="tile-info-b"
 				to={{
-					pathname: `${parentPage}/${id}`
+					pathname: `/${parentPage}/${id}`
 				}}>
 				{seeMoreText}
 				{/* <Launch fill={textColor} /> */}

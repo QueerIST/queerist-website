@@ -44,6 +44,9 @@ class TileInfo extends React.Component {
 				backgroundColor: bgColor, color: textColor
 			}}>
 				<div className={`tile-info-text ${openClass}`}>
+					<div className="tile-info-text-img">
+						<img src={publicPath('assets/ban2.png')} alt={name} />
+					</div>
 					<h3 className="tile-info-text-text">{name}</h3>
 					<p className="tile-info-text-desc tile-info-text-text">{description}</p>
 					<Button borderColor={textColor} color={textColor}>

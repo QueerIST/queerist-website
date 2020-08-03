@@ -87,6 +87,17 @@
 	flex: 1 1 100%;
 }
 
+.tile-info-text-img {
+	display: flex;
+	height: 100px;
+	flex: 1 1;
+}
+
+.tile-info-text-img>img {
+	object-fit: contain;
+	height: 100%;
+}
+
 .tile-info-b {
 	margin: 5%;
 	display: flex;

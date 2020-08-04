@@ -60,7 +60,7 @@
 	transition: filter 1s, min-height 10s;
 }
 
-.tile-info-img>img:hover {
+.tile-info:hover>.tile-info-img>img {
 	min-height: 150%;
 }
 

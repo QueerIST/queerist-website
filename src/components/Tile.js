@@ -24,6 +24,7 @@ function PageTileInfo({ id, parentPage, name, description, imgLink, bgColor, tex
 		}}>
 			<img src={publicPath(imgLink)} alt={name} />
 			<div className="tile-info-text">
+				<div className="page-tile-info-bg" style={{ backgroundColor: bgColor }}></div>
 				<div className="tile-info-text-img">
 					<img src={publicPath('assets/ban2.png')} alt={name} />
 				</div>

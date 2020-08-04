@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/piersans-bold-webfont.fee8fc8e.woff"
   },
   {
-    "revision": "c21d188ae25d821943fc",
-    "url": "/queerist-website/static/css/main.112b34e8.chunk.css"
+    "revision": "6398d06c67a3399ef5f0",
+    "url": "/queerist-website/static/css/main.ed60ec93.chunk.css"
   },
   {
     "revision": "7088c32c0e1e24160b27",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/launch.d8d309bb.svg"
   },
   {
-    "revision": "377fffa3d574033704d9",
+    "revision": "5cff529dd0d939a38fd3",
     "url": "/queerist-website/static/js/2.163b4a38.chunk.js"
   },
   {
@@ -32,12 +32,12 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/Cores fundo claro.5e63cbc1.png"
   },
   {
-    "revision": "2655bcba02c11a919a6acad872362e3c",
-    "url": "/queerist-website/static/media/pier-italic_0-webfont.2655bcba.woff2"
-  },
-  {
     "revision": "e40d8aaf3e217ddfb3754b35d0cbdf33",
     "url": "/queerist-website/static/media/pier-bold-italic_0-webfont.e40d8aaf.woff2"
+  },
+  {
+    "revision": "2655bcba02c11a919a6acad872362e3c",
+    "url": "/queerist-website/static/media/pier-italic_0-webfont.2655bcba.woff2"
   },
   {
     "revision": "f8bc6d4643b6d3253af2f88dcde46649",
@@ -52,36 +52,32 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/piersans-medium-webfont.1da03d22.woff2"
   },
   {
-    "revision": "b1a5fdea4202690c00acda8b62817721",
-    "url": "/queerist-website/static/media/pier-regular_0-webfont.b1a5fdea.woff"
-  },
-  {
     "revision": "b0ca0be4f5b514bf0db68fa4f4dd74e5",
     "url": "/queerist-website/static/media/pier-italic_0-webfont.b0ca0be4.woff"
-  },
-  {
-    "revision": "b974e0aadb17e7679386c7bad572c73d",
-    "url": "/queerist-website/static/media/piersans-black_0-webfont.b974e0aa.woff2"
   },
   {
     "revision": "135447d1db785df0e32b93b8bfa06daa",
     "url": "/queerist-website/static/media/piersans-black_0-webfont.135447d1.woff"
   },
   {
-    "revision": "3ee10ded29c9701994e84f4e3aaf9f27",
-    "url": "/queerist-website/static/media/piersans-blackitalic-webfont.3ee10ded.woff"
+    "revision": "b974e0aadb17e7679386c7bad572c73d",
+    "url": "/queerist-website/static/media/piersans-black_0-webfont.b974e0aa.woff2"
+  },
+  {
+    "revision": "b1a5fdea4202690c00acda8b62817721",
+    "url": "/queerist-website/static/media/pier-regular_0-webfont.b1a5fdea.woff"
   },
   {
     "revision": "4fff7092dcf035361d5e58227d9e8901",
     "url": "/queerist-website/static/media/piersans-blackitalic-webfont.4fff7092.woff2"
   },
   {
-    "revision": "c21d188ae25d821943fc",
-    "url": "/queerist-website/static/js/main.11bf3b66.chunk.js"
+    "revision": "3ee10ded29c9701994e84f4e3aaf9f27",
+    "url": "/queerist-website/static/media/piersans-blackitalic-webfont.3ee10ded.woff"
   },
   {
-    "revision": "7dd9a29974a25da8b7120064be483fe0",
-    "url": "/queerist-website/static/media/piersans-light-webfont.7dd9a299.woff2"
+    "revision": "6398d06c67a3399ef5f0",
+    "url": "/queerist-website/static/js/main.3e287059.chunk.js"
   },
   {
     "revision": "6cb515559100c5a840ac691e83fb738d",
@@ -94,6 +90,10 @@ self.__precacheManifest = [
   {
     "revision": "07b53f76cfdeba5200dfd5c5d40d28d5",
     "url": "/queerist-website/static/media/piersans-light-webfont.07b53f76.woff"
+  },
+  {
+    "revision": "7dd9a29974a25da8b7120064be483fe0",
+    "url": "/queerist-website/static/media/piersans-light-webfont.7dd9a299.woff2"
   },
   {
     "revision": "ebae7b813c4b414a7e3b03a28e6f2a0c",
@@ -148,11 +148,11 @@ self.__precacheManifest = [
     "url": "/queerist-website/static/media/expand.bb158ab6.svg"
   },
   {
-    "revision": "377fffa3d574033704d9",
-    "url": "/queerist-website/static/css/2.474ed5df.chunk.css"
+    "revision": "5cff529dd0d939a38fd3",
+    "url": "/queerist-website/static/css/2.f1b75673.chunk.css"
   },
   {
-    "revision": "2fa98612a9246ee848883fb25baa2911",
+    "revision": "1169488db230321f94d10414d3dc2f55",
     "url": "/queerist-website/index.html"
   }
 ];

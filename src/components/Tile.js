@@ -7,7 +7,37 @@ import { ReactComponent as Expand } from './../svg/expand.svg'
 
 import './tile.css'
 
-class TileInfo extends React.Component {
+function PageTileInfo({ id, parentPage, name, description, imgLink, bgColor, textColor, happenings, seeMoreText }) {
+	const EventTypeInfoButton = (
+		<NavLink
+			className="tile-info-b"
+			to={{
+				pathname: `/${parentPage}/${id}`
+			}}>
+			{seeMoreText}
+			{/* <Launch fill={textColor} /> */}
+		</NavLink>
+	)
+	return (
+		<div className="tile-info page-tile-info" style={{
+			color: textColor
+		}}>
+			<img src={publicPath(imgLink)} alt={name} />
+			<div className="tile-info-text">
+				<div className="tile-info-text-img">
+					<img src={publicPath('assets/ban2.png')} alt={name} />
+				</div>
+				<h3 className="tile-info-text-text">{name}</h3>
+				<p className="tile-info-text-desc tile-info-text-text">{description}</p>
+				<Button borderColor={textColor} color={textColor}>
+					{EventTypeInfoButton}
+				</Button>
+			</div>
+		</div>
+	)
+}
+
+class EventTileInfo extends React.Component {
 
 	constructor(props) {
 		super(props)
@@ -19,26 +49,17 @@ class TileInfo extends React.Component {
 	}
 
 	render() {
-		const { n, id, parentPage, name, description, imgLink, bgColor, textColor, happenings, seeMoreText } = this.props;
+		const { n, name, description, imgLink, bgColor, textColor, happenings, seeMoreText } = this.props;
 		const dir = n % 2 ? "left" : "right"
 		const openClass = this.state.open ? "open" : ""
-		const EventTypeInfoButton = () => parentPage ? (
-			<NavLink
-				className="tile-info-b"
-				to={{
-					pathname: `/${parentPage}/${id}`
-				}}>
+		const EventTypeInfoButton = (
+			<button
+				onClick={this.toggleGallery}
+				className={`tile-info-b tile-info-button ${openClass}`}>
 				{seeMoreText}
-				{/* <Launch fill={textColor} /> */}
-			</NavLink>
-		) : (
-				<button
-					onClick={this.toggleGallery}
-					className={`tile-info-b tile-info-button ${openClass}`}>
-					{seeMoreText}
-					<Expand fill={textColor} />
-				</button>
-			)
+				<Expand fill={textColor} />
+			</button>
+		)
 		return (
 			<div className={`tile-info ${dir}`} style={{
 				backgroundColor: bgColor, color: textColor
@@ -50,7 +71,7 @@ class TileInfo extends React.Component {
 					<h3 className="tile-info-text-text">{name}</h3>
 					<p className="tile-info-text-desc tile-info-text-text">{description}</p>
 					<Button borderColor={textColor} color={textColor}>
-						{EventTypeInfoButton()}
+						{EventTypeInfoButton}
 					</Button>
 				</div>
 				<div className="tile-info-img">
@@ -64,18 +85,32 @@ class TileInfo extends React.Component {
 
 const Tile = ({ n, data, parentPage }) => (
 	<div id={data.id}>
-		<TileInfo
-			n={n}
-			id={data.id}
-			parentPage={parentPage}
-			name={data.name}
-			description={data.description}
-			imgLink={data.img_link}
-			bgColor={data.bg_color}
-			textColor={data.text_color}
-			happenings={data.happenings}
-			seeMoreText={data.see_more_text}
-		/>
+		{
+			!parentPage ?
+				(
+					<EventTileInfo
+						n={n}
+						name={data.name}
+						description={data.description}
+						imgLink={data.img_link}
+						bgColor={data.bg_color}
+						textColor={data.text_color}
+						happenings={data.happenings}
+						seeMoreText={data.see_more_text}
+					/>
+				) : (
+					<PageTileInfo
+						id={data.id}
+						parentPage={parentPage}
+						name={data.name}
+						description={data.description}
+						imgLink={data.img_link}
+						bgColor={data.bg_color}
+						textColor={data.text_color}
+						seeMoreText={data.see_more_text}
+					/>
+				)
+		}
 	</div>
 )
 

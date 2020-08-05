@@ -65,6 +65,7 @@
 
 .tile-info:hover>.tile-info-img>img {
 	min-height: 150%;
+	filter: brightness(40%);
 }
 
 .tile-info-img>img.open {

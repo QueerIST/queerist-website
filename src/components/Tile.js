@@ -7,7 +7,7 @@ import { ReactComponent as Expand } from './../svg/expand.svg'
 
 import './tile.css'
 
-function PageTileInfo({ id, parentPage, name, description, imgLink, bgColor, textColor, happenings, seeMoreText }) {
+function PageTileInfo({ id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText }) {
 	const EventTypeInfoButton = (
 		<NavLink
 			className="tile-info-b"
@@ -25,9 +25,11 @@ function PageTileInfo({ id, parentPage, name, description, imgLink, bgColor, tex
 			<img src={publicPath(imgLink)} alt={name} />
 			<div className="tile-info-text">
 				<div className="page-tile-info-bg" style={{ backgroundColor: bgColor }}></div>
-				<div className="tile-info-text-img">
-					<img src={publicPath('assets/ban2.png')} alt={name} />
-				</div>
+				{logoLink &&
+					<div className="tile-info-text-img">
+						<img src={publicPath(logoLink)} alt={name} />
+					</div>
+				}
 				<h3 className="tile-info-text-text">{name}</h3>
 				<p className="tile-info-text-desc tile-info-text-text">{description}</p>
 				<Button borderColor={textColor} color={textColor}>
@@ -50,7 +52,7 @@ class EventTileInfo extends React.Component {
 	}
 
 	render() {
-		const { n, name, description, imgLink, bgColor, textColor, happenings, seeMoreText } = this.props;
+		const { n, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText } = this.props;
 		const dir = n % 2 ? "left" : "right"
 		const openClass = this.state.open ? "open" : ""
 		const EventTypeInfoButton = (
@@ -66,9 +68,11 @@ class EventTileInfo extends React.Component {
 				backgroundColor: bgColor, color: textColor
 			}}>
 				<div className={`tile-info-text ${openClass}`}>
-					<div className="tile-info-text-img">
-						<img src={publicPath('assets/ban2.png')} alt={name} />
-					</div>
+					{logoLink &&
+						<div className="tile-info-text-img">
+							<img src={publicPath(logoLink)} alt={name} />
+						</div>
+					}
 					<h3 className="tile-info-text-text">{name}</h3>
 					<p className="tile-info-text-desc tile-info-text-text">{description}</p>
 					<Button borderColor={textColor} color={textColor}>
@@ -94,6 +98,7 @@ const Tile = ({ n, data, parentPage }) => (
 						name={data.name}
 						description={data.description}
 						imgLink={data.img_link}
+						logoLink={data.logo_link}
 						bgColor={data.bg_color}
 						textColor={data.text_color}
 						happenings={data.happenings}
@@ -106,6 +111,7 @@ const Tile = ({ n, data, parentPage }) => (
 						name={data.name}
 						description={data.description}
 						imgLink={data.img_link}
+						logoLink={data.logo_link}
 						bgColor={data.bg_color}
 						textColor={data.text_color}
 						seeMoreText={data.see_more_text}

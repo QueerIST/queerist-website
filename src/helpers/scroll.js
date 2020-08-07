@@ -4,6 +4,8 @@ import { withRouter } from 'react-router'
 class ScrollToTopComp extends Component {
 
 	shouldComponentUpdate(prevProps) {
+		if (this.props.history.action === 'POP')
+			return true;
 		if (this.props.location.pathname !== prevProps.location.pathname) {
 			document.documentElement.style.scrollBehavior = 'unset';
 			setTimeout(() => {

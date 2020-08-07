@@ -95,7 +95,7 @@
 .tile-info-text-img {
 	display: flex;
 	height: 100px;
-	flex: 0 1;
+	flex: 0 1 auto;
 }
 
 .tile-info-text-img>img {
@@ -106,6 +106,7 @@
 .tile-info-b {
 	margin: 3%;
 	display: flex;
+	flex: 0 0 auto;
 }
 
 .tile-info-button>svg {

@@ -1,23 +1,23 @@
 @font-face {
-    font-family: 'pier-sans_bold_italic';
+    font-family: 'pier-sans';
     src: url('./pier-bold-italic_0-webfont.woff2') format('woff2'),
          url('./pier-bold-italic_0-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 800;
+    font-style: italic;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_italic';
+    font-family: 'pier-sans';
     src: url('./pier-italic_0-webfont.woff2') format('woff2'),
          url('./pier-italic_0-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_regular';
+    font-family: 'pier-sans';
     src: url('./pier-regular_0-webfont.woff2') format('woff2'),
          url('./pier-regular_0-webfont.woff') format('woff');
     font-weight: normal;
@@ -26,73 +26,73 @@
 }
 
 @font-face {
-    font-family: 'pier-sans_black';
+    font-family: 'pier-sans';
     src: url('./piersans-black_0-webfont.woff2') format('woff2'),
          url('./piersans-black_0-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 900;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_black_italic';
+    font-family: 'pier-sans';
     src: url('./piersans-blackitalic-webfont.woff2') format('woff2'),
          url('./piersans-blackitalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 900;
+    font-style: italic;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_bold';
+    font-family: 'pier-sans';
     src: url('./piersans-bold-webfont.woff2') format('woff2'),
          url('./piersans-bold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_bold_italic';
+    font-family: 'pier-sans';
     src: url('./piersans-bolditalic-webfont.woff2') format('woff2'),
          url('./piersans-bolditalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: bold;
+    font-style: italic;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_light';
+    font-family: 'pier-sans';
     src: url('./piersans-light-webfont.woff2') format('woff2'),
          url('./piersans-light-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_light_italic';
+    font-family: 'pier-sans';
     src: url('./piersans-lightitalic-webfont.woff2') format('woff2'),
          url('./piersans-lightitalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 300;
+    font-style: italic;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_medium';
+    font-family: 'pier-sans';
     src: url('./piersans-medium-webfont.woff2') format('woff2'),
          url('./piersans-medium-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'pier-sans_medium_italic';
+    font-family: 'pier-sans';
     src: url('./piersans-mediumitalic-webfont.woff2') format('woff2'),
          url('./piersans-mediumitalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 500;
+    font-style: italic;
 
 }

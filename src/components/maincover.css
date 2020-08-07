@@ -6,7 +6,7 @@
 	height: 350px;
 	background-repeat: repeat-y;
 	background-attachment: fixed;
-	background-size: cover;
+	background-size: auto;
 	background-color: var(--blue-color);
 }
 

@@ -27,7 +27,7 @@ function PageTileInfo({ id, parentPage, name, description, imgLink, logoLink, bg
 				<div className="page-tile-info-bg" style={{ backgroundColor: bgColor }}></div>
 				{logoLink &&
 					<div className="tile-info-text-img">
-						<img src={publicPath(logoLink)} alt={name} />
+						<img src={publicPath(logoLink)} alt={`Logo ${name}`} />
 					</div>
 				}
 				<h3 className="tile-info-text-text">{name}</h3>
@@ -70,7 +70,7 @@ class EventTileInfo extends React.Component {
 				<div className={`tile-info-text ${openClass}`}>
 					{logoLink &&
 						<div className="tile-info-text-img">
-							<img src={publicPath(logoLink)} alt={name} />
+							<img src={publicPath(logoLink)} alt={`Logo ${name}`} />
 						</div>
 					}
 					<h3 className="tile-info-text-text">{name}</h3>

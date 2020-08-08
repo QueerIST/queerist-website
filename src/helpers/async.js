@@ -1,17 +1,13 @@
-import React from 'react'
+import { useState } from 'react'
 
-class WrapDelayed extends React.Component {
+function WrapDelayed(props) {
+	const { load, children } = props
+	const [loaded, setLoaded] = useState(false)
 
-	constructor(props) {
-		super(props);
-		this.state = { loaded: false }
-	}
+	if (load && !loaded)
+		setLoaded(true)
 
-	render() {
-		if (this.props.load && !this.state.loaded)
-			this.setState({ loaded: true })
-		return this.state.loaded && this.props.children
-	}
+	return loaded && (children)
 }
 
 export default WrapDelayed

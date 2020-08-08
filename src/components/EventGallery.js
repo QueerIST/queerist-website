@@ -1,6 +1,6 @@
 import React from 'react'
 import './eventgallery.css'
-import { publicPath } from '../helpers'
+import { publicPath, WrapDelayed } from '../helpers'
 import { ReactComponent as Launch } from './../svg/launch.svg'
 
 function EventGalleryWrap(props) {
@@ -13,10 +13,12 @@ function EventGalleryWrap(props) {
 	)
 }
 
-const EventGalleryItem = ({ name, description, date, place, imgLink, link }) => (
+const EventGalleryItem = ({ name, description, open, date, place, imgLink, link }) => (
 	<li className="event-gallery-item">
 		<div className="event-gallery-item-img">
-			<img src={publicPath(imgLink)} alt={name} />
+			<WrapDelayed load={open}>
+				<img src={publicPath(imgLink)} alt={name} />
+			</WrapDelayed>
 		</div>
 		<div className="event-gallery-item-text">
 			<h3>{name}</h3>
@@ -37,6 +39,7 @@ function EventGallery({ data, open, seeMoreText }) {
 					<EventGalleryItem
 						key={i}
 						name={event.name}
+						open={open}
 						description={event.description}
 						date={event.date}
 						place={event.place}

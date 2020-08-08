@@ -6,16 +6,17 @@ import './button.css'
 export default class Button extends React.Component {
 
 	render() {
-		const { children, borderColor, color } = this.props
+		const { children, borderColor, color, backgroundColor, block } = this.props
 		const buildClassName = (child) => classNames(
 			child.props.className,
-			"block-button"
+			"block-button",
+			{ "block": block }
 		);
 
 		return React.Children.map(children, (child) => (
 			React.cloneElement(child, {
 				className: buildClassName(child),
-				style: { borderColor, color }
+				style: { borderColor, color, backgroundColor }
 			})
 		))
 	}

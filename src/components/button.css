@@ -11,3 +11,7 @@
 	border-radius: 7%;
 	width: 50%;
 }
+
+.block-button.block {
+	border: none;
+}

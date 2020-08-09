@@ -1,0 +1,37 @@
+.iconlist {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	list-style-type: none;
+	margin: 0;
+	padding: 0px 10%;
+}
+
+.iconlist-icon {
+	flex: 0 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.iconlist-icon-img {
+	width: 100px;
+	height: 100px;
+	background-color: white;
+	border: 10px solid white;
+	border-radius: 50%;
+}
+
+.iconlist-icon-img>img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.iconlist-icon>a {
+	text-decoration: none;
+	color: inherit;
+}

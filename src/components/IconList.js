@@ -7,7 +7,7 @@ const Icon = ({ name, link, imgLink }) => (
 	<li className="iconlist-icon">
 		<a href={link}>
 			<div className="iconlist-icon-img">
-				<img src={publicPath(imgLink)} alt={name} />
+				{imgLink && <img src={publicPath(imgLink)} alt={name} />}
 			</div>
 			<h4>{name}</h4>
 		</a>

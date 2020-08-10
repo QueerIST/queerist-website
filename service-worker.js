@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/queerist-website/precache-manifest.4a8c6fa110f56736ded90a039824fec9.js"
+  "/queerist-website/precache-manifest.98948450fbe35b7d56385830357c689d.js"
 );
 
 self.addEventListener('message', (event) => {

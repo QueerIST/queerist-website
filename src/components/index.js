@@ -10,5 +10,6 @@ import Tile from './Tile'
 import Separator from './Separator'
 import EventGallery from './EventGallery'
 import Button from './Button'
+import IconList from './IconList'
 
-export { Header, Page, Footer, MainCover, TextBlock, Banners, Pages, PageCover, Tile, Separator, EventGallery, Button }
+export { Header, Page, Footer, MainCover, TextBlock, Banners, Pages, PageCover, Tile, Separator, EventGallery, Button, IconList }

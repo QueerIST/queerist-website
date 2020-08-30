@@ -5,11 +5,11 @@ import Pages from './Pages'
 import MainCover from './MainCover'
 import PageCover from './PageCover'
 import TextBlock from './TextBlock'
-import Banners from './Banners'
+import { BigBanner, SmallBanners } from './Banners'
 import Tile from './Tile'
 import Separator from './Separator'
 import EventGallery from './EventGallery'
 import Button from './Button'
 import IconList from './IconList'
 
-export { Header, Page, Footer, MainCover, TextBlock, Banners, Pages, PageCover, Tile, Separator, EventGallery, Button, IconList }
+export { Header, Page, Footer, MainCover, TextBlock, BigBanner, SmallBanners, Pages, PageCover, Tile, Separator, EventGallery, Button, IconList }

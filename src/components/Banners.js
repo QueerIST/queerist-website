@@ -5,7 +5,7 @@ import { scrollOptions, publicPath } from '../helpers'
 
 import './banners.css'
 
-function BigBanner({ name, imgLink }) {
+function BigBannerInfo({ name, imgLink }) {
 	return (
 		<div className="big-banner banner" /*data-aos="zoom-in"*/>
 			<img src={publicPath(imgLink)} alt={name} />
@@ -39,7 +39,7 @@ function SmallBanner({ name, imgLink, bgColor, textColor, linkText, linkPage, li
 	)
 }
 
-function SmallBanners({ children }) {
+function SmallBannersWrap({ children }) {
 	return (
 		<div className="small-banners">
 			{children}
@@ -47,34 +47,32 @@ function SmallBanners({ children }) {
 	)
 }
 
-class Banners extends React.Component {
+const BigBanner = ({ data }) => (
+	<BigBannerInfo
+		name={data.big_banner_name}
+		imgLink={data.big_banner_img_link}
+	/>
+)
 
-	render() {
-		return (
-			<React.Fragment>
-				<BigBanner
-					name={this.props.data.big_banner_name}
-					imgLink={this.props.data.big_banner_img_link}
-				/>
-				<SmallBanners>
-					{this.props.data.small_banners.map(
-						(smallBanner, i) => (
-							<SmallBanner
-								key={i}
-								name={smallBanner.name}
-								imgLink={smallBanner.img_link}
-								bgColor={smallBanner.bg_color}
-								textColor={smallBanner.text_color}
-								linkText={smallBanner.link_text}
-								linkPage={smallBanner.link_page}
-								linkId={smallBanner.link_id}
-							/>
-						)
-					)}
-				</SmallBanners>
-			</React.Fragment>
-		)
-	}
-}
+const SmallBanners = ({ data }) => (
+	<SmallBannersWrap>
+		{
+			data.map(
+				(smallBanner, i) => (
+					<SmallBanner
+						key={i}
+						name={smallBanner.name}
+						imgLink={smallBanner.img_link}
+						bgColor={smallBanner.bg_color}
+						textColor={smallBanner.text_color}
+						linkText={smallBanner.link_text}
+						linkPage={smallBanner.link_page}
+						linkId={smallBanner.link_id}
+					/>
+				)
+			)
+		}
+	</SmallBannersWrap>
+)
 
-export default Banners
+export { BigBanner, SmallBanners }

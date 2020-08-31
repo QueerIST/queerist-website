@@ -14,8 +14,21 @@ const Icon = ({ name, link, imgLink }) => (
 	</li>
 )
 
-const IconList = ({ data }) => (
+const TextBox = ({ name, text, bgColor }) => (
+	<li className="iconlist-icon">
+		<h4>{name}</h4>
+		<p>A equipa das Tertúlias é responsável por organizar eventos como conversas, debates, reflexões e conferências que informam e promovem o diálogo para toda a comunidade estudantil. Estas acontecem com uma periodicidade mensal.</p>
+	</li>
+)
+
+const List = ({ children }) => (
 	<ul className="iconlist">
+		{children}
+	</ul>
+)
+
+const IconList = ({ data }) => (
+	<List>
 		{data.map((icon, i) => (
 			<Icon
 				key={i}
@@ -24,7 +37,20 @@ const IconList = ({ data }) => (
 				imgLink={icon.img_link}
 			/>
 		))}
-	</ul>
+	</List>
 )
 
-export default IconList
+const TextBoxList = ({ data }) => (
+	<List>
+		{data.map((textbox, i) => (
+			<TextBox
+				key={i}
+				name={textbox.name}
+				text={textbox.text}
+				bgColor={textbox.bg_color}
+			/>
+		))}
+	</List>
+)
+
+export { IconList, TextBoxList }

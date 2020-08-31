@@ -17,7 +17,11 @@ const Icon = ({ name, link, imgLink }) => (
 const TextBox = ({ name, text, bgColor }) => (
 	<li className="lists-textboxlist-box">
 		<h4>{name}</h4>
-		<p>A equipa das Tertúlias é responsável por organizar eventos como conversas, debates, reflexões e conferências que informam e promovem o diálogo para toda a comunidade estudantil. Estas acontecem com uma periodicidade mensal.</p>
+		<p className="lists-textboxlist-box-text"
+			style={{ backgroundColor: bgColor, borderColor: bgColor }}
+		>
+			{text}
+		</p>
 	</li>
 )
 

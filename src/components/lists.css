@@ -35,3 +35,21 @@
 	text-decoration: none;
 	color: inherit;
 }
+
+.lists-textboxlist-box {
+	flex: 1 1 auto;
+	width: 300px;
+	margin: 15px;
+	padding: 25px;
+	display: flex;
+	background-color: white;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.lists-textboxlist-box-text {
+	text-align: justify;
+	border: 10px solid;
+}

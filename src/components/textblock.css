@@ -4,7 +4,6 @@
 	justify-content: center;
 	align-items: flex-start;
 	width: 100%;
-	background-color: white;
 }
 
 .textblock-child {
@@ -36,7 +35,6 @@
 
 .textblock-button-text {
 	margin: 0;
-	color: var(--blue-color);
 	font-size: 30pt;
 	font-weight: bold;
 	text-align: center;

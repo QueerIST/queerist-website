@@ -5,10 +5,10 @@ import { scrollOptions } from '../helpers'
 
 import './textblock.css'
 
-const TextBlockInfo = ({ id, title, text, bgColor, textColor, linkBackgroundColor, linkText, linkPage, linkId }) => (
+const TextBlockInfo = ({ id, title, text, bgColor, titleColor, textColor, linkBackgroundColor, linkText, linkPage, linkId }) => (
 	<div id={id} className="textblock" style={{ backgroundColor: bgColor, color: textColor }}>
 		<div className="textblock-child">
-			<h2 className="textblock-button-child textblock-button-text">{title}</h2>
+			<h2 className="textblock-button-child textblock-button-text" style={{ color: titleColor }}>{title}</h2>
 			{linkText &&
 				<div className="textblock-button-child">
 					<Button
@@ -43,6 +43,7 @@ const TextBlock = ({ data }) => (
 		title={data.title}
 		text={data.text}
 		bgColor={data.bg_color}
+		titleColor={data.title_color}
 		textColor={data.text_color}
 		linkBackgroundColor={data.link_bg_color}
 		linkText={data.link_text}

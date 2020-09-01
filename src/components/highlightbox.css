@@ -1,0 +1,17 @@
+.highlightbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin: 50px 8%;
+	text-align: center;
+	height: 200px;
+}
+
+.highlightbox-button {
+	position: absolute;
+	bottom: -20px;
+	padding: 10px;
+	/* font-size: 20px; */
+}

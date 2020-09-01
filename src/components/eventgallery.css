@@ -75,11 +75,11 @@
 	padding-left: 0;
 }
 
-.event-gallery-item-text p, .event-gallery-item-text h3, .event-gallery-item-text h4 {
+.event-gallery-item-text p, .event-gallery-item-text h3 {
 	margin: 0;
 }
 
-.event-gallery-item-text p {
+.event-gallery-item-text>p {
 	margin-top: 10px;
 }
 

@@ -23,7 +23,7 @@ const EventGalleryItem = ({ name, description, open, date, place, imgLink, link 
 		<div className="event-gallery-item-text">
 			<h3>{name}</h3>
 			<span className="event-gallery-item-launch">
-				<h4>{date} @ {place}</h4>
+				<p>{date} @ {place}</p>
 				<a href={link}><Launch /></a>
 			</span>
 			{/* <p>{description}</p> */}

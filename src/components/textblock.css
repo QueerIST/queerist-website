@@ -6,6 +6,11 @@
 	width: 100%;
 }
 
+.textblock.textblock-small {
+	max-width: 1000px;
+	margin: auto;
+}
+
 .textblock-child {
 	flex: 1 1;
 	display: flex;
@@ -24,6 +29,10 @@
 
 .textblock-text:last-child {
 	margin-block-end: 0;
+}
+
+.textblock.textblock-small .textblock-text {
+	font-size: 20px;
 }
 
 .textblock-button-child {

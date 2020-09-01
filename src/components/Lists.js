@@ -16,7 +16,7 @@ const Icon = ({ name, link, imgLink }) => (
 
 const TextBox = ({ name, text, bgColor }) => (
 	<li className="lists-textboxlist-box">
-		<h4>{name}</h4>
+		<h3>{name}</h3>
 		<p className="lists-textboxlist-box-text"
 			style={{ backgroundColor: bgColor, borderColor: bgColor }}
 		>

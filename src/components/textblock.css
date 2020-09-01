@@ -35,15 +35,15 @@
 
 .textblock-button-text {
 	margin: 0;
-	font-size: 30pt;
-	font-weight: bold;
+	/* font-size: 40px; */
+	font-size: 30px;
 	text-align: center;
 }
 
 .textblock-button {
 	padding: 10px 40px !important;
 	width: auto !important;
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 @media only screen and (min-width: 600px) {

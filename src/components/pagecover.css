@@ -12,17 +12,16 @@
 .page-background p {
 	max-width: 80%;
 	margin: 10px;
-	font-size: 14pt;
+	font-size: 20px;
 }
 
 .page-background h1 {
 	margin: 10px;
-	font-size: 30pt;
+	font-size: 40px;
 }
 
 .page-background h2 {
 	margin: 10px;
-	font-size: 20pt;
 	font-weight: normal;
 	text-transform: uppercase;
 }

@@ -30,7 +30,7 @@ function PageTileInfo({ id, parentPage, name, description, imgLink, logoLink, bg
 						<img src={publicPath(logoLink)} alt={`Logo ${name}`} />
 					</div>
 				}
-				<h3 className="tile-info-text-text">{name}</h3>
+				<h2 className="tile-info-text-text">{name}</h2>
 				<p className="tile-info-text-desc tile-info-text-text">{description}</p>
 				<Button borderColor={textColor} color={textColor}>
 					{EventTypeInfoButton}

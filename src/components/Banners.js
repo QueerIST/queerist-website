@@ -17,7 +17,7 @@ function SmallBanner({ name, imgLink, bgColor, textColor, linkText, linkPage, li
 	return (
 		<div className="small-banner banner" data-aos="zoom-in" style={{ backgroundColor: bgColor, color: textColor }}>
 			<div className="small-banner-content">
-				<div className="small-banner-text">{name}</div>
+				<h2 className="small-banner-text">{name}</h2>
 				<div className="small-banner-img">
 					<img src={publicPath(imgLink)} alt={name} />
 				</div>

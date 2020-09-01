@@ -29,8 +29,8 @@ const TextBlockInfo = ({ id, title, text, small, bgColor, titleColor, textColor,
 				</div>}
 		</div>
 		<div className="textblock-child">
-			{(Array.isArray(text) ? text : [text]).map(t => (
-				<p className="textblock-text">
+			{(Array.isArray(text) ? text : [text]).map((t, i) => (
+				<p key={i} className="textblock-text">
 					{t}
 				</p>
 			))}</div>

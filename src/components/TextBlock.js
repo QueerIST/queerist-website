@@ -8,9 +8,8 @@ import './textblock.css'
 const TextBlockInfo = ({ id, title, text, small, bgColor, titleColor, textColor, linkBackgroundColor, linkText, linkPage, linkId }) => (
 	<div id={id} className={`textblock ${small && 'textblock-small'}`} style={{ backgroundColor: bgColor, color: textColor }}>
 		<div className="textblock-child">
-			<h2 className="textblock-button-child textblock-button-text" style={{ color: titleColor }}>{title}</h2>
+			<h2 className="textblock-title" style={{ color: titleColor }}>{title}</h2>
 			{linkText &&
-				<div className="textblock-button-child">
 					<Button
 						block
 						color={bgColor}
@@ -25,8 +24,7 @@ const TextBlockInfo = ({ id, title, text, small, bgColor, titleColor, textColor,
 						>
 							{linkText}
 						</NavLink>
-					</Button>
-				</div>}
+				</Button>}
 		</div>
 		<div className="textblock-child">
 			{(Array.isArray(text) ? text : [text]).map((t, i) => (

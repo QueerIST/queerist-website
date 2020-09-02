@@ -9,18 +9,18 @@
 	color: white;
 }
 
-.page-background p {
+.page-background>p {
 	max-width: 80%;
 	margin: 10px;
 	font-size: 20px;
 }
 
-.page-background h1 {
+.page-background>h1 {
 	margin: 10px;
 	font-size: 40px;
 }
 
-.page-background h2 {
+.page-background>h2 {
 	margin: 10px;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -78,10 +78,12 @@
 	.page-background {
 		justify-content: unset;
 		padding-top: 20px;
-		height: 200px;
+		min-height: 200px;
+		height: fit-content;
 	}
-	.page-background p {
+	.page-background>p {
 		max-width: 60%;
+		margin-bottom: 60px;
 	}
 	.page-image {
 		margin-top: -50px;

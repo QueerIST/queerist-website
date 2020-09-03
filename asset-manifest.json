@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/queerist-website/static/css/main.ff7ef26c.chunk.css",
-    "main.js": "/queerist-website/static/js/main.d214751c.chunk.js",
-    "main.js.map": "/queerist-website/static/js/main.d214751c.chunk.js.map",
+    "main.css": "/queerist-website/static/css/main.97da2896.chunk.css",
+    "main.js": "/queerist-website/static/js/main.36158914.chunk.js",
+    "main.js.map": "/queerist-website/static/js/main.36158914.chunk.js.map",
     "runtime-main.js": "/queerist-website/static/js/runtime-main.c82093ef.js",
     "runtime-main.js.map": "/queerist-website/static/js/runtime-main.c82093ef.js.map",
     "static/css/2.4707e12a.chunk.css": "/queerist-website/static/css/2.4707e12a.chunk.css",
     "static/js/2.eeb27967.chunk.js": "/queerist-website/static/js/2.eeb27967.chunk.js",
     "static/js/2.eeb27967.chunk.js.map": "/queerist-website/static/js/2.eeb27967.chunk.js.map",
     "index.html": "/queerist-website/index.html",
-    "precache-manifest.e99720ce2f468da0186158ae97512cf4.js": "/queerist-website/precache-manifest.e99720ce2f468da0186158ae97512cf4.js",
+    "precache-manifest.66cd9d38c006056ba4566025b55d1ca6.js": "/queerist-website/precache-manifest.66cd9d38c006056ba4566025b55d1ca6.js",
     "service-worker.js": "/queerist-website/service-worker.js",
     "static/css/2.4707e12a.chunk.css.map": "/queerist-website/static/css/2.4707e12a.chunk.css.map",
-    "static/css/main.ff7ef26c.chunk.css.map": "/queerist-website/static/css/main.ff7ef26c.chunk.css.map",
+    "static/css/main.97da2896.chunk.css.map": "/queerist-website/static/css/main.97da2896.chunk.css.map",
     "static/js/2.eeb27967.chunk.js.LICENSE.txt": "/queerist-website/static/js/2.eeb27967.chunk.js.LICENSE.txt",
     "static/media/Cores fundo claro.png": "/queerist-website/static/media/Cores fundo claro.5e63cbc1.png",
     "static/media/email.c7d69bb5.svg": "/queerist-website/static/media/email.c7d69bb5.svg",
@@ -31,7 +31,7 @@
     "static/js/runtime-main.c82093ef.js",
     "static/css/2.4707e12a.chunk.css",
     "static/js/2.eeb27967.chunk.js",
-    "static/css/main.ff7ef26c.chunk.css",
-    "static/js/main.d214751c.chunk.js"
+    "static/css/main.97da2896.chunk.css",
+    "static/js/main.36158914.chunk.js"
   ]
 }

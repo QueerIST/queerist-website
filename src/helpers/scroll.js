@@ -27,12 +27,12 @@ const ScrollToTop = withRouter(ScrollToTopComp)
 
 export { ScrollToTop }
 
-function scrollOptions(el) {
+function scrollOptions(el, start) {
 	document.documentElement.style.scrollBehavior = 'unset';
 	setTimeout((e) => {
 		window.scrollTo(0, 0);
 		document.documentElement.style.scrollBehavior = 'smooth';
-		el.scrollIntoView({ block: 'center' });
+		el.scrollIntoView({ block: start ? 'start' : 'center' });
 	}, 0, el)
 }
 

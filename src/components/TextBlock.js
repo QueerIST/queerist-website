@@ -10,20 +10,20 @@ const TextBlockInfo = ({ id, title, text, small, bgColor, titleColor, textColor,
 		<div className="textblock-child">
 			<h2 className="textblock-title" style={{ color: titleColor }}>{title}</h2>
 			{linkText &&
-					<Button
-						block
-						color={bgColor}
-						backgroundColor={linkBackgroundColor}
+				<Button
+					block
+					color={bgColor}
+					backgroundColor={linkBackgroundColor}
+				>
+					<NavLink
+						className="textblock-button"
+						to={{
+							pathname: linkPage, hash: '#' + linkId
+						}}
+						scroll={el => scrollOptions(el, true)}
 					>
-						<NavLink
-							className="textblock-button"
-							to={{
-								pathname: linkPage, hash: '#' + linkId
-							}}
-							scroll={scrollOptions}
-						>
-							{linkText}
-						</NavLink>
+						{linkText}
+					</NavLink>
 				</Button>}
 		</div>
 		<div className="textblock-child">

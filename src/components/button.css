@@ -10,6 +10,7 @@
 	align-items: center;
 	border-radius: 8px;
 	width: 50%;
+	min-width: min-content;
 }
 
 .block-button.block {

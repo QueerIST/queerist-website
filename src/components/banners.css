@@ -30,7 +30,7 @@
 	display: flex;
 	height: 200px;
 	padding: 20px;
-	flex: 0 0;
+	flex: 0 0 200px;
 	justify-content: center;
 	align-items: center;
 	max-width: 100%;
@@ -38,7 +38,7 @@
 
 .small-banner-img>img {
 	max-height: 95%;
-	max-width: 100%;
+	max-width: 95%;
 }
 
 .small-banner-text {

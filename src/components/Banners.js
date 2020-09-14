@@ -13,11 +13,12 @@ function BigBannerInfo({ name, imgLink }) {
 	)
 }
 
-function SmallBanner({ name, imgLink, bgColor, textColor, linkText, linkPage, linkId }) {
+function SmallBanner({ name, label, imgLink, bgColor, textColor, linkText, linkPage, linkId }) {
 	return (
 		<div className="small-banner banner" data-aos="zoom-in" style={{ backgroundColor: bgColor, color: textColor }}>
 			<div className="small-banner-content">
 				<h2 className="small-banner-text">{name}</h2>
+				<p className="small-banner-text">{label}</p>
 				<div className="small-banner-img">
 					<img src={publicPath(imgLink)} alt={name} />
 				</div>
@@ -62,6 +63,7 @@ const SmallBanners = ({ data }) => (
 					<SmallBanner
 						key={i}
 						name={smallBanner.name}
+						label={smallBanner.label}
 						imgLink={smallBanner.img_link}
 						bgColor={smallBanner.bg_color}
 						textColor={smallBanner.text_color}

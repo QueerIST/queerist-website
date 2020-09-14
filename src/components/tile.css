@@ -37,7 +37,7 @@
 }
 
 .tile-info>div {
-	flex: 2 0;
+	flex: 1 0;
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
@@ -75,12 +75,7 @@
 
 .tile-info-text {
 	flex-direction: column;
-	transition: flex 1s;
 	padding: 3% 0;
-}
-
-.tile-info-text.open {
-	flex: 1;
 }
 
 .tile-info-text-text {

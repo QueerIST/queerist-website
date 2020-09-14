@@ -32,7 +32,7 @@
 }
 
 .event-gallery::-webkit-scrollbar {
-	width: 1%;
+	width: 1vw;
 }
 
 .event-gallery::-webkit-scrollbar-thumb {

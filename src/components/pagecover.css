@@ -20,10 +20,9 @@
 	font-size: 40px;
 }
 
-.page-background>h2 {
+.page-background>img {
 	margin: 10px;
-	font-weight: normal;
-	text-transform: uppercase;
+	height: 100px;
 }
 
 .page-image {
@@ -83,7 +82,12 @@
 	}
 	.page-background>p {
 		max-width: 60%;
+	}
+	.page-background>*:last-child {
 		margin-bottom: 60px;
+	}
+	.page-background>img {
+		height: 75px;
 	}
 	.page-image {
 		margin-top: -50px;

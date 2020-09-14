@@ -2,12 +2,12 @@ import React from 'react'
 import { publicPath } from '../helpers'
 import './pagecover.css'
 
-function PageBackground({ name, description, bgColor, textColor, parentPage }) {
+function PageBackground({ name, description, bgColor, textColor, isSubPage, logoLink }) {
 	return (
 		<div className="page-background" style={{ backgroundColor: bgColor, color: textColor }}>
-			{parentPage && <h2>{parentPage}</h2>}
+			{isSubPage && logoLink && <img src={publicPath(logoLink)} alt={name} />}
 			<h1>{name}</h1>
-			{!parentPage && <p>{description}</p>}
+			{!isSubPage && <p>{description}</p>}
 		</div>
 	)
 }
@@ -41,7 +41,8 @@ class PageCover extends React.Component {
 			<React.Fragment>
 				<PageBackground
 					name={this.props.data.name}
-					parentPage={this.props.parentPage}
+					isSubPage={this.props.isSubPage}
+					logoLink={this.props.data.logo_link}
 					imgBgColor={this.props.data.img_bg_color}
 					description={this.props.data.description}
 					bgColor={this.props.data.bg_color}
@@ -49,7 +50,7 @@ class PageCover extends React.Component {
 				/>
 				<PageImage
 					name={this.props.data.name}
-					isSubPage={this.props.parentPage}
+					isSubPage={this.props.isSubPage}
 					imgBgColor={this.props.data.img_bg_color}
 					description={this.props.data.description}
 					imgLink={this.props.data.img_link}

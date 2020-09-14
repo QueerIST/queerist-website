@@ -1,40 +1,52 @@
 import React from 'react'
 import { Button } from '.'
 import { NavHashLink as NavLink } from 'react-router-hash-link'
-import { scrollOptions } from '../helpers'
+import { scrollOptions, publicPath } from '../helpers'
 
 import './textblock.css'
 
-const TextBlockInfo = ({ id, title, text, small, bgColor, titleColor, textColor, linkBackgroundColor, linkText, linkPage, linkId }) => (
-	<div id={id} className={`textblock ${small && 'textblock-small'}`} style={{ backgroundColor: bgColor, color: textColor }}>
-		<div className="textblock-child">
-			<h2 className="textblock-title" style={{ color: titleColor }}>{title}</h2>
-			{linkText &&
-				<Button
-					block
-					color={bgColor}
-					backgroundColor={linkBackgroundColor}
-				>
-					<NavLink
-						className="textblock-button"
-						to={{
-							pathname: linkPage, hash: '#' + linkId
-						}}
-						scroll={el => scrollOptions(el, true)}
+function TextBlockInfo({ id, title, text, small, bgColor, titleColor, textColor, linkBackgroundColor, linkTextColor, linkText, linkPage, linkId, linkFile, linkWeb }) {
+	const TextBlockButton = (
+		linkPage ? (
+			<NavLink
+				className="textblock-button"
+				to={{
+					pathname: linkPage, hash: '#' + linkId
+				}}
+				scroll={el => scrollOptions(el, true)}
+			>
+				{linkText}
+			</NavLink>
+		) :
+			linkFile ? (
+				<a href={publicPath(linkFile)} className="textblock-button">{linkText}</a>
+			) :
+				(
+					<a href={linkWeb} className="textblock-button">{linkText}</a>
+				)
+	)
+	return (
+		<div id={id} className={`textblock ${small && 'textblock-small'}`} style={{ backgroundColor: bgColor, color: textColor }}>
+			<div className="textblock-child">
+				<h2 className="textblock-title" style={{ color: titleColor }}>{title}</h2>
+				{linkText &&
+					<Button
+						block
+						color={linkTextColor || bgColor}
+						backgroundColor={linkBackgroundColor || textColor}
 					>
-						{linkText}
-					</NavLink>
-				</Button>}
+						{TextBlockButton}
+					</Button>}
+			</div>
+			<div className="textblock-child">
+				{(Array.isArray(text) ? text : [text]).map((t, i) => (
+					<p key={i} className="textblock-text">
+						{t}
+					</p>
+				))}</div>
 		</div>
-		<div className="textblock-child">
-			{(Array.isArray(text) ? text : [text]).map((t, i) => (
-				<p key={i} className="textblock-text">
-					{t}
-				</p>
-			))}</div>
-	</div>
-)
-
+	)
+}
 const TextBlock = ({ data, small }) => (
 	<TextBlockInfo
 		id={data.id}
@@ -45,9 +57,12 @@ const TextBlock = ({ data, small }) => (
 		titleColor={data.title_color}
 		textColor={data.text_color}
 		linkBackgroundColor={data.link_bg_color}
+		linkTextColor={data.link_text_color}
 		linkText={data.link_text}
 		linkPage={data.link_page}
 		linkId={data.link_id}
+		linkFile={data.link_file}
+		linkWeb={data.link_web}
 	/>
 )
 

@@ -19,7 +19,7 @@ function PageTileInfo({ id, parentPage, name, description, imgLink, logoLink, bg
 		</NavLink>
 	)
 	return (
-		<div className="tile-info page-tile-info" style={{
+		<div data-aos="zoom-in" className="tile-info page-tile-info" style={{
 			color: textColor
 		}}>
 			<img src={publicPath(imgLink)} alt={name} />
@@ -64,7 +64,7 @@ class EventTileInfo extends React.Component {
 			</button>
 		)
 		return (
-			<div className={`tile-info ${dir}`} style={{
+			<div data-aos={`flip-${dir}`} className={`tile-info ${dir}`} style={{
 				backgroundColor: bgColor, color: textColor
 			}}>
 				<div className={`tile-info-text ${openClass}`}>

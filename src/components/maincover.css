@@ -1,9 +1,10 @@
 .background {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 350px;
+	height: 500px;
 	background-repeat: repeat-y;
 	background-attachment: fixed;
 	background-size: auto;
@@ -14,4 +15,24 @@
 	background-color: white;
 	border-radius: 50%;
 	max-height: 200px;
+}
+
+.background>h3 {
+	color: white;
+	font-weight: normal;
+	font-style: italic;
+	text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+	/* For tablets and bigger */
+	.background {
+		height: 350px;
+		flex-direction: row;
+	}
+	.background>h3 {
+		text-align: left;
+		max-width: 300px;
+		margin-left: 50px;
+	}
 }

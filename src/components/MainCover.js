@@ -8,6 +8,7 @@ class MainCover extends React.Component {
 		return (
 			<div className="background" style={{ backgroundImage: `url(${fundo})` }}>
 				<img src={logo} alt="QueerIST logo" />
+				<h3>Secção Autónoma da Associação dos Estudantes do Instituto Superior Técnico</h3>
 			</div>
 		)
 	}

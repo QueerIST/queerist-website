@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button } from '.'
+import { publicPath } from '../helpers'
 
 import './highlightbox.css'
 
-const HighlightBoxInfo = ({ title, subTitle, bgColor, textColor, linkTextColor, linkBgColor, linkText, linkWeb }) => (
+const HighlightBoxInfo = ({ title, subTitle, bgColor, textColor, linkTextColor, linkBgColor, linkText, linkFile, linkWeb }) => (
 	<div className="highlightbox"
 		style={{ backgroundColor: bgColor, color: textColor }}
 	>
@@ -14,7 +15,13 @@ const HighlightBoxInfo = ({ title, subTitle, bgColor, textColor, linkTextColor, 
 			color={linkTextColor}
 			block
 		>
-			<a href={linkWeb} className="highlightbox-button">{linkText}</a>
+			{
+				linkFile ?
+					<a href={publicPath(linkFile)} className="highlightbox-button">{linkText}</a>
+					:
+					<a href={linkWeb} className="highlightbox-button">{linkText}</a>
+			}
+
 		</Button>
 	</div>
 )
@@ -28,6 +35,7 @@ const HighlightBox = ({ data }) => (
 		linkTextColor={data.link_text_color}
 		linkBgColor={data.link_bg_color}
 		linkText={data.link_text}
+		linkFile={data.link_file}
 		linkWeb={data.link_web}
 	/>
 )

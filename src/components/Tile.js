@@ -32,9 +32,9 @@ function PageTileInfo({ id, parentPage, name, description, imgLink, logoLink, bg
 				}
 				<h2 className="tile-info-text-text">{name}</h2>
 				<p className="tile-info-text-desc tile-info-text-text">{description}</p>
-				<Button borderColor={textColor} color={textColor}>
+				{seeMoreText && <Button borderColor={textColor} color={textColor}>
 					{EventTypeInfoButton}
-				</Button>
+				</Button>}
 			</div>
 		</div>
 	)
@@ -75,9 +75,9 @@ class EventTileInfo extends React.Component {
 					}
 					<h3 className="tile-info-text-text">{name}</h3>
 					<p className="tile-info-text-desc tile-info-text-text">{description}</p>
-					<Button borderColor={textColor} color={textColor}>
+					{seeMoreText && <Button borderColor={textColor} color={textColor}>
 						{EventTypeInfoButton}
-					</Button>
+					</Button>}
 				</div>
 				<div className="tile-info-img">
 					<img className={openClass} src={publicPath(imgLink)} alt={name} />

@@ -119,6 +119,7 @@
 }
 
 .page-tile-info {
+	height: 600px;
 	flex-direction: row;
 	position: relative;
 	overflow: hidden;

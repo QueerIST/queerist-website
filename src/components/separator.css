@@ -1,3 +1,7 @@
+.separator>h2 {
+	text-align: center;
+}
+
 hr {
 	margin: 30px 25%;
 }

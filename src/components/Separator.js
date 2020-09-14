@@ -1,10 +1,13 @@
 import React from 'react'
 import './separator.css'
 
-function Separator() {
-	return (
+const Separator = ({ data }) => (
+	<div className="separator">
+		<h2>
+			{data}
+		</h2>
 		<hr />
-	)
-}
+	</div>
+)
 
 export default Separator

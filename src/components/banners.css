@@ -7,10 +7,30 @@
 
 .big-banner>img {
 	width: 100%;
+	filter: brightness(100%);
+	transition: filter 1s, transform 10s;
+}
+
+.big-banner:hover>img {
+	transform: scale(1.5);
+	filter: brightness(40%);
 }
 
 .big-banner {
 	width: 100%;
+}
+
+.big-banner-button {
+	width: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.big-banner:hover>.big-banner-button {
+	opacity: 1;
 }
 
 .small-banner {

@@ -5,10 +5,26 @@ import { scrollOptions, publicPath } from '../helpers'
 
 import './banners.css'
 
-function BigBannerInfo({ name, imgLink }) {
+function BigBannerInfo({ name, imgLink, textColor, linkText, linkPage, linkId }) {
 	return (
 		<div className="big-banner banner" /*data-aos="zoom-in"*/>
 			<img src={publicPath(imgLink)} alt={name} />
+			{linkText &&
+				<div className="big-banner-button">
+					<Button
+						borderColor={textColor}
+						color={textColor}
+					>
+						<NavLink
+							to={{
+								pathname: linkPage, hash: '#' + linkId
+							}}
+							scroll={scrollOptions}
+						>
+							{linkText}
+						</NavLink>
+					</Button>
+				</div>}
 		</div >
 	)
 }
@@ -52,6 +68,10 @@ const BigBanner = ({ data }) => (
 	<BigBannerInfo
 		name={data.big_banner_name}
 		imgLink={data.big_banner_img_link}
+		textColor={data.text_color}
+		linkText={data.link_text}
+		linkPage={data.link_page}
+		linkId={data.link_id}
 	/>
 )
 

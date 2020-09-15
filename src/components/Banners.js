@@ -8,7 +8,6 @@ import './banners.css'
 function BigBannerInfo({ name, imgLink, textColor, linkText, linkPage, linkId }) {
 	return (
 		<div className="big-banner banner" /*data-aos="zoom-in"*/>
-			<img src={publicPath(imgLink)} alt={name} />
 			{linkText &&
 				<div className="big-banner-button">
 					<Button
@@ -25,6 +24,7 @@ function BigBannerInfo({ name, imgLink, textColor, linkText, linkPage, linkId })
 						</NavLink>
 					</Button>
 				</div>}
+			<img src={publicPath(imgLink)} alt={name} />
 		</div >
 	)
 }

@@ -7,12 +7,16 @@
 
 .big-banner>img {
 	width: 100%;
+	z-index: -1;
 	filter: brightness(100%);
 	transition: filter 1s, transform 10s;
 }
 
 .big-banner:hover>img {
 	transform: scale(1.5);
+}
+
+.big-banner:hover>.big-banner-button+img {
 	filter: brightness(40%);
 }
 

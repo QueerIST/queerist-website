@@ -36,6 +36,94 @@
 			]
 		}
 	},
+	"about_page": {
+		"id": "about",
+		"name": "Sobre",
+		"description": "Somos um grupo de estudantes do Técnico que nasceu em 2017, e trabalhamos, em equipa, para criar uma comunidade mais inclusiva e tolerante. Junta-te!",
+		"img_link": "assets/sala.jpg",
+		"bg_color": "var(--yellow-color)",
+		"separator": "Conhece as nossas equipas!",
+		"text_block_1": {
+			"id": "história",
+			"title": "o QueerIST",
+			"text": [
+				"O QueerIST é um núcleo queer (LGBTI+) de estudantes do Instituto Superior Técnico (IST) que visa incluir, informar e dialogar. Não temos fins lucrativos. O que fazemos parte de um pequeno conjunto de pessoas, mas destina-se a todas.",
+				"Nascemos como forma de eliminar a invisibilidade e isolamento dos membros da comunidade queer do IST, principalmente face à sua presença significativa dentro do corpo estudantil.",
+				"Constatámos a necessidade da existência de um grupo que sensibilize e promova a integração de todos os membros da comunidade por via da aceitação e nunca por omissão. ",
+				"O QueerIST foi formalizado como Secção Autónoma (SA) da Associação dos Estudantes do IST (AEIST) a 6 de dezembro de 2017, marcando assim o nosso nascimento, e tem desde então criado uma comunidade unida, que acolhe qualquer pessoa que queira juntar-se e criar um ambiente mais inclusivo, informado e disposto a dialogar, no IST e em Lisboa.",
+				"Realizamos várias atividades, abertas a toda a gente, desde as mais educativas (como tertúlias e conversas) até às mais recreativas (como churrascos e piqueniques), passando por sessões de cinema, tardes de convívio e mais; podes ver tudo na secção Eventos do nosso site. Mantemos ainda uma biblioteca com obras queer e relacionadas de forma a facilitar o acesso a uma cultura mais inclusiva; além de ainda atuarmos em outras iniciativas fora da faculdade, como por exemplo participando na Marcha do Orgulho LGBTI+ de Lisboa, todas as quais podes descobrir na secção Projetos daqui.",
+				"Os membros do QueerIST são voluntários e dividem-se em diferentes equipas, cada uma responsável por um conjunto de atividades.",
+				"Temos uma sala no Pavilhão da AEIST no IST, onde estamos (quase) sempre disponíveis e de portas abertas para ajudar com qualquer tema, mas também nos podes contactar através das nossas redes sociais ou e-mail, abaixo!"
+			],
+			"bg_color": "white",
+			"title_color": "var(--blue-color)",
+			"text_color": "black",
+			"link_bg_color": "lightseagreen",
+			"link_text": "Conhece a AEIST",
+			"link_web": "https://aeist.pt"
+		},
+		"text_block_2": {
+			"id": "statement",
+			"title": "a nossa missão",
+			"text": [
+				"É nossa missão estimular a discussão e divulgar informações sobre a temática queer, servindo isto mesmo como ponto de partida para o diálogo, para a troca de ideias e para a exposição construtiva de opiniões, assim como promover a inclusão de membros desta comunidade, contribuindo para a diminuição da discriminação em função da orientação sexual ou identidade de género. Deste modo, esta SA destina-se não só a pessoas pertencentes a uma minoria sexual ou de género, mas a todo o IST, promovendo um corpo estudantil mais culto, unido e inclusivo.",
+				"Acreditamos que podemos contribuir para o enriquecimento de toda a comunidade académica do IST, acrescentando conhecimento e informação, dando visibilidade a questões que consideramos descuradas."
+			],
+			"bg_color": "lightseagreen",
+			"title_color": "white",
+			"text_color": "black",
+			"link_bg_color": "lightseagreen",
+			"link_text": "",
+			"link_page": "/about",
+			"link_id": "statement"
+		},
+		"banners": {
+			"big_banner_name": "objetivos",
+			"big_banner_img_link": "assets/objetivos.png"
+		},
+		"textboxs": [
+			{
+				"name": "#tertúlias",
+				"bg_color": "aquamarine",
+				"text": "A equipa das Tertúlias é responsável por organizar eventos como conversas, debates, reflexões e conferências que informam e promovem o diálogo para toda a comunidade estudantil. Estas acontecem com uma periodicidade mensal."
+			},
+			{
+				"name": "#orgulho",
+				"bg_color": "aquamarine",
+				"text": "A equipa do Orgulho vai promover o orgulho dando a conhecer a nossa mensagem em colaboração com outras associações, fazendo a nossa representação em eventos como o Arraial Pride, Marcha do Orgulho e a Receção aos Novos Alunos."
+			},
+			{
+				"name": "#qultura",
+				"bg_color": "aquamarine",
+				"text": "A equipa da Qultura vai promover o conhecimento e reflexão cultural ao organizar sessões e ciclos de cinema, idas coletivas a eventos culturais, sessões de partilha cultural, também criando cultura ao dinamizar um programa de rádio."
+			},
+			{
+				"name": "#comunicação",
+				"bg_color": "aquamarine",
+				"text": "A equipa de Comunicação é responsável por interagir com a comunidade e divulgar eventos através das redes sociais, da newsletter e do design de posters e material promocional. Faz ainda este site!"
+			},
+			{
+				"name": "#tesouraria",
+				"bg_color": "aquamarine",
+				"text": "A equipa da Tesouraria mantém o QueerIST a funcionar contra todos os desafios, arranja o nosso maravilhoso merch e ajuda a financiar e planear todos os nossos eventos."
+			},
+			{
+				"name": "#recreativa",
+				"bg_color": "aquamarine",
+				"text": "A equipa da Recreativa trata da realização de eventos como churrascos, piqueniques e PubCrawls onde é priorizado o encontro e socialização entre os membros da nossa comunidade."
+			}
+		],
+		"highlightbox": {
+			"title": "Queres ajudar ou saber mais?",
+			"sub_title": "Envia-nos uma mensagem pelas nossas redes sociais, um e-mail, ou aparece na nossa sala!",
+			"bg_color": "maroon",
+			"text_color": "white",
+			"link_text_color": "black",
+			"link_bg_color": "burlywood",
+			"link_text": "Consulta o nosso regulamento",
+			"link_file": "files/Regulamentos_QueerIST_19-20.pdf"
+		}
+	},
 	"events_page": {
 		"name": "Eventos",
 		"description": "Organizamos diversos ambientes onde te podes divertir e conviver em boa companhia, mas também aprender e informar-te. Vem fazer coisas connosco!",

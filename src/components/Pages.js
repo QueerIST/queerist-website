@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, About, Events } from '../pages'
+import { Home, About, Events, Projects } from '../pages'
 import { Switch, Route } from 'react-router-dom'
 
 function Pages({ data }) {
@@ -19,6 +19,11 @@ function Pages({ data }) {
 				exact path='/events'
 				render={() =>
 					<Events data={data.events_page} />
+				} />
+			<Route
+				exact path='/projects'
+				render={() =>
+					<Projects data={data.projects_page} />
 				} />
 		</Switch>
 	)

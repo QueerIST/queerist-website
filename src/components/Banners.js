@@ -66,12 +66,12 @@ function SmallBannersWrap({ children }) {
 
 const BigBanner = ({ data }) => (
 	<BigBannerInfo
-		name={data.big_banner_name}
-		imgLink={data.big_banner_img_link}
-		textColor={data.text_color}
-		linkText={data.link_text}
-		linkPage={data.link_page}
-		linkId={data.link_id}
+		name={data.big_banner.name}
+		imgLink={data.big_banner.img_link}
+		textColor={data.big_banner.text_color}
+		linkText={data.big_banner.link_text}
+		linkPage={data.big_banner.link_page}
+		linkId={data.big_banner.link_id}
 	/>
 )
 

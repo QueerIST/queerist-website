@@ -20,8 +20,14 @@
 			"link_id": "manifesto"
 		},
 		"banners": {
-			"big_banner_name": "churrasco",
-			"big_banner_img_link": "assets/paq/conversas2_wide.png",
+			"big_banner": {
+				"name": "conversas",
+				"img_link": "assets/paq/conversas2_wide.png",
+				"text_color": "white",
+				"link_text": "Ouvir conversas",
+				"link_page": "/projetos",
+				"link_id": "paq"
+			},
 			"small_banners": [
 				{
 					"name": "Quartas Queer",
@@ -95,8 +101,10 @@
 			"link_bg_color": "lightseagreen"
 		},
 		"banners": {
-			"big_banner_name": "objetivos",
-			"big_banner_img_link": "assets/objetivos.png"
+			"big_banner": {
+				"name": "objetivos",
+				"img_link": "assets/objetivos.png"
+			}
 		},
 		"textboxs": [
 			{

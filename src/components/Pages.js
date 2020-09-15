@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, About, Events, Projects } from '../pages'
+import { Home, About, Events, Projects, SubPage } from '../pages'
 import { Switch, Route } from 'react-router-dom'
 
 function Pages({ data }) {
@@ -24,6 +24,11 @@ function Pages({ data }) {
 				exact path='/projects'
 				render={() =>
 					<Projects data={data.projects_page} />
+				} />
+			<Route
+				exact path='/projects/:id'
+				render={({ match }) =>
+					<SubPage id={match.params.id} parentData={data.projects_page} />
 				} />
 		</Switch>
 	)

@@ -505,5 +505,659 @@
 				]
 			}
 		]
+	},
+	"projects_page": {
+		"id": "projects",
+		"name": "Projetos",
+		"description": "Focamo-nos em outros projetos mais longos ou complexos, para além da faculdade, tentando trazer ainda mais valor a toda a comunidade. Descobre-os!",
+		"img_link": "assets/projetos.jpg",
+		"bg_color": "grey",
+		"sub_pages": [
+			{
+				"id": "jornadas",
+				"name": "Jornadas Arco-Íris",
+				"see_more_text": "Entrar nesta jornada",
+				"description": "Uma semana inteira dedicada a atividades da temática queer",
+				"img_link": "assets/jornadas/jornadas.jpg",
+				"logo_link": "assets/jornadas/jor.svg",
+				"img_bg_color": "#fbcbd7",
+				"bg_color": "white",
+				"text_color": "black",
+				"text_block": {
+					"id": "jornadas",
+					"title": "jornadas coloridas",
+					"text": [
+						"À semelhança de outras jornadas organizadas pelos núcleos de estudantes do IST, o QueerIST propôs-se a desenvolver uma semana anual de atividades dedicada à temática queer, com o intuito de começar o diálogo sobre a integração de pessoas queer no mundo de trabalho e da universidade, e incentivar à reflexão sobre a vivência LGBTI+ no contexto da engenharia.",
+						"Tivemos oportunidades de debate, partilha de experiências e convívio durante toda a semana, com pessoas do mundo académico e da engenharia.",
+						"Devido à pandemia, só conseguimos ainda realizar uma edição, em abril de 2019, mas foi um sucesso!",
+						"O programa começou com uma sessão de abertura com o Vice-Reitor da Universidade de Lisboa, o Prof. Doutor António M. Feijó, e o presidente da AEIST, Gonçalo Azevedo.",
+						"Duas tertúlias \"A colourful workplace\": Primeiro painel, empresarial, composto por Madalena Roseta, representante da IBM Portugal, Manuel Fernandes, representante da McKinsey, Romeu Monteiro, representante do BNP Paribas e ainda Joana Cadete Pires, membro da direção da ILGA e advogada com foco em direito do trabalhador",
+						"Segundo painel, académico, composto pelo Professor Manuel Cabral Morais, pelo professor Hugo Terças e por Manuel Amaral Beja, que apresentou a sua investigação sobre o processo de saída do armário.",
+						"Durante isso, estava a decorrer uma feira de arte queer!",
+						"Contámos ainda com um workshop de vogue, salvo tão generosamente por João Carvalho; e a exibição de duas curtas de Alexandra Barbosa: o aclamado \"Camel Toe\", que segue a queen do mesmo nome, e \"Primavera\", um reflexo sobre inocência; terminando com um debate sobre ambas, com a realizadora!",
+						"Esperamos realizar mais edições assim que possível!"
+					],
+					"bg_color": "#f6c9a2",
+					"text_color": "black",
+					"title_color": "#a21333"
+				},
+				"separator_events": "Edições realizadas",
+				"events": [
+					{
+						"id": "2019",
+						"name": "Jornadas Arco-Íris 2019",
+						"description": "A primeira semana exclusivamente cheia de cor do IST",
+						"see_more_text": "Ver programa",
+						"img_link": "assets/jornadas/ja2.jpg",
+						"bg_color": "#776eaf",
+						"text_color": "white",
+						"happenings": [
+							{
+								"name": "Sessão de Abertura",
+								"img_link": "assets/jornadas/ab.png",
+								"date": "23 abr 19, 15h",
+								"place": "Anfiteatro Abreu Faro",
+								"link": "https://www.facebook.com/events/424818871599872/"
+							},
+							{
+								"name": "Exposição de Arte Queer",
+								"img_link": "assets/jornadas/arte.png",
+								"date": "23 abr 19, 15h30",
+								"place": "Complexo Interdisciplinar",
+								"link": "https://www.facebook.com/events/424818871599872/"
+							},
+							{
+								"name": "Tertúlia \"A colourful workplace\" (Painel Empresarial)",
+								"img_link": "assets/jornadas/tert.jpg",
+								"date": "23 abr 19, 16h",
+								"place": "Anfiteatro Abreu Faro",
+								"link": "https://www.facebook.com/events/424818871599872/"
+							},
+							{
+								"name": "Tertúlia \"A colourful workplace\" (Painel Académico)",
+								"img_link": "assets/jornadas/tert.jpg",
+								"date": "23 abr 19, 18h",
+								"place": "Anfiteatro Abreu Faro",
+								"link": "https://www.facebook.com/events/424818871599872/"
+							},
+							{
+								"name": "Workshop de Vogue",
+								"img_link": "assets/jornadas/arte.png",
+								"date": "25 abr 19, 15h",
+								"place": "V1.06",
+								"link": "https://www.facebook.com/events/424818871599872/"
+							},
+							{
+								"name": "Curtas \"Camel Toe\" e \"Primavera\" + Debate",
+								"img_link": "assets/jornadas/cin.png",
+								"date": "26 abr 19, 16h",
+								"place": "VA5",
+								"link": "https://www.facebook.com/events/424818871599872/"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "radio",
+				"name": "Zero Preconceitos",
+				"see_more_text": "Ouvir episódios",
+				"description": "Uma nova conversa entre vozes coloridas do QueerIST onde risos, reflexões e pausas estranhas são garantidas",
+				"img_link": "assets/radio/radio.jpg",
+				"logo_link": "assets/radio/radio.png",
+				"img_bg_color": "grey",
+				"bg_color": "#232323",
+				"text_color": "white",
+				"separator": "Gravado nos estúdios e emitido pela",
+				"icons": [
+					{
+						"name": "Rádio Zero",
+						"link": "https://radiozero.pt",
+						"img_link": "assets/radio/zero.png"
+					}
+				],
+				"text_block": {
+					"id": "info",
+					"title": "de programa a podcast",
+					"text": [
+						"Nomeado para a categoria Sociedade dos Prémios Podes 2019, este projeto nasceu a partir de um convite da Rádio Zero para dar uma voz mais colorida ao Técnico.",
+						"Consiste na emissão de um podcast semanal, às 21h de terça-feira, com reemissão às 14h30 da sexta-feira da mesma semana. Os episódios são posteriormente disponibilizados em plataformas online tais como o Spotify, Apple Podcast e Anchor, entre outros.",
+						"Alguns dos episódios têm convidades, sendo estes membros do QueerIST, representantes de associações ou especialistas; e rodando a conversa à volta de um tema que dá nome ao mesmo!",
+						"O formato do podcast é variável, podendo ser um entrevista, um debate ou um Q&A. No entanto, no final de cada episódio é feita uma recomendação musical, que idealmente está relacionada com o tema deste!"
+					],
+					"bg_color": "white",
+					"text_color": "black"
+				},
+				"separator_events": "Episódios disponíveis",
+				"events": [
+					{
+						"id": "terceira",
+						"name": "3º Temporada",
+						"description": "De volta com os quatro pilares do podcast juntos em episódios mais longos e intimistas",
+						"see_more_text": "Ouvir episódios",
+						"img_link": "assets/radio/terceira.png",
+						"bg_color": "#40acbf",
+						"text_color": "black",
+						"happenings": [
+							{
+								"name": "Pinkwashing e Queerbaiting",
+								"img_link": "assets/radio/terceira.png",
+								"date": "16 jan 20",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Queers, Discord(ia) e Videojogos",
+								"img_link": "assets/radio/terceira.png",
+								"date": "02 jan 20",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Queer Christmas",
+								"img_link": "assets/radio/terceira.png",
+								"date": "19 dez 19",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "És Rapaz ou Rapariga? Nenhum!",
+								"date": "05 dez 19",
+								"img_link": "assets/radio/terceira.png",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Legislativas, jovens na política e ",
+								"img_link": "assets/radio/terceira.png",
+								"date": "21 nov 19",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Queer Praxis, Est Praxis?",
+								"date": "07 nov 19",
+								"img_link": "assets/radio/terceira.png",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "\"Vê-se a milhas!\"",
+								"date": "27 out 19",
+								"img_link": "assets/radio/terceira.png",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							}
+						]
+					},
+					{
+						"id": "segunda",
+						"name": "2º Temporada",
+						"description": "A temporada do ativismo",
+						"see_more_text": "Ouvir episódios",
+						"img_link": "assets/radio/segunda.jpg",
+						"bg_color": "white",
+						"text_color": "#8c2baf",
+						"happenings": [
+							{
+								"name": "Q&A",
+								"date": "26 jun 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Marchas do Orgulho - 20 anos da MOL",
+								"date": "19 jun 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Poliamor e Não-Monogamias Consensuais",
+								"img_link": "assets/radio/segunda.jpg",
+								"date": "10 jun 19",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Ser Queer: Brasil vs. Portugal",
+								"date": "03 jun 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Ativismo depois do 25 de abril",
+								"date": "27 mai 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Educação Sexual",
+								"date": "19 mai 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Masculinidade Tóxica",
+								"date": "15 mai 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Sexualidades Rebeldes",
+								"date": "08 mai 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Queerness em Eventos de Família",
+								"date": "01 mai 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Educação Inclusiva com a rede ex aequo",
+								"date": "24 abr 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Jornadas Arco-Íris",
+								"date": "16 abr 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Linguagem Neutra",
+								"date": "08 abr 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Feminismo",
+								"date": "02 abr 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Queercap",
+								"date": "02 abr 19",
+								"img_link": "assets/radio/segunda.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							}
+						]
+					},
+					{
+						"id": "primeira",
+						"name": "1º Temporada",
+						"description": "A estreia do podcast mais colorido do Técnico!",
+						"see_more_text": "Ouvir episódios",
+						"img_link": "assets/radio/plataforma.jpg",
+						"bg_color": "#cd262e",
+						"text_color": "white",
+						"happenings": [
+							{
+								"name": "Qultura: Livros Queer",
+								"date": "18 dez 18",
+								"img_link": "assets/radio/primeira.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Aplicações de Engate",
+								"img_link": "assets/radio/primeira.jpg",
+								"date": "13 dez 18",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Ativismo Estudantil: Formação do QueerIST",
+								"img_link": "assets/radio/primeira.jpg",
+								"date": "04 dez 18",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Normatividades e Apoiantes",
+								"date": "30 nov 18",
+								"img_link": "assets/radio/primeira.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Homofobia, Preconceito e Estereótipos",
+								"date": "23 nov 18",
+								"img_link": "assets/radio/primeira.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Descoberta da Identidade",
+								"date": "15 nov 18",
+								"img_link": "assets/radio/primeira.jpg",
+								"place": "Plataformas de streaming",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							},
+							{
+								"name": "Coming Out: Secundário vs. Universidade",
+								"date": "09 nov 18",
+								"place": "Plataformas de streaming",
+								"img_link": "assets/radio/primeira.jpg",
+								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "raqul",
+				"name": "Rede de Ação Queer Universitária de Lisboa",
+				"see_more_text": "Explorar Lisboa",
+				"description": "Cinco núcleos estudantis que visam unir a comunidade queer universitária de Lisboa, além de faculdades e instituições",
+				"img_link": "assets/raqul/lisboa.jpg",
+				"logo_link": "assets/raqul/raqul.png",
+				"img_bg_color": "mediumpurple",
+				"bg_color": "#afe9af",
+				"text_color": "white",
+				"text_block": {
+					"id": "rede",
+					"title": "a rede",
+					"text": [
+						"Num esforço para unir a luta queer académica, cinco núcleos universitários de diferentes faculdades de Lisboa juntaram-se, em 2020, criando uma rede: RAQUL.",
+						"Existimos porque a união faz a força: queremos ser uma plataforma para troca de experiências e entreajuda, queremos apoiar a criação de mais núcleos, e queremos que a comunidade se conheça e sinta incluía.",
+						"Ainda estamos numa fase experimental e o nosso primeiro evento não pôde acontecer nos moldes que queríamos, devido à pandemia, mas estamos confiantes e a trabalhar para fazer isto acontecer!"
+					],
+					"bg_color": "#e8ebf4",
+					"text_color": "#345d4d"
+				},
+				"separator": "Constituída também por",
+				"icons": [
+					{
+						"name": "OutCiências",
+						"link": "https://instagr.am/outciencias",
+						"img_link": "assets/raqul/out.png"
+					},
+					{
+						"name": "MAIS",
+						"link": "https://instagr.am/maisfful",
+						"img_link": "assets/raqul/mais.png"
+					},
+					{
+						"name": "Nu Pride",
+						"link": "https://instagr.am/nupridefct",
+						"img_link": "assets/raqul/nu.png"
+					},
+					{
+						"name": "Letras Fora do Armário",
+						"link": "https://instagr.am/letras_fora_do_armario",
+						"img_link": "assets/raqul/lfa.png"
+					}
+				]
+			},
+			{
+				"id": "mol",
+				"name": "Marcha do Orgulho LGBTI+ de Lisboa",
+				"see_more_text": "Marchar connosco",
+				"description": "Manifestação para visibilizar, celebrar e defender a diversidade relacional, das orientações e características sexuais e das identidades e expressões de género, bem como combater o conjunto das discriminações",
+				"img_link": "assets/mol/marcha.jpg",
+				"logo_link": "assets/mol/mol.png",
+				"img_bg_color": "#f4992f",
+				"bg_color": "#fed144",
+				"text_color": "white",
+				"separator": "Comissão organizadora composta por",
+				"icons": [
+					{
+						"name": "Academia Cidadã"
+					},
+					{
+						"name": "GAT"
+					},
+					{
+						"name": "Grupo Transexual Portugal"
+					},
+					{
+						"name": "ILGA Portugal"
+					},
+					{
+						"name": "Letras Fora do Armário",
+						"img_link": "assets/raqul/lfa.png"
+					},
+					{
+						"name": "Lóbula"
+					},
+					{
+						"name": "MAIS",
+						"img_link": "assets/raqul/mais.png"
+					},
+					{
+						"name": "NuPRIDE",
+						"img_link": "assets/raqul/nu.png"
+					},
+					{
+						"name": "Opus Diversidades"
+					},
+					{
+						"name": "OutCiências",
+						"img_link": "assets/raqul/out.png"
+					},
+					{
+						"name": "Panteras Rosa"
+					},
+					{
+						"name": "PolyPortugal"
+					},
+					{
+						"name": "Por Todas Nós"
+					},
+					{
+						"name": "Queer Tropical"
+					},
+					{
+						"name": "TransMissão"
+					},
+					{
+						"name": "rede ex aequo"
+					}
+				],
+				"text_block": {
+					"id": "comissão",
+					"title": "a comissão organizadora",
+					"text": "A Marcha do Orgulho LGBTI+ de Lisboa (MOL) é uma manifestação anual organizada por vários coletivos LGBTI+ da região de Lisboa. O QueerIST participa ativamente na organização da MOL e marcha sozinho ou em bloco com os restantes núcleos universitários da região de Lisboa. A MOL é acompanhada todos os anos por um manifesto preparado por todos os coletivos organizadores que visa reclamar condições e direitos em falta na comunidade LGBTI+, manifesto este subscrito pelo QueerIST.",
+					"bg_color": "#b4ce42",
+					"text_color": "black",
+					"link_text": "Ler manifesto da MOL",
+					"link_text_color": "black",
+					"link_bg_color": "#72a0d5",
+					"link_web": "http://lgbtilisboa.pt"
+				},
+				"separator_events": "Participámos na organização de",
+				"events": [
+					{
+						"id": "2020",
+						"name": "#ContinuamosAMarchar",
+						"description": "Devido à pandemia, a MOL decidiu não sair à rua este ano mas Continuar a Marchar ao criar uma rede de apoio para apoiar pessoas em dificuldades.",
+						"see_more_text": "Marchar sem sair de casa",
+						"img_link": "assets/mol/cam.jpg",
+						"bg_color": "white",
+						"text_color": "#513894",
+						"happenings": [
+							{
+								"name": "Doar Também é Marchar - Angariação de Fundos",
+								"img_link": "assets/mol/chuffed.jpg",
+								"date": "24 ago 20, 18h30",
+								"place": "Chuffed",
+								"link": "https://chuffed.org/project/continuamosamarchar"
+							},
+							{
+								"name": "21ª Marcha do Orgulho LGBTI+ de Lisboa",
+								"img_link": "assets/mol/cam.jpg",
+								"date": "20 jun 20, 17h",
+								"place": "Facebook live",
+								"link": "https://www.facebook.com/events/522870168365209"
+							}
+						]
+					},
+					{
+						"id": "2019",
+						"name": "Marcha do Orgulho LGBTI+ de Lisboa 2019",
+						"description": "Celebramos os 20 anos da MOL e as várias conquistas até agora. No entanto, sabemos que nada está garantido e que ainda nos falta muito caminho para percorrer.",
+						"see_more_text": "Ver celebrações",
+						"img_link": "assets/mol/mol20.jpg",
+						"bg_color": "#eb5d5c",
+						"text_color": "white",
+						"happenings": [
+							{
+								"name": "Movimento Estudantil: Ativismo LGBTI+ no Ensino Superior",
+								"img_link": "assets/mol/cc.png",
+								"date": "28 nov 19, 18h15",
+								"place": "VA4",
+								"link": "https://www.facebook.com/events/2463456507242631/"
+							},
+							{
+								"name": "20ª Marcha do Orgulho LGBTI+ de Lisboa",
+								"img_link": "assets/mol/mol20.jpg",
+								"date": "29 jun 19, 17h",
+								"place": "Jardim do Príncipe Real",
+								"link": "https://www.facebook.com/events/2454153327942938/"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "biblioteca",
+				"name": "Biblioteca do QueerIST",
+				"see_more_text": "Consultar catálogo",
+				"description": "Biblioteca de temática queer que acolhe obras de relevância e disponibiliza a quem não consiga ter acesso às mesmas",
+				"img_link": "assets/biblioteca/biblioteca.jpg",
+				"logo_link": "assets/biblioteca/bibli.png",
+				"img_bg_color": "steelblue",
+				"bg_color": "lightsteelblue",
+				"text_color": "white",
+				"text_block": {
+					"id": "biblio",
+					"title": "a biblioteca",
+					"text": [
+						"A Biblioteca do QueerIST é uma biblioteca especializada de temática LGBTI+ que preserva o património do QueerIST e acolhe obras de relevância para a sua comunidade, através da sua coleção permanente e de coleções disponibilizadas por membros e pessoas amigas do QueerIST.",
+						"A Biblioteca tem a missão de preservar, divulgar e disseminar obras de temática queer a quem não consiga ter acesso às mesmas, em particular estudantes do Técnico, outras faculdades, jovens e público em geral.",
+						"Para requisitar um livro, basta consultares o catálogo, escolheres e fazeres o pedido lá, e vires à nossa sala buscar num horário acordado! Se tiveres livros em casa, podes também cedê-los à nossa Biblioteca."
+					],
+					"bg_color": "#2c5372",
+					"text_color": "white",
+					"link_text": "Consultar catálogo",
+					"link_web": "https://www.librarycat.org/lib/queerist"
+				},
+				"separator_events": "Às vezes damos um saltinho a outros lados",
+				"events": [
+					{
+						"id": "feira",
+						"name": "Feira do Livro da AEIST",
+						"description": "A Feira conta com Livreiros, Alfarrabistas e venda de livros em segunda mão, colaborando na sua organização 15 núcleos de estudantes do IST.",
+						"img_link": "assets/biblioteca/biblioteca2.jpg",
+						"bg_color": "#364153",
+						"text_color": "white"
+					}
+				]
+			},
+			{
+				"id": "paq",
+				"name": "Pela Arte Queer",
+				"see_more_text": "Procurar artistas",
+				"description": "Projeto de apoio a artistas queer em Portugal",
+				"img_link": "assets/paq/paq.jpg",
+				"logo_link": "assets/paq/paq.png",
+				"img_bg_color": "#0e925f",
+				"bg_color": "#bde9c8",
+				"text_color": "white",
+				"text_block": {
+					"id": "descrição",
+					"title": "o projeto",
+					"text": [
+						"O PELA ARTE QUEER é a reação do QueerIST às dificuldades causadas por esta pandemia na vida e no trabalho de artistas queer em Portugal.",
+						"Apresentamos o conjunto de artistas que nos chegaram, através de sugestões e testemunhos, e que pretendemos apoiar. Mas só podemos fazer isto com a ajuda do público! Visita o perfil de cada, descobre, segue; leva o teu tempo 🔥 ",
+						"Mas não queremos ficar por aqui! Alocámos fundos do QueerIST para apoiar algumas destas pessoas, através de compra de arte ou donativos; e pretendemos dar a conhecer cada uma mais a fundo. Queremos lançar eventos e passatempos, para descobrires ainda mais da arte de cada uma destas pessoas.",
+						"Novidades para breve."
+					],
+					"bg_color": "#1573b4",
+					"text_color": "white",
+					"link_text": "Ver lista de artistas",
+					"link_web": "https://www.instagram.com/p/CAD9oH9nbEc/"
+				},
+				"separator_events": "Organizámos",
+				"events": [
+					{
+						"id": "conversas",
+						"name": "Conversas Pela Arte",
+						"description": "Conversas semanais com artistas, onde vais poder conhecer as suas histórias e trabalho!",
+						"see_more_text": "Ver conversas realizadas",
+						"img_link": "assets/paq/conversas.png",
+						"bg_color": "#f26f23",
+						"text_color": "white",
+						"happenings": [
+							{
+								"name": "2ª Conversa (Fresco Mafalda, Rá Illustration, Leonardo Mendonza)",
+								"img_link": "assets/paq/conversa2.png",
+								"date": "21 mai 20, 19h",
+								"place": "Instagram do QueerIST",
+								"link": "https://www.facebook.com/events/614674732469073/"
+							},
+							{
+								"name": "1ª Conversa (Valentina Vargas, Carolina Elis, Áquilla Correia, Keyla Brasil)",
+								"img_link": "assets/paq/conversa1.png",
+								"date": "14 mai 20, 19h",
+								"place": "Instagram do QueerIST",
+								"link": "https://www.facebook.com/events/614674735802406/"
+							}
+						]
+					}
+				],
+				"highlightbox": {
+					"title": "Queres conhecer melhor es artistas?",
+					"sub_title": "Em breve teremos aqui uma lista mais detalhada, mas por enquanto poder ver algumas Conversas.",
+					"bg_color": "#7f3f98",
+					"text_color": "white",
+					"link_text_color": "black",
+					"link_bg_color": "#f6ec98",
+					"link_text": "Ver no IGTV do QueerIST",
+					"link_web": "https://www.instagram.com/queer.ist/channel/"
+				}
+			},
+			{
+				"id": "linguagem",
+				"name": "Linguagem Neutra",
+				"see_more_text": "Conhecer gramática",
+				"description": "Um sistema de linguagem neutra (-e), para um Português verdadeiramente inclusivo",
+				"img_link": "assets/linguagem/neutra.jpg",
+				"img_bg_color": "#ea9999",
+				"bg_color": "#b4a7d6",
+				"text_color": "#353744",
+				"text_block": {
+					"id": "neutra",
+					"title": "gramática inclusiva",
+					"text": [
+						"O QueerIST usa um sistema de linguagem neutra na sua comunicação em Português. Este foi criado para colmatar a inexistência de uma flexão neutra na lingua portuguesa. Através duma terceira flexão em género, podemos referir-nos a uma pessoa (ou um conjunto de pessoas) sem determinar o seu género ou a uma pessoa que use pronomes neutros.",
+						"De forma a tentar concretizar este sistema criámos um guia prático para quem quiser aprender e/ou utilizar linguagem neutra na língua portuguesa."
+					],
+					"bg_color": "white",
+					"text_color": "#353744",
+					"title_color": "#9b59d0",
+					"link_bg_color": "#56b885",
+					"link_text": "Consultar gramática",
+					"link_file": "files/Guia Prático Para Um Português Inclusivo.pdf"
+				}
+			}
+		]
 	}
 }

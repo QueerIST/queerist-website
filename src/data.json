@@ -16,8 +16,8 @@
 			"text_color": "black",
 			"link_bg_color": "lightseagreen",
 			"link_text": "Manifesto da missão",
-			"link_page": "/about",
-			"link_id": "statement"
+			"link_page": "/sobre",
+			"link_id": "manifesto"
 		},
 		"banners": {
 			"big_banner_name": "churrasco",
@@ -30,7 +30,7 @@
 					"bg_color": "orange",
 					"text_color": "white",
 					"link_text": "Explorar quacks",
-					"link_page": "/events",
+					"link_page": "/eventos",
 					"link_id": "quartas"
 				},
 				{
@@ -40,7 +40,7 @@
 					"bg_color": "white",
 					"text_color": "#364153",
 					"link_text": "Ver catálogo",
-					"link_page": "/projects",
+					"link_page": "/projetos",
 					"link_id": "biblioteca"
 				},
 				{
@@ -50,14 +50,14 @@
 					"bg_color": "#232323",
 					"text_color": "white",
 					"link_text": "Ouvir podcast",
-					"link_page": "/projects",
+					"link_page": "/projetos",
 					"link_id": "radio"
 				}
 			]
 		}
 	},
 	"about_page": {
-		"id": "about",
+		"id": "sobre",
 		"name": "Sobre",
 		"description": "Somos um grupo de estudantes do Técnico que nasceu em 2017, e trabalhamos, em equipa, para criar uma comunidade mais inclusiva e tolerante. Junta-te!",
 		"img_link": "assets/sala.jpg",
@@ -83,7 +83,7 @@
 			"link_web": "https://aeist.pt"
 		},
 		"text_block_2": {
-			"id": "statement",
+			"id": "manifesto",
 			"title": "a nossa missão",
 			"text": [
 				"É nossa missão estimular a discussão e divulgar informações sobre a temática queer, servindo isto mesmo como ponto de partida para o diálogo, para a troca de ideias e para a exposição construtiva de opiniões, assim como promover a inclusão de membros desta comunidade, contribuindo para a diminuição da discriminação em função da orientação sexual ou identidade de género. Deste modo, esta SA destina-se não só a pessoas pertencentes a uma minoria sexual ou de género, mas a todo o IST, promovendo um corpo estudantil mais culto, unido e inclusivo.",
@@ -92,10 +92,7 @@
 			"bg_color": "lightseagreen",
 			"title_color": "white",
 			"text_color": "black",
-			"link_bg_color": "lightseagreen",
-			"link_text": "",
-			"link_page": "/about",
-			"link_id": "statement"
+			"link_bg_color": "lightseagreen"
 		},
 		"banners": {
 			"big_banner_name": "objetivos",
@@ -507,7 +504,7 @@
 		]
 	},
 	"projects_page": {
-		"id": "projects",
+		"id": "projetos",
 		"name": "Projetos",
 		"description": "Focamo-nos em outros projetos mais longos ou complexos, para além da faculdade, tentando trazer ainda mais valor a toda a comunidade. Descobre-os!",
 		"img_link": "assets/projetos.jpg",

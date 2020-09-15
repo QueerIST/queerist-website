@@ -35,10 +35,9 @@ class Header extends React.Component {
 								</NavLink>
 								<Menu className="navtop-side" onClick={this.handleClickMenuButton} />
 							</div>
-							<NavLink className={"navlink" + menustatus} to="/about" onClick={this.handleClickLink}>Sobre</NavLink>
-							<NavLink className={"navlink" + menustatus} to="/events" onClick={this.handleClickLink}>Eventos</NavLink>
-							<NavLink className={"navlink" + menustatus} to="/projects" onClick={this.handleClickLink}>Projetos</NavLink>
-							<NavLink className={"navlink" + menustatus} to="/merch" onClick={this.handleClickLink}>Merch</NavLink>
+							<NavLink className={"navlink" + menustatus} to="/sobre" onClick={this.handleClickLink}>Sobre</NavLink>
+							<NavLink className={"navlink" + menustatus} to="/eventos" onClick={this.handleClickLink}>Eventos</NavLink>
+							<NavLink className={"navlink" + menustatus} to="/projetos" onClick={this.handleClickLink}>Projetos</NavLink>
 						</div>
 					</div>
 				</div>

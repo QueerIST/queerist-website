@@ -1,35 +1,55 @@
 {
 	"main_page": {
-		"mission": "Estimular a discussão e divulgar informação sobre a temática queer, promovendo a inclusão de membros desta comunidade, com o intuito de diminuir a discriminação em função da orientação sexual ou identidade de género.",
-		"mission_statement": "",
+		"home": true,
+		"name": "QueerIST",
+		"description": "Núcleo LGBTI+ de estudantes do IST. Pretendemos estimular a discussão e divulgar informação sobre a temática queer, promovendo a inclusão de membros desta comunidade, com o intuito de diminuir a discriminação em função da orientação sexual ou identidade de género.",
+		"img_link": "assets/objetivos.png",
+		"text_block": {
+			"id": "mission",
+			"title": "quem somos",
+			"text": [
+				"Núcleo LGBTI+ de estudantes do Instituto Superior Técnico.",
+				"Pretendemos estimular a discussão e divulgar informação sobre a temática queer, promovendo a inclusão de membros desta comunidade, com o intuito de diminuir a discriminação em função da orientação sexual ou identidade de género."
+			],
+			"bg_color": "white",
+			"title_color": "var(--blue-color)",
+			"text_color": "black",
+			"link_bg_color": "lightseagreen",
+			"link_text": "Manifesto da missão",
+			"link_page": "/about",
+			"link_id": "statement"
+		},
 		"banners": {
 			"big_banner_name": "churrasco",
-			"big_banner_img_link": "assets/churrasco.png",
+			"big_banner_img_link": "assets/paq/conversas2_wide.png",
 			"small_banners": [
 				{
-					"name": "Tertúlia \"Faz-te Ouvir\"",
-					"img_link": "assets/ban1.png",
-					"bg_color": "#6bcde7",
+					"name": "Quartas Queer",
+					"label": "De regresso em breve",
+					"img_link": "assets/quartas/qq.png",
+					"bg_color": "orange",
 					"text_color": "white",
-					"link_text": "Ver Tertúlias",
+					"link_text": "Explorar quacks",
 					"link_page": "/events",
-					"link_id": "tertulia"
+					"link_id": "quartas"
 				},
 				{
-					"name": "PubCrawl",
-					"img_link": "assets/ban2.png",
+					"name": "Biblioteca do QueerIST",
+					"label": "Requisita um livro!",
+					"img_link": "assets/biblioteca/bibli.png",
 					"bg_color": "white",
-					"text_color": "black",
-					"link_text": "Ver Pubcrawls",
-					"link_page": "/events",
-					"link_id": "pubcrawl"
+					"text_color": "#364153",
+					"link_text": "Ver catálogo",
+					"link_page": "/projects",
+					"link_id": "biblioteca"
 				},
 				{
 					"name": "Zero Preconceitos",
-					"img_link": "assets/ban3.png",
+					"label": "Nova temporada",
+					"img_link": "assets/radio/radio.png",
 					"bg_color": "#232323",
 					"text_color": "white",
-					"link_text": "Ver Programas",
+					"link_text": "Ouvir podcast",
 					"link_page": "/projects",
 					"link_id": "radio"
 				}

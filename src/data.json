@@ -37,18 +37,19 @@
 		}
 	},
 	"events_page": {
-		"title": "Eventos",
-		"description": "Onde te podes divertir e conviver e aprender e informar e educar e tudo e mais. Vem fazer coisas connosco!",
-		"img_link": "assets/tertulia.jpg",
-		"bg_color": "blue",
+		"name": "Eventos",
+		"description": "Organizamos diversos ambientes onde te podes divertir e conviver em boa companhia, mas também aprender e informar-te. Vem fazer coisas connosco!",
+		"img_link": "assets/eventos.jpg",
+		"bg_color": "cadetblue",
 		"events": [
 			{
 				"id": "tertulia",
 				"name": "Tertúlias Arco-Íris",
-				"description": "Sessões de partilha e discussão",
-				"see_more_text": "Ver todas as tertúlias",
-				"img_link": "assets/tertulia.jpg",
-				"bg_color": "blue",
+				"description": "Ambientes abertos para partilha informal de experiências e opiniões, muitas vezes com um painel moderado, promovendo o diálogo e informação, para a educação da comunidade.",
+				"see_more_text": "Ver os temas abordados",
+				"img_link": "assets/tertulias/tertulia.jpg",
+				"logo_link": "assets/tertulias/tertulias.png",
+				"bg_color": "#6bcde7",
 				"text_color": "white",
 				"happenings": [
 					{
@@ -96,9 +97,10 @@
 			{
 				"id": "churrasco",
 				"name": "Churrascos Straight or Queer, We All Want Beer",
-				"description": "Bebe",
-				"see_more_text": "Explorar todos os churrascos",
-				"img_link": "assets/tertulia.jpg",
+				"description": "A noite perfeita para qualquer queen e apoiantes! Boa comida, incluindo o famoso hambúrger vegan; e ainda cerveja, sidra, sangria ou shots temáticos. Alguém falou em happy hour de gin?",
+				"see_more_text": "Apontar o próximo churrasco",
+				"img_link": "assets/churrasco/churrasco.jpg",
+				"logo_link": "assets/churrasco/chr.png",
 				"bg_color": "orange",
 				"text_color": "white",
 				"happenings": [
@@ -122,10 +124,11 @@
 			},
 			{
 				"id": "pubcrawl",
-				"name": "Pubcrawls QueerIST",
-				"description": "Exprorar a noite lisboeta e conhecer novas pessoas",
-				"see_more_text": "Crawl the pubcrawls",
-				"img_link": "assets/tertulia.jpg",
+				"name": "PubCrawls QueerIST",
+				"description": "O plano é simples: durante a noite, damos-te uma amostra dos melhores bares queer-friendly da cidade. Há um bar aberto e várias bebidas incluídas, para além de muitos jogos!",
+				"see_more_text": "Crawl the PubCrawls",
+				"img_link": "assets/pubcrawl/pubcrawl.jpg",
+				"logo_link": "assets/pubcrawl/pc.png",
 				"bg_color": "white",
 				"text_color": "black",
 				"happenings": [
@@ -158,9 +161,9 @@
 			{
 				"id": "cinema",
 				"name": "Cinema Arco-Íris",
-				"description": "Sessões de exibição de filmes",
-				"see_more_text": "Ver todos os filmes exibidos",
-				"img_link": "assets/tertulia.jpg",
+				"description": "Um filme, curta ou série, seguidas de um discussão casual, não só dos aspetos queer, mas qualquer ideia cinematográfica; às vezes até com um painel. Nós trazemos as pipocas!",
+				"see_more_text": "Pesquisar todos os filmes exibidos",
+				"img_link": "assets/cinema/cdc.jpg",
 				"bg_color": "brown",
 				"text_color": "white",
 				"happenings": [
@@ -224,11 +227,11 @@
 			},
 			{
 				"id": "qultura",
-				"name": "Qultura",
-				"description": "Momentos para partilhares e descobrires cultura queer",
+				"name": "Sessões de Qultura",
+				"description": "A oportunidade de descobrir e partilhar experiências culturais. Traz o que mais te inspira: livros, revistas, fotografias, pinturas, entre outros; e vem trocar experiências!",
 				"see_more_text": "Ver todas as partilhas",
-				"img_link": "assets/tertulia.jpg",
-				"bg_color": "red",
+				"img_link": "assets/qultura/q.jpg",
+				"bg_color": "steelblue",
 				"text_color": "white",
 				"happenings": [
 					{

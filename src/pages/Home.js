@@ -7,6 +7,7 @@ const Home = ({ data }) => (
 		<TextBlock data={data.text_block} />
 		<BigBanner data={data.banners} />
 		<SmallBanners data={data.banners.small_banners} />
+		<HighlightBox data={data.highlightbox} />
 	</Page>
 )
 

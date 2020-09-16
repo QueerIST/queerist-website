@@ -60,6 +60,16 @@
 					"link_id": "radio"
 				}
 			]
+		},
+		"highlightbox": {
+			"title": "Não queres perder nenhum evento?",
+			"sub_title": "Adiciona o nosso calendário ao teu telemóvel!",
+			"bg_color": "#d33f49",
+			"text_color": "white",
+			"link_text_color": "white",
+			"link_bg_color": "#6c9a8b",
+			"link_text": "Subscrever calendário",
+			"link_web": "http://bit.ly/CalendarQueerIST"
 		}
 	},
 	"about_page": {

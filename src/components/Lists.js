@@ -1,11 +1,19 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 import { publicPath } from '../helpers'
 
 import './lists.css'
 
+const handleClickLink = (name) => {
+	ReactGA.event({
+		category: "IconList",  // Required
+		action: `Clica ${name}`  // Required
+	})
+}
+
 const Icon = ({ name, link, imgLink }) => (
 	<li className="lists-iconlist-icon">
-		<a href={link}>
+		<a href={link} onClick={() => handleClickLink(name)}>
 			<div className="lists-iconlist-icon-img">
 				{imgLink && <img src={publicPath(imgLink)} alt={name} />}
 			</div>

@@ -1,7 +1,15 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 import './eventgallery.css'
 import { publicPath, WrapDelayed } from '../helpers'
 import { ReactComponent as Launch } from './../svg/launch.svg'
+
+const handleClickEventLink = (event) => {
+	ReactGA.event({
+		category: "EventGallery",  // Required
+		action: `Clica link de ${event}`  // Required
+	})
+}
 
 function EventGalleryWrap(props) {
 	const getClassName = () => props.open ? "" : "closed"
@@ -24,7 +32,7 @@ const EventGalleryItem = ({ name, description, open, date, place, imgLink, link 
 			<h3>{name}</h3>
 			<span className="event-gallery-item-launch">
 				<p>{date} @ {place}</p>
-				<a href={link}><Launch /></a>
+				<a href={link} onClick={() => handleClickEventLink(name)}> <Launch /></a>
 			</span>
 			{/* <p>{description}</p> */}
 		</div>

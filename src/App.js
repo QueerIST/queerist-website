@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Header, Pages, Footer } from './components'
-import { BrowserRouter } from 'react-router-dom'
-import data from './data.json'
+import { Router } from 'react-router-dom'
 import { ScrollToTop } from './helpers'
+
+import data from './data.json'
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Router basename={process.env.PUBLIC_URL} history={this.props.history}>
         <ScrollToTop>
           <React.Fragment>
             <Header />
@@ -15,7 +16,7 @@ class App extends Component {
             <Footer />
           </React.Fragment>
         </ScrollToTop>
-      </BrowserRouter>
+      </Router>
     )
   }
 }

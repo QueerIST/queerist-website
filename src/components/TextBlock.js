@@ -31,6 +31,8 @@ function TextBlockInfo({ id, title, text, small, bgColor, titleColor, textColor,
 				<h2 className="textblock-title" style={{ color: titleColor }}>{title}</h2>
 				{linkText &&
 					<Button
+						actionComp={"TextBlock"}
+						actionName={`Clica ${linkText}`}
 						block
 						color={linkTextColor || bgColor}
 						backgroundColor={linkBackgroundColor || textColor}

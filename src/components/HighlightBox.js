@@ -11,6 +11,8 @@ const HighlightBoxInfo = ({ title, subTitle, bgColor, textColor, linkTextColor, 
 		<h2>{title}</h2>
 		<p>{subTitle}</p>
 		<Button
+			actionComp={"HighlightBox"}
+			actionName={`Clica ${linkText}`}
 			backgroundColor={linkBgColor}
 			color={linkTextColor}
 			block

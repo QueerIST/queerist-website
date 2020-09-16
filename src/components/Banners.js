@@ -11,6 +11,8 @@ function BigBannerInfo({ name, imgLink, textColor, linkText, linkPage, linkId })
 			{linkText &&
 				<div className="big-banner-button">
 					<Button
+						actionComp={"BigBanner"}
+						actionName={`Entra ${name}`}
 						borderColor={textColor}
 						color={textColor}
 					>
@@ -39,6 +41,8 @@ function SmallBanner({ name, label, imgLink, bgColor, textColor, linkText, linkP
 					<img src={publicPath(imgLink)} alt={name} />
 				</div>
 				<Button
+					actionComp={"SmallBanner"}
+					actionName={`Entra ${name}`}
 					borderColor={textColor}
 					color={textColor}
 				>

@@ -4,8 +4,8 @@ import { publicPath } from '../helpers'
 
 import './highlightbox.css'
 
-const HighlightBoxInfo = ({ title, subTitle, bgColor, textColor, linkTextColor, linkBgColor, linkText, linkFile, linkWeb }) => (
-	<div className="highlightbox"
+const HighlightBoxInfo = ({ id, title, subTitle, bgColor, textColor, linkTextColor, linkBgColor, linkText, linkFile, linkWeb }) => (
+	<div id={id} className="highlightbox"
 		style={{ backgroundColor: bgColor, color: textColor }}
 	>
 		<h2>{title}</h2>
@@ -30,6 +30,7 @@ const HighlightBoxInfo = ({ title, subTitle, bgColor, textColor, linkTextColor, 
 
 const HighlightBox = ({ data }) => (
 	<HighlightBoxInfo
+		id={data.id}
 		title={data.title}
 		subTitle={data.sub_title}
 		bgColor={data.bg_color}

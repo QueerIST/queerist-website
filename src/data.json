@@ -25,8 +25,8 @@
 				"img_link": "assets/paq/conversas2_wide.png",
 				"text_color": "white",
 				"link_text": "Ouvir conversas",
-				"link_page": "/projetos",
-				"link_id": "paq"
+				"link_page": "/projetos/paq",
+				"link_id": "igtv"
 			},
 			"small_banners": [
 				{
@@ -124,37 +124,37 @@
 			},
 			{
 				"name": "#orgulho",
-				"bg_color": "aquamarine",
+				"bg_color": "#75e275",
 				"text": "A equipa do Orgulho vai promover o orgulho dando a conhecer a nossa mensagem em colaboração com outras associações, fazendo a nossa representação em eventos como o Arraial Pride, Marcha do Orgulho e a Receção aos Novos Alunos."
 			},
 			{
 				"name": "#qultura",
-				"bg_color": "aquamarine",
+				"bg_color": "#fffa51",
 				"text": "A equipa da Qultura vai promover o conhecimento e reflexão cultural ao organizar sessões e ciclos de cinema, idas coletivas a eventos culturais, sessões de partilha cultural, também criando cultura ao dinamizar um programa de rádio."
 			},
 			{
 				"name": "#comunicação",
-				"bg_color": "aquamarine",
+				"bg_color": "#ff985c",
 				"text": "A equipa de Comunicação é responsável por interagir com a comunidade e divulgar eventos através das redes sociais, da newsletter e do design de posters e material promocional. Faz ainda este site!"
 			},
 			{
-				"name": "#tesouraria",
-				"bg_color": "aquamarine",
-				"text": "A equipa da Tesouraria mantém o QueerIST a funcionar contra todos os desafios, arranja o nosso maravilhoso merch e ajuda a financiar e planear todos os nossos eventos."
+				"name": "#recreativa",
+				"bg_color": "#ff8bc4",
+				"text": "A equipa da Recreativa trata da realização de eventos como churrascos, piqueniques e PubCrawls onde é priorizado o encontro e socialização entre os membros da nossa comunidade."
 			},
 			{
-				"name": "#recreativa",
-				"bg_color": "aquamarine",
-				"text": "A equipa da Recreativa trata da realização de eventos como churrascos, piqueniques e PubCrawls onde é priorizado o encontro e socialização entre os membros da nossa comunidade."
+				"name": "#tesouraria",
+				"bg_color": "#de68ff",
+				"text": "A equipa da Tesouraria mantém o QueerIST a funcionar contra todos os desafios, arranja o nosso maravilhoso merch e ajuda a financiar e planear todos os nossos eventos."
 			}
 		],
 		"highlightbox": {
 			"title": "Queres ajudar ou saber mais?",
 			"sub_title": "Envia-nos uma mensagem pelas nossas redes sociais, um e-mail, ou aparece na nossa sala!",
-			"bg_color": "maroon",
+			"bg_color": "cadetblue",
 			"text_color": "white",
-			"link_text_color": "black",
-			"link_bg_color": "burlywood",
+			"link_text_color": "white",
+			"link_bg_color": "#6b2737",
 			"link_text": "Consulta o nosso regulamento",
 			"link_file": "files/Regulamentos_QueerIST_19-20.pdf"
 		}
@@ -1139,6 +1139,7 @@
 					}
 				],
 				"highlightbox": {
+					"id": "igtv",
 					"title": "Queres conhecer melhor es artistas?",
 					"sub_title": "Em breve teremos aqui uma lista mais detalhada, mas por enquanto poder ver algumas Conversas.",
 					"bg_color": "#7f3f98",

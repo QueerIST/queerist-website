@@ -15,7 +15,6 @@ AOS.init({
 });
 
 ReactGA.initialize(process.env.REACT_APP_GA_CODE, {
-	debug: true,
 	gaOptions: {
 		siteSpeedSampleRate: 100
 	}

@@ -32,7 +32,7 @@
 }
 
 .event-gallery::-webkit-scrollbar {
-	width: 1vw;
+	width: 0.5em;
 }
 
 .event-gallery::-webkit-scrollbar-thumb {
@@ -48,6 +48,7 @@
 	width: -webkit-fill-available;
 	margin: 5px 20px;
 	align-items: center;
+	text-align: center;
 	justify-content: center;
 	background-color: white;
 	color: black;

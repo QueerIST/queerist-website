@@ -76,6 +76,7 @@
 }
 
 .tile-info-text {
+	box-sizing: border-box;
 	flex-direction: column;
 	padding: 3% 0;
 }
@@ -126,6 +127,7 @@
 	height: 100%;
 	align-self: center;
 	position: absolute;
+	box-sizing: content-box;
 }
 
 .page-tile-info>div>* {

@@ -21,6 +21,7 @@
 }
 
 .textblock-child:last-child {
+	align-items: flex-start;
 	align-self: center;
 }
 

@@ -32,7 +32,7 @@ const EventGalleryItem = ({ name, description, open, date, place, imgLink, link 
 			<h3>{name}</h3>
 			<span className="event-gallery-item-launch">
 				<p>{date} @ {place}</p>
-				<a href={link} onClick={() => handleClickEventLink(name)}> <Launch /></a>
+				<a href={link} target="_blank" rel="noopener noreferrer" onClick={() => handleClickEventLink(name)}> <Launch /></a>
 			</span>
 			{/* <p>{description}</p> */}
 		</div>

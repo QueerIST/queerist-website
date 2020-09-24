@@ -46,7 +46,7 @@
 					"bg_color": "white",
 					"text_color": "#364153",
 					"link_text": "Ver catálogo",
-					"link_page": "/projetos",
+					"link_page": "/projetos/",
 					"link_id": "biblioteca"
 				},
 				{
@@ -56,7 +56,7 @@
 					"bg_color": "#232323",
 					"text_color": "white",
 					"link_text": "Ouvir podcast",
-					"link_page": "/projetos",
+					"link_page": "/projetos/",
 					"link_id": "radio"
 				}
 			]

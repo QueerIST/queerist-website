@@ -11,11 +11,11 @@ const handleClickLink = (name) => {
 	})
 }
 
-const Icon = ({ name, link, imgLink }) => (
+const Icon = ({ name, link, logoLink }) => (
 	<li className="lists-iconlist-icon">
 		<a href={link} onClick={() => handleClickLink(name)}>
 			<div className="lists-iconlist-icon-img">
-				{imgLink && <img src={publicPath(imgLink)} alt={name} />}
+				{logoLink && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
 			</div>
 			<h4>{name}</h4>
 		</a>
@@ -46,7 +46,7 @@ const IconList = ({ data }) => (
 				key={i}
 				name={icon.name}
 				link={icon.link}
-				imgLink={icon.img_link}
+				logoLink={icon.logo_link}
 			/>
 		))}
 	</List>

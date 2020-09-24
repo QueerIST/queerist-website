@@ -5,7 +5,7 @@ import './pagecover.css'
 function PageBackground({ name, description, bgColor, textColor, isSubPage, logoLink }) {
 	return (
 		<div className="page-background" style={{ backgroundColor: bgColor, color: textColor }}>
-			{isSubPage && logoLink && <img src={publicPath(logoLink)} alt={name} />}
+			{isSubPage && logoLink && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
 			<h1>{name}</h1>
 			{!isSubPage && <p>{description}</p>}
 		</div>

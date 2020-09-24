@@ -13,6 +13,7 @@ const Page = ({ data, location, children }) => (
 			{/* HTML Meta Tags */}
 			{!data.home && <title>{data.name}</title>}
 			<meta name="description" content={data.description} />
+			<link rel="canonical" href={fullPathSlashless(location.pathname)} />
 
 			{/* Google / Search Engine Tags */}
 			<meta itemprop="name" content={data.name} />

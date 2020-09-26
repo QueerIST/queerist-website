@@ -3,6 +3,7 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
+	overflow-y: auto;
 	overflow-y: overlay;
 	position: absolute;
 	display: flex;
@@ -12,6 +13,8 @@
 	padding: 0;
 	align-items: flex-start;
 	transition: left 1s, top 1s;
+	scrollbar-color: #F5F5F5 transparent;
+	scrollbar-width: thin;
 }
 
 .event-gallery.closed {
@@ -45,7 +48,7 @@
 	flex: 0 0 auto;
 	display: flex;
 	flex-direction: row;
-	width: -webkit-fill-available;
+	width: stretch;
 	margin: 5px 20px;
 	align-items: center;
 	text-align: center;

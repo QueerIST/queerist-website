@@ -46,8 +46,8 @@
 					"bg_color": "white",
 					"text_color": "#364153",
 					"link_text": "Ver catálogo",
-					"link_page": "/projetos/",
-					"link_id": "biblioteca"
+					"link_page": "/projetos/biblioteca",
+					"link_id": ""
 				},
 				{
 					"name": "Zero Preconceitos",
@@ -75,7 +75,7 @@
 	"about_page": {
 		"id": "sobre",
 		"name": "Sobre",
-		"description": "Somos um grupo de estudantes do Técnico que nasceu em 2017, e trabalhamos, em equipa, para criar uma comunidade mais inclusiva e tolerante. Junta-te!",
+		"description": "Somos um grupo de estudantes do Técnico que nasceu em 2017, e trabalhamos, em equipa, para promover a aceitação e uma comunidade mais inclusiva. Junta-te!",
 		"img_link": "assets/sala.jpg",
 		"bg_color": "var(--yellow-color)",
 		"separator": "Conhece as nossas equipas!",
@@ -1041,11 +1041,57 @@
 								"link": "https://www.facebook.com/events/2463456507242631/"
 							},
 							{
+								"name": "Now Sissy That Walk - Festa da MOL",
+								"img_link": "assets/mol/nstw19.jpg",
+								"date": "29 jun 19, 23h",
+								"place": "Titanic Sur Mer",
+								"link": "https://www.facebook.com/events/350255902352505/"
+							},
+							{
 								"name": "20ª Marcha do Orgulho LGBTI+ de Lisboa",
 								"img_link": "assets/mol/mol20.jpg",
 								"date": "29 jun 19, 17h",
 								"place": "Jardim do Príncipe Real",
 								"link": "https://www.facebook.com/events/2454153327942938/"
+							},
+							{
+								"name": "Queers Just Wanna Have Funds - 20 Years Edition",
+								"img_link": "assets/mol/qjwhf19.jpg",
+								"date": "24 mai 19, 23h",
+								"place": "Titanic Sur Mer",
+								"link": "https://www.facebook.com/events/2163074990413049/"
+							}
+						]
+					},
+					{
+						"id": "2018",
+						"name": "Marcha do Orgulho LGBTI+ de Lisboa 2018",
+						"description": "Na sua 19ª edição, a MOL abraça a inclusão e a representatividade das pessoas intersexo, pelo que o evento passa a chamar-se Marcha do Orgulho LGBTI+.",
+						"see_more_text": "Ver celebrações",
+						"img_link": "assets/mol/mol19.jpg",
+						"bg_color": "#d6e497",
+						"text_color": "#523759",
+						"happenings": [
+							{
+								"name": "Now Sissy That Walk - Festa da MOL",
+								"img_link": "assets/mol/nstw18.jpg",
+								"date": "16 jun 18, 22h",
+								"place": "Rive Rouge",
+								"link": "https://www.facebook.com/events/1782726818507640/"
+							},
+							{
+								"name": "19ª Marcha do Orgulho LGBTI+ de Lisboa",
+								"img_link": "assets/mol/mol19.jpg",
+								"date": "16 jun 18, 17h",
+								"place": "Jardim do Príncipe Real",
+								"link": "https://www.facebook.com/events/233522320534598/"
+							},
+							{
+								"name": "Queers Just Wanna Have Funds",
+								"img_link": "assets/mol/qjwhf18.jpg",
+								"date": "30 mai 18, 23h",
+								"place": "Titanic Sur Mer",
+								"link": "https://www.facebook.com/events/166315627382531/"
 							}
 						]
 					}
@@ -1054,7 +1100,7 @@
 			{
 				"id": "biblioteca",
 				"name": "Biblioteca do QueerIST",
-				"see_more_text": "Consultar catálogo",
+				"see_more_text": "Conhecer arquivo",
 				"description": "Biblioteca de temática queer que acolhe obras de relevância e disponibiliza a quem não consiga ter acesso às mesmas",
 				"img_link": "assets/biblioteca/biblioteca.jpg",
 				"logo_link": "assets/biblioteca/bibli.png",

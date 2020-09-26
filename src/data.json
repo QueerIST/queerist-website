@@ -1117,6 +1117,17 @@
 					],
 					"bg_color": "#2c5372",
 					"text_color": "white",
+					"link_text": "Ler Carta de Direitos e Deveres",
+					"link_file": "files/Carta de Direitos e Deveres - Biblioteca QueerIST.pdf"
+				},
+				"highlightbox": {
+					"id": "catalogo",
+					"title": "Queres requisitar um livro?",
+					"sub_title": "Temos uma coleção online e fisica de livros e obras queer para requisitares e devorares!",
+					"bg_color": "#cecece",
+					"text_color": "#364153",
+					"link_text_color": "white",
+					"link_bg_color": "#62171e",
 					"link_text": "Consultar catálogo",
 					"link_web": "https://www.librarycat.org/lib/queerist"
 				},

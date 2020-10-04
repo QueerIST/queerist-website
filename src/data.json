@@ -22,11 +22,11 @@
 		"banners": {
 			"big_banner": {
 				"name": "conversas",
-				"img_link": "assets/paq/conversas2_wide.png",
+				"img_link": "assets/apresentacao/out20_b.png",
 				"text_color": "white",
-				"link_text": "Ouvir conversas",
-				"link_page": "/projetos/paq",
-				"link_id": "igtv"
+				"link_text": "Saber mais",
+				"link_page": "/eventos",
+				"link_id": "apresentacao"
 			},
 			"small_banners": [
 				{

@@ -493,6 +493,39 @@
 				]
 			},
 			{
+				"id": "apresentacao",
+				"name": "Sessões de Apresentação",
+				"description": "Uma conversa detalhada sobre o funcionamento do QueerIST, com quem o faz e para quem quer saber mais ou ajudar. Vem descobrir como podes dar o teu contributo!",
+				"see_more_text": "Receber briefing",
+				"img_link": "assets/apresentacao/sess.jpg",
+				"logo_link": "assets/apresentacao/ap.gif",
+				"bg_color": "mediumpurple",
+				"text_color": "white",
+				"happenings": [
+					{
+						"name": "Vem conhecer o QueerIST! 2020",
+						"img_link": "assets/apresentacao/out20.png",
+						"date": "15 out 20, 17h",
+						"place": "Sala Zoom",
+						"link": "https://www.facebook.com/events/778014776368299/"
+					},
+					{
+						"name": "Vem conhecer-nos! 2019 + Piquenique",
+						"img_link": "assets/apresentacao/out19.jpg",
+						"date": "02 out 19, 17h30",
+						"place": "V1.09",
+						"link": "https://www.facebook.com/events/2337250299663687/"
+					},
+					{
+						"name": "Vem conhecer o QueerIST! 2019",
+						"img_link": "assets/apresentacao/fev19.jpg",
+						"date": "20 fev 19, 17h",
+						"place": "V1.06",
+						"link": "https://www.facebook.com/events/1419581748178633/"
+					}
+				]
+			},
+			{
 				"id": "qultura",
 				"name": "Sessões de Qultura",
 				"description": "A oportunidade de descobrir e partilhar experiências culturais. Traz o que mais te inspira: livros, revistas, fotografias, pinturas, entre outros; e vem trocar experiências!",

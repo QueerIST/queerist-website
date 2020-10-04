@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/queerist-website/static/css/main.59851c9f.chunk.css",
-    "main.js": "/queerist-website/static/js/main.9b63499f.chunk.js",
-    "main.js.map": "/queerist-website/static/js/main.9b63499f.chunk.js.map",
+    "main.css": "/queerist-website/static/css/main.b1dc3ca6.chunk.css",
+    "main.js": "/queerist-website/static/js/main.43b32249.chunk.js",
+    "main.js.map": "/queerist-website/static/js/main.43b32249.chunk.js.map",
     "runtime-main.js": "/queerist-website/static/js/runtime-main.c82093ef.js",
     "runtime-main.js.map": "/queerist-website/static/js/runtime-main.c82093ef.js.map",
     "static/css/2.4707e12a.chunk.css": "/queerist-website/static/css/2.4707e12a.chunk.css",
-    "static/js/2.e73b18d3.chunk.js": "/queerist-website/static/js/2.e73b18d3.chunk.js",
-    "static/js/2.e73b18d3.chunk.js.map": "/queerist-website/static/js/2.e73b18d3.chunk.js.map",
+    "static/js/2.a22e76a5.chunk.js": "/queerist-website/static/js/2.a22e76a5.chunk.js",
+    "static/js/2.a22e76a5.chunk.js.map": "/queerist-website/static/js/2.a22e76a5.chunk.js.map",
     "index.html": "/queerist-website/index.html",
-    "precache-manifest.bab8de4e54c52b9f6e2adc6fc0a2041e.js": "/queerist-website/precache-manifest.bab8de4e54c52b9f6e2adc6fc0a2041e.js",
+    "precache-manifest.e6b9d6fc4a5303f72c2352404bf44990.js": "/queerist-website/precache-manifest.e6b9d6fc4a5303f72c2352404bf44990.js",
     "service-worker.js": "/queerist-website/service-worker.js",
     "static/css/2.4707e12a.chunk.css.map": "/queerist-website/static/css/2.4707e12a.chunk.css.map",
-    "static/css/main.59851c9f.chunk.css.map": "/queerist-website/static/css/main.59851c9f.chunk.css.map",
-    "static/js/2.e73b18d3.chunk.js.LICENSE.txt": "/queerist-website/static/js/2.e73b18d3.chunk.js.LICENSE.txt",
+    "static/css/main.b1dc3ca6.chunk.css.map": "/queerist-website/static/css/main.b1dc3ca6.chunk.css.map",
+    "static/js/2.a22e76a5.chunk.js.LICENSE.txt": "/queerist-website/static/js/2.a22e76a5.chunk.js.LICENSE.txt",
     "static/media/Cores fundo claro.png": "/queerist-website/static/media/Cores fundo claro.5e63cbc1.png",
     "static/media/email.c7d69bb5.svg": "/queerist-website/static/media/email.c7d69bb5.svg",
     "static/media/expand.bb158ab6.svg": "/queerist-website/static/media/expand.bb158ab6.svg",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.c82093ef.js",
     "static/css/2.4707e12a.chunk.css",
-    "static/js/2.e73b18d3.chunk.js",
-    "static/css/main.59851c9f.chunk.css",
-    "static/js/main.9b63499f.chunk.js"
+    "static/js/2.a22e76a5.chunk.js",
+    "static/css/main.b1dc3ca6.chunk.css",
+    "static/js/main.43b32249.chunk.js"
   ]
 }

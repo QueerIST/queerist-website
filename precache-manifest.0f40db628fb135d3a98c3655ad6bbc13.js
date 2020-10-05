@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fd8f3c91364e1d33e76c14d0753d2e98",
+    "revision": "a5719407d28146202896aa719acf0ca9",
     "url": "/queerist-website/index.html"
   },
   {
-    "revision": "e33dec93c77706582c03",
+    "revision": "b63c7375fccfbe5ae338",
     "url": "/queerist-website/static/css/2.4707e12a.chunk.css"
   },
   {
-    "revision": "3857316e091d53d31add",
+    "revision": "8e6ec244af8080cbe40c",
     "url": "/queerist-website/static/css/main.b1dc3ca6.chunk.css"
   },
   {
-    "revision": "e33dec93c77706582c03",
-    "url": "/queerist-website/static/js/2.a22e76a5.chunk.js"
+    "revision": "b63c7375fccfbe5ae338",
+    "url": "/queerist-website/static/js/2.e73b18d3.chunk.js"
   },
   {
     "revision": "1adb110813a30163ca679a14e0de12c3",
-    "url": "/queerist-website/static/js/2.a22e76a5.chunk.js.LICENSE.txt"
+    "url": "/queerist-website/static/js/2.e73b18d3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3857316e091d53d31add",
-    "url": "/queerist-website/static/js/main.43b32249.chunk.js"
+    "revision": "8e6ec244af8080cbe40c",
+    "url": "/queerist-website/static/js/main.a60df2c5.chunk.js"
   },
   {
     "revision": "d1f6f5d3e44d3a1f6f3e",

@@ -1179,7 +1179,7 @@
 					"text": [
 						"A Biblioteca do QueerIST é uma biblioteca especializada de temática LGBTI+ que preserva o património do QueerIST e acolhe obras de relevância para a sua comunidade, através da sua coleção permanente e de coleções disponibilizadas por membros e pessoas amigas do QueerIST.",
 						"A Biblioteca tem a missão de preservar, divulgar e disseminar obras de temática queer a quem não consiga ter acesso às mesmas, em particular estudantes do Técnico, outras faculdades, jovens e público em geral.",
-						"Para requisitar um livro, basta consultares o catálogo, escolheres e fazeres o pedido lá, e vires à nossa sala buscar num horário acordado! Se tiveres livros em casa, podes também cedê-los à nossa Biblioteca."
+						"Para requisitar um livro, basta consultares o catálogo, escolheres e fazeres o pedido lá, e vires buscar num horário e local acordado! Se tiveres livros em casa, podes também cedê-los à nossa Biblioteca."
 					],
 					"bg_color": "#2c5372",
 					"text_color": "white",
@@ -1193,9 +1193,28 @@
 					"bg_color": "#cecece",
 					"text_color": "#364153",
 					"link_text_color": "white",
-					"link_bg_color": "#62171e",
+					"link_bg_color": "#d8315b",
 					"link_text": "Consultar catálogo",
 					"link_web": "https://www.librarycat.org/lib/queerist"
+				},
+				"text_block_2": {
+					"id": "faq",
+					"title": "faq e contactos",
+					"text": [
+						"🧐 Tenho de ser estudante do Técnico para pedir um livro?",
+						"🙋 Não! Qualquer pessoa pode requisitar livros da nossa coleção. Temos algumas parcerias com colectivos queer noutras faculdades, e aceitamos requisições de outras bibliotecas.",
+						"🧐 Como funciona o serviço de empréstimo atualmente?",
+						"🙋 É simples: consulta o nosso catálogo online e clica no botão para requisitar. Preenche o formulário para marcar connosco um dia e hora para receberes a tua requisição.",
+						"🧐 O que significa ceder uma obra à biblioteca?",
+						"🙋 Significa que os livros continuam a ser teus e poderás reavê-los quando queiras. Só tens de nos contactar! Ceder obras de temática queer é muito fácil e ajuda-nos na nossa missão.",
+						"🧐 Posso doar livros de forma permanente?",
+						"🙋 Sim! Agradecíamos imenso se quiseres doar livros para ficarem nossos. Se não tiveres ideias, pede-nos a nossa lista de obras que gostávamos de ter.",
+						"Para mais dúvidas, contacta-nos pelo e-mail da biblioteca no link acima!"
+					],
+					"bg_color": "#575b53",
+					"text_color": "#cbd4c2",
+					"link_text": "Enviar e-mail para a biblioteca",
+					"link_web": "mailto:biblioteca.armario@sapo.pt"
 				},
 				"separator_events": "Às vezes damos um saltinho a outros lados",
 				"events": [

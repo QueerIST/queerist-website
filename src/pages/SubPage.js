@@ -10,6 +10,7 @@ const SubPage = ({ id, parentData }) => {
 			{data.icons && <IconList data={data.icons} />}
 			<TextBlock data={data.text_block} />
 			{data.highlightbox && <HighlightBox data={data.highlightbox} />}
+			{data.text_block_2 && <TextBlock data={data.text_block_2} small />}
 			{data.events && <>
 				<Separator data={data.separator_events} />
 				{data.events.map(

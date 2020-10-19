@@ -910,6 +910,39 @@
 				]
 			},
 			{
+				"id": "discord",
+				"name": "Servidor de Discord",
+				"see_more_text": "Juntar-me ao servidor",
+				"description": "A sala online do QueerIST, mas onde há sempre algo diferente a acontecer, a todas as horas, e para toda a gente",
+				"img_link": "assets/discord/discord.jpg",
+				"logo_link": "assets/discord/discord.png",
+				"img_bg_color": "#2C2F33",
+				"bg_color": "#7289DA",
+				"text_color": "white",
+				"text_block": {
+					"id": "info",
+					"title": "servidor para toda a gente",
+					"text": [
+						"Nascido para dar resposta à necessidade de uma alternativa à sala física, o nosso servidor de Discord é agora o local de encontro e convívio de toda e qualquer gente que queira pertencer a um ambiente inclusivo!",
+						"Além de plataforma para diversas conversas, partilha de memes, jogos e watchparties random, é também palco para a maior parte dos eventos oficiais do QueerIST atualmente.",
+						"É a coisa mais ativa que poderás apanhar, pois está sempre algo a acontecer! ⌚"
+					],
+					"bg_color": "#23272A",
+					"text_color": "white"
+				},
+				"highlightbox": {
+					"id": "link",
+					"title": "Queres entrar no nossa sala online?",
+					"sub_title": "Apresenta-te quando chegares (ou não). Mas é tudo gente simpática!",
+					"bg_color": "#99AAB5",
+					"text_color": "#292841",
+					"link_text_color": "white",
+					"link_bg_color": "#43b581",
+					"link_text": "Juntar-me ao servidor",
+					"link_web": "https://discord.gg/kKK8ykr"
+				}
+			},
+			{
 				"id": "raqul",
 				"name": "Rede de Ação Queer Universitária de Lisboa",
 				"see_more_text": "Explorar Lisboa",

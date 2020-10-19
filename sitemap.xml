@@ -9,67 +9,77 @@
 
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/</loc>
-  <lastmod>2020-09-24T11:57:10+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:43+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/sobre</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/eventos</loc>
-  <lastmod>2020-09-24T11:57:10+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/projetos/</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://queerist.tecnico.ulisboa.pt/projetos/paq</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>http://queerist.tecnico.ulisboa.pt/projetos/discord</loc>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://queerist.tecnico.ulisboa.pt/projetos/biblioteca</loc>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/files/Regulamentos_QueerIST_19-20.pdf</loc>
-  <lastmod>2020-09-16T22:17:56+00:00</lastmod>
+  <lastmod>2020-10-04T23:39:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/projetos/jornadas</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/projetos/radio</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/projetos/raqul</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/projetos/mol</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://queerist.tecnico.ulisboa.pt/projetos/biblioteca</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
+  <loc>http://queerist.tecnico.ulisboa.pt/projetos/paq</loc>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://queerist.tecnico.ulisboa.pt/projetos/linguagem</loc>
-  <lastmod>2020-09-24T11:57:11+00:00</lastmod>
+  <lastmod>2020-10-19T15:39:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://queerist.tecnico.ulisboa.pt/files/Carta%20de%20Direitos%20e%20Deveres%20-%20Biblioteca%20QueerIST.pdf</loc>
+  <lastmod>2020-10-04T23:39:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
   <loc>http://queerist.tecnico.ulisboa.pt/files/Guia%20Pr%C3%A1tico%20Para%20Um%20Portugu%C3%AAs%20Inclusivo.pdf</loc>
-  <lastmod>2020-09-16T22:17:56+00:00</lastmod>
+  <lastmod>2020-10-04T23:39:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 

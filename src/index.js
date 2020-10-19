@@ -22,7 +22,7 @@ ReactGA.initialize(process.env.REACT_APP_GA_CODE, {
 
 const history = createBrowserHistory()
 const analyticsHistory = location => {
-	ReactGA.set({ page: location.pathname + location.search }); // Update the user's current page
+	ReactGA.set({ page: location.pathname + location.hash }); // Update the user's current page
 	ReactGA.pageview(location.pathname); // Record a pageview for the given page
 }
 

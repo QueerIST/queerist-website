@@ -75,7 +75,7 @@
 	"about_page": {
 		"id": "sobre",
 		"name": "Sobre",
-		"description": "Somos um grupo de estudantes do Técnico que nasceu em 2017, e trabalhamos, em equipa, para promover a aceitação e uma comunidade mais inclusiva. Junta-te!",
+		"description": "Somos um grupo de estudantes do Técnico que nasceu em 2017 e trabalhamos, em equipa, para promover a aceitação e uma comunidade mais inclusiva. Junta-te!",
 		"img_link": "assets/sala.jpg",
 		"bg_color": "var(--yellow-color)",
 		"separator": "Conhece as nossas equipas!",
@@ -95,8 +95,8 @@
 			"title_color": "var(--blue-color)",
 			"text_color": "black",
 			"link_bg_color": "lightseagreen",
-			"link_text": "Conhece a AEIST",
-			"link_web": "https://aeist.pt"
+			"link_text": "Consulta o nosso regulamento",
+			"link_file": "files/Regulamentos_QueerIST_19-20.pdf"
 		},
 		"text_block_2": {
 			"id": "manifesto",
@@ -149,14 +149,15 @@
 			}
 		],
 		"highlightbox": {
+			"id": "junta",
 			"title": "Queres ajudar ou saber mais?",
-			"sub_title": "Envia-nos uma mensagem pelas nossas redes sociais, um e-mail, ou aparece na nossa sala!",
+			"sub_title": "Estamos sempre de braços abertos. Envia-nos uma mensagem, um e-mail, ou aparece na nossa sala!",
 			"bg_color": "cadetblue",
 			"text_color": "white",
 			"link_text_color": "white",
 			"link_bg_color": "#6b2737",
-			"link_text": "Consulta o nosso regulamento",
-			"link_file": "files/Regulamentos_QueerIST_19-20.pdf"
+			"link_text": "Junta-te ao QueerIST!",
+			"link_web": "https://forms.gle/EE5Yg4gHqecHWM5v7"
 		}
 	},
 	"events_page": {

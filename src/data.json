@@ -395,6 +395,13 @@
 				"text_color": "white",
 				"happenings": [
 					{
+						"name": "Vamos jogar Among Us!",
+						"img_link": "assets/quartas/qq18.png",
+						"date": "21 out 20, 21h30",
+						"place": "Servidor Discord do QueerIST",
+						"link": "https://www.facebook.com/events/901341073729922/"
+					},
+					{
 						"name": "Vamos jogar Jackbox!",
 						"img_link": "assets/quartas/qq17.png",
 						"date": "27 mai 20, 21h",

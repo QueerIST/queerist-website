@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, PageCover, Tile, Separator } from '../components'
+import { Page, PageCover, Tile, Separator, HighlightBox } from '../components'
 
 const Events = ({ data }) => (
 	<Page data={data}>
@@ -10,6 +10,7 @@ const Events = ({ data }) => (
 				<Tile key={i} n={i} data={event} />
 			)
 		)}
+		<HighlightBox data={data.highlightbox} />
 	</Page>
 )
 

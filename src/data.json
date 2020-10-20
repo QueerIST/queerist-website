@@ -62,14 +62,15 @@
 			]
 		},
 		"highlightbox": {
-			"title": "Não queres perder nenhum evento?",
-			"sub_title": "Adiciona o nosso calendário ao teu telemóvel!",
+			"id": "junta",
+			"title": "Queres ajudar ou saber mais?",
+			"sub_title": "Estamos sempre de braços abertos. Envia-nos uma mensagem, um e-mail, ou aparece na nossa sala!",
 			"bg_color": "#d33f49",
 			"text_color": "white",
 			"link_text_color": "white",
 			"link_bg_color": "#6c9a8b",
-			"link_text": "Subscrever calendário",
-			"link_web": "http://bit.ly/CalendarQueerIST"
+			"link_text": "Junta-te ao QueerIST!",
+			"link_web": "https://forms.gle/EE5Yg4gHqecHWM5v7"
 		}
 	},
 	"about_page": {
@@ -147,18 +148,7 @@
 				"bg_color": "#de68ff",
 				"text": "A equipa da Tesouraria mantém o QueerIST a funcionar contra todos os desafios, arranja o nosso maravilhoso merch e ajuda a financiar e planear todos os nossos eventos."
 			}
-		],
-		"highlightbox": {
-			"id": "junta",
-			"title": "Queres ajudar ou saber mais?",
-			"sub_title": "Estamos sempre de braços abertos. Envia-nos uma mensagem, um e-mail, ou aparece na nossa sala!",
-			"bg_color": "cadetblue",
-			"text_color": "white",
-			"link_text_color": "white",
-			"link_bg_color": "#6b2737",
-			"link_text": "Junta-te ao QueerIST!",
-			"link_web": "https://forms.gle/EE5Yg4gHqecHWM5v7"
-		}
+		]
 	},
 	"events_page": {
 		"name": "Eventos",
@@ -560,7 +550,17 @@
 					}
 				]
 			}
-		]
+		],
+		"highlightbox": {
+			"title": "Não queres perder nenhum evento?",
+			"sub_title": "Adiciona o nosso calendário ao teu telemóvel!",
+			"bg_color": "cadetblue",
+			"text_color": "white",
+			"link_text_color": "white",
+			"link_bg_color": "#6b2737",
+			"link_text": "Subscrever calendário",
+			"link_web": "http://bit.ly/CalendarQueerIST"
+		}
 	},
 	"projects_page": {
 		"id": "projetos",

@@ -21,12 +21,12 @@
 		},
 		"banners": {
 			"big_banner": {
-				"name": "quartas queer",
-				"img_link": "assets/quartas/qq18.png",
+				"name": "bly manor",
+				"img_link": "assets/cinema/cq1.png",
 				"text_color": "white",
 				"link_text": "Saber mais",
 				"link_page": "/eventos",
-				"link_id": "quartas"
+				"link_id": "cinema"
 			},
 			"small_banners": [
 				{
@@ -310,6 +310,13 @@
 				"text_color": "white",
 				"happenings": [
 					{
+						"name": "The Haunting of Bly Manor",
+						"img_link": "assets/cinema/cq1.png",
+						"date": "15, 22 e 29 nov 20, 18h",
+						"place": "Servidor Discord do QueerIST",
+						"link": "https://www.facebook.com/events/799529737260071/"
+					},
+					{
 						"name": "#CasaDoCais 2 Viewing Party + Q&A",
 						"img_link": "assets/cinema/c8.png",
 						"date": "20 fev 20, 21h",
@@ -384,6 +391,20 @@
 				"bg_color": "orange",
 				"text_color": "white",
 				"happenings": [
+					{
+						"name": "Vamos jogar ao STOP!",
+						"img_link": "assets/quartas/qq20.png",
+						"date": "18 nov 20, 21h",
+						"place": "Servidor Discord do QueerIST",
+						"link": "https://www.facebook.com/events/378844090030002/"
+					},
+					{
+						"name": "Vamos celebrar o Magusto!",
+						"img_link": "assets/quartas/qq19.png",
+						"date": "11 nov 20, 21h",
+						"place": "Instagram do QueerIST",
+						"link": "https://www.facebook.com/events/651655758857097/"
+					},
 					{
 						"name": "Vamos jogar Among Us!",
 						"img_link": "assets/quartas/qq18.png",
@@ -536,7 +557,7 @@
 						"name": "Vês Quem És?",
 						"img_link": "assets/qultura/q2.jpg",
 						"date": "29 nov 18, 17h",
-						"place": "Sala QueerIST",
+						"place": "Sala do QueerIST",
 						"description": "Qual é a representação que vês? Vês-te em filmes? Vês-te na música? Vês-te em livros? Nesta sessão convidamos-te a partilhar as maneiras como te vês ou gostavas de ver na cultura que te rodeia.\nTraz clips de filmes, música, livros ou o que quiseres e vem falar sobre representação nos media, queerbaiting, fetishização gay no mundo de fanfiction, etc.\nHaverá também uma pequena coleção de livros queer (YA, romance, etc). Poderás também deixar no nosso repositório livros teus se quiseres.",
 						"link": "https://www.facebook.com/events/547101252368581/"
 					},

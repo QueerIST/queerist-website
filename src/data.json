@@ -21,12 +21,12 @@
 		},
 		"banners": {
 			"big_banner": {
-				"name": "bly manor",
-				"img_link": "assets/cinema/cq1.png",
+				"name": "martinee banner",
+				"img_link": "assets/martinee/martinee_wide.png",
 				"text_color": "white",
 				"link_text": "Saber mais",
 				"link_page": "/eventos",
-				"link_id": "cinema"
+				"link_id": "martinee"
 			},
 			"small_banners": [
 				{
@@ -488,6 +488,25 @@
 						"date": "23 out 19, 17h",
 						"place": "Sala do QueerIST",
 						"link": "https://www.facebook.com/events/2774609029258017/"
+					}
+				]
+			},
+			{
+				"id": "martinee",
+				"name": "Martinée de Inverno",
+				"description": "Um final de tarde divertido onde podes melhorar as tuas bartending skills com boa música e o melhor ambiente! (mas em casa, porque frio)",
+				"see_more_text": "Descobre a noite",
+				"img_link": "assets/martinee/martinee_fundo.png",
+				"logo_link": "assets/martinee/copo.png",
+				"bg_color": "#0a0a16",
+				"text_color": "white",
+				"happenings": [
+					{
+						"name": "Workshop de Cocktails",
+						"img_link": "assets/martinee/martinee_wide.png",
+						"date": "10 dez 20, 19h",
+						"place": "Instagram do QueerIST",
+						"link": "https://www.facebook.com/events/1376696476031096/"
 					}
 				]
 			},

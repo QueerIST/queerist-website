@@ -21,12 +21,12 @@
 		},
 		"banners": {
 			"big_banner": {
-				"name": "martinee banner",
-				"img_link": "assets/martinee/martinee_wide.png",
+				"name": "minecraft banner",
+				"img_link": "assets/quartas/qq22.png",
 				"text_color": "white",
 				"link_text": "Saber mais",
 				"link_page": "/eventos",
-				"link_id": "martinee"
+				"link_id": "quartas"
 			},
 			"small_banners": [
 				{
@@ -310,6 +310,13 @@
 				"text_color": "white",
 				"happenings": [
 					{
+						"name": "Tangerine",
+						"img_link": "assets/cinema/cq2.png",
+						"date": "13 dez 20, 18h",
+						"place": "Servidor Discord do QueerIST",
+						"link": "https://www.facebook.com/events/422318875458352/"
+					},
+					{
 						"name": "The Haunting of Bly Manor",
 						"img_link": "assets/cinema/cq1.png",
 						"date": "15, 22 e 29 nov 20, 18h",
@@ -391,6 +398,20 @@
 				"bg_color": "orange",
 				"text_color": "white",
 				"happenings": [
+					{
+						"name": "Vem jogar Minecraft!",
+						"img_link": "assets/quartas/qq22.png",
+						"date": "27 jan 21, 21h",
+						"place": "Servidor Discord do QueerIST",
+						"link": "https://www.facebook.com/events/228215562280584/"
+					},
+					{
+						"name": "Vamos jogar Among Us!?",
+						"img_link": "assets/quartas/qq21.png",
+						"date": "2 dez 20, 21h30",
+						"place": "Servidor Discord do QueerIST",
+						"link": "https://www.facebook.com/events/1867523656720102/"
+					},
 					{
 						"name": "Vamos jogar ao STOP!",
 						"img_link": "assets/quartas/qq20.png",

@@ -47,6 +47,7 @@ class Header extends React.Component {
 							<NavLink className={"navlink" + menustatus} to="/sobre" onClick={() => this.handleClickLink('sobre')}>Sobre</NavLink>
 							<NavLink className={"navlink" + menustatus} to="/eventos" onClick={() => this.handleClickLink('eventos')}>Eventos</NavLink>
 							<NavLink className={"navlink" + menustatus} to="/projetos/" onClick={() => this.handleClickLink('projetos')}>Projetos</NavLink>
+							<a className={"navlink" + menustatus} href="https://queerist.tecnico.ulisboa.pt/blog/" onClick={() => this.handleClickLink('blog')}>Blog</a>
 							<a className={"navlink" + menustatus} href="http://eepurl.com/dnApYP" onClick={() => this.handleClickLink('newsletter')}>Newsletter</a>
 						</div>
 					</div>

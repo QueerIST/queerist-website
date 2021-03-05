@@ -21,12 +21,12 @@
 		},
 		"banners": {
 			"big_banner": {
-				"name": "minecraft banner",
-				"img_link": "assets/quartas/qq22.png",
+				"name": "apresentação banner",
+				"img_link": "assets/apresentacao/mar21.png",
 				"text_color": "white",
-				"link_text": "Saber mais",
+				"link_text": "Conhecer",
 				"link_page": "/eventos",
-				"link_id": "quartas"
+				"link_id": "apresentacao"
 			},
 			"small_banners": [
 				{
@@ -150,7 +150,7 @@
 				"bg_color": "#de68ff",
 				"text": "A equipa da Tesouraria mantém o QueerIST a funcionar contra todos os desafios, arranja o nosso maravilhoso merch e ajuda a financiar e planear todos os nossos eventos."
 			}
-		]
+			]
 		}
 	},
 	"events_page": {
@@ -564,6 +564,13 @@
 				"bg_color": "mediumpurple",
 				"text_color": "white",
 				"happenings": [
+					{
+						"name": "Já conheces o QueerIST! 2021",
+						"img_link": "assets/apresentacao/mar21.png",
+						"date": "10 mar 21, 17h30",
+						"place": "Sala Zoom",
+						"link": "https://www.facebook.com/events/335791634527423/"
+					},
 					{
 						"name": "Vem conhecer o QueerIST! 2020",
 						"img_link": "assets/apresentacao/out20.png",

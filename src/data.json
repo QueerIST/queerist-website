@@ -117,7 +117,9 @@
 				"img_link": "assets/objetivos.png"
 			}
 		},
-		"textboxs": [
+		"textboxs": {
+				"id": "equipas",
+				"boxes": [
 			{
 				"name": "#tertúlias",
 				"bg_color": "aquamarine",
@@ -149,6 +151,7 @@
 				"text": "A equipa da Tesouraria mantém o QueerIST a funcionar contra todos os desafios, arranja o nosso maravilhoso merch e ajuda a financiar e planear todos os nossos eventos."
 			}
 		]
+		}
 	},
 	"events_page": {
 		"name": "Eventos",

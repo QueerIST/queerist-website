@@ -33,8 +33,8 @@ const TextBox = ({ name, text, bgColor }) => (
 	</li>
 )
 
-const List = ({ children }) => (
-	<ul className="lists-listwrap">
+const List = ({ id, children }) => (
+	<ul id={id} className="lists-listwrap">
 		{children}
 	</ul>
 )
@@ -53,8 +53,8 @@ const IconList = ({ data }) => (
 )
 
 const TextBoxList = ({ data }) => (
-	<List>
-		{data.map((textbox, i) => (
+	<List id={data.id}>
+		{data.boxes.map((textbox, i) => (
 			<TextBox
 				key={i}
 				name={textbox.name}

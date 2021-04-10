@@ -21,12 +21,12 @@
 		},
 		"banners": {
 			"big_banner": {
-				"name": "apresentação banner",
-				"img_link": "assets/apresentacao/mar21.png",
+				"name": "quarta banner",
+				"img_link": "assets/quartas/qq23.png",
 				"text_color": "white",
-				"link_text": "Conhecer",
+				"link_text": "Jogar",
 				"link_page": "/eventos",
-				"link_id": "apresentacao"
+				"link_id": "quartas"
 			},
 			"small_banners": [
 				{
@@ -70,7 +70,7 @@
 			"link_text_color": "white",
 			"link_bg_color": "#6c9a8b",
 			"link_text": "Junta-te ao QueerIST!",
-			"link_web": "https://forms.gle/EE5Yg4gHqecHWM5v7"
+			"link_web": "https://form.jotform.com/202964047045353"
 		}
 	},
 	"about_page": {
@@ -97,7 +97,7 @@
 			"text_color": "black",
 			"link_bg_color": "lightseagreen",
 			"link_text": "Consulta o nosso regulamento",
-			"link_file": "files/Regulamentos_QueerIST_19-20.pdf"
+			"link_file": "files/Regulamentos_QueerIST_20-21.pdf"
 		},
 		"text_block_2": {
 			"id": "manifesto",
@@ -401,6 +401,13 @@
 				"bg_color": "orange",
 				"text_color": "white",
 				"happenings": [
+					{
+						"name": "Vem jogar Jackbox!",
+						"img_link": "assets/quartas/qq23.png",
+						"date": "7 abr 21, 21h",
+						"place": "Servidor Discord do QueerIST",
+						"link": "https://www.facebook.com/events/284412123204548/"
+					},
 					{
 						"name": "Vem jogar Minecraft!",
 						"img_link": "assets/quartas/qq22.png",
@@ -1258,7 +1265,8 @@
 					"text": [
 						"A Biblioteca do QueerIST é uma biblioteca especializada de temática LGBTI+ que preserva o património do QueerIST e acolhe obras de relevância para a sua comunidade, através da sua coleção permanente e de coleções disponibilizadas por membros e pessoas amigas do QueerIST.",
 						"A Biblioteca tem a missão de preservar, divulgar e disseminar obras de temática queer a quem não consiga ter acesso às mesmas, em particular estudantes do Técnico, outras faculdades, jovens e público em geral.",
-						"Para requisitar um livro, basta consultares o catálogo, escolheres e fazeres o pedido lá, e vires buscar num horário e local acordado! Se tiveres livros em casa, podes também cedê-los à nossa Biblioteca."
+						"Para requisitar um livro, basta consultares o catálogo, escolheres e fazeres o pedido lá, e vires buscar num horário e local acordado! Se tiveres livros em casa, podes também cedê-los à nossa Biblioteca.",
+						"E temos agora também um Blog da Biblioteca! Acede pelo link no topo da página."
 					],
 					"bg_color": "#2c5372",
 					"text_color": "white",

@@ -21,12 +21,12 @@
 		},
 		"banners": {
 			"big_banner": {
-				"name": "quarta banner",
-				"img_link": "assets/quartas/qq23.png",
+				"name": "tertulia banner",
+				"img_link": "assets/tertulias/c1.png",
 				"text_color": "white",
-				"link_text": "Jogar",
+				"link_text": "Participar na Conversa",
 				"link_page": "/eventos",
-				"link_id": "quartas"
+				"link_id": "tertulia"
 			},
 			"small_banners": [
 				{
@@ -169,6 +169,13 @@
 				"bg_color": "#6bcde7",
 				"text_color": "white",
 				"happenings": [
+					{
+						"name": "Catolicismo e Comunidade LGBTI+ // Conversa Colorida",
+						"img_link": "assets/tertulias/c1.png",
+						"date": "8 mai 21, 18h",
+						"place": "Sala Zoom",
+						"link": "https://www.facebook.com/events/306560251075876/"
+					},
 					{
 						"name": "Casas Arco-Íris",
 						"img_link": "assets/tertulias/t5.png",

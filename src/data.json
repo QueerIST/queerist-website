@@ -118,38 +118,38 @@
 			}
 		},
 		"textboxs": {
-				"id": "equipas",
-				"boxes": [
-			{
-				"name": "#tertúlias",
-				"bg_color": "aquamarine",
-				"text": "A equipa das Tertúlias é responsável por organizar eventos como conversas, debates, reflexões e conferências que informam e promovem o diálogo para toda a comunidade estudantil. Estas acontecem com uma periodicidade mensal."
-			},
-			{
-				"name": "#orgulho",
-				"bg_color": "#75e275",
-				"text": "A equipa do Orgulho vai promover o orgulho dando a conhecer a nossa mensagem em colaboração com outras associações, fazendo a nossa representação em eventos como o Arraial Pride, Marcha do Orgulho e a Receção aos Novos Alunos."
-			},
-			{
-				"name": "#qultura",
-				"bg_color": "#fffa51",
-				"text": "A equipa da Qultura vai promover o conhecimento e reflexão cultural ao organizar sessões e ciclos de cinema, idas coletivas a eventos culturais, sessões de partilha cultural, também criando cultura ao dinamizar um programa de rádio."
-			},
-			{
-				"name": "#comunicação",
-				"bg_color": "#ff985c",
-				"text": "A equipa de Comunicação é responsável por interagir com a comunidade e divulgar eventos através das redes sociais, da newsletter e do design de posters e material promocional. Faz ainda este site!"
-			},
-			{
-				"name": "#recreativa",
-				"bg_color": "#ff8bc4",
-				"text": "A equipa da Recreativa trata da realização de eventos como churrascos, piqueniques e PubCrawls onde é priorizado o encontro e socialização entre os membros da nossa comunidade."
-			},
-			{
-				"name": "#tesouraria",
-				"bg_color": "#de68ff",
-				"text": "A equipa da Tesouraria mantém o QueerIST a funcionar contra todos os desafios, arranja o nosso maravilhoso merch e ajuda a financiar e planear todos os nossos eventos."
-			}
+			"id": "equipas",
+			"boxes": [
+				{
+					"name": "#tertúlias",
+					"bg_color": "aquamarine",
+					"text": "A equipa das Tertúlias é responsável por organizar eventos como conversas, debates, reflexões e conferências que informam e promovem o diálogo para toda a comunidade estudantil. Estas acontecem com uma periodicidade mensal."
+				},
+				{
+					"name": "#orgulho",
+					"bg_color": "#75e275",
+					"text": "A equipa do Orgulho vai promover o orgulho dando a conhecer a nossa mensagem em colaboração com outras associações, fazendo a nossa representação em eventos como o Arraial Pride, Marcha do Orgulho e a Receção aos Novos Alunos."
+				},
+				{
+					"name": "#qultura",
+					"bg_color": "#fffa51",
+					"text": "A equipa da Qultura vai promover o conhecimento e reflexão cultural ao organizar sessões e ciclos de cinema, idas coletivas a eventos culturais, sessões de partilha cultural, também criando cultura ao dinamizar um programa de rádio."
+				},
+				{
+					"name": "#comunicação",
+					"bg_color": "#ff985c",
+					"text": "A equipa de Comunicação é responsável por interagir com a comunidade e divulgar eventos através das redes sociais, da newsletter e do design de posters e material promocional. Faz ainda este site!"
+				},
+				{
+					"name": "#recreativa",
+					"bg_color": "#ff8bc4",
+					"text": "A equipa da Recreativa trata da realização de eventos como churrascos, piqueniques e PubCrawls onde é priorizado o encontro e socialização entre os membros da nossa comunidade."
+				},
+				{
+					"name": "#tesouraria",
+					"bg_color": "#de68ff",
+					"text": "A equipa da Tesouraria mantém o QueerIST a funcionar contra todos os desafios, arranja o nosso maravilhoso merch e ajuda a financiar e planear todos os nossos eventos."
+				}
 			]
 		}
 	},
@@ -1407,7 +1407,7 @@
 					"title_color": "#9b59d0",
 					"link_bg_color": "#56b885",
 					"link_text": "Consultar gramática",
-					"link_file": "files/Guia Prático Para Um Português Inclusivo.pdf"
+					"link_file": "files/Guia Prático Para Um Português Inclusivo (versão 2).pdf"
 				}
 			}
 		]

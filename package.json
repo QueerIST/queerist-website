@@ -14,7 +14,7 @@
     "react-headroom": "^2.2.8",
     "react-helmet": "^6.1.0",
     "react-router-dom": "5.1",
-    "react-router-hash-link": "^1.2.1",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "^3.4.1",
     "standard": "^17.0.0",
     "svgo": "^2.8.0"

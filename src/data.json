@@ -172,14 +172,16 @@
 					{
 						"name": "Catolicismo e Comunidade LGBTI+ // Conversa Colorida",
 						"img_link": "assets/tertulias/c1.png",
-						"date": "8 mai 21, 18h",
+						"date": "2021-05-08",
+						"time": "18:00:00",
 						"place": "Sala Zoom",
 						"link": "https://www.facebook.com/events/306560251075876/"
 					},
 					{
 						"name": "Casas Arco-Íris",
 						"img_link": "assets/tertulias/t5.png",
-						"date": "13 dez 18, 17h30",
+						"date": "2018-12-13",
+						"time": "17:30:00",
 						"place": "V0.02",
 						"description": "Sabemos que ao longo dos anos o conceito de família tem evoluído mas de que forma? Quão diferente é a dinâmica familiar de um agregado com pais queer? E como é que pais não queer lidam com as necessidades dos seus filhos queer? Quais são as suas dificuldades e desafios?",
 						"link": "https://www.facebook.com/events/298131047703659/"
@@ -187,7 +189,8 @@
 					{
 						"name": "Faz-te Ouvir!",
 						"img_link": "assets/tertulias/t4.png",
-						"date": "22 nov 18, 18h",
+						"date": "2018-11-22",
+						"time": "18:00:00",
 						"place": "GA1",
 						"description": "O ativismo queer é das principais ferramentas que existem para a emancipação e luta na igualdade da comunidade queer, mas qual será a melhor forma de o fazer? Será que as marchas ainda fazem sentido?\nTentaremos responder a estas e várias outras questões sobre a história do ativismo, os movimentos Pride e até sobre que direitos têm atualmente que ser reclamados na nossa próxima tertúlia.",
 						"link": "https://www.facebook.com/events/1074556752718680/"
@@ -195,7 +198,8 @@
 					{
 						"name": "Let's Get In Drag",
 						"img_link": "assets/tertulias/t3.png",
-						"date": "07 mai 18, 17h",
+						"date": "2018-05-07",
+						"time": "17:00:00",
 						"place": "VA4",
 						"description": "Vamos falar sobre transformismo e a performance de género, sobre as suas histórias e origens, importância social ao longo dos tempos e relação com a teoria de género moderna.\nPara isto, contamos com conhecidos performers e estudiosos do tema, que nos vão apresentar a sua experiência e opinião!",
 						"link": "https://www.facebook.com/events/205847710193129/"
@@ -203,7 +207,8 @@
 					{
 						"name": "LGBTQuê",
 						"img_link": "assets/tertulias/t2.png",
-						"date": "10 abr 18, 17h",
+						"date": "2018-04-10",
+						"time": "17:00:00",
 						"place": "V1.10",
 						"description": "LGBTQIA+ é uma sigla que levanta bastantes questões: por um lado, pretende ser inclusiva e representativa, por outro, deixa muitos membros da comunidade pendurados num \"+\".\nÉ com estas questões em mente, que fazemos a nossa 2ª Tertúlia, onde vamos não só tentar respondê-las mas também levantar outras!\nPartindo de cada letra, vamos explorar os seus significados e a necessidade de se utilizar esta sigla para representar um grupo tão rico em pluralidade de identidades e vivências de pessoas.",
 						"link": "https://www.facebook.com/events/416288752150303/"
@@ -211,7 +216,8 @@
 					{
 						"name": "We're Here, We're Queer",
 						"img_link": "assets/tertulias/t1.png",
-						"date": "05 mar 18, 18h",
+						"date": "2018-03-05",
+						"time": "18:00:00",
 						"place": "Anfiteatro Abreu Faro",
 						"description": "Em outubro de 2017, surgiu um dos post mais comentados e polémicos no grupo do IST, relativo à criação do QueerIST. http://bit.ly/PostQueerIST \nTendo em conta esse post, iremos realizar a 1ª Tertúlia sobre a formação do QueerIST!\nOs comos e os porquês irão ser debatidos com o público e também com convidados especiais da ILGA e da rede ex aequo.",
 						"link": "https://www.facebook.com/events/416288752150303/"
@@ -231,21 +237,24 @@
 					{
 						"name": "4º Churrasco",
 						"img_link": "assets/churrasco/ch4.png",
-						"date": "05 dez 19, 19h",
+						"date": "2019-12-05",
+						"time": "19:00:00",
 						"place": "Espaço BBQ",
 						"link": "https://www.facebook.com/events/566118894216435/"
 					},
 					{
 						"name": "3º Churrasco",
 						"img_link": "assets/churrasco/ch3.png",
-						"date": "29 mai 19, 19h",
+						"date": "2019-05-29",
+						"time": "19:00:00",
 						"place": "Espaço BBQ",
 						"link": "https://www.facebook.com/events/2047408702226175/"
 					},
 					{
 						"name": "2º Churrasco",
 						"img_link": "assets/churrasco/ch2.png",
-						"date": "05 dez 18, 19h",
+						"date": "2018-12-05",
+						"time": "19:00:00",
 						"place": "Espaço BBQ",
 						"description": "O QueerIST faz um ano! Para o comemorar, junta-te a nós em mais uma edição do nosso épico churrasco :) Vem aproveitar as restantes horas de diversão antes da clausura dos exames para te divertires até te cansares! \nPrometemos uma noite de boa comida e bebida!\nPodes contar com a clássica bifana, mas também teremos alternativas vegan. Cerveja, sangria, shots e bebidas brancas! Traz pessoal contigo e vem experimentar os nossos shots temáticos que serão anunciados em breve!",
 						"link": "https://www.facebook.com/events/211007056464588/"
@@ -253,7 +262,8 @@
 					{
 						"name": "1º Churrasco",
 						"img_link": "assets/churrasco/ch1.png",
-						"date": "29 mai 18, 19h",
+						"date": "2018-05-29",
+						"time": "19:00:00",
 						"place": "Espaço BBQ",
 						"description": "Vem aproveitar o pouco tempo que te falta até te fechares a estudar para os exames! Aparece no 1º Churrasco do QueerIST! Prometemos-te uma playlist que fará dançar até os mais tímidos.\nPodes contar com a clássica bifana, mas também  teremos hambúrgueres vegan como alternativa. Cerveja, sangria, shots e bebidas brancas! Arranja alguém e vem experimentar o nosso Pack Shots Arco-Íris, 6 cores, 6 shots, 1 desafio: quantos bebes?",
 						"link": "https://www.facebook.com/events/372094889959942/"
@@ -273,21 +283,24 @@
 					{
 						"name": "4º PubCrawl",
 						"img_link": "assets/pubcrawl/pc4.png",
-						"date": "23 nov 19, 21h30",
+						"date": "2019-11-23",
+						"time": "21:30:00",
 						"place": "Praça Luís de Camões",
 						"link": "https://www.facebook.com/events/707402519781997/"
 					},
 					{
 						"name": "3º PubCrawl",
 						"img_link": "assets/pubcrawl/pc3.png",
-						"date": "11 jul 19, 21h30",
+						"date": "2019-07-11",
+						"time": "21:30:00",
 						"place": "Praça Luís de Camões",
 						"link": "https://www.facebook.com/events/447455356068072/"
 					},
 					{
 						"name": "2º PubCrawl",
 						"img_link": "assets/pubcrawl/pc2.png",
-						"date": "24 nov 18, 21h30",
+						"date": "2018-11-24",
+						"time": "21:30:00",
 						"place": "Praça Luís de Camões",
 						"description": "Se sentes que andas a estudar/trabalhar demais e que precisas da saída mais queer e divertida de sempre, então o dia pelo qual esperavas finalmente chegou!\nO plano é simples: durante a noite, vamos dar-te uma amostra dos melhores bares queer-friendly da cidade. Haverá um bar aberto e várias bebidas incluídas, para além de vários jogos!\nComo se isso não fosse suficiente, quem participar terá incluída entrada no Trumps, indiscutivelmente uma das melhores discotecas LGBT+ da cidade",
 						"link": "https://www.facebook.com/events/327110634748913/"
@@ -295,7 +308,8 @@
 					{
 						"name": "PubCrawl QueerIST + OutCiências",
 						"img_link": "assets/pubcrawl/pcout.png",
-						"date": "07 jul 18, 21h30",
+						"date": "2018-07-07",
+						"time": "21:30:00",
 						"place": "Praça Príncipe Real",
 						"description": "Para terminar o ano em grande, estamos a organizar um PubCrawl, o 1º evento conjunto entre o OutCiências e o Queer IST!\nVai ser o PubCrawl mais divertido e queer a que já foste! Inclui, entre muitas outras coisas maravilhosas, bar aberto e a entrada no Trumps. Não percas esta oportunidade!",
 						"link": "https://www.facebook.com/events/1850191985284416/"
@@ -303,7 +317,8 @@
 					{
 						"name": "1º PubCrawl",
 						"img_link": "assets/pubcrawl/pc1.png",
-						"date": "17 mai 18, 21h30",
+						"date": "2018-05-17",
+						"time": "21:30:00",
 						"place": "Praça Luís de Camões",
 						"description": "Pensado especialmente em ti para promover o convívio entre membros e amigos do QueerIST e aproximar à vida LGBT+ que existe em Lisboa!\nO plano é simples: durante a noite, vamos visitar diversos bares num percurso em que queremos incluir a melhor amostra de bares queer friendly da cidade. Em cada paragem e bar, vamos beber uma bebida e fazer vários jogos!\nDurante a noite toda, haverá um bar aberto e várias bebidas incluídas!",
 						"link": "https://www.facebook.com/events/256519388227636/"
@@ -322,28 +337,33 @@
 					{
 						"name": "Tangerine",
 						"img_link": "assets/cinema/cq2.png",
-						"date": "13 dez 20, 18h",
+						"date": "2020-12-13",
+						"time": "18:00:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/422318875458352/"
 					},
 					{
 						"name": "The Haunting of Bly Manor",
 						"img_link": "assets/cinema/cq1.png",
-						"date": "15, 22 e 29 nov 20, 18h",
+						"date": "2020-11-15",
+						"time": "18:00:00",
+						"enddate": "2020-11-29",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/799529737260071/"
 					},
 					{
 						"name": "#CasaDoCais 2 Viewing Party + Q&A",
 						"img_link": "assets/cinema/c8.png",
-						"date": "20 fev 20, 21h",
+						"date": "2020-02-20",
+						"time": "21:00:00",
 						"place": "VA4",
 						"link": "https://www.facebook.com/events/2654439781277499/"
 					},
 					{
 						"name": "RPDR Season 11 Viewing Party",
 						"img_link": "assets/cinema/c7.jpg",
-						"date": "01 mar 19, 21h",
+						"date": "2019-03-01",
+						"time": "21:00:00",
 						"place": "VA1",
 						"description": "Hey, Kitty Girls! Mais uma temporada de RuPaul's Drag Race está prestes a começar, traz companhia e junta-te a nós na estreia!\nCaso nunca tenhas visto, esta é a altura ideal para te juntares ao fenómeno internacional que é esta competição de drag!",
 						"link": "https://www.facebook.com/events/314740139399128/"
@@ -351,7 +371,8 @@
 					{
 						"name": "The Rocky Horror Picture Show",
 						"img_link": "assets/cinema/c6.jpg",
-						"date": "17 jan 19, 18h",
+						"date": "2019-01-17",
+						"time": "18:00:00",
 						"place": "VA2",
 						"description": "Em parceria com o Diferencial!\nOs namorados Brad e Janet ficam presos numa tempestade com um pneu furado, obrigando-os a procurar abrigo e a descobrir a estranha mansão do Dr. Frank-N-Furter, um cientista bastante peculiar. À medida que vão perdendo a sua inocência e ingenuidade, o casal depara-se com uma casa cheia de personagens intrigantes e, através de danças e canções, Frank-N-Furter revela a sua mais recente criação: ‘Rocky’. \nNo entanto, não nos deixemos enganar pelo tom satírico com que Richard O’Brian e, mais tarde, Jim Sharman nos oferecem esta versão distorcida e revolucionária de clássicos sci-fi e terror, pois ele entra em constante colisão com a séria discussão vivida nos últimos, pelo menos, 44 anos. Abordando pontos como a identidade de género, a liberdade sexual e outras questões relacionadas com a comunidade queer, este aclamado filme revolucionou a abordagem sociológica do cinema – \"a different set of jaws\", indeed",
 						"link": "https://www.facebook.com/events/292887844747455/"
@@ -359,7 +380,8 @@
 					{
 						"name": "Weekend",
 						"img_link": "assets/cinema/c5.jpg",
-						"date": "21 nov 18, 21h",
+						"date": "2018-11-21",
+						"time": "21:00:00",
 						"place": "VA1",
 						"description": "Mais uma sessão de cinema do QueerIST, desta vez com um romance queer, Weekend (2011).\nAproveita este momento de descontração depois da primeira ronda de testes (pelo menos para alguns de nós) e traz pessoal contigo. Como sempre, teremos pipocas!!\n\"After a drunken house party with his straight mates, Russell heads out to a gay club. Just before closing time he picks up Glen but what's expected to be just a one-night stand becomes something else, something special.\" - IMDB",
 						"link": "https://www.facebook.com/events/334686703754051/"
@@ -367,7 +389,8 @@
 					{
 						"name": "But I'm a Cheerleader",
 						"img_link": "assets/cinema/c4.jpg",
-						"date": "23 out 18, 21h",
+						"date": "2018-10-23",
+						"time": "21:00:00",
 						"place": "VA1",
 						"description": "Nada melhor para começar o ano do que uma boa comédia queer e por isso mesmo iremos passar o filme \"But I'm a Cheerleader\" (1999). \nAparece e traz amigxs que nós aparecemos com as pipocas!\n\"A naive teenager is sent to rehab camp when her straitlaced parents and friends suspect her of being a lesbian.\" - IMDB",
 						"link": "https://www.facebook.com/events/320866441978738/"
@@ -375,7 +398,8 @@
 					{
 						"name": "Tomboy",
 						"img_link": "assets/cinema/c3.jpg",
-						"date": "24 abr 18, 21h",
+						"date": "2018-04-24",
+						"time": "21:00:00",
 						"place": "VA3",
 						"description": "Junta-te a nós porque vamos ver o filme \"Tomboy\" (2011), realizado por Céline Sciamma. \n Uma família muda-se para um novo bairro com a filha Laurie, de 10 anos. Esta apresenta-se aos seus novos amigos como um rapaz chamado Mikael.\nA história consiste na convivência da personagem com os seus novos colegas, entre eles Lisa (por quem vem a desenvolver algo mais), e a sua família. É importante também referir o foco dado a questões de identidade de género, nomeadamente a sua relevância nas interações sociais, facto capital se tivermos em conta a idade precoce em que a personagem se depara com este dilema.\nEm suma, o filme remete-nos não para a descoberta do amor, mas sim para uma descoberta natural do verdadeiro “eu” em choque com o socialmente aceite.",
 						"link": "https://www.facebook.com/events/193860507916982/"
@@ -383,7 +407,8 @@
 					{
 						"name": "Paris is Burning",
 						"img_link": "assets/cinema/c2.jpg",
-						"date": "21 mar 18, 21h",
+						"date": "2018-03-21",
+						"time": "21:00:00",
 						"place": "VA3",
 						"description": "A 2ª sessão de cinema do QueerIST chegou! Iremos passar o filme \"Paris Is Burning\" (1990). \"A chronicle of New York's drag scene in the 1980s, focusing on balls, voguing and the ambitions and dreams of those who gave the era its warmth and vitality.\"- IMDB",
 						"link": "https://www.facebook.com/events/557170994663082/"
@@ -391,7 +416,8 @@
 					{
 						"name": "Quem foi que te ensinou sobre o amor?",
 						"img_link": "assets/cinema/c1.jpg",
-						"date": "21 fev 18, 21h30",
+						"date": "2018-02-21",
+						"time": "21:30:00",
 						"place": "VA3",
 						"description": "O QueerIST traz-te o primeiro momento de cinema queer no IST! Iremos passar o filme \"O Ninho\" (2016). \nBruno não está tão interessado em ser militar. A sua prioridade é reencontrar o seu irmão, que não vê há anos. Ele decide viajar para Porto Alegre para encontrá-lo, mas parece que seu irmão não está na cidade. No entanto, o que parecia ser uma viagem perdida, é na verdade, o início de uma jornada de autoconhecimento. Bruno depara-se com os amigos, as memórias e as situações vividas pelo irmão e, onde menos espera, acaba por encontrar uma família.",
 						"link": "https://www.facebook.com/events/166893427276788/"
@@ -411,119 +437,136 @@
 					{
 						"name": "Vem jogar Jackbox!",
 						"img_link": "assets/quartas/qq23.png",
-						"date": "7 abr 21, 21h",
+						"date": "2021-04-07",
+						"time": "21:00:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/284412123204548/"
 					},
 					{
 						"name": "Vem jogar Minecraft!",
 						"img_link": "assets/quartas/qq22.png",
-						"date": "27 jan 21, 21h",
+						"date": "2021-01-27",
+						"time": "21:00:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/228215562280584/"
 					},
 					{
 						"name": "Vamos jogar Among Us!?",
 						"img_link": "assets/quartas/qq21.png",
-						"date": "2 dez 20, 21h30",
+						"date": "2020-12-02",
+						"time": "21:30:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/1867523656720102/"
 					},
 					{
 						"name": "Vamos jogar ao STOP!",
 						"img_link": "assets/quartas/qq20.png",
-						"date": "18 nov 20, 21h",
+						"date": "2020-11-18",
+						"time": "21:00:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/378844090030002/"
 					},
 					{
 						"name": "Vamos celebrar o Magusto!",
 						"img_link": "assets/quartas/qq19.png",
-						"date": "11 nov 20, 21h",
+						"date": "2020-11-11",
+						"time": "21:00:00",
 						"place": "Instagram do QueerIST",
 						"link": "https://www.facebook.com/events/651655758857097/"
 					},
 					{
 						"name": "Vamos jogar Among Us!",
 						"img_link": "assets/quartas/qq18.png",
-						"date": "21 out 20, 21h30",
+						"date": "2020-10-21",
+						"time": "21:30:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/901341073729922/"
 					},
 					{
 						"name": "Vamos jogar Jackbox!",
 						"img_link": "assets/quartas/qq17.png",
-						"date": "27 mai 20, 21h",
+						"date": "2020-05-27",
+						"time": "21:00:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/2618686358379441/"
 					},
 					{
 						"name": "Vamos ver She-Ra!",
 						"img_link": "assets/quartas/qq15.png",
-						"date": "13 mai 20, 18h",
+						"date": "2020-05-13",
+						"time": "18:00:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/284365939624997/"
 					},
 					{
 						"name": "Vamos ver Given!",
 						"img_link": "assets/quartas/qq14.png",
-						"date": "29 abr 20, 21h30",
+						"date": "2020-04-29",
+						"time": "21:30:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/2599649296922020/"
 					},
 					{
 						"name": "Vamos aprender a descontrair!",
 						"img_link": "assets/quartas/qq12.png",
-						"date": "15 abr 20, 18h",
+						"date": "2020-04-15",
+						"time": "18:00:00",
 						"place": "Instagram do QueerIST",
 						"link": "https://www.facebook.com/events/518758508790544/"
 					},
 					{
 						"name": "Vem ao Quiz Queer!",
 						"img_link": "assets/quartas/qq10.png",
-						"date": "18 mar 20, 17h",
+						"date": "2020-03-18",
+						"time": "17:00:00",
 						"place": "Servidor Discord do QueerIST",
 						"link": "https://www.facebook.com/events/1430433463810079/"
 					},
 					{
 						"name": "Vem conhecer a nossa biblioteca!",
 						"img_link": "assets/quartas/qq8.png",
-						"date": "19 fev 20, 17h",
+						"date": "2020-02-19",
+						"time": "17:00:00",
 						"place": "Sala do QueerIST",
 						"link": "https://www.facebook.com/events/497109477644003/"
 					},
 					{
 						"name": "Let's Switch it up!",
 						"img_link": "assets/quartas/qq6.png",
-						"date": "18 dez 19, 17h",
+						"date": "2019-12-18",
+						"time": "17:00:00",
 						"place": "Sala do QueerIST",
 						"link": "https://www.facebook.com/events/967842213597614/"
 					},
 					{
 						"name": "Vamos pintar as unhas!",
 						"img_link": "assets/quartas/qq4.png",
-						"date": "04 dez 19, 17h",
+						"date": "2019-12-04",
+						"time": "17:00:00",
 						"place": "Sala do QueerIST",
 						"link": "https://www.facebook.com/events/459767168014577/"
 					},
 					{
 						"name": "Vamos aprender jogos de tabuleiro!",
 						"img_link": "assets/quartas/qq3.png",
-						"date": "20 nov 19, 17h",
+						"date": "2019-11-20",
+						"time": "17:00:00",
 						"place": "Sala do QueerIST",
 						"link": "https://www.facebook.com/events/563347711090621/"
 					},
 					{
 						"name": "Vamos fazer origami!",
 						"img_link": "assets/quartas/qq2.png",
-						"date": "06 nov 19, 17h",
+						"date": "2019-11-06",
+						"time": "17:00:00",
 						"place": "Sala do QueerIST",
 						"link": "https://www.facebook.com/events/418842085695132/"
 					},
 					{
 						"name": "Vamos decorar a sala!",
 						"img_link": "assets/quartas/qq1.png",
-						"date": "23 out 19, 17h",
+						"date": "2019-10-23",
+						"time": "17:00:00",
 						"place": "Sala do QueerIST",
 						"link": "https://www.facebook.com/events/2774609029258017/"
 					}
@@ -542,7 +585,8 @@
 					{
 						"name": "Workshop de Cocktails",
 						"img_link": "assets/martinee/martinee_wide.png",
-						"date": "10 dez 20, 19h",
+						"date": "2020-12-10",
+						"time": "19:00:00",
 						"place": "Instagram do QueerIST",
 						"link": "https://www.facebook.com/events/1376696476031096/"
 					}
@@ -561,7 +605,8 @@
 					{
 						"name": "Jovens LGBT e a Sociedade Actual",
 						"img_link": "assets/tertulias/conferencia.png",
-						"date": "17 mai 18, 18h",
+						"date": "2018-05-17",
+						"time": "18:00:00",
 						"place": "VA4",
 						"description": "É já no próximo dia 17 de Maio que se celebra o Dia Internacional Contra a Homofobia, Bifobia e Transfobia.\nAproveitamos esta data para analisar problemáticas do panorama atual dos direitos LGBTI+ em Portugal, dinamizando uma conferência.\nCom este evento procuramos analisar as iniciativas jovens que atuam dentro da temática LGBTI+ e considerar o seu impacto e receção e discutir a necessidade de educação para a sexualidade. Vamos ainda visitar questões atuais, como a discriminação na saúde e legislação referente à autodeterminação de género.\nPara isso, contamos com a presença de pessoas experientes na área.",
 						"link": "https://www.facebook.com/events/2016960025044996/"
@@ -581,28 +626,32 @@
 					{
 						"name": "Já conheces o QueerIST! 2021",
 						"img_link": "assets/apresentacao/mar21.png",
-						"date": "10 mar 21, 17h30",
+						"date": "2021-03-10",
+						"time": "17:30:00",
 						"place": "Sala Zoom",
 						"link": "https://www.facebook.com/events/335791634527423/"
 					},
 					{
 						"name": "Vem conhecer o QueerIST! 2020",
 						"img_link": "assets/apresentacao/out20.png",
-						"date": "15 out 20, 17h",
+						"date": "2020-10-15",
+						"time": "17:00:00",
 						"place": "Sala Zoom",
 						"link": "https://www.facebook.com/events/778014776368299/"
 					},
 					{
 						"name": "Vem conhecer-nos! 2019 + Piquenique",
 						"img_link": "assets/apresentacao/out19.jpg",
-						"date": "02 out 19, 17h30",
+						"date": "2019-10-02",
+						"time": "17:30:00",
 						"place": "V1.09",
 						"link": "https://www.facebook.com/events/2337250299663687/"
 					},
 					{
 						"name": "Vem conhecer o QueerIST! 2019",
 						"img_link": "assets/apresentacao/fev19.jpg",
-						"date": "20 fev 19, 17h",
+						"date": "2019-02-20",
+						"time": "17:00:00",
 						"place": "V1.06",
 						"link": "https://www.facebook.com/events/1419581748178633/"
 					}
@@ -620,7 +669,8 @@
 					{
 						"name": "Vês Quem És?",
 						"img_link": "assets/qultura/q2.jpg",
-						"date": "29 nov 18, 17h",
+						"date": "2018-11-29",
+						"time": "17:00:00",
 						"place": "Sala do QueerIST",
 						"description": "Qual é a representação que vês? Vês-te em filmes? Vês-te na música? Vês-te em livros? Nesta sessão convidamos-te a partilhar as maneiras como te vês ou gostavas de ver na cultura que te rodeia.\nTraz clips de filmes, música, livros ou o que quiseres e vem falar sobre representação nos media, queerbaiting, fetishização gay no mundo de fanfiction, etc.\nHaverá também uma pequena coleção de livros queer (YA, romance, etc). Poderás também deixar no nosso repositório livros teus se quiseres.",
 						"link": "https://www.facebook.com/events/547101252368581/"
@@ -628,7 +678,8 @@
 					{
 						"name": "Partilha Cultural",
 						"img_link": "assets/qultura/q1.jpg",
-						"date": "03 mai 18, 17h30",
+						"date": "2018-05-03",
+						"time": "17:30:00",
 						"place": "F3",
 						"description": "Como há histórias que merecem ser contadas, queremos proporcionar-te um evento fora do comum. Terás a oportunidade de descobrir e partilhar experiências culturais naquela que será a 1ª sessão de Qultura do QueerIST!\nTraz o que mais te inspira: livros, revistas, fotografias, pinturas, entre outros. O que importa é que possas partilhar cultura LGBT+ com outras pessoas presentes.\nMesmo que não tragas algo, junta-te a nós e ouve as nossas histórias!",
 						"link": "https://www.facebook.com/events/179825582836781/"
@@ -696,42 +747,48 @@
 							{
 								"name": "Sessão de Abertura",
 								"img_link": "assets/jornadas/ab.png",
-								"date": "23 abr 19, 15h",
+								"date": "2019-04-23",
+								"time": "15:00:00",
 								"place": "Anfiteatro Abreu Faro",
 								"link": "https://www.facebook.com/events/424818871599872/"
 							},
 							{
 								"name": "Exposição de Arte Queer",
 								"img_link": "assets/jornadas/arte.png",
-								"date": "23 abr 19, 15h30",
+								"date": "2019-04-23",
+								"time": "15:30:00",
 								"place": "Complexo Interdisciplinar",
 								"link": "https://www.facebook.com/events/424818871599872/"
 							},
 							{
 								"name": "Tertúlia \"A colourful workplace\" (Painel Empresarial)",
 								"img_link": "assets/jornadas/tert.jpg",
-								"date": "23 abr 19, 16h",
+								"date": "2019-04-23",
+								"time": "16:00:00",
 								"place": "Anfiteatro Abreu Faro",
 								"link": "https://www.facebook.com/events/424818871599872/"
 							},
 							{
 								"name": "Tertúlia \"A colourful workplace\" (Painel Académico)",
 								"img_link": "assets/jornadas/tert.jpg",
-								"date": "23 abr 19, 18h",
+								"date": "2019-04-23",
+								"time": "18:00:00",
 								"place": "Anfiteatro Abreu Faro",
 								"link": "https://www.facebook.com/events/424818871599872/"
 							},
 							{
 								"name": "Workshop de Vogue",
 								"img_link": "assets/jornadas/arte.png",
-								"date": "25 abr 19, 15h",
+								"date": "2019-04-25",
+								"time": "15:00:00",
 								"place": "V1.06",
 								"link": "https://www.facebook.com/events/424818871599872/"
 							},
 							{
 								"name": "Curtas \"Camel Toe\" e \"Primavera\" + Debate",
 								"img_link": "assets/jornadas/cin.png",
-								"date": "26 abr 19, 16h",
+								"date": "2019-04-26",
+								"time": "16:00:00",
 								"place": "VA5",
 								"link": "https://www.facebook.com/events/424818871599872/"
 							}
@@ -783,27 +840,27 @@
 							{
 								"name": "Pinkwashing e Queerbaiting",
 								"img_link": "assets/radio/terceira.png",
-								"date": "16 jan 20",
+								"date": "2020-01-16",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Queers, Discord(ia) e Videojogos",
 								"img_link": "assets/radio/terceira.png",
-								"date": "02 jan 20",
+								"date": "2020-01-02",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Queer Christmas",
 								"img_link": "assets/radio/terceira.png",
-								"date": "19 dez 19",
+								"date": "2019-12-19",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "És Rapaz ou Rapariga? Nenhum!",
-								"date": "05 dez 19",
+								"date": "2019-12-05",
 								"img_link": "assets/radio/terceira.png",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
@@ -811,20 +868,20 @@
 							{
 								"name": "Legislativas, jovens na política e ",
 								"img_link": "assets/radio/terceira.png",
-								"date": "21 nov 19",
+								"date": "2019-11-21",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Queer Praxis, Est Praxis?",
-								"date": "07 nov 19",
+								"date": "2019-11-07",
 								"img_link": "assets/radio/terceira.png",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "\"Vê-se a milhas!\"",
-								"date": "27 out 19",
+								"date": "2019-10-27",
 								"img_link": "assets/radio/terceira.png",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
@@ -842,14 +899,14 @@
 						"happenings": [
 							{
 								"name": "Q&A",
-								"date": "26 jun 19",
+								"date": "2019-06-26",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Marchas do Orgulho - 20 anos da MOL",
-								"date": "19 jun 19",
+								"date": "2019-06-19",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
@@ -857,83 +914,83 @@
 							{
 								"name": "Poliamor e Não-Monogamias Consensuais",
 								"img_link": "assets/radio/segunda.jpg",
-								"date": "10 jun 19",
+								"date": "2019-06-10",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Ser Queer: Brasil vs. Portugal",
-								"date": "03 jun 19",
+								"date": "2019-06-03",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Ativismo depois do 25 de abril",
-								"date": "27 mai 19",
+								"date": "2019-05-27",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Educação Sexual",
-								"date": "19 mai 19",
+								"date": "2019-05-19",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Masculinidade Tóxica",
-								"date": "15 mai 19",
+								"date": "2019-05-15",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Sexualidades Rebeldes",
-								"date": "08 mai 19",
+								"date": "2019-05-08",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Queerness em Eventos de Família",
-								"date": "01 mai 19",
+								"date": "2019-05-01",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Educação Inclusiva com a rede ex aequo",
-								"date": "24 abr 19",
+								"date": "2019-04-24",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Jornadas Arco-Íris",
-								"date": "16 abr 19",
+								"date": "2019-04-16",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Linguagem Neutra",
-								"date": "08 abr 19",
+								"date": "2019-04-08",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Feminismo",
-								"date": "02 abr 19",
+								"date": "2019-04-02",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Queercap",
-								"date": "02 abr 19",
+								"date": "2019-04-02",
 								"img_link": "assets/radio/segunda.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
@@ -951,7 +1008,7 @@
 						"happenings": [
 							{
 								"name": "Qultura: Livros Queer",
-								"date": "18 dez 18",
+								"date": "2018-12-18",
 								"img_link": "assets/radio/primeira.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
@@ -959,41 +1016,41 @@
 							{
 								"name": "Aplicações de Engate",
 								"img_link": "assets/radio/primeira.jpg",
-								"date": "13 dez 18",
+								"date": "2018-12-13",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Ativismo Estudantil: Formação do QueerIST",
 								"img_link": "assets/radio/primeira.jpg",
-								"date": "04 dez 18",
+								"date": "2018-12-04",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Normatividades e Apoiantes",
-								"date": "30 nov 18",
+								"date": "2018-11-30",
 								"img_link": "assets/radio/primeira.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Homofobia, Preconceito e Estereótipos",
-								"date": "23 nov 18",
+								"date": "2018-11-23",
 								"img_link": "assets/radio/primeira.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Descoberta da Identidade",
-								"date": "15 nov 18",
+								"date": "2018-11-15",
 								"img_link": "assets/radio/primeira.jpg",
 								"place": "Plataformas de streaming",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
 							},
 							{
 								"name": "Coming Out: Secundário vs. Universidade",
-								"date": "09 nov 18",
+								"date": "2018-11-09",
 								"place": "Plataformas de streaming",
 								"img_link": "assets/radio/primeira.jpg",
 								"link": "https://open.spotify.com/show/3VkE4YctT7swN8iyOy9gxP"
@@ -1170,14 +1227,16 @@
 							{
 								"name": "Doar Também é Marchar - Angariação de Fundos",
 								"img_link": "assets/mol/chuffed.jpg",
-								"date": "24 ago 20, 18h30",
+								"date": "2020-08-24",
+								"time": "18:30:00",
 								"place": "Chuffed",
 								"link": "https://chuffed.org/project/continuamosamarchar"
 							},
 							{
 								"name": "21ª Marcha do Orgulho LGBTI+ de Lisboa",
 								"img_link": "assets/mol/cam.jpg",
-								"date": "20 jun 20, 17h",
+								"date": "2020-06-20",
+								"time": "17:00:00",
 								"place": "Facebook live",
 								"link": "https://www.facebook.com/events/522870168365209"
 							}
@@ -1195,28 +1254,32 @@
 							{
 								"name": "Movimento Estudantil: Ativismo LGBTI+ no Ensino Superior",
 								"img_link": "assets/mol/cc.png",
-								"date": "28 nov 19, 18h15",
+								"date": "2019-11-28",
+								"time": "18:15:00",
 								"place": "VA4",
 								"link": "https://www.facebook.com/events/2463456507242631/"
 							},
 							{
 								"name": "Now Sissy That Walk - Festa da MOL",
 								"img_link": "assets/mol/nstw19.jpg",
-								"date": "29 jun 19, 23h",
+								"date": "2019-06-29",
+								"time": "23:00:00",
 								"place": "Titanic Sur Mer",
 								"link": "https://www.facebook.com/events/350255902352505/"
 							},
 							{
 								"name": "20ª Marcha do Orgulho LGBTI+ de Lisboa",
 								"img_link": "assets/mol/mol20.jpg",
-								"date": "29 jun 19, 17h",
+								"date": "2019-06-29",
+								"time": "17:00:00",
 								"place": "Jardim do Príncipe Real",
 								"link": "https://www.facebook.com/events/2454153327942938/"
 							},
 							{
 								"name": "Queers Just Wanna Have Funds - 20 Years Edition",
 								"img_link": "assets/mol/qjwhf19.jpg",
-								"date": "24 mai 19, 23h",
+								"date": "2019-05-24",
+								"time": "23:00:00",
 								"place": "Titanic Sur Mer",
 								"link": "https://www.facebook.com/events/2163074990413049/"
 							}
@@ -1234,21 +1297,24 @@
 							{
 								"name": "Now Sissy That Walk - Festa da MOL",
 								"img_link": "assets/mol/nstw18.jpg",
-								"date": "16 jun 18, 22h",
+								"date": "2018-06-16",
+								"time": "22:00:00",
 								"place": "Rive Rouge",
 								"link": "https://www.facebook.com/events/1782726818507640/"
 							},
 							{
 								"name": "19ª Marcha do Orgulho LGBTI+ de Lisboa",
 								"img_link": "assets/mol/mol19.jpg",
-								"date": "16 jun 18, 17h",
+								"date": "2018-06-16",
+								"time": "17:00:00",
 								"place": "Jardim do Príncipe Real",
 								"link": "https://www.facebook.com/events/233522320534598/"
 							},
 							{
 								"name": "Queers Just Wanna Have Funds",
 								"img_link": "assets/mol/qjwhf18.jpg",
-								"date": "30 mai 18, 23h",
+								"date": "2018-05-30",
+								"time": "23:00:00",
 								"place": "Titanic Sur Mer",
 								"link": "https://www.facebook.com/events/166315627382531/"
 							}
@@ -1360,14 +1426,16 @@
 							{
 								"name": "2ª Conversa (Fresco Mafalda, Rá Illustration, Leonardo Mendonza)",
 								"img_link": "assets/paq/conversa2.png",
-								"date": "21 mai 20, 19h",
+								"date": "2020-05-21",
+								"time": "19:00:00",
 								"place": "Instagram do QueerIST",
 								"link": "https://www.facebook.com/events/614674732469073/"
 							},
 							{
 								"name": "1ª Conversa (Valentina Vargas, Carolina Elis, Áquilla Correia, Keyla Brasil)",
 								"img_link": "assets/paq/conversa1.png",
-								"date": "14 mai 20, 19h",
+								"date": "2020-05-14",
+								"time": "19:00:00",
 								"place": "Instagram do QueerIST",
 								"link": "https://www.facebook.com/events/614674735802406/"
 							}

@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactGA from 'react-ga'
+import { format } from 'date-fns'
+import pt from 'date-fns/locale/pt'
 import './eventgallery.css'
 import { publicPath, WrapDelayed } from '../helpers'
 import { ReactComponent as Launch } from './../svg/launch.svg'
@@ -21,23 +23,26 @@ function EventGalleryWrap(props) {
 	)
 }
 
-const EventGalleryItem = ({ name, description, open, date, place, imgLink, link }) => (
-	<li className="event-gallery-item">
-		<div className="event-gallery-item-img">
-			<WrapDelayed load={open}>
-				<img src={publicPath(imgLink)} alt={name} />
-			</WrapDelayed>
-		</div>
-		<div className="event-gallery-item-text">
-			<h3>{name}</h3>
-			<span className="event-gallery-item-launch">
-				<p>{date} @ {place}</p>
-				<a href={link} target="_blank" rel="noopener noreferrer" onClick={() => handleClickEventLink(name)}> <Launch /></a>
-			</span>
-			{/* <p>{description}</p> */}
-		</div>
-	</li>
-)
+const EventGalleryItem = ({ id, name, description, open, date, time, place, imgLink, link }) => {
+	const dateObj = new Date(`${date}T${time ?? '00:00:00'}`)
+	return (
+		<li className="event-gallery-item" id={id}>
+			<div className="event-gallery-item-img">
+				<WrapDelayed load={open}>
+					<img src={publicPath(imgLink)} alt={name} />
+				</WrapDelayed>
+			</div>
+			<div className="event-gallery-item-text">
+				<h3>{name}</h3>
+				<span className="event-gallery-item-launch">
+					<p>{format(dateObj, `dd MMM yyyy${time ? ', HH\'h\'mm' : ''}`, { locale: pt })} @ {place}</p>
+					<a href={link} target="_blank" rel="noopener noreferrer" onClick={() => handleClickEventLink(name)}> <Launch /></a>
+				</span>
+				{/* <p>{description}</p> */}
+			</div>
+		</li>
+	)
+}
 
 function EventGallery({ data, open, seeMoreText }) {
 	return (
@@ -50,6 +55,7 @@ function EventGallery({ data, open, seeMoreText }) {
 						open={open}
 						description={event.description}
 						date={event.date}
+						time={event.time}
 						place={event.place}
 						imgLink={event.img_link}
 						link={event.link}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainCover, TextBlock, BigBanner, SmallBanners, Page } from '../components'
+import { MainCover, TextBlock, BigBanner, SmallBanners, Page, HighlightBox } from '../components'
 
 const Home = ({ data }) => (
 	<Page data={data}>

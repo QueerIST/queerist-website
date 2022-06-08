@@ -1,29 +1,27 @@
-import { Component } from 'react'
-import { withRouter } from 'react-router'
+import React, { useRef, useEffect } from 'react'
+import { useLocation, useHistory } from 'react-router-dom'
 
-class ScrollToTopComp extends Component {
+const ScrollToTop = ({ children }) => {
+	const location = useLocation();
+	const history = useHistory();
+	const prevLocationRef = useRef(location);
 
-	shouldComponentUpdate(prevProps) {
-		if (this.props.history.action === 'POP')
-			return true;
-		if (this.props.location.pathname !== prevProps.location.pathname) {
-			document.documentElement.style.scrollBehavior = 'unset';
-			setTimeout(() => {
+	useEffect(() => {
+		if (history.action !== 'POP')
+			if (location.pathname !== prevLocationRef.current.pathname) {
+				document.documentElement.style.scrollBehavior = 'unset';
+				setTimeout(() => {
+					window.scrollTo(0, 0);
+					document.documentElement.style.scrollBehavior = 'smooth';
+				}, 0)
+			} else {
 				window.scrollTo(0, 0);
-				document.documentElement.style.scrollBehavior = 'smooth';
-			}, 0)
-		} else {
-			window.scrollTo(0, 0);
-		}
-		return true;
-	}
+			}
+		prevLocationRef.current = location;
+	}, [location, history]);
 
-	render() {
-		return this.props.children;
-	}
+	return children;
 }
-
-const ScrollToTop = withRouter(ScrollToTopComp)
 
 export { ScrollToTop }
 

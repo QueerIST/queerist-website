@@ -1,7 +1,9 @@
 import React from 'react'
 import { Page, PageCover, Tile, Separator, TextBlock, IconList, HighlightBox } from '../components'
+import { useParams } from 'react-router-dom'
 
-const SubPage = ({ id, parentData }) => {
+const SubPage = ({ parentData }) => {
+	const { id } = useParams()
 	const data = parentData.sub_pages.find(p => p.id === id)
 	return (
 		<Page data={data}>

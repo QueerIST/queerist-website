@@ -44,13 +44,14 @@ const EventGalleryItem = ({ id, name, description, open, date, time, place, imgL
 	)
 }
 
-function EventGallery({ data, open, seeMoreText }) {
+function EventGallery({ id, data, open, seeMoreText }) {
 	return (
 		<EventGalleryWrap open={open} seeMoreText={seeMoreText}>
 			{data.map(
 				(event, i) => (
 					<EventGalleryItem
 						key={i}
+						id={`${id}-${i}`}
 						name={event.name}
 						open={open}
 						description={event.description}

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { EventGallery, Button } from '.'
 import { publicPath } from '../helpers'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { ReactComponent as Expand } from './../svg/expand.svg'
 // import { ReactComponent as Launch } from './../svg/launch.svg'
 
@@ -40,52 +40,49 @@ function PageTileInfo({ id, parentPage, name, description, imgLink, logoLink, bg
 	)
 }
 
-class EventTileInfo extends React.Component {
+const EventTileInfo = ({ n, id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText }) => {
 
-	constructor(props) {
-		super(props)
-		this.state = { open: false }
-	}
+	const [open, setOpen] = useState(false)
+	const location = useLocation()
+	const dir = n % 2 ? "left" : "right"
+	const openClass = open ? "open" : ""
 
-	toggleGallery = () => {
-		this.setState({ open: !this.state.open })
-	}
+	const EventTypeInfoButton = (
+		<button
+			onClick={() => setOpen(!open)}
+			className={`tile-info-b tile-info-button ${openClass}`}>
+			{seeMoreText}
+			<Expand fill={textColor} />
+		</button>
+	)
 
-	render() {
-		const { n, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText } = this.props;
-		const dir = n % 2 ? "left" : "right"
-		const openClass = this.state.open ? "open" : ""
-		const EventTypeInfoButton = (
-			<button
-				onClick={this.toggleGallery}
-				className={`tile-info-b tile-info-button ${openClass}`}>
-				{seeMoreText}
-				<Expand fill={textColor} />
-			</button>
-		)
-		return (
-			<div data-aos={`flip-${dir}`} className={`tile-info ${dir}`} style={{
-				backgroundColor: bgColor, color: textColor
-			}}>
-				<div className={`tile-info-text ${openClass}`}>
-					{logoLink &&
-						<div className="tile-info-text-img">
-							<img src={publicPath(logoLink)} alt={`Logo ${name}`} />
-						</div>
-					}
-					<h3 className="tile-info-text-text">{name}</h3>
-					<p className="tile-info-text-desc tile-info-text-text">{description}</p>
-					{seeMoreText && <Button actionComp={"EventTile"} actionName={`Clica ${name}`} actionLabel={this.state.open ? "Close" : "Open"} borderColor={textColor} color={textColor}>
-						{EventTypeInfoButton}
-					</Button>}
-				</div>
-				<div className="tile-info-img">
-					<img className={openClass} src={publicPath(imgLink)} alt={name} />
-					{happenings && <EventGallery open={this.state.open} data={happenings} />}
-				</div>
+	useEffect(() => {
+		if (location && location.hash.split('-')[0] === `#${id}` && !open)
+			setOpen(true)
+	}, [location])
+
+	return (
+		<div data-aos={`flip-${dir}`} className={`tile-info ${dir}`} style={{
+			backgroundColor: bgColor, color: textColor
+		}}>
+			<div className={`tile-info-text ${openClass}`}>
+				{logoLink &&
+					<div className="tile-info-text-img">
+						<img src={publicPath(logoLink)} alt={`Logo ${name}`} />
+					</div>
+				}
+				<h3 className="tile-info-text-text">{name}</h3>
+				<p className="tile-info-text-desc tile-info-text-text">{description}</p>
+				{seeMoreText && <Button actionComp={"EventTile"} actionName={`Clica ${name}`} actionLabel={open ? "Close" : "Open"} borderColor={textColor} color={textColor}>
+					{EventTypeInfoButton}
+				</Button>}
 			</div>
-		)
-	}
+			<div className="tile-info-img">
+				<img className={openClass} src={publicPath(imgLink)} alt={name} />
+				{happenings && <EventGallery id={id} open={open} data={happenings} />}
+			</div>
+		</div>
+	)
 }
 
 const Tile = ({ n, data, parentPage }) => (
@@ -95,6 +92,7 @@ const Tile = ({ n, data, parentPage }) => (
 				(
 					<EventTileInfo
 						n={n}
+						id={data.id}
 						name={data.name}
 						description={data.description}
 						imgLink={data.img_link}

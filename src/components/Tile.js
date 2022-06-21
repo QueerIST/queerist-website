@@ -57,9 +57,9 @@ const EventTileInfo = ({ n, id, name, description, imgLink, logoLink, bgColor, t
 	)
 
 	useEffect(() => {
-		if (location && location.hash.split('-')[0] === `#${id}` && !open)
+		if (location && location.hash.split('-')[0] === `#${id}`)
 			setOpen(true)
-	}, [location])
+	}, [location, id])
 
 	return (
 		<div data-aos={`flip-${dir}`} className={`tile-info ${dir}`} style={{

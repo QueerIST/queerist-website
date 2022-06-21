@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { useLocation, useHistory } from 'react-router-dom'
 
 const ScrollToTop = ({ children }) => {

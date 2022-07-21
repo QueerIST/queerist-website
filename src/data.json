@@ -21,12 +21,12 @@
 		},
 		"banners": {
 			"big_banner": {
-				"name": "tertulia banner",
-				"img_link": "assets/tertulias/c1.png",
+				"name": "pubcrawl banner",
+				"img_link": "assets/pubcrawl/pc5.png",
 				"text_color": "white",
-				"link_text": "Participar na Conversa",
+				"link_text": "Descobrir a noite",
 				"link_page": "/eventos",
-				"link_id": "tertulia"
+				"link_id": "pubcrawl-0"
 			},
 			"small_banners": [
 				{
@@ -41,7 +41,7 @@
 				},
 				{
 					"name": "Biblioteca do QueerIST",
-					"label": "Requisita um livro!",
+					"label": "Requisita um livro",
 					"logo_link": "assets/biblioteca/bibli.png",
 					"bg_color": "white",
 					"text_color": "#364153",
@@ -51,7 +51,7 @@
 				},
 				{
 					"name": "Zero Preconceitos",
-					"label": "Nova temporada",
+					"label": "Ouve a voz do QueerIST",
 					"logo_link": "assets/radio/radio.png",
 					"bg_color": "#232323",
 					"text_color": "white",
@@ -235,6 +235,14 @@
 				"text_color": "white",
 				"happenings": [
 					{
+						"name": "Churrasco QueerIST + AmbientalIST",
+						"img_link": "assets/churrasco/cha.png",
+						"date": "2022-05-10",
+						"time": "19:00:00",
+						"place": "Espaço BBQ",
+						"link": "https://www.facebook.com/events/736920707479164/"
+					},
+					{
 						"name": "4º Churrasco",
 						"img_link": "assets/churrasco/ch4.png",
 						"date": "2019-12-05",
@@ -280,6 +288,14 @@
 				"bg_color": "white",
 				"text_color": "black",
 				"happenings": [
+					{
+						"name": "5º PubCrawl",
+						"img_link": "assets/pubcrawl/pc5.png",
+						"date": "2022-06-30",
+						"time": "21:00:00",
+						"place": "Praça Luís de Camões",
+						"link": "https://www.facebook.com/events/485312310065127/"
+					},
 					{
 						"name": "4º PubCrawl",
 						"img_link": "assets/pubcrawl/pc4.png",

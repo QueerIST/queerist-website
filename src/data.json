@@ -21,12 +21,12 @@
 		},
 		"banners": {
 			"big_banner": {
-				"name": "pubcrawl banner",
-				"img_link": "assets/pubcrawl/pc5.png",
+				"name": "Banner Churrasco QueerIST + AmbientalIST",
+				"img_link": "assets/churrasco/cha2.png",
 				"text_color": "white",
-				"link_text": "Descobrir a noite",
+				"link_text": "Mergulhar neste sol",
 				"link_page": "/eventos",
-				"link_id": "pubcrawl-0"
+				"link_id": "churrasco-0"
 			},
 			"small_banners": [
 				{
@@ -227,13 +227,21 @@
 			{
 				"id": "churrasco",
 				"name": "Churrascos Straight or Queer, We All Want Beer",
-				"description": "A noite perfeita para qualquer queen e apoiantes! Boa comida, incluindo o famoso hambúrger vegan; e ainda cerveja, sidra, sangria ou shots temáticos. Alguém falou em happy hour de gin?",
+				"description": "A noite perfeita para qualquer queen e apoiantes! Boa comida, incluindo seitanas e o famoso hambúrger vegan; e ainda cerveja, sidra, sangria ou shots temáticos. Alguém falou em happy hour de gin?",
 				"see_more_text": "Apontar o próximo churrasco",
 				"img_link": "assets/churrasco/churrasco.jpg",
 				"logo_link": "assets/churrasco/chr.png",
 				"bg_color": "orange",
 				"text_color": "white",
 				"happenings": [
+					{
+						"name": "2º Churrasco QueerIST + AmbientalIST",
+						"img_link": "assets/churrasco/cha2.png",
+						"date": "2023-05-12",
+						"time": "19:00:00",
+						"place": "Espaço BBQ",
+						"link": "https://www.instagram.com/p/Cr9AiAhMu19/"
+					},
 					{
 						"name": "Churrasco QueerIST + AmbientalIST",
 						"img_link": "assets/churrasco/cha.png",

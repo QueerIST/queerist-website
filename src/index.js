@@ -4,7 +4,7 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import AOS from 'aos'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { createBrowserHistory } from 'history'
 import 'aos/dist/aos.css'
 import './webfontkit/fontstylesheet.css'
@@ -23,7 +23,6 @@ ReactGA.initialize(process.env.REACT_APP_GA_CODE, {
 const history = createBrowserHistory()
 const analyticsHistory = location => {
 	ReactGA.set({ page: location.pathname + location.hash }); // Update the user's current page
-	ReactGA.pageview(location.pathname); // Record a pageview for the given page
 }
 
 // Initialize google analytics page view tracking

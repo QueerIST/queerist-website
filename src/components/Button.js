@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 import './button.css'
 

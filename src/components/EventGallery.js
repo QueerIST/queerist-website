@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { format } from 'date-fns'
 import pt from 'date-fns/locale/pt'
 import './eventgallery.css'

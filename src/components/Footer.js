@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import Facebook from '../svg/facebook.svg?react'
 import Instagram from '../svg/instagram.svg?react'
 import Twiter from '../svg/twitter.svg?react'

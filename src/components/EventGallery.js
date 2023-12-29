@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 import pt from 'date-fns/locale/pt'
 import './eventgallery.css'
 import { publicPath, WrapDelayed } from '../helpers'
-import { ReactComponent as Launch } from './../svg/launch.svg'
+import Launch from './../svg/launch.svg?react'
 
 const handleClickEventLink = (event) => {
 	ReactGA.event({

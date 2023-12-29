@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import Headroom from 'react-headroom'
 import ReactGA from 'react-ga'
 import logo from '../img/logo so letras brancas.png'
-import { ReactComponent as Menu } from '../svg/menu.svg'
+import Menu from '../svg/menu.svg?react'
 import './header.css'
 
 class Header extends React.Component {

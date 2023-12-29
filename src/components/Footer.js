@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactGA from 'react-ga'
-import { ReactComponent as Facebook } from '../svg/facebook.svg'
-import { ReactComponent as Instagram } from '../svg/instagram.svg'
-import { ReactComponent as Twiter } from '../svg/twitter.svg'
-import { ReactComponent as GitHub } from '../svg/github.svg'
-import { ReactComponent as Email } from '../svg/email.svg'
+import Facebook from '../svg/facebook.svg?react'
+import Instagram from '../svg/instagram.svg?react'
+import Twiter from '../svg/twitter.svg?react'
+import GitHub from '../svg/github.svg?react'
+import Email from '../svg/email.svg?react'
 import './footer.css'
 
 class Footer extends React.Component {

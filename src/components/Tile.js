@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { EventGallery, Button } from '.'
 import { publicPath } from '../helpers'
 import { NavLink, useLocation } from 'react-router-dom'
-import { ReactComponent as Expand } from './../svg/expand.svg'
-// import { ReactComponent as Launch } from './../svg/launch.svg'
+import Expand from './../svg/expand.svg?react'
+// import Launch from './../svg/launch.svg?react'
 
 import './tile.css'
 

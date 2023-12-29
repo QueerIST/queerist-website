@@ -8,7 +8,7 @@ import data from './data.json'
 class App extends Component {
   render() {
     return (
-      <Router basename={process.env.PUBLIC_URL} history={this.props.history}>
+      <Router basename={import.meta.env.BASE_URL} history={this.props.history}>
         <ScrollToTop>
           <React.Fragment>
             <Header />

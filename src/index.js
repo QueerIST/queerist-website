@@ -13,11 +13,13 @@ AOS.init({
 	once: true
 });
 
-ReactGA.initialize(process.env.REACT_APP_GA_CODE, {
-	gaOptions: {
-		siteSpeedSampleRate: 100
-	}
-})
+if (import.meta.env.PROD) {
+	ReactGA.initialize(import.meta.env.VITE_GA_CODE, {
+		gaOptions: {
+			siteSpeedSampleRate: 100
+		}
+	})
+}
 
 const history = createBrowserHistory()
 const analyticsHistory = location => {

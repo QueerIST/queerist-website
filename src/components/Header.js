@@ -39,7 +39,7 @@ class Header extends React.Component {
 						<div className="navbar-delimiter">
 							<div className="navtop">
 								<div className="navtop-side"></div>
-								<NavLink className="navimg" exact to="/" onClick={() => this.handleClickLink('logo')}>
+								<NavLink className="navimg" end to="/" onClick={() => this.handleClickLink('logo')}>
 									<img src={logo} alt="QueerIST logo" />
 								</NavLink>
 								<Menu className="navtop-side" onClick={this.handleClickMenuButton} />

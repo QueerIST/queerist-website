@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Header, Pages, Footer } from './components'
-import { Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { ScrollToTop } from './helpers'
 
 import data from './data.json'
@@ -8,15 +8,13 @@ import data from './data.json'
 class App extends Component {
   render() {
     return (
-      <Router basename={import.meta.env.BASE_URL} history={this.props.history}>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop>
-          <React.Fragment>
             <Header />
             <Pages data={data} />
             <Footer />
-          </React.Fragment>
         </ScrollToTop>
-      </Router>
+      </BrowserRouter>
     )
   }
 }

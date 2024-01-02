@@ -68,6 +68,6 @@ export default function defineConfig ({ mode }) {
         plugins: [esbuildPlugin]
       }
     },
-    base: JSON.stringify(env.VITE_BASE_URL)
+    base: env.VITE_BASE_URL
   }
 }

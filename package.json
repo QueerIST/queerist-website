@@ -20,7 +20,6 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "github:build": "tsc && vite build --mode github",
-    "github:deploy": "gh-pages -d dist",
     "lint": "standard && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -35,7 +34,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "gh-pages": "^6.1.1",
     "react-snap": "^1.13.1",
     "standard": "^17.1.0",
     "typescript": "^5.2.2",

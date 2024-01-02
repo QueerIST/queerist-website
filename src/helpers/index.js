@@ -1,6 +1,4 @@
-
-import { ScrollToTop, scrollOptions } from './scroll'
-import { publicPath, fullPath, fullPathSlashless } from './links'
 import WrapDelayed from './async'
+import { publicPath, fullPath, fullPathSlashless } from './links'
 
-export { ScrollToTop, scrollOptions, publicPath, fullPath, fullPathSlashless, WrapDelayed }
+export { publicPath, fullPath, fullPathSlashless, WrapDelayed }

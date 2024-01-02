@@ -54,14 +54,20 @@ const esbuildPlugin = {
 
 export default function defineConfig ({ mode }) {
   const env = loadEnv(mode, process.cwd(), '')
-  console.log(env.VITE_BASE_URL)
   return {
     plugins: [
       vitePlugin(mode === 'production' || mode === 'github'),
       // Include React plugin to serve `/@react-refresh` and transform HTML to
       // inject this dependency.
       react(),
-      svgr()
+      svgr({
+        svgrOptions: {
+          plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
+          svgoConfig: {
+            floatPrecision: 2
+          }
+        }
+      })
     ],
     optimizeDeps: {
       esbuildOptions: {

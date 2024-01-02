@@ -1,22 +1,13 @@
-import React, { Component } from 'react'
-import { Header, Pages, Footer } from './components'
-import { BrowserRouter } from 'react-router-dom'
-import { ScrollToTop } from './helpers'
+import React from 'react'
 
-import data from './data.json'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <ScrollToTop>
-            <Header />
-            <Pages data={data} />
-            <Footer />
-        </ScrollToTop>
-      </BrowserRouter>
-    )
-  }
+import { Routes } from './components'
+
+const App = () => {
+  const router = createBrowserRouter(Routes, { basename: import.meta.env.BASE_URL })
+
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default App

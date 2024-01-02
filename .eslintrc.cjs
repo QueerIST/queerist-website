@@ -12,14 +12,31 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['@typescript-eslint', 'react', 'react-refresh'],
+  plugins: ['@typescript-eslint', 'react', 'react-refresh', 'import'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true }
     ],
-
-    'sort-imports': ['error']
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: '{react,react-dom/**}',
+            group: 'external',
+            position: 'before'
+          }
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true
+        }
+      }
+    ]
   },
   overrides: [
     {

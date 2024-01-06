@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Helmet, HelmetData } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Route, createRoutesFromElements } from 'react-router-dom'
 
 import Layout from './Layout'

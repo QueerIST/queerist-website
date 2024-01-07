@@ -21,7 +21,8 @@
     "build": "tsc && vite build",
     "github:build": "tsc && vite build --mode github",
     "lint": "ts-standard && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "react-snap"
   },
   "devDependencies": {
     "@svgr/plugin-svgo": "^8.1.0",
@@ -35,10 +36,16 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "react-snap": "^1.13.1",
+    "react-snap": "^1.23.0",
     "ts-standard": "^12.0.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-svgr": "^4.2.0"
+  },
+  "reactSnap": {
+    "source": "dist"
+  },
+  "resolutions": {
+    "puppeteer": "^13"
   }
 }

@@ -1,11 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
 
-import './index.css'
 import AOS from 'aos'
+import { hydrate, render } from 'react-dom'
 import ReactGA from 'react-ga4'
 
 import App from './App'
+
+import './index.css'
 import 'aos/dist/aos.css'
 import './webfontkit/fontstylesheet.css'
 
@@ -21,8 +22,17 @@ if (import.meta.env.PROD && import.meta.env.MODE !== 'github') {
   })
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+const rootElement = document.getElementById('root')
+if (rootElement.hasChildNodes()) {
+  hydrate(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+    , rootElement)
+} else {
+  render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+    , rootElement)
+}

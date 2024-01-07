@@ -43,7 +43,8 @@
     "vite-plugin-svgr": "^4.2.0"
   },
   "reactSnap": {
-    "source": "dist"
+    "source": "dist",
+    "skipThirdPartyRequests": true
   },
   "resolutions": {
     "puppeteer": "^13"

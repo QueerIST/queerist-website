@@ -1,8 +1,11 @@
 import { Route, createRoutesFromElements } from 'react-router-dom'
 
 import Layout from './Layout'
-import data from '../data.json'
+import untypedData from '../data.json'
 import { About, Events, Home, Projects, SubPage } from '../pages'
+import { type Data } from '../types/data'
+
+const data: typeof untypedData & Data = untypedData
 
 const Routes = createRoutesFromElements(
   <Route element={<Layout />}>

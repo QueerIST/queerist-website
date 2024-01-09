@@ -2,41 +2,46 @@ import { NavLink } from 'react-router-dom'
 
 import { Button } from '.'
 import { publicPath } from '../helpers'
+import { isDataTextBlockWithLink, isDataTextBlockWithLinkToFile, isDataTextBlockWithLinkToPage, isTextBlockWithLink, isTextBlockWithLinkToFile, isTextBlockWithLinkToPage } from '../helpers/types'
+import { type DTextBlock } from '../types/data'
+import { type TextBlockWithLink, type TextBlock as TextBlockProps } from '../types/domain'
 
 import './textblock.css'
 
-function TextBlockInfo ({ id, title, text, small, bgColor, titleColor, textColor, linkBackgroundColor, linkTextColor, linkText, linkPage, linkId, linkFile, linkWeb }) {
-  const TextBlockButton = (
-    linkPage
-      ? (
+const TextBlockButton = (props: TextBlockWithLink) => (
+  isTextBlockWithLinkToPage(props)
+    ? (
         <NavLink
           className='textblock-button'
-          to={{ pathname: linkPage, hash: '#' + linkId }}
+          to={{ pathname: props.linkPage, hash: '#' + props.linkId }}
         >
-          {linkText}
+          {props.linkText}
         </NavLink>
+      )
+    : isTextBlockWithLinkToFile(props)
+      ? (
+          <a href={publicPath(props.linkFile)} className='textblock-button'>{props.linkText}</a>
         )
-      : linkFile
-        ? (
-          <a href={publicPath(linkFile)} className='textblock-button'>{linkText}</a>
-          )
-        : (
-          <a href={linkWeb} className='textblock-button'>{linkText}</a>
-          )
-  )
+      : (
+          <a href={props.linkWeb} className='textblock-button'>{props.linkText}</a>
+        )
+)
+
+function TextBlockInfo (props: TextBlockProps) {
+  const { id, title, text, small, bgColor, titleColor, textColor } = props
   return (
     <div id={id} className={`textblock ${small && 'textblock-small'}`} style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='textblock-child'>
         <h2 className='textblock-title' style={{ color: titleColor }}>{title}</h2>
-        {linkText &&
+        {isTextBlockWithLink(props) &&
           <Button
             actionComp='TextBlock'
-            actionName={`Clica ${linkText}`}
+            actionName={`Clica ${props.linkText}`}
             block
-            color={linkTextColor || bgColor}
-            backgroundColor={linkBackgroundColor || textColor}
+            color={props.linkTextColor ?? bgColor}
+            backgroundColor={props.linkBackgroundColor ?? textColor}
           >
-            {TextBlockButton}
+            {TextBlockButton(props)}
           </Button>}
       </div>
       <div className='textblock-child'>
@@ -49,7 +54,8 @@ function TextBlockInfo ({ id, title, text, small, bgColor, titleColor, textColor
     </div>
   )
 }
-const TextBlock = ({ data, small }) => (
+
+const TextBlock = ({ data, small = false }: { data: DTextBlock, small?: boolean }) => (
   <TextBlockInfo
     id={data.id}
     title={data.title}
@@ -58,13 +64,19 @@ const TextBlock = ({ data, small }) => (
     bgColor={data.bg_color}
     titleColor={data.title_color}
     textColor={data.text_color}
-    linkBackgroundColor={data.link_bg_color}
-    linkTextColor={data.link_text_color}
-    linkText={data.link_text}
-    linkPage={data.link_page}
-    linkId={data.link_id}
-    linkFile={data.link_file}
-    linkWeb={data.link_web}
+    {...(isDataTextBlockWithLink(data) && {
+      linkText: data.link_text,
+      linkBackgroundColor: data.link_bg_color,
+      linkTextColor: data.link_text_color,
+      ...(isDataTextBlockWithLinkToPage(data)
+        ? {
+            linkPage: data.link_page,
+            linkId: data.link_id
+          }
+        : isDataTextBlockWithLinkToFile(data)
+          ? { linkFile: data.link_file }
+          : { linkWeb: data.link_web })
+    })}
   />
 )
 

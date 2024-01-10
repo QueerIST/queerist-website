@@ -5,6 +5,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'standard-with-typescript'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
@@ -40,6 +42,7 @@ module.exports = {
     ],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'error',
+    'react/jsx-indent': ['error', 2]
   },
   overrides: [
     {

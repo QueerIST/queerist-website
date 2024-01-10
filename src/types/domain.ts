@@ -50,7 +50,7 @@ export type TextBlock = BaseTextBlock | TextBlockWithLink
 
 export interface Banners {
   bigBanner: BigBanner
-  smallBanners?: SmallBanner[]
+  smallBanners: SmallBanner[]
 }
 
 export interface BigBanner {

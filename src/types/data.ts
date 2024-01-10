@@ -49,7 +49,7 @@ export type DTextBlock = DBaseTextBlock | DTextBlockWithLink
 
 export interface DBanners {
   big_banner: DBigBanner
-  small_banners?: DSmallBanner[]
+  small_banners: DSmallBanner[]
 }
 
 export interface DBigBanner {

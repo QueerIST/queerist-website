@@ -1,34 +1,36 @@
+import { type ReactNode } from 'react'
+
 import { NavLink } from 'react-router-dom'
 
 import { Button } from '.'
 import { publicPath } from '../helpers'
+import { type DBanners } from '../types/data'
+import { type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
 
 import './banners.css'
 
-function BigBannerInfo ({ name, imgLink, textColor, linkText, linkPage, linkId }) {
-  return (
-    <div className='big-banner banner'>
-      {linkText &&
-        <div className='big-banner-button'>
-          <Button
+const BigBannerInfo = ({ name, imgLink, textColor, linkText, linkPage, linkId }: BigBannerProps) => (
+  <div className='big-banner banner'>
+    {linkText !== undefined &&
+    <div className='big-banner-button'>
+      <Button
             actionComp='BigBanner'
             actionName={`Entra ${name}`}
             borderColor={textColor}
             color={textColor}
           >
-            <NavLink
+        <NavLink
               to={{ pathname: linkPage, hash: '#' + linkId }}
             >
-              {linkText}
-            </NavLink>
-          </Button>
-        </div>}
-      <img src={publicPath(imgLink)} alt={name} />
-    </div>
-  )
-}
+          {linkText}
+        </NavLink>
+      </Button>
+    </div>}
+    <img src={publicPath(imgLink)} alt={name} />
+  </div>
+)
 
-function SmallBanner ({ name, label, logoLink, bgColor, textColor, linkText, linkPage, linkId }) {
+function SmallBanner ({ name, label, logoLink, bgColor, textColor, linkText, linkPage, linkId }: SmallBannerProps) {
   return (
     <div className='small-banner banner' data-aos='zoom-in' style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='small-banner-content'>
@@ -54,15 +56,13 @@ function SmallBanner ({ name, label, logoLink, bgColor, textColor, linkText, lin
   )
 }
 
-function SmallBannersWrap ({ children }) {
-  return (
-    <div className='small-banners'>
-      {children}
-    </div>
-  )
-}
+const SmallBannersWrap = ({ children }: { children: ReactNode }) => (
+  <div className='small-banners'>
+    {children}
+  </div>
+)
 
-const BigBanner = ({ data }) => (
+const BigBanner = ({ data }: { data: DBanners }) => (
   <BigBannerInfo
     name={data.big_banner.name}
     imgLink={data.big_banner.img_link}
@@ -73,7 +73,7 @@ const BigBanner = ({ data }) => (
   />
 )
 
-const SmallBanners = ({ data }) => (
+const SmallBanners = ({ data }: { data: DBanners['small_banners'] }) => (
   <SmallBannersWrap>
     {data.map((smallBanner, i) => (
       <SmallBanner
@@ -87,8 +87,7 @@ const SmallBanners = ({ data }) => (
         linkPage={smallBanner.link_page}
         linkId={smallBanner.link_id}
       />
-    )
-    )}
+    ))}
   </SmallBannersWrap>
 )
 

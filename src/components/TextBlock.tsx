@@ -11,19 +11,19 @@ import './textblock.css'
 const TextBlockButton = (props: TextBlockWithLink) => (
   isTextBlockWithLinkToPage(props)
     ? (
-        <NavLink
+      <NavLink
           className='textblock-button'
           to={{ pathname: props.linkPage, hash: '#' + props.linkId }}
         >
-          {props.linkText}
-        </NavLink>
+        {props.linkText}
+      </NavLink>
       )
     : isTextBlockWithLinkToFile(props)
       ? (
-          <a href={publicPath(props.linkFile)} className='textblock-button'>{props.linkText}</a>
+        <a href={publicPath(props.linkFile)} className='textblock-button'>{props.linkText}</a>
         )
       : (
-          <a href={props.linkWeb} className='textblock-button'>{props.linkText}</a>
+        <a href={props.linkWeb} className='textblock-button'>{props.linkText}</a>
         )
 )
 

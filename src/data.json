@@ -111,11 +111,9 @@
 			"text_color": "black",
 			"link_bg_color": "lightseagreen"
 		},
-		"banners": {
-			"big_banner": {
-				"name": "objetivos",
-				"img_link": "assets/objetivos.png"
-			}
+		"big_banner": {
+			"name": "objetivos",
+			"img_link": "assets/objetivos.png"
 		},
 		"textboxs": {
 			"id": "equipas",

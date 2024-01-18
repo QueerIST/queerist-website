@@ -94,7 +94,7 @@ export interface AboutPage {
   separator: string
   textBlock_1: TextBlock
   textBlock_2: TextBlock
-  banners: Banners
+  big_banner: BigBanner
   textboxs: Textboxs
 }
 

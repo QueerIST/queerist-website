@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 import { Button } from '.'
 import { publicPath } from '../helpers'
-import { type DBanners, type DSmallBanner } from '../types/data'
+import { type DBigBanner, type DSmallBanner } from '../types/data'
 import { type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
 
 import './banners.css'
@@ -62,14 +62,14 @@ const SmallBannersWrap = ({ children }: { children: ReactNode }) => (
   </div>
 )
 
-const BigBanner = ({ data }: { data: DBanners }) => (
+const BigBanner = ({ data }: { data: DBigBanner }) => (
   <BigBannerInfo
-    name={data.big_banner.name}
-    imgLink={data.big_banner.img_link}
-    textColor={data.big_banner.text_color}
-    linkText={data.big_banner.link_text}
-    linkPage={data.big_banner.link_page}
-    linkId={data.big_banner.link_id}
+    name={data.name}
+    imgLink={data.img_link}
+    textColor={data.text_color}
+    linkText={data.link_text}
+    linkPage={data.link_page}
+    linkId={data.link_id}
   />
 )
 

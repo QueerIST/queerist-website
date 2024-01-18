@@ -49,7 +49,7 @@ export type DTextBlock = DBaseTextBlock | DTextBlockWithLink
 
 export interface DBanners {
   big_banner: DBigBanner
-  small_banners?: DSmallBanner[]
+  small_banners: DSmallBanner[]
 }
 
 export interface DBigBanner {
@@ -93,7 +93,7 @@ export interface DAboutPage {
   separator: string
   text_block_1: DTextBlock
   text_block_2: DTextBlock
-  banners: DBanners
+  big_banner: DBigBanner
   textboxs: DTextboxs
 }
 

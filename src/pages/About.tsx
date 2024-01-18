@@ -1,6 +1,7 @@
 import { Page, PageCover, Separator, BigBanner, TextBlock, TextBoxList } from '../components'
+import { type DAboutPage } from '../types/data'
 
-const About = ({ data }) => (
+const About = (data: DAboutPage) => (
   <Page data={data}>
     <PageCover data={data} />
     <Separator />

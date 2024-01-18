@@ -19,14 +19,14 @@ export default class Button extends React.Component {
         action: actionName, // Required
         label: actionLabel
       })
-      child.props.onClick && child.props.onClick()
+      child.props.onClick?.()
     }
 
     return React.Children.map(children, (child) => (
       React.cloneElement(child, {
         className: buildClassName(child),
         style: { borderColor, color, backgroundColor },
-        onClick: () => onClickAnalytics(child)
+        onClick: () => { onClickAnalytics(child) }
       })
     ))
   }

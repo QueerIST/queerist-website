@@ -91,7 +91,7 @@ export interface AboutPage {
   description: string
   imgLink: string
   bgColor: string
-  separator: string
+  separator?: Separator
   textBlock_1: TextBlock
   textBlock_2: TextBlock
   big_banner: BigBanner
@@ -108,6 +108,8 @@ export interface Box {
   bgColor: string
   text: string
 }
+
+export type Separator = string
 
 export interface EventsPage {
   name: string
@@ -162,7 +164,7 @@ export interface SubPage {
   textBlock: TextBlock
   separatorEvents?: string
   events?: Event[]
-  separator?: string
+  separator?: Separator
   icons?: Icon[]
   highlightbox?: Highlightbox
   textBlock_2?: TextBlock

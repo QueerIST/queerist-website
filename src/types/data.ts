@@ -90,7 +90,7 @@ export interface DAboutPage {
   description: string
   img_link: string
   bg_color: string
-  separator: string
+  separator?: DSeparator
   text_block_1: DTextBlock
   text_block_2: DTextBlock
   big_banner: DBigBanner
@@ -107,6 +107,8 @@ export interface DBox {
   bg_color: string
   text: string
 }
+
+export type DSeparator = string
 
 export interface DEventsPage {
   name: string
@@ -162,7 +164,7 @@ export interface DSubPage {
   text_block: DTextBlock
   separator_events?: string
   events?: DEvent[]
-  separator?: string
+  separator?: DSeparator
   icons?: DIcon[]
   highlightbox?: DHighlightbox
   text_block_2?: DTextBlock

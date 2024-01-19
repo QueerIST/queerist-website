@@ -97,12 +97,15 @@ export interface DAboutPage {
   textboxs: DTextboxs
 }
 
-export interface DTextboxs {
+export interface DList {
   id: string
-  boxes: DBox[]
 }
 
-export interface DBox {
+export interface DTextboxs extends DList {
+  boxes: DTextBox[]
+}
+
+export interface DTextBox {
   name: string
   bg_color: string
   text: string
@@ -165,10 +168,12 @@ export interface DSubPage {
   separator_events?: string
   events?: DEvent[]
   separator?: DSeparator
-  icons?: DIcon[]
+  icons?: DIcons
   highlightbox?: DHighlightbox
   text_block_2?: DTextBlock
 }
+
+export type DIcons = DIcon[]
 
 export interface DIcon {
   name: string

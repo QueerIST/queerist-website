@@ -1,28 +1,43 @@
+import { type PropsWithChildren } from 'react'
+
 import ReactGA from 'react-ga4'
 
 import { publicPath } from '../helpers'
+import { type DIcons, type DTextboxs } from '../types/data'
+import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps } from '../types/domain'
 
 import './lists.css'
 
-const handleClickLink = (name) => {
+const handleClickLink = (name: string) => {
   ReactGA.event({
     category: 'IconList', // Required
     action: `Clica ${name}` // Required
   })
 }
 
-const Icon = ({ name, link, logoLink }) => (
+const IconImg = ({ name, logoLink }: IconProps) => (
+  <>
+    {logoLink !== undefined &&
+    <div className='lists-iconlist-icon-img'>
+      <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
+    </div>
+    }
+    <h4>{name}</h4>
+  </>
+)
+
+const Icon = ({ name, link, logoLink }: IconProps) => (
   <li className='lists-iconlist-icon'>
-    <a href={link} onClick={() => handleClickLink(name)}>
-      <div className='lists-iconlist-icon-img'>
-        {logoLink && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
-      </div>
-      <h4>{name}</h4>
-    </a>
+    {link !== undefined
+      ? <a href={link} onClick={() => { handleClickLink(name) }}>
+        <IconImg name={name} logoLink={logoLink} />
+      </a>
+      : <IconImg name={name} logoLink={logoLink} />
+      }
   </li>
 )
 
-const TextBox = ({ name, text, bgColor }) => (
+const TextBox = ({ name, text, bgColor }: TextBoxProps) => (
   <li className='lists-textboxlist-box'>
     <h3>{name}</h3>
     <p
@@ -34,13 +49,13 @@ const TextBox = ({ name, text, bgColor }) => (
   </li>
 )
 
-const List = ({ id, children }) => (
+const List = ({ id, children }: PropsWithChildren<ListProps>) => (
   <ul id={id} className='lists-listwrap'>
     {children}
   </ul>
 )
 
-const IconList = ({ data }) => (
+const IconList = ({ data }: { data: DIcons }) => (
   <List>
     {data.map((icon, i) => (
       <Icon
@@ -53,7 +68,7 @@ const IconList = ({ data }) => (
   </List>
 )
 
-const TextBoxList = ({ data }) => (
+const TextBoxList = ({ data }: { data: DTextboxs }) => (
   <List id={data.id}>
     {data.boxes.map((textbox, i) => (
       <TextBox

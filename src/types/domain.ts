@@ -98,12 +98,15 @@ export interface AboutPage {
   textboxs: Textboxs
 }
 
-export interface Textboxs {
-  id: string
-  boxes: Box[]
+export interface List {
+  id?: string
 }
 
-export interface Box {
+export interface Textboxs extends List {
+  boxes: TextBox[]
+}
+
+export interface TextBox {
   name: string
   bgColor: string
   text: string

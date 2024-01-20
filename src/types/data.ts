@@ -88,6 +88,7 @@ export interface DHighlightbox {
   link_bg_color: string
   link_text: string
   link_web: string
+  link_file?: string
 }
 
 export interface DAboutPage extends DPageMeta {

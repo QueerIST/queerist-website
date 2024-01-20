@@ -89,6 +89,7 @@ export interface Highlightbox {
   linkBgColor: string
   linkText: string
   linkWeb: string
+  linkFile?: string
 }
 
 export interface AboutPage extends PageMeta {

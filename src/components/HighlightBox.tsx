@@ -1,9 +1,11 @@
 import { Button } from '.'
 import { publicPath } from '../helpers'
+import { type DHighlightbox } from '../types/data'
+import { type Highlightbox as HighlightboxProps } from '../types/domain'
 
 import './highlightbox.css'
 
-const HighlightBoxInfo = ({ id, title, subTitle, bgColor, textColor, linkTextColor, linkBgColor, linkText, linkFile, linkWeb }) => (
+const HighlightBoxInfo = ({ id, title, subTitle, bgColor, textColor, linkTextColor, linkBgColor, linkText, linkFile, linkWeb }: HighlightboxProps) => (
   <div
     id={id} className='highlightbox'
     style={{ backgroundColor: bgColor, color: textColor }}
@@ -17,15 +19,15 @@ const HighlightBoxInfo = ({ id, title, subTitle, bgColor, textColor, linkTextCol
       color={linkTextColor}
       block
     >
-      {linkFile
+      {linkFile !== undefined
         ? <a href={publicPath(linkFile)} className='highlightbox-button'>{linkText}</a>
-        : <a href={linkWeb} className='highlightbox-button'>{linkText}</a>}
-
+        : <a href={linkWeb} className='highlightbox-button'>{linkText}</a>
+      }
     </Button>
   </div>
 )
 
-const HighlightBox = ({ data }) => (
+const HighlightBox = ({ data }: { data: DHighlightbox }) => (
   <HighlightBoxInfo
     id={data.id}
     title={data.title}

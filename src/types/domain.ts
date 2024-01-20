@@ -5,11 +5,17 @@ export interface Domain {
   projectsPage: ProjectsPage
 }
 
-export interface MainPage {
-  home: boolean
+export interface PageMeta {
+  id?: string
+  home?: boolean
   name: string
   description: string
   imgLink: string
+  bgColor?: string
+  textColor?: string
+}
+
+export interface MainPage extends PageMeta {
   textBlock: TextBlock
   banners: Banners
   highlightbox: Highlightbox
@@ -85,12 +91,7 @@ export interface Highlightbox {
   linkWeb: string
 }
 
-export interface AboutPage {
-  id: string
-  name: string
-  description: string
-  imgLink: string
-  bgColor: string
+export interface AboutPage extends PageMeta {
   separator?: Separator
   textBlock_1: TextBlock
   textBlock_2: TextBlock
@@ -114,11 +115,7 @@ export interface TextBox {
 
 export type Separator = string
 
-export interface EventsPage {
-  name: string
-  description: string
-  imgLink: string
-  bgColor: string
+export interface EventsPage extends PageMeta {
   events: Event[]
   highlightbox: Highlightbox
 }
@@ -145,30 +142,26 @@ export interface Happening {
   link: string
   description?: string
 }
-export interface ProjectsPage {
-  id: string
-  name: string
-  description: string
-  imgLink: string
-  bgColor: string
+export interface ProjectsPage extends PageMeta {
   subPages: SubPage[]
 }
 
-export interface SubPage {
+export interface SubPageMeta extends PageMeta {
   id: string
-  name: string
-  seeMoreText: string
-  description: string
-  imgLink: string
+  isSubPage: boolean
   logoLink?: string
   imgBgColor: string
   bgColor: string
   textColor: string
-  textBlock: TextBlock
-  separatorEvents?: string
-  events?: Event[]
+}
+
+export interface SubPage extends SubPageMeta {
+  seeMoreText: string
   separator?: Separator
   icons?: Icon[]
+  textBlock: TextBlock
+  separatorEvents?: Separator
+  events?: Event[]
   highlightbox?: Highlightbox
   textBlock_2?: TextBlock
 }
@@ -178,3 +171,5 @@ export interface Icon {
   logoLink?: string
   link?: string
 }
+
+export type PagesMeta = PageMeta | SubPageMeta

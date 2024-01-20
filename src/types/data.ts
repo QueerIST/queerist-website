@@ -5,11 +5,17 @@ export interface Data {
   projects_page: DProjectsPage
 }
 
-export interface DMainPage {
-  home: boolean
+export interface DPageMeta {
+  id?: string
+  home?: boolean
   name: string
   description: string
   img_link: string
+  bg_color?: string
+  text_color?: string
+}
+
+export interface DMainPage extends DPageMeta {
   text_block: DTextBlock
   banners: DBanners
   highlightbox: DHighlightbox
@@ -84,12 +90,7 @@ export interface DHighlightbox {
   link_web: string
 }
 
-export interface DAboutPage {
-  id: string
-  name: string
-  description: string
-  img_link: string
-  bg_color: string
+export interface DAboutPage extends DPageMeta {
   separator?: DSeparator
   text_block_1: DTextBlock
   text_block_2: DTextBlock
@@ -113,11 +114,7 @@ export interface DTextBox {
 
 export type DSeparator = string
 
-export interface DEventsPage {
-  name: string
-  description: string
-  img_link: string
-  bg_color: string
+export interface DEventsPage extends DPageMeta {
   events: DEvent[]
   highlightbox: DHighlightbox
 }
@@ -145,33 +142,30 @@ export interface DHappening {
   description?: string
 }
 
-export interface DProjectsPage {
-  id: string
-  name: string
-  description: string
-  img_link: string
-  bg_color: string
+export interface DProjectsPage extends DPageMeta {
   sub_pages: DSubPage[]
 }
 
-export interface DSubPage {
+export interface DSubPageMeta extends DPageMeta {
   id: string
-  name: string
   see_more_text: string
-  description: string
-  img_link: string
   logo_link?: string
   img_bg_color: string
   bg_color: string
   text_color: string
-  text_block: DTextBlock
-  separator_events?: string
-  events?: DEvent[]
+}
+
+export interface DSubPage extends DSubPageMeta {
   separator?: DSeparator
   icons?: DIcons
+  text_block: DTextBlock
+  separator_events?: DSeparator
+  events?: DEvent[]
   highlightbox?: DHighlightbox
   text_block_2?: DTextBlock
 }
+
+export type DPage = DPageMeta | DSubPageMeta
 
 export type DIcons = DIcon[]
 

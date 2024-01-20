@@ -33,6 +33,6 @@ export function isDataTextBlockWithLinkToFile (textBlock: DTextBlock): textBlock
   return 'link_file' in textBlock
 }
 
-export function isDataSubPageMeta (page: DPage, isSubPage: boolean): page is DSubPageMeta {
+export function isDataSubPageMeta (_page: DPage, isSubPage: boolean): _page is DSubPageMeta {
   return isSubPage
 }

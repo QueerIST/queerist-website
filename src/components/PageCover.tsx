@@ -1,22 +1,26 @@
-import React from 'react'
-
 import { publicPath } from '../helpers'
+import { isDataSubPageMeta, isSubPageMeta } from '../helpers/types'
+import { type DPage } from '../types/data'
+import { type PagesMeta } from '../types/domain'
+
 import './pagecover.css'
 
-function PageBackground ({ name, description, bgColor, textColor, isSubPage, logoLink }) {
+function PageBackground (props: PagesMeta) {
+  const { name, description, bgColor, textColor } = props
   return (
     <div className='page-background' style={{ backgroundColor: bgColor, color: textColor }}>
-      {isSubPage && logoLink && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
+      {isSubPageMeta(props) && props.logoLink !== undefined && <img src={publicPath(props.logoLink)} alt={`Logo ${name}`} />}
       <h1>{name}</h1>
-      {!isSubPage && <p>{description}</p>}
+      {!isSubPageMeta(props) && <p>{description}</p>}
     </div>
   )
 }
 
-function PageImage ({ imgLink, name, description, imgBgColor, textColor, isSubPage }) {
+function PageImage (props: PagesMeta) {
+  const { imgLink, name, description } = props
   return (
     <div className='page-image'>
-      {isSubPage
+      {isSubPageMeta(props)
         ? (
           <div className='page-image-group'>
             <div className='page-image-child'>
@@ -24,7 +28,7 @@ function PageImage ({ imgLink, name, description, imgBgColor, textColor, isSubPa
             </div>
             <div
               className='page-image-child'
-              style={{ backgroundColor: imgBgColor, color: textColor }}
+              style={{ backgroundColor: props.imgBgColor, color: props.textColor }}
             >
               <p>{description}</p>
             </div>
@@ -39,30 +43,25 @@ function PageImage ({ imgLink, name, description, imgBgColor, textColor, isSubPa
   )
 }
 
-class PageCover extends React.Component {
-  render () {
-    return (
-      <>
-        <PageBackground
-          name={this.props.data.name}
-          isSubPage={this.props.isSubPage}
-          logoLink={this.props.data.logo_link}
-          imgBgColor={this.props.data.img_bg_color}
-          description={this.props.data.description}
-          bgColor={this.props.data.bg_color}
-          textColor={this.props.data.text_color}
-        />
-        <PageImage
-          name={this.props.data.name}
-          isSubPage={this.props.isSubPage}
-          imgBgColor={this.props.data.img_bg_color}
-          description={this.props.data.description}
-          imgLink={this.props.data.img_link}
-          textColor={this.props.data.text_color}
-        />
-      </>
-    )
-  }
-}
+const PageCoverInfo = (props: PagesMeta) => (
+  <>
+    <PageBackground {...props} />
+    <PageImage {...props} />
+  </>
+)
+
+const PageCover = ({ data, isSubPage = false }: { data: DPage, isSubPage?: boolean }) =>
+  <PageCoverInfo
+    name={data.name}
+    isSubPage={isSubPage}
+    description={data.description}
+    textColor={data.text_color}
+    bgColor={data.bg_color}
+    imgLink={data.img_link}
+    {...(isDataSubPageMeta(data, isSubPage) && {
+      logoLink: data.logo_link,
+      imgBgColor: data.img_bg_color
+    })}
+  />
 
 export default PageCover

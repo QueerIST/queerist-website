@@ -42,7 +42,8 @@ module.exports = {
     ],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'error',
-    'react/jsx-indent': ['error', 2]
+    '@typescript-eslint/triple-slash-reference': [{ types: 'always' }],
+    'react/jsx-indent': ['error', 2],
   },
   overrides: [
     {

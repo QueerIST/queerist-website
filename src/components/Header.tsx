@@ -1,5 +1,3 @@
-/// <reference types="vite-plugin-svgr/client" />
-
 import { useState } from 'react'
 
 import ReactGA from 'react-ga4'

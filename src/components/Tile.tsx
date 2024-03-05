@@ -5,11 +5,14 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { EventGallery, Button } from '.'
 import Expand from './../svg/expand.svg?react'
 import { publicPath } from '../helpers'
+import { isDataSubPage } from '../helpers/types'
+import { type DHappening, type DTile } from '../types/data'
+import { type Event, type SubPage } from '../types/domain'
 // import Launch from './../svg/launch.svg?react'
 
 import './tile.css'
 
-function PageTileInfo ({ id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText }) {
+function PageTileInfo ({ id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText }: Omit<SubPage, 'textBlock' | 'isSubPage' | 'imgBgColor'>) {
   const EventTypeInfoButton = (
     <NavLink
       className='tile-info-b'
@@ -26,30 +29,29 @@ function PageTileInfo ({ id, parentPage, name, description, imgLink, logoLink, b
       <img src={publicPath(imgLink)} alt={name} />
       <div className='tile-info-text'>
         <div className='page-tile-info-bg' style={{ backgroundColor: bgColor }} />
-        {logoLink &&
+        {logoLink !== undefined &&
           <div className='tile-info-text-img'>
             <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
           </div>}
         <h2 className='tile-info-text-text'>{name}</h2>
         <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-        {seeMoreText &&
-          <Button actionComp='PageTile' actionName={`Entra ${name} (em ${parentPage})`} borderColor={textColor} color={textColor}>
-            {EventTypeInfoButton}
-          </Button>}
+        <Button actionComp='PageTile' actionName={`Entra ${name} (em ${parentPage})`} borderColor={textColor} color={textColor}>
+          {EventTypeInfoButton}
+        </Button>
       </div>
     </div>
   )
 }
 
-const EventTileInfo = ({ n, id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText }) => {
+const EventTileInfo = ({ n, id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText }: Omit<Event, 'happenings'> & { happenings?: DHappening[] }) => {
   const [open, setOpen] = useState(false)
   const location = useLocation()
-  const dir = n % 2 ? 'left' : 'right'
+  const dir = n % 2 !== 0 ? 'left' : 'right'
   const openClass = open ? 'open' : ''
 
   const EventTypeInfoButton = (
     <button
-      onClick={() => setOpen(!open)}
+      onClick={() => { setOpen(!open) }}
       className={`tile-info-b tile-info-button ${openClass}`}
     >
       {seeMoreText}
@@ -58,7 +60,7 @@ const EventTileInfo = ({ n, id, name, description, imgLink, logoLink, bgColor, t
   )
 
   useEffect(() => {
-    if (location && location.hash.split('-')[0] === `#${id}`) { setOpen(true) }
+    if (location.hash.split('-')[0] === `#${id}`) { setOpen(true) }
   }, [location, id])
 
   return (
@@ -66,28 +68,28 @@ const EventTileInfo = ({ n, id, name, description, imgLink, logoLink, bgColor, t
       data-aos={`flip-${dir}`} className={`tile-info ${dir}`} style={{ backgroundColor: bgColor, color: textColor }}
     >
       <div className={`tile-info-text ${openClass}`}>
-        {logoLink &&
+        {logoLink !== undefined &&
           <div className='tile-info-text-img'>
             <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
           </div>}
         <h3 className='tile-info-text-text'>{name}</h3>
         <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-        {seeMoreText &&
+        {seeMoreText !== undefined &&
           <Button actionComp='EventTile' actionName={`Clica ${name}`} actionLabel={open ? 'Close' : 'Open'} borderColor={textColor} color={textColor}>
             {EventTypeInfoButton}
           </Button>}
       </div>
       <div className='tile-info-img'>
         <img className={openClass} src={publicPath(imgLink)} alt={name} />
-        {happenings && <EventGallery id={id} open={open} data={happenings} />}
+        {happenings !== undefined && <EventGallery id={id} open={open} data={happenings} />}
       </div>
     </div>
   )
 }
 
-const Tile = ({ n, data, parentPage }) => (
+const Tile = ({ n, data, parentPage }: { n: number, data: DTile, parentPage?: string }) => (
   <div id={data.id}>
-    {!parentPage
+    {!isDataSubPage(data, parentPage)
       ? (
         <EventTileInfo
           n={n}
@@ -105,7 +107,8 @@ const Tile = ({ n, data, parentPage }) => (
       : (
         <PageTileInfo
           id={data.id}
-          parentPage={parentPage}
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          parentPage={parentPage!}
           name={data.name}
           description={data.description}
           imgLink={data.img_link}

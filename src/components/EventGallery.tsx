@@ -1,29 +1,30 @@
+import { type PropsWithChildren } from 'react'
+
 import { format } from 'date-fns'
-import pt from 'date-fns/locale/pt'
+import { pt } from 'date-fns/locale'
 import ReactGA from 'react-ga4'
 
-import './eventgallery.css'
 import Launch from './../svg/launch.svg?react'
 import { publicPath, WrapDelayed } from '../helpers'
+import { type DHappening } from '../types/data'
+import { type Event, type Happening } from '../types/domain'
 
-const handleClickEventLink = (event) => {
+import './eventgallery.css'
+
+const handleClickEventLink = (event: string) => {
   ReactGA.event({
     category: 'EventGallery', // Required
     action: `Clica link de ${event}` // Required
   })
 }
 
-function EventGalleryWrap (props) {
-  const getClassName = () => props.open ? '' : 'closed'
+const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
+  <ul className={`event-gallery ${props.open ? '' : 'closed'}`}>
+    {props.children}
+  </ul>
+)
 
-  return (
-    <ul className={`event-gallery ${getClassName()}`}>
-      {props.children}
-    </ul>
-  )
-}
-
-const EventGalleryItem = ({ id, name, description, open, date, time, place, imgLink, link }) => {
+const EventGalleryItem = ({ id, name, description, open, date, time, place, imgLink, link }: Happening & { id: string, open: boolean }) => {
   const dateObj = new Date(`${date}T${time ?? '00:00:00'}`)
   return (
     <li className='event-gallery-item' id={id}>
@@ -35,8 +36,8 @@ const EventGalleryItem = ({ id, name, description, open, date, time, place, imgL
       <div className='event-gallery-item-text'>
         <h3>{name}</h3>
         <span className='event-gallery-item-launch'>
-          <p>{format(dateObj, `dd MMM yyyy${time ? ', HH\'h\'mm' : ''}`, { locale: pt })} @ {place}</p>
-          <a href={link} target='_blank' rel='noopener noreferrer' onClick={() => handleClickEventLink(name)}> <Launch /></a>
+          <p>{format(dateObj, `dd MMM yyyy${time !== undefined ? ', HH\'h\'mm' : ''}`, { locale: pt })} @ {place}</p>
+          <a href={link} target='_blank' rel='noopener noreferrer' onClick={() => { handleClickEventLink(name) }}> <Launch /></a>
         </span>
         {/* <p>{description}</p> */}
       </div>
@@ -44,9 +45,9 @@ const EventGalleryItem = ({ id, name, description, open, date, time, place, imgL
   )
 }
 
-function EventGallery ({ id, data, open, seeMoreText }) {
+function EventGallery ({ id, data, open }: Pick<Event, 'id'> & { data: DHappening[], open: boolean }) {
   return (
-    <EventGalleryWrap open={open} seeMoreText={seeMoreText}>
+    <EventGalleryWrap open={open}>
       {data.map((event, i) => (
         <EventGalleryItem
           key={i}

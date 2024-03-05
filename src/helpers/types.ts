@@ -1,4 +1,4 @@
-import { type DTextBlock, type DTextBlockWithLink, type DLinkToPage, type DLinkToFile, type DPage, type DSubPageMeta } from '../types/data'
+import { type DTextBlock, type DTextBlockWithLink, type DLinkToPage, type DLinkToFile, type DPage, type DSubPageMeta, type DTile, type DSubPage } from '../types/data'
 import { type PagesMeta, type LinkToFile, type LinkToPage, type TextBlockWithLink, type TextBlock as TypeTextBlock, type SubPageMeta } from '../types/domain'
 
 /* DOMAIN */
@@ -35,4 +35,8 @@ export function isDataTextBlockWithLinkToFile (textBlock: DTextBlock): textBlock
 
 export function isDataSubPageMeta (_page: DPage, isSubPage: boolean): _page is DSubPageMeta {
   return isSubPage
+}
+
+export function isDataSubPage (_tile: DTile, parentPage?: string): _tile is DSubPage {
+  return parentPage !== undefined
 }

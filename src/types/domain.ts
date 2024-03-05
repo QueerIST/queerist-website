@@ -122,6 +122,7 @@ export interface EventsPage extends PageMeta {
 }
 
 export interface Event {
+  n: number
   id: string
   name: string
   description: string
@@ -132,6 +133,8 @@ export interface Event {
   textColor: string
   happenings?: Happening[]
 }
+
+export type Tile = Event | SubPage
 
 export interface Happening {
   name: string

@@ -143,8 +143,11 @@ export interface DHappening {
   description?: string
 }
 
-export interface DProjectsPage extends DPageMeta {
+export interface DPageWithSubPages {
   sub_pages: DSubPage[]
+}
+
+export interface DProjectsPage extends DPageMeta, DPageWithSubPages {
 }
 
 export interface DSubPageMeta extends DPageMeta {
@@ -175,3 +178,5 @@ export interface DIcon {
   logo_link?: string
   link?: string
 }
+
+export type DTile = DEvent | DSubPage

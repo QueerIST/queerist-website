@@ -50,15 +50,15 @@ const PageCoverInfo = (props: PagesMeta) => (
   </>
 )
 
-const PageCover = ({ data, isSubPage = false }: { data: DPage, isSubPage?: boolean }) =>
+const PageCover = ({ data, parentPage }: { data: DPage, parentPage?: string }) =>
   <PageCoverInfo
     name={data.name}
-    isSubPage={isSubPage}
+    parentPage={parentPage}
     description={data.description}
     textColor={data.text_color}
     bgColor={data.bg_color}
     imgLink={data.img_link}
-    {...(isDataSubPageMeta(data, isSubPage) && {
+    {...(isDataSubPageMeta(data, parentPage) && {
       logoLink: data.logo_link,
       imgBgColor: data.img_bg_color
     })}

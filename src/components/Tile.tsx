@@ -12,7 +12,7 @@ import { type Event, type SubPage } from '../types/domain'
 
 import './tile.css'
 
-function PageTileInfo ({ id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText }: Omit<SubPage, 'textBlock' | 'isSubPage' | 'imgBgColor'>) {
+function PageTileInfo ({ id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText }: Omit<SubPage, 'textBlock' | 'imgBgColor'>) {
   const EventTypeInfoButton = (
     <NavLink
       className='tile-info-b'

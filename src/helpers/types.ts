@@ -16,7 +16,7 @@ export function isTextBlockWithLinkToFile (textBlock: TextBlockWithLink): textBl
 }
 
 export function isSubPageMeta (page: PagesMeta): page is SubPageMeta {
-  return 'isSubPage' in page && page.isSubPage
+  return 'parentPage' in page
 }
 
 /* DATA */
@@ -33,8 +33,8 @@ export function isDataTextBlockWithLinkToFile (textBlock: DTextBlock): textBlock
   return 'link_file' in textBlock
 }
 
-export function isDataSubPageMeta (_page: DPage, isSubPage: boolean): _page is DSubPageMeta {
-  return isSubPage
+export function isDataSubPageMeta (_page: DPage, parentPage?: string): _page is DSubPageMeta {
+  return parentPage !== undefined
 }
 
 export function isDataSubPage (_tile: DTile, parentPage?: string): _tile is DSubPage {

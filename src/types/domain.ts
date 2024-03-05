@@ -152,7 +152,7 @@ export interface ProjectsPage extends PageMeta {
 
 export interface SubPageMeta extends PageMeta {
   id: string
-  isSubPage: boolean
+  parentPage: string
   logoLink?: string
   imgBgColor: string
   bgColor: string

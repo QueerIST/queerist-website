@@ -143,11 +143,11 @@ export interface DHappening {
   description?: string
 }
 
-export interface DPageWithSubPages {
+export interface DPageWithSubPages extends DPageMeta {
   sub_pages: DSubPage[]
 }
 
-export interface DProjectsPage extends DPageMeta, DPageWithSubPages {
+export interface DProjectsPage extends DPageWithSubPages {
 }
 
 export interface DSubPageMeta extends DPageMeta {

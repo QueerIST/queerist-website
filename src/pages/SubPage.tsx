@@ -10,7 +10,7 @@ const SubPage = ({ parentData }: { parentData: DPageWithSubPages }) => {
 
   return (
     <Page data={data}>
-      <PageCover data={data} isSubPage />
+      <PageCover data={data} parentPage={parentData.id} />
       <Separator data={data.separator} />
       {data.icons !== undefined && <IconList data={data.icons} />}
       <TextBlock data={data.text_block} />

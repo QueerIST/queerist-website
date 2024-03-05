@@ -1,6 +1,7 @@
 import { Page, PageCover, Tile, Separator, HighlightBox } from '../components'
+import { type DEventsPage } from '../types/data'
 
-const Events = ({ data }) => (
+const Events = ({ data }: { data: DEventsPage }) => (
   <Page data={data}>
     <PageCover data={data} />
     <Separator />

@@ -1,4 +1,4 @@
-import logo from ' ../img/Cores fundo claro.png'
+import logo from '../img/Cores fundo claro.png'
 import fundo from '../img/fundo.png'
 
 import './maincover.css'

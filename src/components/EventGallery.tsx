@@ -24,7 +24,7 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ id, name, description, open, date, time, place, imgLink, link }: Happening & { id: string, open: boolean }) => {
+const EventGalleryItem = ({ id, name, open, date, time, place, imgLink, link }: Happening & { id: string, open: boolean }) => {
   const dateObj = new Date(`${date}T${time ?? '00:00:00'}`)
   return (
     <li className='event-gallery-item' id={id}>

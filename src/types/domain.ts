@@ -121,18 +121,23 @@ export interface EventsPage extends PageMeta {
   highlightbox: Highlightbox
 }
 
-export interface Event {
+export interface EventMeta {
   n: number
   id: string
   name: string
   description: string
-  seeMoreText?: string
   imgLink: string
   logoLink?: string
   bgColor: string
   textColor: string
-  happenings?: Happening[]
 }
+
+export interface EventWithHappenings extends EventMeta {
+  seeMoreText: string
+  happenings: Happening[]
+}
+
+export type Event = EventMeta | EventWithHappenings
 
 export type Tile = Event | SubPage
 

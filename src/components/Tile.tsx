@@ -5,9 +5,9 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { EventGallery, Button } from '.'
 import Expand from './../svg/expand.svg?react'
 import { publicPath } from '../helpers'
-import { isDataSubPage } from '../helpers/types'
+import { isDataEventWithHappenings, isDataSubPage, isEventWithHappenings } from '../helpers/types'
 import { type DHappening, type DTile } from '../types/data'
-import { type Event, type SubPage } from '../types/domain'
+import { type EventWithHappenings, type Event, type SubPage } from '../types/domain'
 // import Launch from './../svg/launch.svg?react'
 
 import './tile.css'
@@ -43,18 +43,20 @@ function PageTileInfo ({ id, parentPage, name, description, imgLink, logoLink, b
   )
 }
 
-const EventTileInfo = ({ n, id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText }: Omit<Event, 'happenings'> & { happenings?: DHappening[] }) => {
+const EventTileInfo = (props: Omit<Event, 'happenings'> & { happenings?: DHappening[] }) => {
+  const { n, id, name, description, imgLink, logoLink, bgColor, textColor } = props
+
   const [open, setOpen] = useState(false)
   const location = useLocation()
   const dir = n % 2 !== 0 ? 'left' : 'right'
   const openClass = open ? 'open' : ''
 
-  const EventTypeInfoButton = (
+  const EventTypeInfoButton = (props: EventWithHappenings) => (
     <button
       onClick={() => { setOpen(!open) }}
       className={`tile-info-b tile-info-button ${openClass}`}
     >
-      {seeMoreText}
+      {props.seeMoreText}
       <Expand fill={textColor} />
     </button>
   )
@@ -74,14 +76,14 @@ const EventTileInfo = ({ n, id, name, description, imgLink, logoLink, bgColor, t
           </div>}
         <h3 className='tile-info-text-text'>{name}</h3>
         <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-        {seeMoreText !== undefined &&
+        {isEventWithHappenings(props) &&
           <Button actionComp='EventTile' actionName={`Clica ${name}`} actionLabel={open ? 'Close' : 'Open'} borderColor={textColor} color={textColor}>
-            {EventTypeInfoButton}
+            {EventTypeInfoButton(props)}
           </Button>}
       </div>
       <div className='tile-info-img'>
         <img className={openClass} src={publicPath(imgLink)} alt={name} />
-        {happenings !== undefined && <EventGallery id={id} open={open} data={happenings} />}
+        {isEventWithHappenings(props) && <EventGallery id={id} open={open} data={props.happenings} />}
       </div>
     </div>
   )
@@ -100,8 +102,10 @@ const Tile = ({ n, data, parentPage }: { n: number, data: DTile, parentPage?: st
           logoLink={data.logo_link}
           bgColor={data.bg_color}
           textColor={data.text_color}
-          happenings={data.happenings}
-          seeMoreText={data.see_more_text}
+          {...(isDataEventWithHappenings(data) && {
+            happenings: data.happenings,
+            seeMoreText: data.see_more_text
+          })}
         />
         )
       : (

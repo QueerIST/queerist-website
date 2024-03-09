@@ -120,17 +120,22 @@ export interface DEventsPage extends DPageMeta {
   highlightbox: DHighlightbox
 }
 
-export interface DEvent {
+export interface DEventMeta {
   id: string
   name: string
   description: string
-  see_more_text?: string
   img_link: string
   logo_link?: string
   bg_color: string
   text_color: string
-  happenings?: DHappening[]
 }
+
+export interface DEventWithHappenings extends DEventMeta {
+  see_more_text: string
+  happenings: DHappening[]
+}
+
+export type DEvent = DEventMeta | DEventWithHappenings
 
 export interface DHappening {
   name: string

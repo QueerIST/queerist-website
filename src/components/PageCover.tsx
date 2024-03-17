@@ -1,4 +1,4 @@
-import { publicPath } from '../helpers'
+import { publicPath } from '../helpers/links'
 import { isDataSubPageMeta, isSubPageMeta } from '../helpers/types'
 import { type DPage } from '../types/data'
 import { type PagesMeta } from '../types/domain'

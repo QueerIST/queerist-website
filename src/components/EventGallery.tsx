@@ -5,7 +5,8 @@ import { pt } from 'date-fns/locale'
 import ReactGA from 'react-ga4'
 
 import Launch from './../svg/launch.svg?react'
-import { publicPath, WrapDelayed } from '../helpers'
+import WrapDelayed from '../helpers/async'
+import { publicPath } from '../helpers/links'
 import { type DHappening } from '../types/data'
 import { type Event, type Happening } from '../types/domain'
 

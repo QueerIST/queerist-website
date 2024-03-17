@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 
 import { EventGallery, Button } from '.'
 import Expand from './../svg/expand.svg?react'
-import { publicPath } from '../helpers'
+import { publicPath } from '../helpers/links'
 import { isDataEventWithHappenings, isDataSubPage, isEventWithHappenings } from '../helpers/types'
 import { type DHappening, type DTile } from '../types/data'
 import { type EventWithHappenings, type Event, type SubPage } from '../types/domain'

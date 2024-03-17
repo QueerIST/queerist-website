@@ -1,7 +1,7 @@
 import { Helmet, HelmetData } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 
-import { fullPath, fullPathSlashless } from '../helpers'
+import { fullPath, fullPathSlashless } from '../helpers/links'
 
 const Page = ({ data, children }) => {
   const location = useLocation()
@@ -23,9 +23,9 @@ const Page = ({ data, children }) => {
         />
 
         {/* Google / Search Engine Tags */}
-        <meta itemprop='name' content={data.name} />
-        <meta itemprop='description' content={data.description} />
-        <meta itemprop='image' content={fullPath(data.img_link)} />
+        <meta itemProp='name' content={data.name} />
+        <meta itemProp='description' content={data.description} />
+        <meta itemProp='image' content={fullPath(data.img_link)} />
 
         {/* Facebook Meta Tags */}
         <meta

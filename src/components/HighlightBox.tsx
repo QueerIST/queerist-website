@@ -1,5 +1,5 @@
 import { Button } from '.'
-import { publicPath } from '../helpers'
+import { publicPath } from '../helpers/links'
 import { type DHighlightbox } from '../types/data'
 import { type Highlightbox as HighlightboxProps } from '../types/domain'
 

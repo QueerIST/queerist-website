@@ -2,7 +2,7 @@ import { type PropsWithChildren } from 'react'
 
 import ReactGA from 'react-ga4'
 
-import { publicPath } from '../helpers'
+import { publicPath } from '../helpers/links'
 import { type DIcons, type DTextboxs } from '../types/data'
 import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps } from '../types/domain'
 

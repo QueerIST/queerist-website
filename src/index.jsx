@@ -1,7 +1,7 @@
 import React from 'react'
+import { createRoot } from 'react-dom/client'
 
 import AOS from 'aos'
-import { hydrate, render } from 'react-dom'
 import ReactGA from 'react-ga4'
 
 import App from './App'
@@ -22,17 +22,8 @@ if (import.meta.env.PROD && import.meta.env.MODE !== 'github') {
   })
 }
 
-const rootElement = document.getElementById('root')
-if (rootElement.hasChildNodes()) {
-  hydrate(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-    , rootElement)
-} else {
-  render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-    , rootElement)
-}
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)

@@ -4,7 +4,7 @@
 interface ImportMetaEnv {
   readonly VITE_FULL_URL: string
   readonly VITE_BASE_URL: string
-  readonly VITE_GA_CODE?: string
+  readonly VITE_GA_CODE: string
 }
 
 interface ImportMeta {

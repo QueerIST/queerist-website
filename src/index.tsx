@@ -15,7 +15,7 @@ AOS.init({
 })
 
 if (import.meta.env.PROD && import.meta.env.MODE !== 'github') {
-  if (import.meta.env.VITE_GA_CODE !== undefined) {
+  if (import.meta.env.VITE_GA_CODE !== '') {
     ReactGA.initialize(import.meta.env.VITE_GA_CODE, {
       gaOptions: {
         siteSpeedSampleRate: 100

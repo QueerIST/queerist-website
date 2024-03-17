@@ -15,14 +15,17 @@ AOS.init({
 })
 
 if (import.meta.env.PROD && import.meta.env.MODE !== 'github') {
-  ReactGA.initialize(import.meta.env.VITE_GA_CODE, {
-    gaOptions: {
-      siteSpeedSampleRate: 100
-    }
-  })
+  if (import.meta.env.VITE_GA_CODE !== undefined) {
+    ReactGA.initialize(import.meta.env.VITE_GA_CODE, {
+      gaOptions: {
+        siteSpeedSampleRate: 100
+      }
+    })
+  }
 }
 
-createRoot(document.getElementById('root')).render(
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>

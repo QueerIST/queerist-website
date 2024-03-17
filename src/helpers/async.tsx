@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, type PropsWithChildren } from 'react'
 
-function WrapDelayed (props) {
+function WrapDelayed (props: PropsWithChildren<{ load: boolean }>) {
   const { load, children } = props
   const [loaded, setLoaded] = useState(false)
 

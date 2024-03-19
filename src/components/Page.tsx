@@ -1,9 +1,12 @@
+import { type PropsWithChildren } from 'react'
+
 import { Helmet, HelmetData } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 
 import { fullPath, fullPathSlashless } from '../helpers/links'
+import { type DPageMeta } from '../types/data'
 
-const Page = ({ data, children }) => {
+const Page = ({ data, children }: PropsWithChildren<{ data: DPageMeta }>) => {
   const location = useLocation()
   const helmetData = new HelmetData({})
   return (
@@ -15,7 +18,7 @@ const Page = ({ data, children }) => {
         defer={false}
       >
         {/* HTML Meta Tags */}
-        {!data.home && <title>{data.name}</title>}
+        {!(data.home ?? false) && <title>{data.name}</title>}
         <meta name='description' content={data.description} />
         <link
           rel='canonical'

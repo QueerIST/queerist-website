@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react-swc'
 import { loadEnv } from 'vite'
 import svgr from 'vite-plugin-svgr'
 
-export default function defineConfig ({ mode }) {
+export default function defineConfig ({ mode }: { mode: string }) {
   const env = loadEnv(mode, process.cwd(), '')
   return {
     server: {

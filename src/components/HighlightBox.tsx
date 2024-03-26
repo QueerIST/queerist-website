@@ -1,4 +1,4 @@
-import { Button } from '.'
+import Button from './Button'
 import { publicPath } from '../helpers/links'
 import { type DHighlightbox } from '../types/data'
 import { type Highlightbox as HighlightboxProps } from '../types/domain'

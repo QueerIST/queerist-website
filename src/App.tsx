@@ -3,7 +3,7 @@
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import { Routes } from './components'
+import Routes from './components/Routes'
 
 const App = () => {
   const router = createBrowserRouter(Routes, { basename: import.meta.env.BASE_URL })

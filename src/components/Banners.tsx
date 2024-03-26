@@ -2,7 +2,7 @@ import { type ReactNode } from 'react'
 
 import { NavLink } from 'react-router-dom'
 
-import { Button } from '.'
+import Button from './Button'
 import { publicPath } from '../helpers/links'
 import { type DBigBanner, type DSmallBanner } from '../types/data'
 import { type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'

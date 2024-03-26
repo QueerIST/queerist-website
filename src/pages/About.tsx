@@ -1,4 +1,9 @@
-import { Page, PageCover, Separator, BigBanner, TextBlock, TextBoxList } from '../components'
+import { BigBanner } from '../components/Banners'
+import { TextBoxList } from '../components/Lists'
+import Page from '../components/Page'
+import PageCover from '../components/PageCover'
+import Separator from '../components/Separator'
+import TextBlock from '../components/TextBlock'
 import { type DAboutPage } from '../types/data'
 
 const About = ({ data }: { data: DAboutPage }) => (

@@ -1,4 +1,7 @@
-import { Page, PageCover, Tile, Separator } from '../components'
+import Page from '../components/Page'
+import PageCover from '../components/PageCover'
+import Separator from '../components/Separator'
+import Tile from '../components/Tile'
 import { type DProjectsPage } from '../types/data'
 
 const Projects = ({ data }: { data: DProjectsPage }) => (

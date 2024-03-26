@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-import { Button } from '.'
+import Button from './Button'
 import { publicPath } from '../helpers/links'
 import { isDataTextBlockWithLink, isDataTextBlockWithLinkToFile, isDataTextBlockWithLinkToPage, isTextBlockWithLink, isTextBlockWithLinkToFile, isTextBlockWithLinkToPage } from '../helpers/types'
 import { type DTextBlock } from '../types/data'

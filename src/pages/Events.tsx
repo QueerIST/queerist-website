@@ -1,4 +1,8 @@
-import { Page, PageCover, Tile, Separator, HighlightBox } from '../components'
+import HighlightBox from '../components/HighlightBox'
+import Page from '../components/Page'
+import PageCover from '../components/PageCover'
+import Separator from '../components/Separator'
+import Tile from '../components/Tile'
 import { type DEventsPage } from '../types/data'
 
 const Events = ({ data }: { data: DEventsPage }) => (

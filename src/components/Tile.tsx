@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 
 import { NavLink, useLocation } from 'react-router-dom'
 
-import { EventGallery, Button } from '.'
 import Expand from './../svg/expand.svg?react'
+import Button from './Button'
+import EventGallery from './EventGallery'
 import { publicPath } from '../helpers/links'
 import { isDataEventWithHappenings, isDataSubPage, isEventWithHappenings } from '../helpers/types'
 import { type DHappening, type DTile } from '../types/data'

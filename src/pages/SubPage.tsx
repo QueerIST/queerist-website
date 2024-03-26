@@ -1,6 +1,12 @@
 import { useParams } from 'react-router-dom'
 
-import { Page, PageCover, Tile, Separator, TextBlock, IconList, HighlightBox } from '../components'
+import HighlightBox from '../components/HighlightBox'
+import { IconList } from '../components/Lists'
+import Page from '../components/Page'
+import PageCover from '../components/PageCover'
+import Separator from '../components/Separator'
+import TextBlock from '../components/TextBlock'
+import Tile from '../components/Tile'
 import { type DPageWithSubPages } from '../types/data'
 
 const SubPage = ({ parentData }: { parentData: DPageWithSubPages }) => {

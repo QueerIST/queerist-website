@@ -1502,7 +1502,7 @@ export interface ApiMainPageMainPage extends Schema.SingleType {
   attributes: {
     Meta: Attribute.Component<'meta.page-meta'> & Attribute.Required
     Body: Attribute.DynamicZone<
-    ['blocks.big-banner', 'blocks.small-banners-list', 'blocks.text-block']
+    ['blocks.big-banner', 'blocks.small-banners-list', 'blocks.text-block', 'blocks.highlightbox']
     >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime

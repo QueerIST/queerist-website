@@ -4,25 +4,24 @@ import { NavLink } from 'react-router-dom'
 
 import Button from './Button'
 import { publicPath } from '../helpers/links'
-import { type DBigBanner, type DSmallBanner } from '../types/data'
-import { type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
+import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
 
 import './banners.css'
 
-const BigBannerInfo = ({ name, imgLink, textColor, linkText, linkPage, linkId }: BigBannerProps) => (
+const BigBanner = ({ name, imgLink, button }: BigBannerProps) => (
   <div className='big-banner banner'>
-    {linkText !== undefined &&
+    {button !== undefined &&
     <div className='big-banner-button'>
       <Button
             actionComp='BigBanner'
             actionName={`Entra ${name}`}
-            borderColor={textColor}
-            color={textColor}
+            borderColor={button.linkTextColor}
+            color={button.linkTextColor}
           >
         <NavLink
-              to={{ pathname: linkPage, hash: '#' + linkId }}
+              to={{ pathname: button.linkPage, hash: '#' + button.linkId }}
             >
-          {linkText}
+          {button.linkText}
         </NavLink>
       </Button>
     </div>}
@@ -30,7 +29,7 @@ const BigBannerInfo = ({ name, imgLink, textColor, linkText, linkPage, linkId }:
   </div>
 )
 
-function SmallBanner ({ name, label, logoLink, bgColor, textColor, linkText, linkPage, linkId }: SmallBannerProps) {
+function SmallBanner ({ name, label, logoLink, bgColor, textColor, button }: SmallBannerProps) {
   return (
     <div className='small-banner banner' data-aos='zoom-in' style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='small-banner-content'>
@@ -39,18 +38,19 @@ function SmallBanner ({ name, label, logoLink, bgColor, textColor, linkText, lin
         <div className='small-banner-img'>
           <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
         </div>
+        {button !== undefined &&
         <Button
           actionComp='SmallBanner'
           actionName={`Entra ${name}`}
-          borderColor={textColor}
-          color={textColor}
+          borderColor={button.linkTextColor }
+          color={button.linkTextColor}
         >
           <NavLink
-            to={{ pathname: linkPage, hash: '#' + linkId }}
+            to={{ pathname: button.linkPage, hash: '#' + button.linkId }}
           >
-            {linkText}
+            {button.linkText}
           </NavLink>
-        </Button>
+        </Button>}
       </div>
     </div>
   )
@@ -62,30 +62,12 @@ const SmallBannersWrap = ({ children }: { children: ReactNode }) => (
   </div>
 )
 
-const BigBanner = ({ data }: { data: DBigBanner }) => (
-  <BigBannerInfo
-    name={data.name}
-    imgLink={data.img_link}
-    textColor={data.text_color}
-    linkText={data.link_text}
-    linkPage={data.link_page}
-    linkId={data.link_id}
-  />
-)
-
-const SmallBanners = ({ data }: { data: DSmallBanner[] }) => (
+const SmallBanners = ({ banners }: { banners: SmallBannersProps }) => (
   <SmallBannersWrap>
-    {data.map((smallBanner, i) => (
+    {banners.map((smallBanner, i) => (
       <SmallBanner
         key={i}
-        name={smallBanner.name}
-        label={smallBanner.label}
-        logoLink={smallBanner.logo_link}
-        bgColor={smallBanner.bg_color}
-        textColor={smallBanner.text_color}
-        linkText={smallBanner.link_text}
-        linkPage={smallBanner.link_page}
-        linkId={smallBanner.link_id}
+       {...smallBanner}
       />
     ))}
   </SmallBannersWrap>

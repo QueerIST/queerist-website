@@ -1,18 +1,64 @@
+import { useEffect, useState } from 'react'
+
+import axios from 'axios'
+
 import { BigBanner, SmallBanners } from '../components/Banners'
 import HighlightBox from '../components/HighlightBox'
 import MainCover from '../components/MainCover'
 import Page from '../components/Page'
 import TextBlock from '../components/TextBlock'
-import { type DMainPage } from '../types/data'
+import { bigBannerMapper, highlightBoxMapper, pageMapper, smallBannersMapper, textBlockMapper } from '../mappers/components'
+import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const Home = ({ data }: { data: DMainPage }) => (
-  <Page data={data}>
-    <MainCover />
-    <TextBlock data={data.text_block} />
-    <BigBanner data={data.banners.big_banner} />
-    <SmallBanners data={data.banners.small_banners} />
-    <HighlightBox data={data.highlightbox} />
-  </Page>
-)
+const Home = () => {
+  const [data, setData] = useState<APIResponseData<'api::main-page.main-page'>>()
+
+  useEffect(() => {
+    async function fetchData () {
+      const data = await axios.get<APIResponseSingle<'api::main-page.main-page'>>('http://queerist.vps.tecnico.ulisboa.pt/a/pi/main-page', {
+        params: {
+          populate: {
+            Meta: { populate: '*' },
+            Body: {
+              on: {
+                'blocks.text-block': {
+                  populate: ['Button', 'Button.Link']
+                },
+                'blocks.big-banner': {
+                  populate: ['Image', 'Button', 'Button.Link']
+                },
+                'blocks.small-banners-list': {
+                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link']
+                },
+                'blocks.highlightbox': { populate: ['Button', 'Button.Link'] }
+              }
+            }
+          }
+        }
+      })
+      setData(data.data.data)
+    }
+    fetchData().catch((error) => { console.log(error) })
+  }, [])
+
+  if (data === undefined) { return null }
+
+  return (
+    <Page data={pageMapper(data.attributes.Meta)}>
+      <MainCover />
+      {data.attributes.Body?.map((block, i) => {
+        if (block.__component === 'blocks.text-block') {
+          return <TextBlock {...textBlockMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.big-banner') {
+          return <BigBanner {...bigBannerMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.small-banners-list') {
+          return <SmallBanners banners={smallBannersMapper(block)} key={i} />
+        } else {
+          return <HighlightBox {...highlightBoxMapper(block)} key={i} />
+        }
+      })}
+    </Page>
+  )
+}
 
 export default Home

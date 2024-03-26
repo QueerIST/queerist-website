@@ -4,9 +4,9 @@ import { Helmet, HelmetData } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 
 import { fullPath, fullPathSlashless } from '../helpers/links'
-import { type DPageMeta } from '../types/data'
+import { type PageMeta } from '../types/domain'
 
-const Page = ({ data, children }: PropsWithChildren<{ data: DPageMeta }>) => {
+const Page = ({ data, children }: PropsWithChildren<{ data: PageMeta }>) => {
   const location = useLocation()
   const helmetData = new HelmetData({})
   return (
@@ -28,7 +28,7 @@ const Page = ({ data, children }: PropsWithChildren<{ data: DPageMeta }>) => {
         {/* Google / Search Engine Tags */}
         <meta itemProp='name' content={data.name} />
         <meta itemProp='description' content={data.description} />
-        <meta itemProp='image' content={fullPath(data.img_link)} />
+        <meta itemProp='image' content={fullPath(data.imgLink)} />
 
         {/* Facebook Meta Tags */}
         <meta
@@ -38,7 +38,7 @@ const Page = ({ data, children }: PropsWithChildren<{ data: DPageMeta }>) => {
         <meta property='og:type' content='website' />
         <meta property='og:title' content={data.name} />
         <meta property='og:description' content={data.description} />
-        <meta property='og:image' content={fullPath(data.img_link)} />
+        <meta property='og:image' content={fullPath(data.imgLink)} />
 
         {/* Twitter Meta Tags */}
         <meta name='twitter:site' content='@queerist' />

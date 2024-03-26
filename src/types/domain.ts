@@ -1,3 +1,5 @@
+import { type BlocksContent } from '@strapi/blocks-react-renderer'
+
 export interface Domain {
   mainPage: MainPage
   aboutPage: AboutPage
@@ -17,56 +19,51 @@ export interface PageMeta {
 
 export interface MainPage extends PageMeta {
   textBlock: TextBlock
-  banners: Banners
-  highlightbox: Highlightbox
+  bigBanner: BigBanner
+  smallBanners: SmallBanners
+  highlightbox: HighlightBox
 }
 
-interface BaseTextBlock {
+export interface TextBlock {
   id: string
   title: string
-  text: string | string[]
+  text: BlocksContent
   bgColor: string
   titleColor?: string
   textColor: string
   small: boolean
+  button?: BlockButtonLink
 }
 
-interface BaseTextBlockWithLink extends BaseTextBlock {
+interface BlockButton {
   linkText: string
   linkTextColor?: string
   linkBackgroundColor?: string
 }
 
-export interface LinkToPage extends BaseTextBlockWithLink {
-  linkPage: string
-  linkId: string
+interface OutlineButton {
+  linkText: string
+  linkTextColor: string
 }
 
-export interface LinkToFile extends BaseTextBlockWithLink {
-  linkFile: string
+interface ButtonLink {
+  linkPage?: string
+  linkId?: string
+  linkFile?: string
+  linkWeb?: string
 }
 
-export interface LinkToWeb extends BaseTextBlockWithLink {
-  linkWeb: string
-}
+export type BlockButtonLink = BlockButton & ButtonLink
 
-export type TextBlockWithLink = LinkToPage | LinkToFile | LinkToWeb
-
-export type TextBlock = BaseTextBlock | TextBlockWithLink
-
-export interface Banners {
-  bigBanner: BigBanner
-  smallBanners: SmallBanner[]
-}
+export type OutlineButtonLink = OutlineButton & ButtonLink
 
 export interface BigBanner {
   name: string
   imgLink: string
-  textColor?: string
-  linkText?: string
-  linkPage?: string
-  linkId?: string
+  button?: OutlineButtonLink
 }
+
+export type SmallBanners = SmallBanner[]
 
 export interface SmallBanner {
   name: string
@@ -74,22 +71,16 @@ export interface SmallBanner {
   logoLink: string
   bgColor: string
   textColor: string
-  linkText: string
-  linkPage: string
-  linkId: string
+  button?: OutlineButtonLink
 }
 
-export interface Highlightbox {
+export interface HighlightBox {
   id?: string
   title: string
   subTitle: string
   bgColor: string
   textColor: string
-  linkTextColor: string
-  linkBgColor: string
-  linkText: string
-  linkWeb: string
-  linkFile?: string
+  button: BlockButtonLink
 }
 
 export interface AboutPage extends PageMeta {
@@ -118,7 +109,7 @@ export type Separator = string
 
 export interface EventsPage extends PageMeta {
   events: Event[]
-  highlightbox: Highlightbox
+  highlightbox: HighlightBox
 }
 
 export interface EventMeta {
@@ -171,7 +162,7 @@ export interface SubPage extends SubPageMeta {
   textBlock: TextBlock
   separatorEvents?: Separator
   events?: Event[]
-  highlightbox?: Highlightbox
+  highlightbox?: HighlightBox
   textBlock_2?: TextBlock
 }
 

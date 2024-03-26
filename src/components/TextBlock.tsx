@@ -1,15 +1,14 @@
+import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 import { NavLink } from 'react-router-dom'
 
 import Button from './Button'
 import { publicPath } from '../helpers/links'
-import { isDataTextBlockWithLink, isDataTextBlockWithLinkToFile, isDataTextBlockWithLinkToPage, isTextBlockWithLink, isTextBlockWithLinkToFile, isTextBlockWithLinkToPage } from '../helpers/types'
-import { type DTextBlock } from '../types/data'
-import { type TextBlockWithLink, type TextBlock as TextBlockProps } from '../types/domain'
+import { type TextBlock as TextBlockProps, type BlockButtonLink as TextBlockButtonProps } from '../types/domain'
 
 import './textblock.css'
 
-const TextBlockButton = (props: TextBlockWithLink) => (
-  isTextBlockWithLinkToPage(props)
+const TextBlockButton = (props: TextBlockButtonProps) => (
+  props.linkPage !== undefined
     ? (
       <NavLink
           className='textblock-button'
@@ -18,7 +17,7 @@ const TextBlockButton = (props: TextBlockWithLink) => (
         {props.linkText}
       </NavLink>
       )
-    : isTextBlockWithLinkToFile(props)
+    : props.linkFile !== undefined
       ? (
         <a href={publicPath(props.linkFile)} className='textblock-button'>{props.linkText}</a>
         )
@@ -27,57 +26,31 @@ const TextBlockButton = (props: TextBlockWithLink) => (
         )
 )
 
-function TextBlockInfo (props: TextBlockProps) {
-  const { id, title, text, small, bgColor, titleColor, textColor } = props
+function TextBlock (props: TextBlockProps) {
+  const { id, title, text, small, bgColor, titleColor, textColor, button } = props
   return (
     <div id={id} className={`textblock ${small && 'textblock-small'}`} style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='textblock-child'>
         <h2 className='textblock-title' style={{ color: titleColor }}>{title}</h2>
-        {isTextBlockWithLink(props) &&
+        {button !== undefined &&
           <Button
             actionComp='TextBlock'
-            actionName={`Clica ${props.linkText}`}
+            actionName={`Clica ${button.linkText}`}
             block
-            color={props.linkTextColor ?? bgColor}
-            backgroundColor={props.linkBackgroundColor ?? textColor}
+            color={button.linkTextColor ?? bgColor}
+            backgroundColor={button.linkBackgroundColor ?? textColor}
           >
-            {TextBlockButton(props)}
+            {TextBlockButton(button)}
           </Button>}
       </div>
       <div className='textblock-child'>
-        {(Array.isArray(text) ? text : [text]).map((t, i) => (
-          <p key={i} className='textblock-text'>
-            {t}
-          </p>
-        ))}
+        <BlocksRenderer content={text}
+        blocks={{
+          paragraph: ({ children }) => <p className='textblock-text'>{children}</p>
+        }} />
       </div>
     </div>
   )
 }
-
-const TextBlock = ({ data, small = false }: { data: DTextBlock, small?: boolean }) => (
-  <TextBlockInfo
-    id={data.id}
-    title={data.title}
-    text={data.text}
-    small={small}
-    bgColor={data.bg_color}
-    titleColor={data.title_color}
-    textColor={data.text_color}
-    {...(isDataTextBlockWithLink(data) && {
-      linkText: data.link_text,
-      linkBackgroundColor: data.link_bg_color,
-      linkTextColor: data.link_text_color,
-      ...(isDataTextBlockWithLinkToPage(data)
-        ? {
-            linkPage: data.link_page,
-            linkId: data.link_id
-          }
-        : isDataTextBlockWithLinkToFile(data)
-          ? { linkFile: data.link_file }
-          : { linkWeb: data.link_web })
-    })}
-  />
-)
 
 export default TextBlock

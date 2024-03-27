@@ -88,16 +88,18 @@ export interface AboutPage extends PageMeta {
   textBlock_1: TextBlock
   textBlock_2: TextBlock
   big_banner: BigBanner
-  textboxs: Textboxs
+  textboxs: TextBoxes
 }
 
 export interface List {
   id?: string
 }
 
-export interface Textboxs extends List {
+export type TextBoxes = TextBox[]
+
+export type TextBoxList = {
   boxes: TextBox[]
-}
+} & List
 
 export interface TextBox {
   name: string
@@ -105,7 +107,7 @@ export interface TextBox {
   text: string
 }
 
-export type Separator = string
+export type Separator = string | undefined
 
 export interface EventsPage extends PageMeta {
   events: Event[]

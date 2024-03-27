@@ -15,7 +15,7 @@ export interface BlocksBigBanner extends Schema.Component {
 export interface BlocksHighlightbox extends Schema.Component {
   collectionName: 'components_blocks_highlightboxes'
   info: {
-    displayName: 'Highlightbox'
+    displayName: 'HighlightBox'
     icon: 'cube'
     description: ''
   }
@@ -26,6 +26,7 @@ export interface BlocksHighlightbox extends Schema.Component {
     Attribute.Required &
     Attribute.CustomField<'plugin::color-picker.color'>
     TextColor: Attribute.String &
+    Attribute.Required &
     Attribute.CustomField<'plugin::color-picker.color'>
     Button: Attribute.Component<'links.block-button'> & Attribute.Required
   }
@@ -142,6 +143,23 @@ export interface BlocksTextBox extends Schema.Component {
   }
 }
 
+export interface BlocksTextBoxesList extends Schema.Component {
+  collectionName: 'components_blocks_text_boxes_lists'
+  info: {
+    displayName: 'TextBoxesList'
+  }
+  attributes: {
+    Boxes: Attribute.Component<'blocks.text-box', true> &
+    Attribute.Required &
+    Attribute.SetMinMax<
+    {
+      min: 1
+    },
+    number
+    >
+  }
+}
+
 export interface LinksBlockButton extends Schema.Component {
   collectionName: 'components_links_block_buttons'
   info: {
@@ -216,6 +234,7 @@ declare module '@strapi/types' {
       'blocks.small-banners-list': BlocksSmallBannersList
       'blocks.text-block': BlocksTextBlock
       'blocks.text-box': BlocksTextBox
+      'blocks.text-boxes-list': BlocksTextBoxesList
       'links.block-button': LinksBlockButton
       'links.button': LinksButton
       'links.outline-link': LinksOutlineLink

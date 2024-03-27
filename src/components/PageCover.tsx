@@ -1,6 +1,5 @@
 import { publicPath } from '../helpers/links'
-import { isDataSubPageMeta, isSubPageMeta } from '../helpers/types'
-import { type DPage } from '../types/data'
+import { isSubPageMeta } from '../helpers/types'
 import { type PagesMeta } from '../types/domain'
 
 import './pagecover.css'
@@ -43,25 +42,10 @@ function PageImage (props: PagesMeta) {
   )
 }
 
-const PageCoverInfo = (props: PagesMeta) => (
+const PageCover = (props: PagesMeta) =>
   <>
     <PageBackground {...props} />
     <PageImage {...props} />
   </>
-)
-
-const PageCover = ({ data, parentPage }: { data: DPage, parentPage?: string }) =>
-  <PageCoverInfo
-    name={data.name}
-    description={data.description}
-    textColor={data.text_color}
-    bgColor={data.bg_color}
-    imgLink={data.img_link}
-    {...(isDataSubPageMeta(data, parentPage) && {
-      parentPage,
-      logoLink: data.logo_link,
-      imgBgColor: data.img_bg_color
-    })}
-  />
 
 export default PageCover

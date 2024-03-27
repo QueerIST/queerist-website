@@ -14,7 +14,7 @@ const data: typeof untypedData & Data = untypedData
 const Routes = createRoutesFromElements(
   <Route element={<Layout />}>
     <Route path='/' element={<Home />} />
-    <Route path='/sobre' element={<About data={data.about_page} />} />
+    <Route path='/sobre' element={<About />} />
     <Route
       path='/eventos'
       element={<Events data={data.events_page} />}

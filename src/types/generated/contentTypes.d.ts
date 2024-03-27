@@ -1348,12 +1348,24 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
     singularName: 'about-page'
     pluralName: 'about-pages'
     displayName: 'About Page'
+    description: ''
   }
   options: {
     draftAndPublish: true
   }
   attributes: {
-    JSON: Attribute.JSON
+    Meta: Attribute.Component<'meta.page-meta'> & Attribute.Required
+    Separator: Attribute.Component<'blocks.separator'> & Attribute.Required
+    Body: Attribute.DynamicZone<
+    [
+      'blocks.text-block',
+      'blocks.big-banner',
+      'blocks.small-banners-list',
+      'blocks.separator',
+      'blocks.text-boxes-list',
+      'blocks.highlightbox'
+    ]
+    >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1502,7 +1514,12 @@ export interface ApiMainPageMainPage extends Schema.SingleType {
   attributes: {
     Meta: Attribute.Component<'meta.page-meta'> & Attribute.Required
     Body: Attribute.DynamicZone<
-    ['blocks.big-banner', 'blocks.small-banners-list', 'blocks.text-block', 'blocks.highlightbox']
+    [
+      'blocks.big-banner',
+      'blocks.small-banners-list',
+      'blocks.text-block',
+      'blocks.highlightbox'
+    ]
     >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime

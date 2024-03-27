@@ -1,4 +1,4 @@
-import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta } from '../types/domain'
+import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator } from '../types/domain'
 import { type APIResponse, type GetValues } from '../types/strapi'
 
 export function imageMapper (data: APIResponse<'plugin::upload.file'>) {
@@ -101,4 +101,18 @@ export function highlightBoxMapper (data: GetValues<'blocks.highlightbox'>): Hig
     textColor: data.TextColor,
     button: blockButtonMapper(data.Button)
   }
+}
+
+export function textBoxesMapper (data: GetValues<'blocks.text-boxes-list'>): TextBoxList {
+  return {
+    boxes: data.Boxes.map((textbox: GetValues<'blocks.text-box'>) => ({
+      name: textbox.Title,
+      text: textbox.Text,
+      bgColor: textbox.BackgroundColor
+    }))
+  }
+}
+
+export function separatorMapper (data: GetValues<'blocks.separator'>): Separator {
+  return data.Text
 }

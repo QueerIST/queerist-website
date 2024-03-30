@@ -155,13 +155,7 @@ export interface SubPageMeta extends PageMeta {
 
 export interface SubPage extends SubPageMeta {
   seeMoreText: string
-  separator?: Separator
-  icons?: Icon[]
-  textBlock: TextBlock
-  separatorEvents?: Separator
   events?: Event[]
-  highlightbox?: HighlightBox
-  textBlock_2?: TextBlock
 }
 
 export interface Icon {

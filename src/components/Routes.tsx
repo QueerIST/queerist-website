@@ -20,7 +20,7 @@ const Routes = createRoutesFromElements(
       element={<Events />}
     />
     <Route path='/projetos'>
-      <Route index element={<Projects data={data.projects_page} />} />
+      <Route index element={<Projects />} />
       <Route
         path=':id'
         element={<SubPage parentData={data.projects_page} />}

@@ -1246,6 +1246,19 @@ export interface ApiHubHub extends Schema.CollectionType {
   }
   attributes: {
     Name: Attribute.String & Attribute.Required
+    Slug: Attribute.UID<'api::hub.hub', 'Name'> & Attribute.Required
+    Description: Attribute.Text & Attribute.Required
+    Image: Attribute.Media & Attribute.Required
+    BackgroundColor: Attribute.String &
+    Attribute.Required &
+    Attribute.CustomField<'plugin::color-picker.color'>
+    TextColor: Attribute.String &
+    Attribute.Required &
+    Attribute.CustomField<'plugin::color-picker.color'>
+    Logo: Attribute.Media
+    ImageBackgroundColor: Attribute.String &
+    Attribute.Required &
+    Attribute.CustomField<'plugin::color-picker.color'>
     Body: Attribute.DynamicZone<
     [
       'blocks.big-banner',
@@ -1255,6 +1268,8 @@ export interface ApiHubHub extends Schema.CollectionType {
       'blocks.icons-list'
     ]
     >
+    Series: Attribute.Relation<'api::hub.hub', 'oneToMany', 'api::serie.serie'>
+    SeeMoreText: Attribute.String & Attribute.Required
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1362,11 +1377,7 @@ export interface ApiSerieSerie extends Schema.CollectionType {
   }
   attributes: {
     Name: Attribute.String & Attribute.Required
-    Events: Attribute.Relation<
-    'api::serie.serie',
-    'oneToMany',
-    'api::event.event'
-    >
+    Slug: Attribute.UID<'api::serie.serie', 'Name'> & Attribute.Required
     Image: Attribute.Media & Attribute.Required
     Logo: Attribute.Media
     BackgroundColor: Attribute.String &
@@ -1376,7 +1387,13 @@ export interface ApiSerieSerie extends Schema.CollectionType {
     Attribute.Required &
     Attribute.CustomField<'plugin::color-picker.color'>
     Description: Attribute.Text & Attribute.Required
-    Slug: Attribute.UID<'api::serie.serie', 'Name'> & Attribute.Required
+    Events: Attribute.Relation<
+    'api::serie.serie',
+    'oneToMany',
+    'api::event.event'
+    >
+    SeeMoreText: Attribute.String
+    Hub: Attribute.Relation<'api::serie.serie', 'manyToOne', 'api::hub.hub'>
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime

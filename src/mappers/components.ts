@@ -1,5 +1,13 @@
+import { notNullish } from '../helpers/types'
 import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator } from '../types/domain'
 import { type APIResponse, type GetValues } from '../types/strapi'
+
+export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
+  if (!notNullish(data)) { return }
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (data.data === null) { return }
+  return data.data.attributes.url
+}
 
 export function imageMapper (data: APIResponse<'plugin::upload.file'>) {
   return data.data.attributes.url
@@ -35,7 +43,7 @@ export function blockButtonMapper (data: GetValues<'links.block-button'>): Block
 }
 
 export function maybeBlockButtonMapper (data?: GetValues<'links.block-button'> | null): BlockButtonLink | undefined {
-  if (data === undefined || data === null) { return }
+  if (!notNullish(data)) { return }
   return blockButtonMapper(data)
 }
 
@@ -57,7 +65,7 @@ export function outlineButtonMapper (data: GetValues<'links.outline-link'>): Out
 }
 
 export function maybeOutlineButtonMapper (data?: GetValues<'links.outline-link'> | null): OutlineButtonLink | undefined {
-  if (data === undefined || data === null) { return }
+  if (!notNullish(data)) { return }
   return outlineButtonMapper(data)
 }
 

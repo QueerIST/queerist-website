@@ -51,7 +51,6 @@ const About = () => {
   return (
     <Page data={pageMapper(data.attributes.Meta)}>
       <PageCover {...pageMapper(data.attributes.Meta)} />
-      <Separator data={separatorMapper(data.attributes.Separator)}/>
       {data.attributes.Body?.map((block, i) => {
         if (block.__component === 'blocks.text-block') {
           return <TextBlock {...textBlockMapper(block)} key={i} />

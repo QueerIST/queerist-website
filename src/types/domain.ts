@@ -114,8 +114,9 @@ export interface EventsPage extends PageMeta {
   highlightbox: HighlightBox
 }
 
-export interface EventMeta {
-  n: number
+export type Happenings = Happening[]
+
+export interface Event {
   id: string
   name: string
   description: string
@@ -123,26 +124,21 @@ export interface EventMeta {
   logoLink?: string
   bgColor: string
   textColor: string
+  seeMoreText?: string
+  happenings?: Happenings
 }
-
-export interface EventWithHappenings extends EventMeta {
-  seeMoreText: string
-  happenings: Happening[]
-}
-
-export type Event = EventMeta | EventWithHappenings
 
 export type Tile = Event | SubPage
 
 export interface Happening {
+  id: string
   name: string
   imgLink: string
-  date: string
-  enddate?: string
+  date: Date | string
+  enddate?: Date | string
   place: string
-  time?: string
   link: string
-  description?: string
+  description?: BlocksContent
 }
 export interface ProjectsPage extends PageMeta {
   subPages: SubPage[]

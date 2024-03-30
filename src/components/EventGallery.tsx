@@ -7,8 +7,7 @@ import ReactGA from 'react-ga4'
 import Launch from './../svg/launch.svg?react'
 import WrapDelayed from '../helpers/async'
 import { publicPath } from '../helpers/links'
-import { type DHappening } from '../types/data'
-import { type Event, type Happening } from '../types/domain'
+import { type Happenings, type Happening } from '../types/domain'
 
 import './eventgallery.css'
 
@@ -25,8 +24,8 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ id, name, open, date, time, place, imgLink, link }: Happening & { id: string, open: boolean }) => {
-  const dateObj = new Date(`${date}T${time ?? '00:00:00'}`)
+const EventGalleryItem = ({ id, name, open, date, enddate, place, imgLink, link }: Happening & { id: string, open: boolean }) => {
+  const dateObj = new Date(date)
   return (
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
@@ -37,7 +36,7 @@ const EventGalleryItem = ({ id, name, open, date, time, place, imgLink, link }: 
       <div className='event-gallery-item-text'>
         <h3>{name}</h3>
         <span className='event-gallery-item-launch'>
-          <p>{format(dateObj, `dd MMM yyyy${time !== undefined ? ', HH\'h\'mm' : ''}`, { locale: pt })} @ {place}</p>
+          <p>{format(dateObj, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {place}</p>
           <a href={link} target='_blank' rel='noopener noreferrer' onClick={() => { handleClickEventLink(name) }}> <Launch /></a>
         </span>
         {/* <p>{description}</p> */}
@@ -46,21 +45,14 @@ const EventGalleryItem = ({ id, name, open, date, time, place, imgLink, link }: 
   )
 }
 
-function EventGallery ({ id, data, open }: Pick<Event, 'id'> & { data: DHappening[], open: boolean }) {
+function EventGallery ({ data, open }: { data: Happenings, open: boolean }) {
   return (
     <EventGalleryWrap open={open}>
       {data.map((event, i) => (
         <EventGalleryItem
-          key={i}
-          id={`${id}-${i}`}
-          name={event.name}
-          open={open}
-          description={event.description}
-          date={event.date}
-          time={event.time}
-          place={event.place}
-          imgLink={event.img_link}
-          link={event.link}
+        key={i}
+        open={open}
+        {...event}
         />
       ))}
     </EventGalleryWrap>

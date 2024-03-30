@@ -600,141 +600,6 @@ export interface PluginContentReleasesReleaseAction
   }
 }
 
-export interface PluginWebtoolsUrlAlias extends Schema.CollectionType {
-  collectionName: 'wt_url_alias'
-  info: {
-    singularName: 'url-alias'
-    pluralName: 'url-alias'
-    displayName: 'url-alias'
-  }
-  options: {
-    draftAndPublish: false
-    comment: ''
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    url_path: Attribute.String & Attribute.Required & Attribute.Unique
-    generated: Attribute.Boolean & Attribute.DefaultTo<true>
-    contenttype: Attribute.String & Attribute.Required
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::webtools.url-alias',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::webtools.url-alias',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginWebtoolsUrlPattern extends Schema.CollectionType {
-  collectionName: 'wt_url_patterns'
-  info: {
-    singularName: 'url-pattern'
-    pluralName: 'url-patterns'
-    displayName: 'url-pattern'
-  }
-  options: {
-    draftAndPublish: false
-    comment: ''
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    label: Attribute.String & Attribute.Required
-    pattern: Attribute.String & Attribute.Required
-    code: Attribute.String & Attribute.Required & Attribute.Unique
-    contenttype: Attribute.String & Attribute.Required
-    languages: Attribute.JSON & Attribute.Required
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::webtools.url-pattern',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::webtools.url-pattern',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale'
-  info: {
-    singularName: 'locale'
-    pluralName: 'locales'
-    collectionName: 'locales'
-    displayName: 'Locale'
-    description: ''
-  }
-  options: {
-    draftAndPublish: false
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    name: Attribute.String &
-    Attribute.SetMinMax<
-    {
-      min: 1
-      max: 50
-    },
-    number
-    >
-    code: Attribute.String & Attribute.Unique
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::i18n.locale',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::i18n.locale',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-  }
-}
-
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions'
@@ -879,110 +744,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     Attribute.Private
     updatedBy: Attribute.Relation<
     'plugin::users-permissions.user',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginMenusMenu extends Schema.CollectionType {
-  collectionName: 'menus'
-  info: {
-    name: 'Menu'
-    displayName: 'Menu'
-    singularName: 'menu'
-    pluralName: 'menus'
-    tableName: 'menus'
-  }
-  options: {
-    draftAndPublish: false
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    title: Attribute.String & Attribute.Required
-    slug: Attribute.UID<'plugin::menus.menu', 'title'> & Attribute.Required
-    items: Attribute.Relation<
-    'plugin::menus.menu',
-    'oneToMany',
-    'plugin::menus.menu-item'
-    >
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::menus.menu',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::menus.menu',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginMenusMenuItem extends Schema.CollectionType {
-  collectionName: 'menu_items'
-  info: {
-    name: 'MenuItem'
-    displayName: 'Menu Item'
-    singularName: 'menu-item'
-    pluralName: 'menu-items'
-    tableName: 'menu_items'
-  }
-  options: {
-    draftAndPublish: false
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    order: Attribute.Integer
-    title: Attribute.String & Attribute.Required
-    url: Attribute.String
-    target: Attribute.Enumeration<['_blank', '_parent', '_self', '_top']>
-    root_menu: Attribute.Relation<
-    'plugin::menus.menu-item',
-    'manyToOne',
-    'plugin::menus.menu'
-    > &
-    Attribute.Required
-    parent: Attribute.Relation<
-    'plugin::menus.menu-item',
-    'oneToOne',
-    'plugin::menus.menu-item'
-    >
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::menus.menu-item',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::menus.menu-item',
     'oneToOne',
     'admin::user'
     > &
@@ -1355,7 +1116,6 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
   }
   attributes: {
     Meta: Attribute.Component<'meta.page-meta'> & Attribute.Required
-    Separator: Attribute.Component<'blocks.separator'> & Attribute.Required
     Body: Attribute.DynamicZone<
     [
       'blocks.text-block',
@@ -1411,6 +1171,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     Place: Attribute.String & Attribute.Required
     Description: Attribute.Blocks
     Link: Attribute.String & Attribute.Required
+    Slug: Attribute.UID<'api::event.event', 'Name'> & Attribute.Required
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1438,12 +1199,19 @@ export interface ApiEventPageEventPage extends Schema.SingleType {
     singularName: 'event-page'
     pluralName: 'events-pages'
     displayName: 'Events Page'
+    description: ''
   }
   options: {
     draftAndPublish: true
   }
   attributes: {
-    JSON: Attribute.JSON
+    Meta: Attribute.Component<'meta.page-meta'> & Attribute.Required
+    Series: Attribute.Relation<
+    'api::event-page.event-page',
+    'oneToMany',
+    'api::serie.serie'
+    >
+    Highlight: Attribute.Component<'blocks.highlightbox'>
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1548,12 +1316,18 @@ export interface ApiProjectPageProjectPage extends Schema.SingleType {
     singularName: 'project-page'
     pluralName: 'projects-pages'
     displayName: 'Projects Page'
+    description: ''
   }
   options: {
     draftAndPublish: true
   }
   attributes: {
-    JSON: Attribute.JSON
+    Meta: Attribute.Component<'meta.page-meta'> & Attribute.Required
+    Hubs: Attribute.Relation<
+    'api::project-page.project-page',
+    'oneToMany',
+    'api::hub.hub'
+    >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1593,7 +1367,6 @@ export interface ApiSerieSerie extends Schema.CollectionType {
     'oneToMany',
     'api::event.event'
     >
-    Description: Attribute.Blocks & Attribute.Required
     Image: Attribute.Media & Attribute.Required
     Logo: Attribute.Media
     BackgroundColor: Attribute.String &
@@ -1602,6 +1375,8 @@ export interface ApiSerieSerie extends Schema.CollectionType {
     TextColor: Attribute.String &
     Attribute.Required &
     Attribute.CustomField<'plugin::color-picker.color'>
+    Description: Attribute.Text & Attribute.Required
+    Slug: Attribute.UID<'api::serie.serie', 'Name'> & Attribute.Required
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1637,14 +1412,9 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder
       'plugin::content-releases.release': PluginContentReleasesRelease
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction
-      'plugin::webtools.url-alias': PluginWebtoolsUrlAlias
-      'plugin::webtools.url-pattern': PluginWebtoolsUrlPattern
-      'plugin::i18n.locale': PluginI18NLocale
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission
       'plugin::users-permissions.role': PluginUsersPermissionsRole
       'plugin::users-permissions.user': PluginUsersPermissionsUser
-      'plugin::menus.menu': PluginMenusMenu
-      'plugin::menus.menu-item': PluginMenusMenuItem
       'plugin::navigation.audience': PluginNavigationAudience
       'plugin::navigation.navigation': PluginNavigationNavigation
       'plugin::navigation.navigation-item': PluginNavigationNavigationItem

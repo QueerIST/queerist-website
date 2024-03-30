@@ -17,7 +17,7 @@ const Routes = createRoutesFromElements(
     <Route path='/sobre' element={<About />} />
     <Route
       path='/eventos'
-      element={<Events data={data.events_page} />}
+      element={<Events />}
     />
     <Route path='/projetos'>
       <Route index element={<Projects data={data.projects_page} />} />

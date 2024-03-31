@@ -1,5 +1,5 @@
 import { notNullish } from '../helpers/types'
-import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator } from '../types/domain'
+import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons } from '../types/domain'
 import { type APIResponse, type GetValues } from '../types/strapi'
 
 export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
@@ -117,6 +117,16 @@ export function textBoxesMapper (data: GetValues<'blocks.text-boxes-list'>): Tex
       name: textbox.Title,
       text: textbox.Text,
       bgColor: textbox.BackgroundColor
+    }))
+  }
+}
+
+export function iconsMapper (data: GetValues<'blocks.icons-list'>): Icons {
+  return {
+    icons: data.Icons.map((icon: GetValues<'blocks.icon'>) => ({
+      name: icon.Name,
+      logoLink: imageMapper(icon.Logo),
+      link: icon.URL
     }))
   }
 }

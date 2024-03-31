@@ -164,4 +164,6 @@ export interface Icon {
   link?: string
 }
 
+export type Icons = { icons: Icon[] } & List
+
 export type PagesMeta = PageMeta | SubPageMeta

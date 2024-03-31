@@ -3,8 +3,7 @@ import { type PropsWithChildren } from 'react'
 import ReactGA from 'react-ga4'
 
 import { publicPath } from '../helpers/links'
-import { type DIcons } from '../types/data'
-import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps, type TextBoxList as TextBoxListProps } from '../types/domain'
+import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps, type TextBoxList as TextBoxListProps, type Icons } from '../types/domain'
 
 import './lists.css'
 
@@ -55,14 +54,12 @@ const List = ({ id, children }: PropsWithChildren<ListProps>) => (
   </ul>
 )
 
-const IconList = ({ data }: { data: DIcons }) => (
-  <List>
-    {data.map((icon, i) => (
+const IconList = ({ icons, id }: Icons) => (
+  <List id={id}>
+    {icons.map((icon, i) => (
       <Icon
         key={i}
-        name={icon.name}
-        link={icon.link}
-        logoLink={icon.logo_link}
+        {...icon}
       />
     ))}
   </List>

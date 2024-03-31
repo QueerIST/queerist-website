@@ -23,7 +23,7 @@ const Routes = createRoutesFromElements(
       <Route index element={<Projects />} />
       <Route
         path=':id'
-        element={<SubPage parentData={data.projects_page} />}
+        element={<SubPage />}
       />
     </Route>
   </Route>

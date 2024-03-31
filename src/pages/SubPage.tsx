@@ -1,36 +1,75 @@
+import { useState, useEffect } from 'react'
+
+import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
+import { BigBanner } from '../components/Banners'
 import HighlightBox from '../components/HighlightBox'
 import { IconList } from '../components/Lists'
 import Page from '../components/Page'
 import PageCover from '../components/PageCover'
 import Separator from '../components/Separator'
 import TextBlock from '../components/TextBlock'
-import Tile from '../components/Tile'
-import { type DPageWithSubPages } from '../types/data'
+import { EventTile } from '../components/Tile'
+import { bigBannerMapper, highlightBoxMapper, iconsMapper, separatorMapper, textBlockMapper } from '../mappers/components'
+import { hubMapper, seriesMapper } from '../mappers/content'
+import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const SubPage = ({ parentData }: { parentData: DPageWithSubPages }) => {
+const SubPage = () => {
   const { id } = useParams()
-  const data = parentData.sub_pages.find(p => p.id === id)
+  const [data, setData] = useState<APIResponseData<'api::hub.hub'>>()
+
+  useEffect(() => {
+    async function fetchData () {
+      const data = await axios.get<APIResponseSingle<'api::hub.hub'>>(`http://queerist.vps.tecnico.ulisboa.pt/a/pi/slugify/slugs/hub/${id}`, {
+        params: {
+          populate: {
+            Image: { populate: '*' },
+            Logo: { populate: '*' },
+            Body: {
+              on: {
+                'blocks.text-block': {
+                  populate: ['Button', 'Button.Link']
+                },
+                'blocks.big-banner': {
+                  populate: ['Image', 'Button', 'Button.Link']
+                },
+                'blocks.highlightbox': { populate: ['Button', 'Button.Link'] },
+                'blocks.icons-list': { populate: '*' },
+                'blocks.separator': { populate: '*' }
+              }
+            },
+            Series: { populate: ['Image', 'Logo', 'Events', 'Events.Image'] }
+          }
+        }
+      })
+      setData(data.data.data)
+    }
+    fetchData().catch((error) => { console.log(error) })
+  }, [id])
+
   if (data === undefined) return null
 
   return (
-    <Page data={data}>
-      <PageCover data={data} parentPage={parentData.id} />
-      <Separator data={data.separator} />
-      {data.icons !== undefined && <IconList data={data.icons} />}
-      <TextBlock data={data.text_block} />
-      {data.highlightbox !== undefined && <HighlightBox data={data.highlightbox} />}
-      {data.text_block_2 !== undefined && <TextBlock data={data.text_block_2} small />}
-      {data.events !== undefined &&
-        <>
-          <Separator data={data.separator_events} />
-          {data.events.map(
-            (event, i) => (
-              <Tile key={i} n={i} data={event} />
-            )
-          )}
-        </>}
+    <Page data={hubMapper(data.attributes, 'projects')}>
+      <PageCover {...hubMapper(data.attributes, 'projects')}/>
+      {data.attributes.Body?.map((block, i) => {
+        if (block.__component === 'blocks.text-block') {
+          return <TextBlock {...textBlockMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.big-banner') {
+          return <BigBanner {...bigBannerMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.icons-list') {
+          return <IconList {...iconsMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.highlightbox') {
+          return <HighlightBox {...highlightBoxMapper(block)} key={i} />
+        } else {
+          return <Separator data={separatorMapper(block)} key={i} />
+        }
+      })}
+      {data.attributes.Series?.data.map(
+        (event, i) => (
+          <EventTile key={i} n={i} data={seriesMapper(event.attributes)} />
+        ))}
     </Page>
   )
 }

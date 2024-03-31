@@ -1,12 +1,5 @@
 import { type BlocksContent } from '@strapi/blocks-react-renderer'
 
-export interface Domain {
-  mainPage: MainPage
-  aboutPage: AboutPage
-  eventsPage: EventsPage
-  projectsPage: ProjectsPage
-}
-
 export interface PageMeta {
   id?: string
   home?: boolean
@@ -15,13 +8,6 @@ export interface PageMeta {
   imgLink: string
   bgColor?: string
   textColor?: string
-}
-
-export interface MainPage extends PageMeta {
-  textBlock: TextBlock
-  bigBanner: BigBanner
-  smallBanners: SmallBanners
-  highlightbox: HighlightBox
 }
 
 export interface TextBlock {
@@ -83,22 +69,14 @@ export interface HighlightBox {
   button: BlockButtonLink
 }
 
-export interface AboutPage extends PageMeta {
-  separator?: Separator
-  textBlock_1: TextBlock
-  textBlock_2: TextBlock
-  big_banner: BigBanner
-  textboxs: TextBoxes
-}
-
 export interface List {
   id?: string
 }
 
-export type TextBoxes = TextBox[]
+type TextBoxes = TextBox[]
 
 export type TextBoxList = {
-  boxes: TextBox[]
+  boxes: TextBoxes
 } & List
 
 export interface TextBox {
@@ -128,20 +106,15 @@ export interface Event {
   happenings?: Happenings
 }
 
-export type Tile = Event | SubPage
-
 export interface Happening {
   id: string
   name: string
   imgLink: string
   date: Date | string
-  enddate?: Date | string
+  enddate?: Date | string // TODO use
   place: string
   link: string
   description?: BlocksContent
-}
-export interface ProjectsPage extends PageMeta {
-  subPages: SubPage[]
 }
 
 export interface SubPageMeta extends PageMeta {

@@ -2,7 +2,6 @@ import { type BlocksContent } from '@strapi/blocks-react-renderer'
 
 export interface PageMeta {
   id?: string
-  home?: boolean
   name: string
   description: string
   imgLink: string

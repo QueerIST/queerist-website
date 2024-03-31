@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom'
 import { fullPath, fullPathSlashless } from '../helpers/links'
 import { type PageMeta } from '../types/domain'
 
-const Page = ({ data, children }: PropsWithChildren<{ data: PageMeta }>) => {
+const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home?: boolean }>) => {
   const location = useLocation()
   const helmetData = new HelmetData({})
   return (
@@ -18,7 +18,7 @@ const Page = ({ data, children }: PropsWithChildren<{ data: PageMeta }>) => {
         defer={false}
       >
         {/* HTML Meta Tags */}
-        {!(data.home ?? false) && <title>{data.name}</title>}
+        {!(home ?? false) && <title>{data.name}</title>}
         <meta name='description' content={data.description} />
         <link
           rel='canonical'

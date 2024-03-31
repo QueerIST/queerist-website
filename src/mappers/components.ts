@@ -15,7 +15,6 @@ export function imageMapper (data: APIResponse<'plugin::upload.file'>) {
 
 export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
   return {
-    home: data.Home,
     name: data.Name,
     description: data.Description,
     imgLink: imageMapper(data.Image),

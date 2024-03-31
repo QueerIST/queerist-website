@@ -218,7 +218,6 @@ export interface MetaPageMeta extends Schema.Component {
     Attribute.CustomField<'plugin::color-picker.color'>
     TextColor: Attribute.String &
     Attribute.CustomField<'plugin::color-picker.color'>
-    Home: Attribute.Boolean
   }
 }
 

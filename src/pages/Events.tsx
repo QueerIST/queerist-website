@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 
 import axios from 'axios'
 
+import EventTile from '../components/EventTile'
 import HighlightBox from '../components/HighlightBox'
 import Page from '../components/Page'
 import PageCover from '../components/PageCover'
 import Separator from '../components/Separator'
-import { EventTile } from '../components/Tile'
 import { notNullish } from '../helpers/types'
 import { highlightBoxMapper, pageMapper } from '../mappers/components'
 import { seriesMapper } from '../mappers/content'

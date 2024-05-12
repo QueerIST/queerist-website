@@ -1,49 +1,14 @@
 import { useState, useEffect } from 'react'
 
-import { NavLink, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import Expand from './../svg/expand.svg?react'
 import Button from './Button'
 import EventGallery from './EventGallery'
 import { publicPath } from '../helpers/links'
-import { type Event, type SubPage } from '../types/domain'
-// import Launch from './../svg/launch.svg?react'
+import { type Event } from '../types/domain'
 
 import './tile.css'
-
-function PageTile ({ data }: { data: SubPage }) {
-  const { id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText } = data
-  const EventTypeInfoButton = (
-    <NavLink
-      className='tile-info-b'
-      to={{ pathname: `/${parentPage}/${id}` }}
-    >
-      {seeMoreText}
-      {/* <Launch fill={textColor} /> */}
-    </NavLink>
-  )
-  return (
-    <div id={id}>
-      <div
-      data-aos='zoom-in' className='tile-info page-tile-info' style={{ color: textColor }}
-    >
-        <img src={publicPath(imgLink)} alt={name} />
-        <div className='tile-info-text'>
-          <div className='page-tile-info-bg' style={{ backgroundColor: bgColor }} />
-          {logoLink !== undefined &&
-          <div className='tile-info-text-img'>
-            <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
-          </div>}
-          <h2 className='tile-info-text-text'>{name}</h2>
-          <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-          <Button actionComp='PageTile' actionName={`Entra ${name} (em ${parentPage})`} borderColor={textColor} color={textColor}>
-            {EventTypeInfoButton}
-          </Button>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const EventTile = ({ data, n }: { data: Event, n: number }) => {
   const { id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText } = data
@@ -93,4 +58,4 @@ const EventTile = ({ data, n }: { data: Event, n: number }) => {
   )
 }
 
-export { EventTile, PageTile }
+export default EventTile

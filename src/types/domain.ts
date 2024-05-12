@@ -31,7 +31,7 @@ interface OutlineButton {
   linkTextColor: string
 }
 
-interface ButtonLink {
+export interface ButtonLink {
   linkPage?: string
   linkId?: string
   linkFile?: string

@@ -1,5 +1,5 @@
 import { notNullish } from '../helpers/types'
-import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons } from '../types/domain'
+import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink } from '../types/domain'
 import { type APIResponse, type GetValues } from '../types/strapi'
 
 export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
@@ -23,6 +23,19 @@ export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
   }
 }
 
+function enrichWithLink (link: GetValues<'links.button'>, button: ButtonLink
+) {
+  if (link.Page !== undefined) {
+    const [path, hash] = link.Page.split('#')
+    button.linkPage = path
+    button.linkId = hash
+  } else if (link.File !== undefined) {
+    button.linkFile = link.File.data.attributes.url
+  } else if (link.Web !== undefined) {
+    button.linkWeb = link.Web
+  }
+}
+
 export function blockButtonMapper (data: GetValues<'links.block-button'>): BlockButtonLink {
   const button: BlockButtonLink = {
     linkText: data.Text,
@@ -30,13 +43,7 @@ export function blockButtonMapper (data: GetValues<'links.block-button'>): Block
     linkTextColor: data.TextColor
   }
 
-  if (data.Link.Page !== undefined) {
-    button.linkPage = ''
-  } else if (data.Link.File !== undefined) {
-    button.linkFile = ''
-  } else if (data.Link.Web !== undefined) {
-    button.linkWeb = ''
-  }
+  enrichWithLink(data.Link, button)
 
   return button
 }
@@ -52,13 +59,7 @@ export function outlineButtonMapper (data: GetValues<'links.outline-link'>): Out
     linkTextColor: data.TextColor
   }
 
-  if (data.Link.Page !== undefined) {
-    button.linkPage = ''
-  } else if (data.Link.File !== undefined) {
-    button.linkFile = ''
-  } else if (data.Link.Web !== undefined) {
-    button.linkWeb = ''
-  }
+  enrichWithLink(data.Link, button)
 
   return button
 }

@@ -33,6 +33,7 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>): Event {
 }
 
 export function eventMapper (data: GetValues<'api::event.event'>): Happening {
+  const description = data.Description?.[0].children[0]
   return {
     id: data.Slug,
     name: data.Name,
@@ -41,6 +42,7 @@ export function eventMapper (data: GetValues<'api::event.event'>): Happening {
     enddate: data.EndDate,
     place: data.Place,
     link: data.Link,
-    description: data.Description
+    longDescription: data.Description,
+    description: description !== undefined && 'text' in description ? description.text : data.Name
   }
 }

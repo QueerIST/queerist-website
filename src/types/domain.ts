@@ -113,7 +113,8 @@ export interface Happening {
   enddate?: Date | string // TODO use
   place: string
   link: string
-  description?: BlocksContent
+  description: string
+  longDescription?: BlocksContent
 }
 
 export interface SubPageMeta extends PageMeta {

@@ -43,8 +43,8 @@ export default function Header () {
               <Menu className='navtop-side' onClick={handleClickMenuButton} />
             </div>
             <NavLink className={'navlink' + menustatus} to='/sobre' onClick={handleClickLinkCb('sobre')}>Sobre</NavLink>
-            <NavLink className={'navlink' + menustatus} to='/eventos/' onClick={handleClickLinkCb('eventos')}>Eventos</NavLink>
-            <NavLink className={'navlink' + menustatus} to='/projetos/' onClick={handleClickLinkCb('projetos')}>Projetos</NavLink>
+            <NavLink className={'navlink' + menustatus} to='/eventos' onClick={handleClickLinkCb('eventos')}>Eventos</NavLink>
+            <NavLink className={'navlink' + menustatus} to='/projetos' onClick={handleClickLinkCb('projetos')}>Projetos</NavLink>
             <a className={'navlink' + menustatus} href='https://queerist.tecnico.ulisboa.pt/blog/' onClick={handleClickLinkCb('blog')}>Blog</a>
             <a className={'navlink' + menustatus} href='http://eepurl.com/dnApYP' onClick={handleClickLinkCb('newsletter')}>Newsletter</a>
           </div>

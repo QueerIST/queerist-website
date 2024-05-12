@@ -16,12 +16,12 @@ import { hubMapper, seriesMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
 const SubPage = () => {
-  const { id } = useParams()
+  const { hub } = useParams()
   const [data, setData] = useState<APIResponseData<'api::hub.hub'>>()
 
   useEffect(() => {
     async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::hub.hub'>>(`http://queerist.vps.tecnico.ulisboa.pt/a/pi/slugify/slugs/hub/${id}`, {
+      const data = await axios.get<APIResponseSingle<'api::hub.hub'>>(`http://queerist.vps.tecnico.ulisboa.pt/a/pi/slugify/slugs/hub/${hub}`, {
         params: {
           populate: {
             Image: { populate: '*' },
@@ -46,7 +46,7 @@ const SubPage = () => {
       setData(data.data.data)
     }
     fetchData().catch((error) => { console.log(error) })
-  }, [id])
+  }, [hub])
 
   if (data === undefined) return null
 

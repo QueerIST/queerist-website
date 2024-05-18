@@ -14,7 +14,7 @@ const Event = () => {
 
   useEffect(() => {
     async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::event.event'>>(`http://queerist.vps.tecnico.ulisboa.pt/a/pi/slugify/slugs/event/${event}`, {
+      const data = await axios.get<APIResponseSingle<'api::event.event'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/event/${event}`, {
         params: {
           populate: {
             Image: { populate: '*' }

@@ -21,7 +21,7 @@ const SubPage = () => {
 
   useEffect(() => {
     async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::hub.hub'>>(`http://queerist.vps.tecnico.ulisboa.pt/a/pi/slugify/slugs/hub/${hub}`, {
+      const data = await axios.get<APIResponseSingle<'api::hub.hub'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/hub/${hub}`, {
         params: {
           populate: {
             Image: { populate: '*' },

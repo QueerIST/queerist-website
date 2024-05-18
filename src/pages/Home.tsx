@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::main-page.main-page'>>('http://queerist.vps.tecnico.ulisboa.pt/a/pi/main-page', {
+      const data = await axios.get<APIResponseSingle<'api::main-page.main-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/main-page', {
         params: {
           populate: {
             Meta: { populate: '*' },

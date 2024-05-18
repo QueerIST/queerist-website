@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "type": "module",
   "private": true,
-  "homepage": "http://queerist.tecnico.ulisboa.pt",
+  "homepage": "https://queerist.tecnico.ulisboa.pt",
   "dependencies": {
     "@strapi/blocks-react-renderer": "^1.0.1",
     "ajv": "^8.12.0",

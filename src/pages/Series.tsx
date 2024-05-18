@@ -16,7 +16,7 @@ const Series = () => {
 
   useEffect(() => {
     async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::serie.serie'>>(`http://queerist.vps.tecnico.ulisboa.pt/a/pi/slugify/slugs/serie/${serie}`, {
+      const data = await axios.get<APIResponseSingle<'api::serie.serie'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/serie/${serie}`, {
         params: {
           populate: {
             Image: { populate: '*' },

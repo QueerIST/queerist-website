@@ -46,7 +46,7 @@ export default function Header () {
             <NavLink className={'navlink' + menustatus} to='/eventos' onClick={handleClickLinkCb('eventos')}>Eventos</NavLink>
             <NavLink className={'navlink' + menustatus} to='/projetos' onClick={handleClickLinkCb('projetos')}>Projetos</NavLink>
             <a className={'navlink' + menustatus} href='https://queerist.tecnico.ulisboa.pt/blog/' onClick={handleClickLinkCb('blog')}>Blog</a>
-            <a className={'navlink' + menustatus} href='http://eepurl.com/dnApYP' onClick={handleClickLinkCb('newsletter')}>Newsletter</a>
+            <a className={'navlink' + menustatus} href='https://eepurl.com/dnApYP' onClick={handleClickLinkCb('newsletter')}>Newsletter</a>
           </div>
         </div>
       </div>

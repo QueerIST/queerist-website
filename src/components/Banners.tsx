@@ -19,7 +19,7 @@ const BigBanner = ({ name, imgLink, button }: BigBannerProps) => (
             color={button.linkTextColor}
           >
         <NavLink
-              to={{ pathname: button.linkPage, hash: '#' + button.linkId }}
+              to={{ pathname: button.linkPage, hash: button.linkId !== undefined ? '' + button.linkId : undefined }}
             >
           {button.linkText}
         </NavLink>
@@ -46,7 +46,7 @@ function SmallBanner ({ name, label, logoLink, bgColor, textColor, button }: Sma
           color={button.linkTextColor}
         >
           <NavLink
-            to={{ pathname: button.linkPage, hash: '#' + button.linkId }}
+            to={{ pathname: button.linkPage, hash: button.linkId !== undefined ? '#' + button.linkId : undefined }}
           >
             {button.linkText}
           </NavLink>

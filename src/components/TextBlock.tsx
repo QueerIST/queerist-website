@@ -12,7 +12,7 @@ const TextBlockButton = (props: TextBlockButtonProps) => (
     ? (
       <NavLink
           className='textblock-button'
-          to={{ pathname: props.linkPage, hash: '#' + props.linkId }}
+          to={{ pathname: props.linkPage, hash: props.linkId !== undefined ? '#' + props.linkId : undefined }}
         >
         {props.linkText}
       </NavLink>

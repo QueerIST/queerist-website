@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import Page from '../components/Page'
-import PageCover from '../components/PageCover'
+import { PageCover } from '../components/PageCover'
 import PageTile from '../components/PageTile'
 import Separator from '../components/Separator'
 import { pageMapper } from '../mappers/components'

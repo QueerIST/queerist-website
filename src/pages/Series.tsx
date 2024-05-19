@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 import { IconList } from '../components/Lists'
 import Page from '../components/Page'
-import PageCover from '../components/PageCover'
+import { PageCover } from '../components/PageCover'
 import { seriesMapper } from '../mappers/content'
 import { type Happening } from '../types/domain'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'

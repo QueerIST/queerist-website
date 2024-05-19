@@ -138,5 +138,3 @@ export interface Icon {
 }
 
 export type Icons = { icons: Icon[] } & List
-
-export type PagesMeta = PageMeta | SubPageMeta

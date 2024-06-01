@@ -21,11 +21,11 @@ export const PageCover = (props: PageMeta) => {
 }
 
 export const SubPageCover = (props: SubPageMeta) => {
-  const { name, imgLink, description, bgColor, textColor } = props
+  const { name, imgLink, logoLink, description, bgColor, imgBgColor, textColor } = props
   return (
     <>
       <div className='page-background' style={{ backgroundColor: bgColor, color: textColor }}>
-        {props.logoLink !== undefined && <img src={publicPath(props.logoLink)} alt={`Logo ${name}`} />}
+        {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
         <h1>{name}</h1>
       </div>
       <div className='page-image'>
@@ -33,7 +33,7 @@ export const SubPageCover = (props: SubPageMeta) => {
           <div className='page-image-child'>
             <img src={publicPath(imgLink)} alt={name} />
           </div>
-          <div className='page-image-child'style={{ backgroundColor: props.imgBgColor, color: props.textColor }}>
+          <div className='page-image-child'style={{ backgroundColor: imgBgColor, color: textColor }}>
             <p>{description}</p>
           </div>
         </div>

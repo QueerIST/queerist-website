@@ -86,11 +86,6 @@ export interface TextBox {
 
 export type Separator = string | undefined
 
-export interface EventsPage extends PageMeta {
-  events: Event[]
-  highlightbox: HighlightBox
-}
-
 export type Happenings = Happening[]
 
 export interface Event {

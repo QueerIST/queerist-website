@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 
 import Expand from './../svg/expand.svg?react'
 import Button from './Button'
-import EventGallery from './EventGallery'
+import { EventGallery } from './EventGallery'
 import { publicPath } from '../helpers/links'
 import { type Event } from '../types/domain'
 

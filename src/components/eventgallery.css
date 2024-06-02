@@ -22,6 +22,16 @@
 	left: 0;
 }
 
+.event-gallery-inline {
+	display: flex;
+	justify-content: center;
+}
+
+.event-gallery-inline>.event-gallery {
+	position: static;
+	max-width: 700px;
+}
+
 @media only screen and (min-width: 600px) {
 	/* For tablets and bigger */
 	.left .event-gallery.closed {
@@ -48,7 +58,7 @@
 	flex: 0 0 auto;
 	display: flex;
 	flex-direction: row;
-	width: stretch;
+	width: -webkit-fill-available;
 	margin: 5px 20px;
 	align-items: center;
 	text-align: center;
@@ -85,6 +95,10 @@
 
 .event-gallery-item-text>p {
 	margin-top: 10px;
+}
+
+.event-gallery-item-text a {
+	font-size: 16px;
 }
 
 .event-gallery-item-launch {

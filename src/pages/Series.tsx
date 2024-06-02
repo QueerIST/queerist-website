@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
-import { IconList } from '../components/Lists'
+import { InlineEventGallery } from '../components/EventGallery'
 import Page from '../components/Page'
 import { SeriesCover } from '../components/PageCover'
+import Separator from '../components/Separator'
 import { seriesMapper } from '../mappers/content'
-import { type Happening } from '../types/domain'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
 export const Series = () => {
@@ -36,11 +36,8 @@ export const Series = () => {
   return (
     <Page data={series}>
       <SeriesCover {...series}/>
-      {series.happenings !== undefined && <IconList icons={series.happenings.map((happening: Happening) => ({
-        name: happening.name,
-        logoLink: happening.imgLink,
-        link: `${serie}/${happening.id}`
-      }))} />}
+      <Separator />
+      {series.happenings !== undefined && <InlineEventGallery data={series} />}
     </Page>
   )
 }

@@ -112,7 +112,7 @@ export interface Happening {
   longDescription?: BlocksContent
 }
 
-export interface SubPageMeta extends PageMeta {
+export interface HubMeta extends PageMeta {
   id: string
   parentPage: string
   logoLink?: string
@@ -121,7 +121,7 @@ export interface SubPageMeta extends PageMeta {
   textColor: string
 }
 
-export interface SubPage extends SubPageMeta {
+export interface Hub extends HubMeta {
   seeMoreText: string
   events?: Event[]
 }

@@ -2,11 +2,11 @@ import { NavLink } from 'react-router-dom'
 
 import Button from './Button'
 import { publicPath } from '../helpers/links'
-import { type SubPage } from '../types/domain'
+import { type Hub } from '../types/domain'
 
 import './tile.css'
 
-function PageTile ({ data }: { data: SubPage }) {
+function PageTile ({ data }: { data: Hub }) {
   const { id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText } = data
   const EventTypeInfoButton = (
     <NavLink

@@ -1,8 +1,8 @@
 import { imageMapper, maybeImageMapper } from './components'
-import { type SubPage, type Event, type Happening } from '../types/domain'
+import { type Hub, type Event, type Happening } from '../types/domain'
 import { type GetValues } from '../types/strapi'
 
-export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: string): SubPage {
+export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: string): Hub {
   return {
     id: data.Slug,
     name: data.Name,

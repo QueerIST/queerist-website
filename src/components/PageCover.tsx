@@ -1,5 +1,5 @@
 import { publicPath } from '../helpers/links'
-import { type Event, type PageMeta, type SubPageMeta } from '../types/domain'
+import { type Event, type PageMeta, type HubMeta } from '../types/domain'
 
 import './pagecover.css'
 
@@ -20,7 +20,7 @@ export const PageCover = (props: PageMeta) => {
   )
 }
 
-export const SubPageCover = (props: SubPageMeta) => {
+export const HubCover = (props: HubMeta) => {
   const { name, imgLink, logoLink, description, bgColor, imgBgColor, textColor } = props
   return (
     <>

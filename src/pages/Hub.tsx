@@ -8,14 +8,14 @@ import EventTile from '../components/EventTile'
 import HighlightBox from '../components/HighlightBox'
 import { IconList } from '../components/Lists'
 import Page from '../components/Page'
-import { SubPageCover } from '../components/PageCover'
+import { HubCover } from '../components/PageCover'
 import Separator from '../components/Separator'
 import TextBlock from '../components/TextBlock'
 import { bigBannerMapper, highlightBoxMapper, iconsMapper, separatorMapper, textBlockMapper } from '../mappers/components'
 import { hubMapper, seriesMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const SubPage = () => {
+const Hub = () => {
   const { hub } = useParams()
   const [data, setData] = useState<APIResponseData<'api::hub.hub'>>()
 
@@ -52,7 +52,7 @@ const SubPage = () => {
 
   return (
     <Page data={hubMapper(data.attributes, 'projects')}>
-      <SubPageCover {...hubMapper(data.attributes, 'projects')}/>
+      <HubCover {...hubMapper(data.attributes, 'projects')}/>
       {data.attributes.Body?.map((block, i) => {
         if (block.__component === 'blocks.text-block') {
           return <TextBlock {...textBlockMapper(block)} key={i} />
@@ -74,4 +74,4 @@ const SubPage = () => {
   )
 }
 
-export default SubPage
+export default Hub

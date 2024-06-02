@@ -5,9 +5,9 @@ import About from '../pages/About'
 import Event from '../pages/Event'
 import Events from '../pages/Events'
 import Home from '../pages/Home'
+import Hub from '../pages/Hub'
 import Projects from '../pages/Projects'
 import Series from '../pages/Series'
-import SubPage from '../pages/SubPage'
 
 const Routes = createRoutesFromElements(
   <Route element={<Layout />}>
@@ -23,7 +23,7 @@ const Routes = createRoutesFromElements(
     <Route path='/projetos'>
       <Route index element={<Projects />} />
       <Route path=':hub'>
-        <Route index element={<SubPage />} />
+        <Route index element={<Hub />} />
         <Route path=':serie'>
           <Route index element={<Series />} />
           <Route path=':event' element={<Event />} />

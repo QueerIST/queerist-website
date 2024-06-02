@@ -9,18 +9,18 @@
 	color: white;
 }
 
-.page-background>p {
+.page-background p {
 	max-width: 80%;
 	margin: 10px;
 	font-size: 20px;
 }
 
-.page-background>h1 {
+.page-background h1 {
 	margin: 10px;
 	font-size: 40px;
 }
 
-.page-background>img {
+.page-background img {
 	margin: 10px;
 	height: 100px;
 }
@@ -31,6 +31,7 @@
 	align-items: center;
 	min-height: 100%;
 	margin-top: 0;
+	width: 100%;
 }
 
 .page-image-group img {
@@ -72,6 +73,31 @@
 	font-size: 25px;
 }
 
+.page-series {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.page-background-series>p {
+	text-align: center;
+}
+
+.page-series-text {
+	display: flex;
+    align-items: center;
+}
+
+.page-series-text img {
+	margin: 5%;
+}
+
+.page-series-text-container {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
 @media only screen and (min-width: 600px) {
 	/* For tablets and bigger */
 	.page-background {
@@ -95,5 +121,8 @@
 	.page-image-group {
 		max-width: 1000px;
 		flex-direction: row;
+	}
+	.page-background-series {
+		max-width: 900px;
 	}
 }

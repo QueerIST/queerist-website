@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 import { IconList } from '../components/Lists'
 import Page from '../components/Page'
-import { PageCover } from '../components/PageCover'
+import { SeriesCover } from '../components/PageCover'
 import { seriesMapper } from '../mappers/content'
 import { type Happening } from '../types/domain'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
@@ -20,6 +20,7 @@ const Series = () => {
         params: {
           populate: {
             Image: { populate: '*' },
+            Logo: { populate: '*' },
             Events: { populate: ['Image'] }
           }
         }
@@ -34,7 +35,7 @@ const Series = () => {
   const series = seriesMapper(data.attributes)
   return (
     <Page data={series}>
-      <PageCover {...series}/>
+      <SeriesCover {...series}/>
       {series.happenings !== undefined && <IconList icons={series.happenings.map((happening: Happening) => ({
         name: happening.name,
         logoLink: happening.imgLink,

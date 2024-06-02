@@ -21,6 +21,7 @@ export const Series = () => {
           populate: {
             Image: { populate: '*' },
             Logo: { populate: '*' },
+            Hub: { populate: '*' },
             Events: { populate: ['Image'] }
           }
         }

@@ -94,6 +94,7 @@ export interface Event extends PageMeta {
   textColor: string
   seeMoreText?: string
   happenings?: Happenings
+  parent?: Hub
 }
 
 export interface Happening {

@@ -51,7 +51,7 @@ export const SeriesCover = (props: Event) => {
           {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
           <div className='page-series-text-container'>
             <h1>{name}</h1>
-            <p>{'Projetos'}</p>
+            {props.parent !== undefined && <p>{props.parent.name}</p>}
           </div>
         </div>
       </div>

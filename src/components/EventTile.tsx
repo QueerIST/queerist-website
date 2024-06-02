@@ -42,7 +42,7 @@ const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline
   return (
     <div id={id}>
       <div
-      data-aos={`flip-${dir}`} className={`tile-info ${dir}`} style={{ backgroundColor: bgColor, color: textColor }}
+      data-aos={`flip-${dir}`} className={`tile-info ${dir} ${inline ? 'tile-info-inline' : ''}`} style={{ backgroundColor: bgColor, color: textColor }}
     >
         <div className={`tile-info-text ${openClass}`}>
           {logoLink !== undefined &&

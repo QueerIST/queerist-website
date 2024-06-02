@@ -68,6 +68,9 @@
 
 .tile-info:hover>.tile-info-img>img {
 	transform: scale(1.5);
+}
+
+.tile-info-inline:hover>.tile-info-img>img {
 	filter: brightness(40%);
 }
 

@@ -49,8 +49,8 @@ export const About = () => {
   if (data === undefined) { return null }
 
   return (
-    <Page data={pageMapper(data.attributes.Meta)}>
-      <PageCover {...pageMapper(data.attributes.Meta)} />
+    <Page data={pageMapper(data.attributes.Meta, 'sobre')}>
+      <PageCover {...pageMapper(data.attributes.Meta, 'sobre')} />
       {data.attributes.Body?.map((block, i) => {
         if (block.__component === 'blocks.text-block') {
           return <TextBlock {...textBlockMapper(block)} key={i} />

@@ -1,7 +1,7 @@
 import { type BlocksContent } from '@strapi/blocks-react-renderer'
 
 export interface PageMeta {
-  id?: string
+  id: string
   name: string
   description: string
   imgLink: string
@@ -88,11 +88,7 @@ export type Separator = string | undefined
 
 export type Happenings = Happening[]
 
-export interface Event {
-  id: string
-  name: string
-  description: string
-  imgLink: string
+export interface Event extends PageMeta {
   logoLink?: string
   bgColor: string
   textColor: string
@@ -112,16 +108,12 @@ export interface Happening {
   longDescription?: BlocksContent
 }
 
-export interface HubMeta extends PageMeta {
-  id: string
+export interface Hub extends PageMeta {
   parentPage: string
   logoLink?: string
   imgBgColor: string
   bgColor: string
   textColor: string
-}
-
-export interface Hub extends HubMeta {
   seeMoreText: string
   events?: Event[]
 }

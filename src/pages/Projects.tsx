@@ -31,8 +31,8 @@ export const Projects = () => {
   if (data === undefined) { return null }
 
   return (
-    <Page data={pageMapper(data.attributes.Meta)}>
-      <PageCover {...pageMapper(data.attributes.Meta)} />
+    <Page data={pageMapper(data.attributes.Meta, 'projetos')}>
+      <PageCover {...pageMapper(data.attributes.Meta, 'projetos')} />
       <Separator />
       {data.attributes.Hubs?.data.map((hub, i) => (
         <PageTile key={i} data={hubMapper(hub.attributes, 'projetos')} />

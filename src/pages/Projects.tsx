@@ -10,7 +10,7 @@ import { pageMapper } from '../mappers/components'
 import { hubMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const Projects = () => {
+export const Projects = () => {
   const [data, setData] = useState<APIResponseData<'api::project-page.project-page'>>()
 
   useEffect(() => {
@@ -40,5 +40,3 @@ const Projects = () => {
     </Page>
   )
 }
-
-export default Projects

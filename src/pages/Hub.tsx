@@ -15,7 +15,7 @@ import { bigBannerMapper, highlightBoxMapper, iconsMapper, separatorMapper, text
 import { hubMapper, seriesMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const Hub = () => {
+export const Hub = () => {
   const { hub } = useParams()
   const [data, setData] = useState<APIResponseData<'api::hub.hub'>>()
 
@@ -73,5 +73,3 @@ const Hub = () => {
     </Page>
   )
 }
-
-export default Hub

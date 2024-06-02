@@ -8,7 +8,7 @@ import { PageCover } from '../components/PageCover'
 import { eventMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const Event = () => {
+export const Event = () => {
   const { event } = useParams()
   const [data, setData] = useState<APIResponseData<'api::event.event'>>()
 
@@ -34,5 +34,3 @@ const Event = () => {
     </Page>
   )
 }
-
-export default Event

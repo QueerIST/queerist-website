@@ -10,7 +10,7 @@ import TextBlock from '../components/TextBlock'
 import { bigBannerMapper, highlightBoxMapper, pageMapper, smallBannersMapper, textBlockMapper } from '../mappers/components'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const Home = () => {
+export const Home = () => {
   const [data, setData] = useState<APIResponseData<'api::main-page.main-page'>>()
 
   useEffect(() => {
@@ -60,5 +60,3 @@ const Home = () => {
     </Page>
   )
 }
-
-export default Home

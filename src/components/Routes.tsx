@@ -1,15 +1,15 @@
 import { Route, createRoutesFromElements } from 'react-router-dom'
 
 import Layout from './Layout'
-import About from '../pages/About'
-import Event from '../pages/Event'
-import Events from '../pages/Events'
-import Home from '../pages/Home'
-import Hub from '../pages/Hub'
-import Projects from '../pages/Projects'
-import Series from '../pages/Series'
+import { About } from '../pages/About'
+import { Event } from '../pages/Event'
+import { Events } from '../pages/Events'
+import { Home } from '../pages/Home'
+import { Hub } from '../pages/Hub'
+import { Projects } from '../pages/Projects'
+import { Series } from '../pages/Series'
 
-const Routes = createRoutesFromElements(
+export const Routes = createRoutesFromElements(
   <Route element={<Layout />}>
     <Route path='/' element={<Home />} />
     <Route path='/sobre' element={<About />} />
@@ -32,5 +32,3 @@ const Routes = createRoutesFromElements(
     </Route>
   </Route>
 )
-
-export default Routes

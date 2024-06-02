@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import AOS from 'aos'
 import ReactGA from 'react-ga4'
 
-import App from './App'
+import { App } from './App'
 
 import './index.css'
 import 'aos/dist/aos.css'

@@ -10,7 +10,7 @@ import { seriesMapper } from '../mappers/content'
 import { type Happening } from '../types/domain'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const Series = () => {
+export const Series = () => {
   const { serie } = useParams()
   const [data, setData] = useState<APIResponseData<'api::serie.serie'>>()
 
@@ -44,5 +44,3 @@ const Series = () => {
     </Page>
   )
 }
-
-export default Series

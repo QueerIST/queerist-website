@@ -12,7 +12,7 @@ import { highlightBoxMapper, pageMapper } from '../mappers/components'
 import { seriesMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const Events = () => {
+export const Events = () => {
   const [data, setData] = useState<APIResponseData<'api::event-page.event-page'>>()
 
   useEffect(() => {
@@ -44,5 +44,3 @@ const Events = () => {
     </Page>
   )
 }
-
-export default Events

@@ -12,7 +12,7 @@ import TextBlock from '../components/TextBlock'
 import { bigBannerMapper, highlightBoxMapper, pageMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
-const About = () => {
+export const About = () => {
   const [data, setData] = useState<APIResponseData<'api::about-page.about-page'>>()
 
   useEffect(() => {
@@ -69,5 +69,3 @@ const About = () => {
     </Page>
   )
 }
-
-export default About

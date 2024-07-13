@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
 import Page from '../components/Page'
-import { PageCover } from '../components/PageCover'
+import { EventCover } from '../components/PageCover'
 import { eventMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
@@ -30,7 +30,7 @@ export const Event = () => {
 
   return (
     <Page data={eventMapper(data.attributes)}>
-      <PageCover {...eventMapper(data.attributes)}/>
+      <EventCover {...eventMapper(data.attributes)}/>
     </Page>
   )
 }

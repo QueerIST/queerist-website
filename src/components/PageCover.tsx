@@ -1,5 +1,5 @@
 import { publicPath } from '../helpers/links'
-import { type Event, type PageMeta, type Hub } from '../types/domain'
+import { type Event, type PageMeta, type Hub, type Happening } from '../types/domain'
 
 import './pagecover.css'
 
@@ -7,11 +7,11 @@ export const PageCover = (props: PageMeta) => {
   const { name, imgLink, description, bgColor, textColor } = props
   return (
     <>
-      <div className='page-background' style={{ backgroundColor: bgColor, color: textColor }}>
+      <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
         <h1>{name}</h1>
         <p>{description}</p>
       </div>
-      <div className='page-image'>
+      <div className='page-image page-image-margin'>
         <div className='page-image-group'>
           <img src={publicPath(imgLink)} alt={name} />
         </div>
@@ -24,11 +24,11 @@ export const HubCover = (props: Hub) => {
   const { name, imgLink, logoLink, description, bgColor, imgBgColor, textColor } = props
   return (
     <>
-      <div className='page-background' style={{ backgroundColor: bgColor, color: textColor }}>
+      <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
         {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
         <h1>{name}</h1>
       </div>
-      <div className='page-image'>
+      <div className='page-image page-image-margin'>
         <div className='page-image-group'>
           <div className='page-image-child'>
             <img src={publicPath(imgLink)} alt={name} />
@@ -62,6 +62,19 @@ export const SeriesCover = (props: Event) => {
       </div>
       <div className='page-image-child page-background-series' style={{ backgroundColor: bgColor, color: textColor }}>
         <p>{description}</p>
+      </div>
+    </div>
+  )
+}
+
+export const EventCover = (props: Happening) => {
+  const { name, imgLink } = props
+  return (
+    <div className='page-event'>
+      <div className='page-image'>
+        <div className='page-image-group'>
+          <img src={publicPath(imgLink)} alt={name} />
+        </div>
       </div>
     </div>
   )

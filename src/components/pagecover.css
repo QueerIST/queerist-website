@@ -30,7 +30,6 @@
 	justify-content: center;
 	align-items: center;
 	min-height: 100%;
-	margin-top: 0;
 	width: 100%;
 }
 
@@ -98,24 +97,30 @@
 	text-align: left;
 }
 
+.page-event .page-image-group {
+	height: 100%;
+	max-width: none;
+	max-height: 1000px;
+}
+
 @media only screen and (min-width: 600px) {
 	/* For tablets and bigger */
 	.page-background {
 		justify-content: unset;
-		padding-top: 20px;
+		padding: 20px 0;
 		min-height: 200px;
 		height: fit-content;
 	}
 	.page-background>p {
 		max-width: 60%;
 	}
-	.page-background>*:last-child {
+	.page-background-margin>*:last-child {
 		margin-bottom: 60px;
 	}
 	.page-background>img {
 		height: 75px;
 	}
-	.page-image {
+	.page-image-margin {
 		margin-top: -50px;
 	}
 	.page-image-group {

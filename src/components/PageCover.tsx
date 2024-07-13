@@ -6,7 +6,7 @@ import './pagecover.css'
 export const PageCover = (props: PageMeta) => {
   const { name, imgLink, description, bgColor, textColor } = props
   return (
-    <>
+    <div className='page-cover'>
       <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
         <h1>{name}</h1>
         <p>{description}</p>
@@ -16,14 +16,14 @@ export const PageCover = (props: PageMeta) => {
           <img src={publicPath(imgLink)} alt={name} />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
 export const HubCover = (props: Hub) => {
   const { name, imgLink, logoLink, description, bgColor, imgBgColor, textColor } = props
   return (
-    <>
+    <div className='page-hub'>
       <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
         {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
         <h1>{name}</h1>
@@ -38,7 +38,7 @@ export const HubCover = (props: Hub) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

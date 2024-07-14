@@ -97,15 +97,11 @@ export interface Event extends PageMeta {
   parent?: Hub
 }
 
-export interface Happening {
-  id: string
-  name: string
-  imgLink: string
+export interface Happening extends PageMeta {
   date: Date | string
-  enddate?: Date | string // TODO use
+  enddate?: Date | string
   place: string
   link: string
-  description: string
   longDescription?: BlocksContent
 }
 

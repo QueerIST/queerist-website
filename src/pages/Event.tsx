@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
+import { EventInfo } from '../components/EventInfo'
 import Page from '../components/Page'
 import { EventCover } from '../components/PageCover'
 import { eventMapper } from '../mappers/content'
@@ -31,6 +32,7 @@ export const Event = () => {
   return (
     <Page data={eventMapper(data.attributes)}>
       <EventCover {...eventMapper(data.attributes)}/>
+      <EventInfo data={eventMapper(data.attributes)}/>
     </Page>
   )
 }

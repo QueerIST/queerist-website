@@ -1,0 +1,13 @@
+.event-info {
+	padding: 5%;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+	/* For tablets and bigger */
+	.event-info {
+		max-width: 1000px;
+		margin: auto;
+	}
+}

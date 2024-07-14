@@ -41,10 +41,10 @@ export function eventMapper (data: GetValues<'api::event.event'>): Happening {
     name: data.Name,
     imgLink: imageMapper(data.Image),
     date: data.Date,
-    enddate: data.EndDate,
+    enddate: notNullish(data.EndDate) ? data.EndDate : undefined,
     place: data.Place,
     link: data.Link,
-    longDescription: data.Description,
+    longDescription: notNullish(data.Description) ? data.Description : undefined,
     description: description !== undefined && 'text' in description ? description.text : data.Name
   }
 }

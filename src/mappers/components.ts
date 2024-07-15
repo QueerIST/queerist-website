@@ -72,7 +72,7 @@ export function maybeOutlineButtonMapper (data?: GetValues<'links.outline-link'>
 
 export function textBlockMapper (data: GetValues<'blocks.text-block'>): TextBlock {
   return {
-    id: '',
+    id: data.Slug,
     title: data.Title,
     text: data.Text,
     small: data.Small,
@@ -85,6 +85,7 @@ export function textBlockMapper (data: GetValues<'blocks.text-block'>): TextBloc
 
 export function bigBannerMapper (data: GetValues<'blocks.big-banner'>): BigBanner {
   return {
+    id: data.Slug,
     button: maybeOutlineButtonMapper(data.Button),
     name: data.AltName,
     imgLink: imageMapper(data.Image)
@@ -92,18 +93,22 @@ export function bigBannerMapper (data: GetValues<'blocks.big-banner'>): BigBanne
 }
 
 export function smallBannersMapper (data: GetValues<'blocks.small-banners-list'>): SmallBanners {
-  return data.Banners.map((banner: GetValues<'blocks.small-banner'>) => ({
-    name: banner.Title,
-    label: banner.Subtitle,
-    logoLink: imageMapper(banner.Logo),
-    bgColor: banner.BackgroundColor,
-    textColor: banner.TextColor,
-    button: maybeOutlineButtonMapper(banner.Button)
-  }))
+  return {
+    id: data.Slug,
+    banners: data.Banners.map((banner: GetValues<'blocks.small-banner'>) => ({
+      name: banner.Title,
+      label: banner.Subtitle,
+      logoLink: imageMapper(banner.Logo),
+      bgColor: banner.BackgroundColor,
+      textColor: banner.TextColor,
+      button: maybeOutlineButtonMapper(banner.Button)
+    }))
+  }
 }
 
 export function highlightBoxMapper (data: GetValues<'blocks.highlightbox'>): HighlightBox {
   return {
+    id: data.Slug,
     title: data.Title,
     subTitle: data.Subtitle,
     bgColor: data.BackgroundColor,
@@ -114,6 +119,7 @@ export function highlightBoxMapper (data: GetValues<'blocks.highlightbox'>): Hig
 
 export function textBoxesMapper (data: GetValues<'blocks.text-boxes-list'>): TextBoxList {
   return {
+    id: data.Slug,
     boxes: data.Boxes.map((textbox: GetValues<'blocks.text-box'>) => ({
       name: textbox.Title,
       text: textbox.Text,
@@ -124,6 +130,7 @@ export function textBoxesMapper (data: GetValues<'blocks.text-boxes-list'>): Tex
 
 export function iconsMapper (data: GetValues<'blocks.icons-list'>): Icons {
   return {
+    id: data.Slug,
     icons: data.Icons.map((icon: GetValues<'blocks.icon'>) => ({
       name: icon.Name,
       logoLink: imageMapper(icon.Logo),

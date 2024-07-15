@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react'
+import { type PropsWithChildren } from 'react'
 
 import { NavLink } from 'react-router-dom'
 
@@ -8,8 +8,8 @@ import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProp
 
 import './banners.css'
 
-const BigBanner = ({ name, imgLink, button }: BigBannerProps) => (
-  <div className='big-banner banner'>
+const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => (
+  <div id={id} className='big-banner banner'>
     {button !== undefined &&
     <div className='big-banner-button'>
       <Button
@@ -56,14 +56,14 @@ function SmallBanner ({ name, label, logoLink, bgColor, textColor, button }: Sma
   )
 }
 
-const SmallBannersWrap = ({ children }: { children: ReactNode }) => (
+const SmallBannersWrap = (props: PropsWithChildren<{ id?: string }>) => (
   <div className='small-banners'>
-    {children}
+    {props.children}
   </div>
 )
 
-const SmallBanners = ({ banners }: { banners: SmallBannersProps }) => (
-  <SmallBannersWrap>
+const SmallBanners = ({ id, banners }: SmallBannersProps) => (
+  <SmallBannersWrap id={id}>
     {banners.map((smallBanner, i) => (
       <SmallBanner
         key={i}

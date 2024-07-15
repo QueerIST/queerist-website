@@ -10,7 +10,7 @@ export interface PageMeta {
 }
 
 export interface TextBlock {
-  id: string
+  id?: string
   title: string
   text: BlocksContent
   bgColor: string
@@ -43,12 +43,13 @@ export type BlockButtonLink = BlockButton & ButtonLink
 export type OutlineButtonLink = OutlineButton & ButtonLink
 
 export interface BigBanner {
+  id?: string
   name: string
   imgLink: string
   button?: OutlineButtonLink
 }
 
-export type SmallBanners = SmallBanner[]
+export type SmallBanners = { banners: SmallBanner[] } & List
 
 export interface SmallBanner {
   name: string

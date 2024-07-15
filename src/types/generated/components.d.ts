@@ -6,6 +6,7 @@ export interface BlocksBigBanner extends Schema.Component {
     displayName: 'BigBanner'
   }
   attributes: {
+    Slug: Attribute.String
     AltName: Attribute.String & Attribute.Required
     Image: Attribute.Media & Attribute.Required
     Button: Attribute.Component<'links.outline-link'>
@@ -20,6 +21,7 @@ export interface BlocksHighlightbox extends Schema.Component {
     description: ''
   }
   attributes: {
+    Slug: Attribute.String
     Title: Attribute.String & Attribute.Required
     Subtitle: Attribute.Text & Attribute.Required
     BackgroundColor: Attribute.String &
@@ -48,8 +50,10 @@ export interface BlocksIconsList extends Schema.Component {
   collectionName: 'components_blocks_icons_lists'
   info: {
     displayName: 'IconsList'
+    description: ''
   }
   attributes: {
+    Slug: Attribute.String
     Icons: Attribute.Component<'blocks.icon', true> &
     Attribute.Required &
     Attribute.SetMinMax<
@@ -97,6 +101,7 @@ export interface BlocksSmallBannersList extends Schema.Component {
     displayName: 'SmallBannersList'
   }
   attributes: {
+    Slug: Attribute.String
     Banners: Attribute.Component<'blocks.small-banner', true> &
     Attribute.Required &
     Attribute.SetMinMax<
@@ -114,6 +119,7 @@ export interface BlocksTextBlock extends Schema.Component {
     displayName: 'TextBlock'
   }
   attributes: {
+    Slug: Attribute.String
     Title: Attribute.String & Attribute.Required
     Text: Attribute.Blocks & Attribute.Required
     BackgroundColor: Attribute.String &
@@ -147,8 +153,10 @@ export interface BlocksTextBoxesList extends Schema.Component {
   collectionName: 'components_blocks_text_boxes_lists'
   info: {
     displayName: 'TextBoxesList'
+    description: ''
   }
   attributes: {
+    Slug: Attribute.String
     Boxes: Attribute.Component<'blocks.text-box', true> &
     Attribute.Required &
     Attribute.SetMinMax<

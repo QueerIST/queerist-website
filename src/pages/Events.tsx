@@ -34,8 +34,8 @@ export const Events = () => {
   if (data === undefined) { return null }
 
   return (
-    <Page data={pageMapper(data.attributes.Meta, 'eventos')}>
-      <PageCover {...pageMapper(data.attributes.Meta, 'eventos')} />
+    <Page data={pageMapper(data.attributes.Meta)}>
+      <PageCover {...pageMapper(data.attributes.Meta)} />
       <Separator />
       {data.attributes.Series?.data.map((serie, i) => (
         <EventTile key={i} n={i} data={seriesMapper(serie.attributes)} />

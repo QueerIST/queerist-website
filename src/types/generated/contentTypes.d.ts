@@ -1169,6 +1169,15 @@ export interface ApiEventEvent extends Schema.CollectionType {
     Date: Attribute.DateTime & Attribute.Required
     EndDate: Attribute.DateTime
     Place: Attribute.String & Attribute.Required
+    Pin: Attribute.Enumeration<
+    [
+      'Instituto Superior T\u00E9cnico',
+      'Discord',
+      'Instagram',
+      'Largo Lu\u00EDs de Cam\u00F5es'
+    ]
+    > &
+    Attribute.Required
     Description: Attribute.Blocks
     Link: Attribute.String & Attribute.Required
     Slug: Attribute.UID<'api::event.event', 'Name'> & Attribute.Required

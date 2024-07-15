@@ -101,6 +101,7 @@ export interface Happening extends PageMeta {
   date: Date | string
   enddate?: Date | string
   place: string
+  pin: string
   link: string
   longDescription?: BlocksContent
 }

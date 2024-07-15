@@ -7,7 +7,7 @@ import { type Happening } from '../types/domain'
 import './eventinfo.css'
 
 export const EventInfo = (props: { data: Happening }) => {
-  const { name, date, enddate, place, longDescription } = props.data
+  const { name, date, enddate, place, pin, longDescription } = props.data
   const dateObj = new Date(date)
 
   let yearFormat = ''; let timeFormat = "'às' HH'h'mm"; let endTimeString = ''
@@ -28,7 +28,7 @@ export const EventInfo = (props: { data: Happening }) => {
     <div className='event-info'>
       <h3>📅 <time dateTime={dateObj.toISOString()}>{format(dateObj, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time></h3>
       <h2>{name}</h2>
-      <h4><u>{place}, Instituto Superior Técnico</u></h4>
+      <h4><u>{place}, {pin}</u></h4>
       {longDescription !== undefined && <BlocksRenderer content={longDescription}></BlocksRenderer>}
     </div>
   )

@@ -43,6 +43,7 @@ export function eventMapper (data: GetValues<'api::event.event'>): Happening {
     date: data.Date,
     enddate: notNullish(data.EndDate) ? data.EndDate : undefined,
     place: data.Place,
+    pin: data.Pin,
     link: data.Link,
     longDescription: notNullish(data.Description) ? data.Description : undefined,
     description: description !== undefined && 'text' in description ? description.text : data.Name

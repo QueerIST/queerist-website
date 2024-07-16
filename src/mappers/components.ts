@@ -26,13 +26,13 @@ export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
 
 function enrichWithLink (link: GetValues<'links.button'>, button: ButtonLink
 ) {
-  if (link.Page !== undefined) {
+  if (notNullish(link.Page)) {
     const [path, hash] = link.Page.split('#')
     button.linkPage = path
     button.linkId = hash
-  } else if (link.File !== undefined) {
+  } else if (notNullish(link.File)) {
     button.linkFile = link.File.data.attributes.url
-  } else if (link.Web !== undefined) {
+  } else if (notNullish(link.Web)) {
     button.linkWeb = link.Web
   }
 }

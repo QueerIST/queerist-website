@@ -29,8 +29,8 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>): Event {
     bgColor: data.BackgroundColor,
     textColor: data.TextColor,
     seeMoreText: data.SeeMoreText,
-    happenings: happenings !== undefined && (happenings.length > 0) ? happenings : undefined,
-    parent: notNullish(data.Hub) ? hubMapper(data.Hub.data.attributes) : undefined
+    happenings: notNullish(happenings) && happenings.length > 0 ? happenings : undefined,
+    parent: notNullish(data.Hub) && notNullish(data.Hub.data) ? hubMapper(data.Hub.data.attributes) : undefined
   }
 }
 

@@ -57,7 +57,7 @@ export const About = () => {
         } else if (block.__component === 'blocks.big-banner') {
           return <BigBanner {...bigBannerMapper(block)} key={i} />
         } else if (block.__component === 'blocks.small-banners-list') {
-          return <SmallBanners banners={smallBannersMapper(block)} key={i} />
+          return <SmallBanners {...smallBannersMapper(block)} key={i} />
         } else if (block.__component === 'blocks.text-boxes-list') {
           return <TextBoxList {...textBoxesMapper(block)} key={i} />
         } else if (block.__component === 'blocks.highlightbox') {

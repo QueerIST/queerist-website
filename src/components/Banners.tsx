@@ -8,7 +8,7 @@ import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProp
 
 import './banners.css'
 
-const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => (
+export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => (
   <div id={id} className='big-banner banner'>
     {button !== undefined &&
     <div className='big-banner-button'>
@@ -62,7 +62,7 @@ const SmallBannersWrap = (props: PropsWithChildren<{ id?: string }>) => (
   </div>
 )
 
-const SmallBanners = ({ id, banners }: SmallBannersProps) => (
+export const SmallBanners = ({ id, banners }: SmallBannersProps) => (
   <SmallBannersWrap id={id}>
     {banners.map((smallBanner, i) => (
       <SmallBanner
@@ -72,5 +72,3 @@ const SmallBanners = ({ id, banners }: SmallBannersProps) => (
     ))}
   </SmallBannersWrap>
 )
-
-export { BigBanner, SmallBanners }

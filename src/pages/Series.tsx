@@ -3,10 +3,15 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
+import { BigBanner, SmallBanners } from '../components/Banners'
 import { InlineEventGallery } from '../components/EventGallery'
+import HighlightBox from '../components/HighlightBox'
+import { IconList, TextBoxList } from '../components/Lists'
 import Page from '../components/Page'
 import { SeriesCover } from '../components/PageCover'
 import Separator from '../components/Separator'
+import TextBlock from '../components/TextBlock'
+import { textBlockMapper, bigBannerMapper, smallBannersMapper, textBoxesMapper, highlightBoxMapper, separatorMapper, iconsMapper } from '../mappers/components'
 import { seriesMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
@@ -22,7 +27,26 @@ export const Series = () => {
             Image: { populate: '*' },
             Logo: { populate: '*' },
             Hub: { populate: '*' },
-            Events: { populate: ['Image'] }
+            Events: { populate: ['Image'] },
+            Body: {
+              on: {
+                'blocks.text-block': {
+                  populate: ['Button', 'Button.Link']
+                },
+                'blocks.big-banner': {
+                  populate: ['Image', 'Button', 'Button.Link']
+                },
+                'blocks.small-banners-list': {
+                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link']
+                },
+                'blocks.icons-list': {
+                  populate: ['Icons', 'Icons.Logo']
+                },
+                'blocks.highlightbox': { populate: ['Button', 'Button.Link'] },
+                'blocks.text-boxes-list': { populate: '*' },
+                'blocks.separator': { populate: '*' }
+              }
+            }
           }
         }
       })
@@ -39,6 +63,23 @@ export const Series = () => {
       <SeriesCover {...series}/>
       <Separator />
       {series.happenings !== undefined && <InlineEventGallery data={series} />}
+      {data.attributes.Body?.map((block, i) => {
+        if (block.__component === 'blocks.text-block') {
+          return <TextBlock {...textBlockMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.big-banner') {
+          return <BigBanner {...bigBannerMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.small-banners-list') {
+          return <SmallBanners {...smallBannersMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.text-boxes-list') {
+          return <TextBoxList {...textBoxesMapper(block)} key={i} />
+        } if (block.__component === 'blocks.icons-list') {
+          return <IconList {...iconsMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.highlightbox') {
+          return <HighlightBox {...highlightBoxMapper(block)} key={i} />
+        } else {
+          return <Separator data={separatorMapper(block)} key={i} />
+        }
+      })}
     </Page>
   )
 }

@@ -3,15 +3,15 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
-import { BigBanner } from '../components/Banners'
+import { BigBanner, SmallBanners } from '../components/Banners'
 import EventTile from '../components/EventTile'
 import HighlightBox from '../components/HighlightBox'
-import { IconList } from '../components/Lists'
+import { IconList, TextBoxList } from '../components/Lists'
 import Page from '../components/Page'
 import { HubCover } from '../components/PageCover'
 import Separator from '../components/Separator'
 import TextBlock from '../components/TextBlock'
-import { bigBannerMapper, highlightBoxMapper, iconsMapper, separatorMapper, textBlockMapper } from '../mappers/components'
+import { bigBannerMapper, highlightBoxMapper, iconsMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
 import { hubMapper, seriesMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
@@ -34,8 +34,14 @@ export const Hub = () => {
                 'blocks.big-banner': {
                   populate: ['Image', 'Button', 'Button.Link']
                 },
+                'blocks.small-banners-list': {
+                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link']
+                },
+                'blocks.icons-list': {
+                  populate: ['Icons', 'Icons.Logo']
+                },
                 'blocks.highlightbox': { populate: ['Button', 'Button.Link'] },
-                'blocks.icons-list': { populate: '*' },
+                'blocks.text-boxes-list': { populate: '*' },
                 'blocks.separator': { populate: '*' }
               }
             },
@@ -58,7 +64,11 @@ export const Hub = () => {
           return <TextBlock {...textBlockMapper(block)} key={i} />
         } else if (block.__component === 'blocks.big-banner') {
           return <BigBanner {...bigBannerMapper(block)} key={i} />
-        } else if (block.__component === 'blocks.icons-list') {
+        } else if (block.__component === 'blocks.small-banners-list') {
+          return <SmallBanners {...smallBannersMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.text-boxes-list') {
+          return <TextBoxList {...textBoxesMapper(block)} key={i} />
+        } if (block.__component === 'blocks.icons-list') {
           return <IconList {...iconsMapper(block)} key={i} />
         } else if (block.__component === 'blocks.highlightbox') {
           return <HighlightBox {...highlightBoxMapper(block)} key={i} />

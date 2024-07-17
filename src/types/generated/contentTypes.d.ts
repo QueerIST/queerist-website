@@ -600,6 +600,48 @@ export interface PluginContentReleasesReleaseAction
   }
 }
 
+export interface PluginSlugifySlug extends Schema.CollectionType {
+  collectionName: 'slugs'
+  info: {
+    singularName: 'slug'
+    pluralName: 'slugs'
+    displayName: 'slug'
+  }
+  options: {
+    draftAndPublish: false
+    comment: ''
+  }
+  pluginOptions: {
+    'content-manager': {
+      visible: false
+    }
+    'content-type-builder': {
+      visible: false
+    }
+  }
+  attributes: {
+    slug: Attribute.Text
+    count: Attribute.Integer
+    createdAt: Attribute.DateTime
+    updatedAt: Attribute.DateTime
+    createdBy: Attribute.Relation<
+    'plugin::slugify.slug',
+    'oneToOne',
+    'admin::user'
+    > &
+    Attribute.Private
+    updatedBy: Attribute.Relation<
+    'plugin::slugify.slug',
+    'oneToOne',
+    'admin::user'
+    > &
+    Attribute.Private
+    sitemap_exclude: Attribute.Boolean &
+    Attribute.Private &
+    Attribute.DefaultTo<false>
+  }
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions'
@@ -1061,48 +1103,6 @@ export interface PluginSitemapSitemapCache extends Schema.CollectionType {
   }
 }
 
-export interface PluginSlugifySlug extends Schema.CollectionType {
-  collectionName: 'slugs'
-  info: {
-    singularName: 'slug'
-    pluralName: 'slugs'
-    displayName: 'slug'
-  }
-  options: {
-    draftAndPublish: false
-    comment: ''
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    slug: Attribute.Text
-    count: Attribute.Integer
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::slugify.slug',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::slugify.slug',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
 export interface ApiAboutPageAboutPage extends Schema.SingleType {
   collectionName: 'about_pages'
   info: {
@@ -1123,7 +1123,8 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
       'blocks.small-banners-list',
       'blocks.separator',
       'blocks.text-boxes-list',
-      'blocks.highlightbox'
+      'blocks.highlightbox',
+      'blocks.icons-list'
     ]
     >
     createdAt: Attribute.DateTime
@@ -1181,6 +1182,17 @@ export interface ApiEventEvent extends Schema.CollectionType {
     Description: Attribute.Blocks
     Link: Attribute.String & Attribute.Required
     Slug: Attribute.UID<'api::event.event', 'Name'> & Attribute.Required
+    Body: Attribute.DynamicZone<
+    [
+      'blocks.big-banner',
+      'blocks.highlightbox',
+      'blocks.icons-list',
+      'blocks.separator',
+      'blocks.small-banners-list',
+      'blocks.text-block',
+      'blocks.text-boxes-list'
+    ]
+    >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1220,7 +1232,17 @@ export interface ApiEventPageEventPage extends Schema.SingleType {
     'oneToMany',
     'api::serie.serie'
     >
-    Highlight: Attribute.Component<'blocks.highlightbox'>
+    Body: Attribute.DynamicZone<
+    [
+      'blocks.big-banner',
+      'blocks.highlightbox',
+      'blocks.icons-list',
+      'blocks.separator',
+      'blocks.small-banners-list',
+      'blocks.text-block',
+      'blocks.text-boxes-list'
+    ]
+    >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1274,7 +1296,9 @@ export interface ApiHubHub extends Schema.CollectionType {
       'blocks.text-block',
       'blocks.highlightbox',
       'blocks.separator',
-      'blocks.icons-list'
+      'blocks.icons-list',
+      'blocks.text-boxes-list',
+      'blocks.small-banners-list'
     ]
     >
     Series: Attribute.Relation<'api::hub.hub', 'oneToMany', 'api::serie.serie'>
@@ -1310,7 +1334,10 @@ export interface ApiMainPageMainPage extends Schema.SingleType {
       'blocks.big-banner',
       'blocks.small-banners-list',
       'blocks.text-block',
-      'blocks.highlightbox'
+      'blocks.highlightbox',
+      'blocks.icons-list',
+      'blocks.separator',
+      'blocks.text-boxes-list'
     ]
     >
     createdAt: Attribute.DateTime
@@ -1351,6 +1378,17 @@ export interface ApiProjectPageProjectPage extends Schema.SingleType {
     'api::project-page.project-page',
     'oneToMany',
     'api::hub.hub'
+    >
+    Body: Attribute.DynamicZone<
+    [
+      'blocks.big-banner',
+      'blocks.highlightbox',
+      'blocks.separator',
+      'blocks.small-banners-list',
+      'blocks.text-block',
+      'blocks.text-boxes-list',
+      'blocks.icons-list'
+    ]
     >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
@@ -1403,6 +1441,17 @@ export interface ApiSerieSerie extends Schema.CollectionType {
     >
     SeeMoreText: Attribute.String
     Hub: Attribute.Relation<'api::serie.serie', 'manyToOne', 'api::hub.hub'>
+    Body: Attribute.DynamicZone<
+    [
+      'blocks.big-banner',
+      'blocks.highlightbox',
+      'blocks.icons-list',
+      'blocks.separator',
+      'blocks.small-banners-list',
+      'blocks.text-block',
+      'blocks.text-boxes-list'
+    ]
+    >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime
@@ -1438,6 +1487,7 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder
       'plugin::content-releases.release': PluginContentReleasesRelease
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction
+      'plugin::slugify.slug': PluginSlugifySlug
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission
       'plugin::users-permissions.role': PluginUsersPermissionsRole
       'plugin::users-permissions.user': PluginUsersPermissionsUser
@@ -1447,7 +1497,6 @@ declare module '@strapi/types' {
       'plugin::navigation.navigations-items-related': PluginNavigationNavigationsItemsRelated
       'plugin::sitemap.sitemap': PluginSitemapSitemap
       'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache
-      'plugin::slugify.slug': PluginSlugifySlug
       'api::about-page.about-page': ApiAboutPageAboutPage
       'api::event.event': ApiEventEvent
       'api::event-page.event-page': ApiEventPageEventPage

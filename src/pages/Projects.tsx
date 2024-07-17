@@ -2,11 +2,15 @@ import { useEffect, useState } from 'react'
 
 import axios from 'axios'
 
+import { BigBanner, SmallBanners } from '../components/Banners'
+import HighlightBox from '../components/HighlightBox'
+import { TextBoxList, IconList } from '../components/Lists'
 import Page from '../components/Page'
 import { PageCover } from '../components/PageCover'
 import PageTile from '../components/PageTile'
 import Separator from '../components/Separator'
-import { pageMapper } from '../mappers/components'
+import TextBlock from '../components/TextBlock'
+import { bigBannerMapper, highlightBoxMapper, iconsMapper, pageMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
 import { hubMapper } from '../mappers/content'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
@@ -19,7 +23,26 @@ export const Projects = () => {
         params: {
           populate: {
             Meta: { populate: '*' },
-            Hubs: { populate: ['Image', 'Logo', 'Events', 'Events.Image'] }
+            Hubs: { populate: ['Image', 'Logo', 'Events', 'Events.Image'] },
+            Body: {
+              on: {
+                'blocks.text-block': {
+                  populate: ['Button', 'Button.Link']
+                },
+                'blocks.big-banner': {
+                  populate: ['Image', 'Button', 'Button.Link']
+                },
+                'blocks.small-banners-list': {
+                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link']
+                },
+                'blocks.icons-list': {
+                  populate: ['Icons', 'Icons.Logo']
+                },
+                'blocks.highlightbox': { populate: ['Button', 'Button.Link'] },
+                'blocks.text-boxes-list': { populate: '*' },
+                'blocks.separator': { populate: '*' }
+              }
+            }
           }
         }
       })
@@ -37,6 +60,23 @@ export const Projects = () => {
       {data.attributes.Hubs?.data.map((hub, i) => (
         <PageTile key={i} data={hubMapper(hub.attributes, 'projetos')} />
       ))}
+      {data.attributes.Body?.map((block, i) => {
+        if (block.__component === 'blocks.text-block') {
+          return <TextBlock {...textBlockMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.big-banner') {
+          return <BigBanner {...bigBannerMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.small-banners-list') {
+          return <SmallBanners {...smallBannersMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.text-boxes-list') {
+          return <TextBoxList {...textBoxesMapper(block)} key={i} />
+        } if (block.__component === 'blocks.icons-list') {
+          return <IconList {...iconsMapper(block)} key={i} />
+        } else if (block.__component === 'blocks.highlightbox') {
+          return <HighlightBox {...highlightBoxMapper(block)} key={i} />
+        } else {
+          return <Separator data={separatorMapper(block)} key={i} />
+        }
+      })}
     </Page>
   )
 }

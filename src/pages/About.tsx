@@ -4,12 +4,12 @@ import axios from 'axios'
 
 import { BigBanner, SmallBanners } from '../components/Banners'
 import HighlightBox from '../components/HighlightBox'
-import { TextBoxList } from '../components/Lists'
+import { IconList, TextBoxList } from '../components/Lists'
 import Page from '../components/Page'
 import { PageCover } from '../components/PageCover'
 import Separator from '../components/Separator'
 import TextBlock from '../components/TextBlock'
-import { bigBannerMapper, highlightBoxMapper, pageMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
+import { bigBannerMapper, highlightBoxMapper, iconsMapper, pageMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
 import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
 
 export const About = () => {
@@ -32,6 +32,9 @@ export const About = () => {
                 },
                 'blocks.small-banners-list': {
                   populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link']
+                },
+                'blocks.icons-list': {
+                  populate: ['Icons', 'Icons.Logo']
                 },
                 'blocks.highlightbox': { populate: ['Button', 'Button.Link'] },
                 'blocks.text-boxes-list': { populate: '*' },
@@ -60,6 +63,8 @@ export const About = () => {
           return <SmallBanners {...smallBannersMapper(block)} key={i} />
         } else if (block.__component === 'blocks.text-boxes-list') {
           return <TextBoxList {...textBoxesMapper(block)} key={i} />
+        } if (block.__component === 'blocks.icons-list') {
+          return <IconList {...iconsMapper(block)} key={i} />
         } else if (block.__component === 'blocks.highlightbox') {
           return <HighlightBox {...highlightBoxMapper(block)} key={i} />
         } else {

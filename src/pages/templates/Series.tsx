@@ -3,28 +3,31 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
-import { BigBanner, SmallBanners } from '../components/Banners'
-import { EventInfo } from '../components/EventInfo'
-import HighlightBox from '../components/HighlightBox'
-import { IconList, TextBoxList } from '../components/Lists'
-import Page from '../components/Page'
-import { EventCover } from '../components/PageCover'
-import Separator from '../components/Separator'
-import TextBlock from '../components/TextBlock'
-import { textBlockMapper, bigBannerMapper, smallBannersMapper, textBoxesMapper, highlightBoxMapper, separatorMapper, iconsMapper } from '../mappers/components'
-import { eventMapper } from '../mappers/content'
-import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
+import { BigBanner, SmallBanners } from '../../components/Banners'
+import { InlineEventGallery } from '../../components/EventGallery'
+import HighlightBox from '../../components/HighlightBox'
+import { IconList, TextBoxList } from '../../components/Lists'
+import Page from '../../components/Page'
+import { SeriesCover } from '../../components/PageCover'
+import Separator from '../../components/Separator'
+import TextBlock from '../../components/TextBlock'
+import { textBlockMapper, bigBannerMapper, smallBannersMapper, textBoxesMapper, highlightBoxMapper, separatorMapper, iconsMapper } from '../../mappers/components'
+import { seriesMapper } from '../../mappers/content'
+import { type APIResponseData, type APIResponseSingle } from '../../types/strapi'
 
-export const Event = () => {
-  const { event } = useParams()
-  const [data, setData] = useState<APIResponseData<'api::event.event'>>()
+export const Series = () => {
+  const { serie } = useParams()
+  const [data, setData] = useState<APIResponseData<'api::serie.serie'>>()
 
   useEffect(() => {
     async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::event.event'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/event/${event}`, {
+      const data = await axios.get<APIResponseSingle<'api::serie.serie'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/serie/${serie}`, {
         params: {
           populate: {
             Image: { populate: '*' },
+            Logo: { populate: '*' },
+            Hub: { populate: '*' },
+            Events: { populate: ['Image'] },
             Body: {
               on: {
                 'blocks.text-block': {
@@ -50,14 +53,16 @@ export const Event = () => {
       setData(data.data.data)
     }
     fetchData().catch((error) => { console.log(error) })
-  }, [event])
+  }, [serie])
 
   if (data === undefined) return null
 
+  const series = seriesMapper(data.attributes)
   return (
-    <Page data={eventMapper(data.attributes)}>
-      <EventCover {...eventMapper(data.attributes)}/>
-      <EventInfo data={eventMapper(data.attributes)}/>
+    <Page data={series}>
+      <SeriesCover {...series}/>
+      <Separator />
+      {series.happenings !== undefined && <InlineEventGallery data={series} />}
       {data.attributes.Body?.map((block, i) => {
         if (block.__component === 'blocks.text-block') {
           return <TextBlock {...textBlockMapper(block)} key={i} />

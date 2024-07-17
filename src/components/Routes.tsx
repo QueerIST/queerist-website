@@ -2,12 +2,12 @@ import { Route, createRoutesFromElements } from 'react-router-dom'
 
 import Layout from './Layout'
 import { About } from '../pages/About'
-import { Event } from '../pages/Event'
 import { Events } from '../pages/Events'
 import { Home } from '../pages/Home'
-import { Hub } from '../pages/Hub'
 import { Projects } from '../pages/Projects'
-import { Series } from '../pages/Series'
+import { Event } from '../pages/templates/Event'
+import { Hub } from '../pages/templates/Hub'
+import { Series } from '../pages/templates/Series'
 
 export const Routes = createRoutesFromElements(
   <Route element={<Layout />}>

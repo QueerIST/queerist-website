@@ -30,10 +30,10 @@ function enrichWithLink (link: GetValues<'links.button'>, button: ButtonLink
     const [path, hash] = link.Page.split('#')
     button.linkPage = path
     button.linkId = hash
-  } else if (notNullish(link.File)) {
-    button.linkFile = link.File.data.attributes.url
   } else if (notNullish(link.Web)) {
     button.linkWeb = link.Web
+  } else if (notNullish(link.File) && notNullish(link.File.data)) {
+    button.linkFile = link.File.data.attributes.url
   }
 }
 

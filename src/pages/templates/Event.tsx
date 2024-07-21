@@ -28,18 +28,18 @@ export const Event = () => {
             Body: {
               on: {
                 'blocks.text-block': {
-                  populate: ['Button', 'Button.Link']
+                  populate: ['Button', 'Button.Link', 'Button.Link.File']
                 },
                 'blocks.big-banner': {
-                  populate: ['Image', 'Button', 'Button.Link']
+                  populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
                 },
                 'blocks.small-banners-list': {
-                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link']
+                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
                 },
                 'blocks.icons-list': {
                   populate: ['Icons', 'Icons.Logo']
                 },
-                'blocks.highlightbox': { populate: ['Button', 'Button.Link'] },
+                'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
                 'blocks.text-boxes-list': { populate: '*' },
                 'blocks.separator': { populate: '*' }
               }

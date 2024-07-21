@@ -30,14 +30,14 @@ export interface BlocksHighlightbox extends Schema.Component {
     TextColor: Attribute.String &
     Attribute.Required &
     Attribute.CustomField<'plugin::color-picker.color'>
-    Button: Attribute.Component<'links.block-button'> & Attribute.Required
+    Button: Attribute.Component<'links.block-button'>
   }
 }
 
 export interface BlocksIcon extends Schema.Component {
   collectionName: 'components_blocks_icons'
   info: {
-    displayName: 'Icon'
+    displayName: '_Icon'
   }
   attributes: {
     Name: Attribute.String & Attribute.Required
@@ -79,7 +79,7 @@ export interface BlocksSeparator extends Schema.Component {
 export interface BlocksSmallBanner extends Schema.Component {
   collectionName: 'components_blocks_small_banners'
   info: {
-    displayName: 'SmallBanner'
+    displayName: '_SmallBanner'
   }
   attributes: {
     Title: Attribute.String & Attribute.Required
@@ -138,7 +138,7 @@ export interface BlocksTextBlock extends Schema.Component {
 export interface BlocksTextBox extends Schema.Component {
   collectionName: 'components_blocks_text_boxes'
   info: {
-    displayName: 'TextBox'
+    displayName: '_TextBox'
   }
   attributes: {
     Title: Attribute.String & Attribute.Required
@@ -186,7 +186,7 @@ export interface LinksBlockButton extends Schema.Component {
 export interface LinksButton extends Schema.Component {
   collectionName: 'components_blocks_buttons'
   info: {
-    displayName: 'Link'
+    displayName: '_Link'
     description: ''
   }
   attributes: {
@@ -226,7 +226,7 @@ export interface MetaPageMeta extends Schema.Component {
     Attribute.CustomField<'plugin::color-picker.color'>
     TextColor: Attribute.String &
     Attribute.CustomField<'plugin::color-picker.color'>
-    Slug: Attribute.String & Attribute.Required & Attribute.Unique
+    Slug: Attribute.String & Attribute.Required
   }
 }
 

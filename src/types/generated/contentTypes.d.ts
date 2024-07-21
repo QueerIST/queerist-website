@@ -1175,10 +1175,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'Instituto Superior T\u00E9cnico',
       'Discord',
       'Instagram',
-      'Largo Lu\u00EDs de Cam\u00F5es'
+      'Largo Lu\u00EDs de Cam\u00F5es',
+      'Online'
     ]
     > &
-    Attribute.Required
+    Attribute.Required &
+    Attribute.DefaultTo<'Instituto Superior T\u00E9cnico'>
     Description: Attribute.Blocks
     Link: Attribute.String & Attribute.Required
     Slug: Attribute.UID<'api::event.event', 'Name'> & Attribute.Required

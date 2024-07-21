@@ -11,6 +11,7 @@ const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }: Highl
   >
     <h2>{title}</h2>
     <p>{subTitle}</p>
+    {button !== undefined &&
     <Button
       actionComp='HighlightBox'
       actionName={`Clica ${button.linkText}`}
@@ -23,6 +24,7 @@ const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }: Highl
         : <a href={button.linkWeb} className='highlightbox-button'>{button.linkText}</a>
       }
     </Button>
+    }
   </div>
 )
 

@@ -66,7 +66,7 @@ export interface HighlightBox {
   subTitle: string
   bgColor: string
   textColor: string
-  button: BlockButtonLink
+  button?: BlockButtonLink
 }
 
 export interface List {

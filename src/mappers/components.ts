@@ -113,7 +113,7 @@ export function highlightBoxMapper (data: GetValues<'blocks.highlightbox'>): Hig
     subTitle: data.Subtitle,
     bgColor: data.BackgroundColor,
     textColor: data.TextColor,
-    button: blockButtonMapper(data.Button)
+    button: maybeBlockButtonMapper(data.Button)
   }
 }
 

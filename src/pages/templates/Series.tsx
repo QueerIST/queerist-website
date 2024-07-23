@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react'
-
-import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { type AxiosResponse } from 'axios'
+import { useRouteLoaderData } from 'react-router-dom'
 
 import { BigBanner, SmallBanners } from '../../components/Banners'
 import { InlineEventGallery } from '../../components/EventGallery'
@@ -13,49 +11,16 @@ import Separator from '../../components/Separator'
 import TextBlock from '../../components/TextBlock'
 import { textBlockMapper, bigBannerMapper, smallBannersMapper, textBoxesMapper, highlightBoxMapper, separatorMapper, iconsMapper } from '../../mappers/components'
 import { seriesMapper } from '../../mappers/content'
-import { type APIResponseData, type APIResponseSingle } from '../../types/strapi'
+import { type APIResponseSingle } from '../../types/strapi'
 
 export const Series = () => {
-  const { serie } = useParams()
-  const [data, setData] = useState<APIResponseData<'api::serie.serie'>>()
+  const projectsResponse = useRouteLoaderData('p:serie')
+  const eventsResponse = useRouteLoaderData('e:serie')
 
-  useEffect(() => {
-    async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::serie.serie'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/serie/${serie}`, {
-        params: {
-          populate: {
-            Image: { populate: '*' },
-            Logo: { populate: '*' },
-            Hub: { populate: '*' },
-            Events: { populate: ['Image'] },
-            Body: {
-              on: {
-                'blocks.text-block': {
-                  populate: ['Button', 'Button.Link', 'Button.Link.File']
-                },
-                'blocks.big-banner': {
-                  populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-                },
-                'blocks.small-banners-list': {
-                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-                },
-                'blocks.icons-list': {
-                  populate: ['Icons', 'Icons.Logo']
-                },
-                'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-                'blocks.text-boxes-list': { populate: '*' },
-                'blocks.separator': { populate: '*' }
-              }
-            }
-          }
-        }
-      })
-      setData(data.data.data)
-    }
-    fetchData().catch((error) => { console.log(error) })
-  }, [serie])
+  const response = (projectsResponse !== undefined ? projectsResponse : eventsResponse) as AxiosResponse< APIResponseSingle<'api::serie.serie'> | undefined>
+  if (response.data === undefined) { return null }
 
-  if (data === undefined) return null
+  const data = response.data.data
 
   const series = seriesMapper(data.attributes)
   return (

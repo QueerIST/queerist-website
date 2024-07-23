@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react'
-
-import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { type AxiosResponse } from 'axios'
+import { useLoaderData } from 'react-router-dom'
 
 import { BigBanner, SmallBanners } from '../../components/Banners'
 import { EventInfo } from '../../components/EventInfo'
@@ -13,46 +11,13 @@ import Separator from '../../components/Separator'
 import TextBlock from '../../components/TextBlock'
 import { textBlockMapper, bigBannerMapper, smallBannersMapper, textBoxesMapper, highlightBoxMapper, separatorMapper, iconsMapper } from '../../mappers/components'
 import { eventMapper } from '../../mappers/content'
-import { type APIResponseData, type APIResponseSingle } from '../../types/strapi'
+import { type APIResponseSingle } from '../../types/strapi'
 
 export const Event = () => {
-  const { event } = useParams()
-  const [data, setData] = useState<APIResponseData<'api::event.event'>>()
+  const response = useLoaderData() as AxiosResponse< APIResponseSingle<'api::event.event'> | undefined>
+  if (response.data === undefined) { return null }
 
-  useEffect(() => {
-    async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::event.event'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/event/${event}`, {
-        params: {
-          populate: {
-            Image: { populate: '*' },
-            Body: {
-              on: {
-                'blocks.text-block': {
-                  populate: ['Button', 'Button.Link', 'Button.Link.File']
-                },
-                'blocks.big-banner': {
-                  populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-                },
-                'blocks.small-banners-list': {
-                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-                },
-                'blocks.icons-list': {
-                  populate: ['Icons', 'Icons.Logo']
-                },
-                'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-                'blocks.text-boxes-list': { populate: '*' },
-                'blocks.separator': { populate: '*' }
-              }
-            }
-          }
-        }
-      })
-      setData(data.data.data)
-    }
-    fetchData().catch((error) => { console.log(error) })
-  }, [event])
-
-  if (data === undefined) return null
+  const data = response.data.data
 
   return (
     <Page data={eventMapper(data.attributes)}>

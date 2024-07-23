@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
-
-import axios from 'axios'
+import { type AxiosResponse } from 'axios'
+import { useLoaderData } from 'react-router-dom'
 
 import { BigBanner, SmallBanners } from '../components/Banners'
 import HighlightBox from '../components/HighlightBox'
@@ -10,45 +9,13 @@ import Page from '../components/Page'
 import Separator from '../components/Separator'
 import TextBlock from '../components/TextBlock'
 import { bigBannerMapper, highlightBoxMapper, iconsMapper, pageMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
-import { type APIResponseData, type APIResponseSingle } from '../types/strapi'
+import { type APIResponseSingle } from '../types/strapi'
 
 export const Home = () => {
-  const [data, setData] = useState<APIResponseData<'api::main-page.main-page'>>()
+  const response = useLoaderData() as AxiosResponse< APIResponseSingle<'api::main-page.main-page'> | undefined>
+  if (response.data === undefined) { return null }
 
-  useEffect(() => {
-    async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::main-page.main-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/main-page', {
-        params: {
-          populate: {
-            Meta: { populate: '*' },
-            Body: {
-              on: {
-                'blocks.text-block': {
-                  populate: ['Button', 'Button.Link', 'Button.Link.File']
-                },
-                'blocks.big-banner': {
-                  populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-                },
-                'blocks.small-banners-list': {
-                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-                },
-                'blocks.icons-list': {
-                  populate: ['Icons', 'Icons.Logo']
-                },
-                'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-                'blocks.text-boxes-list': { populate: '*' },
-                'blocks.separator': { populate: '*' }
-              }
-            }
-          }
-        }
-      })
-      setData(data.data.data)
-    }
-    fetchData().catch((error) => { console.log(error) })
-  }, [])
-
-  if (data === undefined) { return null }
+  const data = response.data.data
 
   return (
     <Page data={pageMapper(data.attributes.Meta)} home>

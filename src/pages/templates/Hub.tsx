@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react'
-
-import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { type AxiosResponse } from 'axios'
+import { useRouteLoaderData } from 'react-router-dom'
 
 import { BigBanner, SmallBanners } from '../../components/Banners'
 import EventTile from '../../components/EventTile'
@@ -13,48 +11,13 @@ import Separator from '../../components/Separator'
 import TextBlock from '../../components/TextBlock'
 import { bigBannerMapper, highlightBoxMapper, iconsMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../../mappers/components'
 import { hubMapper, seriesMapper } from '../../mappers/content'
-import { type APIResponseData, type APIResponseSingle } from '../../types/strapi'
+import { type APIResponseSingle } from '../../types/strapi'
 
 export const Hub = () => {
-  const { hub } = useParams()
-  const [data, setData] = useState<APIResponseData<'api::hub.hub'>>()
+  const response = useRouteLoaderData('p:hub') as AxiosResponse< APIResponseSingle<'api::hub.hub'> | undefined>
+  if (response.data === undefined) { return null }
 
-  useEffect(() => {
-    async function fetchData () {
-      const data = await axios.get<APIResponseSingle<'api::hub.hub'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/hub/${hub}`, {
-        params: {
-          populate: {
-            Image: { populate: '*' },
-            Logo: { populate: '*' },
-            Body: {
-              on: {
-                'blocks.text-block': {
-                  populate: ['Button', 'Button.Link', 'Button.Link.File']
-                },
-                'blocks.big-banner': {
-                  populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-                },
-                'blocks.small-banners-list': {
-                  populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-                },
-                'blocks.icons-list': {
-                  populate: ['Icons', 'Icons.Logo']
-                },
-                'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-                'blocks.text-boxes-list': { populate: '*' },
-                'blocks.separator': { populate: '*' }
-              }
-            },
-            Series: { populate: ['Image', 'Logo', 'Events', 'Events.Image'] }
-          }
-        }
-      })
-      setData(data.data.data)
-    }
-    fetchData().catch((error) => { console.log(error) })
-  }, [hub])
-
-  if (data === undefined) return null
+  const data = response.data.data
 
   return (
     <Page data={hubMapper(data.attributes, 'projects')}>

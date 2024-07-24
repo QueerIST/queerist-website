@@ -19,10 +19,11 @@ export const Event = () => {
 
   const data = response.data.data
 
+  const event = eventMapper(data.attributes)
   return (
-    <Page data={eventMapper(data.attributes)}>
-      <EventCover {...eventMapper(data.attributes)}/>
-      <EventInfo data={eventMapper(data.attributes)}/>
+    <Page data={event}>
+      <EventCover {...event}/>
+      <EventInfo data={event}/>
       {data.attributes.Body?.map((block, i) => {
         if (block.__component === 'blocks.text-block') {
           return <TextBlock {...textBlockMapper(block)} key={i} />

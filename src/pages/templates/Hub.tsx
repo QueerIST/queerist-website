@@ -19,9 +19,10 @@ export const Hub = () => {
 
   const data = response.data.data
 
+  const hub = hubMapper(data.attributes, 'projects')
   return (
-    <Page data={hubMapper(data.attributes, 'projects')}>
-      <HubCover {...hubMapper(data.attributes, 'projects')}/>
+    <Page data={hub}>
+      <HubCover {...hub}/>
       {data.attributes.Body?.map((block, i) => {
         if (block.__component === 'blocks.text-block') {
           return <TextBlock {...textBlockMapper(block)} key={i} />

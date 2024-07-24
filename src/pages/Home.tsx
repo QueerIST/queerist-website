@@ -17,8 +17,9 @@ export const Home = () => {
 
   const data = response.data.data
 
+  const page = pageMapper(data.attributes.Meta)
   return (
-    <Page data={pageMapper(data.attributes.Meta)} home>
+    <Page data={page} home>
       <MainCover />
       {data.attributes.Body?.map((block, i) => {
         if (block.__component === 'blocks.text-block') {

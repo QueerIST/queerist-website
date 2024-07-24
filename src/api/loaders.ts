@@ -3,30 +3,32 @@ import { type Params } from 'react-router-dom'
 
 import { type APIResponseSingle } from '../types/strapi'
 
+const DYNAMIC_ZONE = {
+  on: {
+    'blocks.text-block': {
+      populate: ['Button', 'Button.Link', 'Button.Link.File']
+    },
+    'blocks.big-banner': {
+      populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
+    },
+    'blocks.small-banners-list': {
+      populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
+    },
+    'blocks.icons-list': {
+      populate: ['Icons', 'Icons.Logo']
+    },
+    'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
+    'blocks.text-boxes-list': { populate: '*' },
+    'blocks.separator': { populate: '*' }
+  }
+}
+
 export async function fetchMainPage () {
   return await axios.get<APIResponseSingle<'api::main-page.main-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/main-page', {
     params: {
       populate: {
         Meta: { populate: '*' },
-        Body: {
-          on: {
-            'blocks.text-block': {
-              populate: ['Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.big-banner': {
-              populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.small-banners-list': {
-              populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-            },
-            'blocks.icons-list': {
-              populate: ['Icons', 'Icons.Logo']
-            },
-            'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-            'blocks.text-boxes-list': { populate: '*' },
-            'blocks.separator': { populate: '*' }
-          }
-        }
+        Body: DYNAMIC_ZONE
       }
     }
   })
@@ -38,25 +40,7 @@ export async function fetchAboutPage () {
       populate: {
         Meta: { populate: '*' },
         Separator: { populate: '*' },
-        Body: {
-          on: {
-            'blocks.text-block': {
-              populate: ['Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.big-banner': {
-              populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.small-banners-list': {
-              populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-            },
-            'blocks.icons-list': {
-              populate: ['Icons', 'Icons.Logo']
-            },
-            'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-            'blocks.text-boxes-list': { populate: '*' },
-            'blocks.separator': { populate: '*' }
-          }
-        }
+        Body: DYNAMIC_ZONE
       }
     }
   })
@@ -68,25 +52,7 @@ export async function fetchEventsPage () {
       populate: {
         Meta: { populate: '*' },
         Series: { populate: ['Image', 'Logo', 'Events', 'Events.Image'] },
-        Body: {
-          on: {
-            'blocks.text-block': {
-              populate: ['Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.big-banner': {
-              populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.small-banners-list': {
-              populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-            },
-            'blocks.icons-list': {
-              populate: ['Icons', 'Icons.Logo']
-            },
-            'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-            'blocks.text-boxes-list': { populate: '*' },
-            'blocks.separator': { populate: '*' }
-          }
-        }
+        Body: DYNAMIC_ZONE
       }
     }
   })
@@ -98,25 +64,7 @@ export async function fetchProjectsPage () {
       populate: {
         Meta: { populate: '*' },
         Hubs: { populate: ['Image', 'Logo', 'Events', 'Events.Image'] },
-        Body: {
-          on: {
-            'blocks.text-block': {
-              populate: ['Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.big-banner': {
-              populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.small-banners-list': {
-              populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-            },
-            'blocks.icons-list': {
-              populate: ['Icons', 'Icons.Logo']
-            },
-            'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-            'blocks.text-boxes-list': { populate: '*' },
-            'blocks.separator': { populate: '*' }
-          }
-        }
+        Body: DYNAMIC_ZONE
       }
     }
   })
@@ -128,25 +76,7 @@ export async function fetchHub ({ params }: { params: Params<string> }) {
       populate: {
         Image: { populate: '*' },
         Logo: { populate: '*' },
-        Body: {
-          on: {
-            'blocks.text-block': {
-              populate: ['Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.big-banner': {
-              populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.small-banners-list': {
-              populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-            },
-            'blocks.icons-list': {
-              populate: ['Icons', 'Icons.Logo']
-            },
-            'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-            'blocks.text-boxes-list': { populate: '*' },
-            'blocks.separator': { populate: '*' }
-          }
-        },
+        Body: DYNAMIC_ZONE,
         Series: { populate: ['Image', 'Logo', 'Events', 'Events.Image'] }
       }
     }
@@ -161,25 +91,7 @@ export async function fetchSeries ({ params }: { params: Params<string> }) {
         Logo: { populate: '*' },
         Hub: { populate: '*' },
         Events: { populate: ['Image'] },
-        Body: {
-          on: {
-            'blocks.text-block': {
-              populate: ['Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.big-banner': {
-              populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.small-banners-list': {
-              populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-            },
-            'blocks.icons-list': {
-              populate: ['Icons', 'Icons.Logo']
-            },
-            'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-            'blocks.text-boxes-list': { populate: '*' },
-            'blocks.separator': { populate: '*' }
-          }
-        }
+        Body: DYNAMIC_ZONE
       }
     }
   })
@@ -190,25 +102,7 @@ export async function fetchEvent ({ params }: { params: Params<string> }) {
     params: {
       populate: {
         Image: { populate: '*' },
-        Body: {
-          on: {
-            'blocks.text-block': {
-              populate: ['Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.big-banner': {
-              populate: ['Image', 'Button', 'Button.Link', 'Button.Link.File']
-            },
-            'blocks.small-banners-list': {
-              populate: ['Banners', 'Banners.Logo', 'Banners.Button', 'Banners.Button.Link', 'Banners.Button.Link.File']
-            },
-            'blocks.icons-list': {
-              populate: ['Icons', 'Icons.Logo']
-            },
-            'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
-            'blocks.text-boxes-list': { populate: '*' },
-            'blocks.separator': { populate: '*' }
-          }
-        }
+        Body: DYNAMIC_ZONE
       }
     }
   })

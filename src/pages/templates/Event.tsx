@@ -19,7 +19,7 @@ export const Event = () => {
     <Page data={event}>
       <EventCover data={event}/>
       <EventInfo data={event}/>
-      <DynamicZone body={data.attributes.Body} />
+      <DynamicZone data={data.attributes.Body} />
     </Page>
   )
 }

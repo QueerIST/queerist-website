@@ -24,7 +24,7 @@ export const Series = () => {
       <SeriesCover data={series}/>
       <Separator />
       {series.happenings !== undefined && <InlineEventGallery data={series} />}
-      <DynamicZone body={data.attributes.Body} />
+      <DynamicZone data={data.attributes.Body} />
     </Page>
   )
 }

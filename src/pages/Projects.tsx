@@ -24,7 +24,7 @@ export const Projects = () => {
       {data.attributes.Hubs?.data.map((hub, i) => (
         <PageTile key={i} data={hubMapper(hub.attributes, 'projetos')} />
       ))}
-      <DynamicZone body={data.attributes.Body} />
+      <DynamicZone data={data.attributes.Body} />
     </Page>
   )
 }

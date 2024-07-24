@@ -17,7 +17,7 @@ export const About = () => {
   return (
     <Page data={page}>
       <PageCover data={page} />
-      <DynamicZone body={data.attributes.Body} />
+      <DynamicZone data={data.attributes.Body} />
     </Page>
   )
 }

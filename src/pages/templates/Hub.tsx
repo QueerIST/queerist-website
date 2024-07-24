@@ -18,7 +18,7 @@ export const Hub = () => {
   return (
     <Page data={hub}>
       <HubCover data={hub}/>
-      <DynamicZone body={data.attributes.Body} />
+      <DynamicZone data={data.attributes.Body} />
       {data.attributes.Series?.data.map(
         (event, i) => (
           <EventTile key={i} n={i} data={seriesMapper(event.attributes)} />

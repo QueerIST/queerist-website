@@ -24,7 +24,7 @@ export const Events = () => {
       {data.attributes.Series?.data.map((serie, i) => (
         <EventTile key={i} n={i} data={seriesMapper(serie.attributes)} />
       ))}
-      <DynamicZone body={data.attributes.Body} />
+      <DynamicZone data={data.attributes.Body} />
     </Page>
   )
 }

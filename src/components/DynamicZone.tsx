@@ -20,8 +20,8 @@ type DynamicZones = GetValue<Attribute.DynamicZone<
 ]
 >>
 
-export const DynamicZone = (props: { body?: DynamicZones }) => {
-  return props.body?.map((block, i) => {
+export const DynamicZone = ({ data }: { data?: DynamicZones }) => {
+  return data?.map((block, i) => {
     if (block.__component === 'blocks.text-block') {
       return <TextBlock {...textBlockMapper(block)} key={i} />
     } else if (block.__component === 'blocks.big-banner') {

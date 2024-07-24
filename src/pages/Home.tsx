@@ -17,7 +17,7 @@ export const Home = () => {
   return (
     <Page data={page} home>
       <MainCover />
-      <DynamicZone body={data.attributes.Body} />
+      <DynamicZone data={data.attributes.Body} />
     </Page>
   )
 }

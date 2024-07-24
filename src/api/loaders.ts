@@ -90,7 +90,7 @@ export async function fetchSeries ({ params }: { params: Params<string> }) {
         Image: { populate: '*' },
         Logo: { populate: '*' },
         Hub: { populate: '*' },
-        Events: { populate: ['Image'] },
+        Events: { populate: ['Image'], sort: ['Date:desc'] },
         Body: DYNAMIC_ZONE
       }
     }

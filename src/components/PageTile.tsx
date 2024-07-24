@@ -11,7 +11,7 @@ function PageTile ({ data }: { data: Hub }) {
   const EventTypeInfoButton = (
     <NavLink
       className='tile-info-b'
-      to={{ pathname: `/${parentPage}/${id}` }}
+      to={{ pathname: `/${parentPage.id}/${id}` }}
     >
       {seeMoreText}
     </NavLink>
@@ -30,7 +30,7 @@ function PageTile ({ data }: { data: Hub }) {
           </div>}
           <h2 className='tile-info-text-text'>{name}</h2>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-          <Button actionComp='PageTile' actionName={`Entra ${name} (em ${parentPage})`} borderColor={textColor} color={textColor}>
+          <Button actionComp='PageTile' actionName={`Entra ${name} (em ${parentPage.name})`} borderColor={textColor} color={textColor}>
             {EventTypeInfoButton}
           </Button>
         </div>

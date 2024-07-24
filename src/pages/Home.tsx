@@ -8,8 +8,8 @@ import { pageMapper } from '../mappers/components'
 import { type APIResponseSingle } from '../types/strapi'
 
 export const Home = () => {
-  const response = useLoaderData() as AxiosResponse< APIResponseSingle<'api::main-page.main-page'> | undefined>
-  if (response.data === undefined) { return null }
+  const response = useLoaderData() as AxiosResponse< APIResponseSingle<'api::main-page.main-page'>> | undefined
+  if (response === undefined) { return null }
 
   const data = response.data.data
 

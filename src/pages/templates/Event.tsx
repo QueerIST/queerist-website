@@ -1,25 +1,27 @@
-import { type AxiosResponse } from 'axios'
-import { useLoaderData } from 'react-router-dom'
-
+import { useEventData } from '../../api/use'
 import { DynamicZone } from '../../components/DynamicZone'
 import { EventInfo } from '../../components/EventInfo'
 import Page from '../../components/Page'
 import { EventCover } from '../../components/PageCover'
-import { eventMapper } from '../../mappers/content'
-import { type APIResponseSingle } from '../../types/strapi'
+import { pageMapper } from '../../mappers/components'
+import { eventMapper, seriesMapper, hubMapper } from '../../mappers/content'
 
 export const Event = () => {
-  const response = useLoaderData() as AxiosResponse< APIResponseSingle<'api::event.event'> | undefined>
-  if (response.data === undefined) { return null }
+  const { projectos: rawProjectos, eventos: rawEventos, hub: rawHub, serie: rawSerie, event: rawEvent } = useEventData()
+  let parentPage
 
-  const data = response.data.data
+  if (rawProjectos !== undefined) {
+    parentPage = seriesMapper(rawSerie.data.attributes, hubMapper(rawHub.data.attributes, pageMapper(rawProjectos.data.attributes.Meta)))
+  } else {
+    parentPage = seriesMapper(rawSerie.data.attributes, pageMapper(rawEventos.data.attributes.Meta))
+  }
 
-  const event = eventMapper(data.attributes)
+  const event = eventMapper(rawEvent.data.attributes, parentPage)
   return (
     <Page data={event}>
       <EventCover data={event}/>
       <EventInfo data={event}/>
-      <DynamicZone data={data.attributes.Body} />
+      <DynamicZone data={rawEvent.data.attributes.Body} />
     </Page>
   )
 }

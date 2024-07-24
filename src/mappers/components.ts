@@ -1,5 +1,5 @@
 import { notNullish } from '../helpers/types'
-import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink } from '../types/domain'
+import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink, Pages } from '../types/domain'
 import { type APIResponse, type GetValues } from '../types/strapi'
 
 export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
@@ -20,7 +20,8 @@ export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
     description: data.Description,
     imgLink: imageMapper(data.Image),
     bgColor: data.BackgroundColor,
-    textColor: data.TextColor
+    textColor: data.TextColor,
+    type: Pages.Root
   }
 }
 

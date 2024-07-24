@@ -11,8 +11,8 @@ import { seriesMapper } from '../mappers/content'
 import { type APIResponseSingle } from '../types/strapi'
 
 export const Events = () => {
-  const response = useRouteLoaderData('eventos') as AxiosResponse< APIResponseSingle<'api::event-page.event-page'> | undefined>
-  if (response.data === undefined) { return null }
+  const response = useRouteLoaderData('eventos') as AxiosResponse< APIResponseSingle<'api::event-page.event-page'>> | undefined
+  if (response === undefined) { return null }
 
   const data = response.data.data
 
@@ -22,7 +22,7 @@ export const Events = () => {
       <PageCover data={page} />
       <Separator />
       {data.attributes.Series?.data.map((serie, i) => (
-        <EventTile key={i} n={i} data={seriesMapper(serie.attributes)} />
+        <EventTile key={i} n={i} data={seriesMapper(serie.attributes, page)} />
       ))}
       <DynamicZone data={data.attributes.Body} />
     </Page>

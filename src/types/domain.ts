@@ -1,5 +1,12 @@
 import { type BlocksContent } from '@strapi/blocks-react-renderer'
 
+export enum Pages {
+  Root,
+  Hub,
+  Series,
+  Event
+}
+
 export interface PageMeta {
   id: string
   name: string
@@ -7,6 +14,8 @@ export interface PageMeta {
   imgLink: string
   bgColor?: string
   textColor?: string
+  parentPage?: PageMeta
+  type: Pages
 }
 
 export interface TextBlock {
@@ -95,7 +104,8 @@ export interface Event extends PageMeta {
   textColor: string
   seeMoreText?: string
   happenings?: Happenings
-  parent?: Hub
+  parentPage: PageMeta
+  type: Pages.Series
 }
 
 export interface Happening extends PageMeta {
@@ -105,16 +115,19 @@ export interface Happening extends PageMeta {
   pin: string
   link: string
   longDescription?: BlocksContent
+  parentPage: Event
+  type: Pages.Event
 }
 
 export interface Hub extends PageMeta {
-  parentPage: string
   logoLink?: string
   imgBgColor: string
   bgColor: string
   textColor: string
   seeMoreText: string
   events?: Event[]
+  parentPage: PageMeta
+  type: Pages.Hub
 }
 
 export interface Icon {

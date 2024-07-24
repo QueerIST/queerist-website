@@ -18,7 +18,7 @@ export const Routes = createRoutesFromElements(
       <Route index element={<Events />} />
       <Route path=':serie' loader={fetchSeries} id='e:serie'>
         <Route index element={<Series />} />
-        <Route path=':event' element={<Event />} loader={fetchEvent} />
+        <Route path=':event' element={<Event />} loader={fetchEvent} id='e:event' />
       </Route>
     </Route>
     <Route path='/projetos' loader={fetchProjectsPage} id='projetos'>
@@ -27,7 +27,7 @@ export const Routes = createRoutesFromElements(
         <Route index element={<Hub />} />
         <Route path=':serie' loader={fetchSeries} id='p:serie'>
           <Route index element={<Series />} />
-          <Route path=':event' element={<Event />} loader={fetchEvent} />
+          <Route path=':event' element={<Event />} loader={fetchEvent} id='p:event' />
         </Route>
       </Route>
     </Route>

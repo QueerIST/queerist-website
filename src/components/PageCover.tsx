@@ -1,4 +1,5 @@
 import { publicPath } from '../helpers/links'
+import { isHub } from '../helpers/types'
 import { type Event, type PageMeta, type Hub, type Happening } from '../types/domain'
 
 import './pagecover.css'
@@ -43,7 +44,7 @@ export const HubCover = ({ data }: { data: Hub }) => {
 }
 
 export const SeriesCover = ({ data }: { data: Event }) => {
-  const { name, imgLink, description, bgColor, textColor, logoLink, parent } = data
+  const { name, imgLink, description, bgColor, textColor, logoLink, parentPage } = data
   return (
     <div className='page-series'>
       <div className='page-background page-background-series' style={{ backgroundColor: bgColor, color: textColor }}>
@@ -51,7 +52,7 @@ export const SeriesCover = ({ data }: { data: Event }) => {
           {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
           <div className='page-series-text-container'>
             <h1>{name}</h1>
-            {parent !== undefined && <p>{parent.name}</p>}
+            {isHub(parentPage) && <p>{parentPage.name}</p>}
           </div>
         </div>
       </div>

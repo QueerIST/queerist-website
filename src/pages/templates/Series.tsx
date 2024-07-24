@@ -1,30 +1,29 @@
-import { type AxiosResponse } from 'axios'
-import { useRouteLoaderData } from 'react-router-dom'
-
+import { useSeriesData } from '../../api/use'
 import { DynamicZone } from '../../components/DynamicZone'
 import { InlineEventGallery } from '../../components/EventGallery'
 import Page from '../../components/Page'
 import { SeriesCover } from '../../components/PageCover'
 import Separator from '../../components/Separator'
-import { seriesMapper } from '../../mappers/content'
-import { type APIResponseSingle } from '../../types/strapi'
+import { pageMapper } from '../../mappers/components'
+import { hubMapper, seriesMapper } from '../../mappers/content'
 
 export const Series = () => {
-  const projectsResponse = useRouteLoaderData('p:serie')
-  const eventsResponse = useRouteLoaderData('e:serie')
+  const { projectos: rawProjectos, eventos: rawEventos, hub: rawHub, serie: rawSerie } = useSeriesData()
+  let parentPage
 
-  const response = (projectsResponse !== undefined ? projectsResponse : eventsResponse) as AxiosResponse< APIResponseSingle<'api::serie.serie'> | undefined>
-  if (response.data === undefined) { return null }
+  if (rawProjectos !== undefined) {
+    parentPage = hubMapper(rawHub.data.attributes, pageMapper(rawProjectos.data.attributes.Meta))
+  } else {
+    parentPage = pageMapper(rawEventos.data.attributes.Meta)
+  }
 
-  const data = response.data.data
-
-  const series = seriesMapper(data.attributes)
+  const series = seriesMapper(rawSerie.data.attributes, parentPage)
   return (
     <Page data={series}>
       <SeriesCover data={series}/>
       <Separator />
       {series.happenings !== undefined && <InlineEventGallery data={series} />}
-      <DynamicZone data={data.attributes.Body} />
+      <DynamicZone data={rawSerie.data.attributes.Body} />
     </Page>
   )
 }

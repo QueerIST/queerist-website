@@ -1,27 +1,26 @@
-import { type AxiosResponse } from 'axios'
-import { useRouteLoaderData } from 'react-router-dom'
-
+import { useHubData } from '../../api/use'
 import { DynamicZone } from '../../components/DynamicZone'
 import EventTile from '../../components/EventTile'
 import Page from '../../components/Page'
 import { HubCover } from '../../components/PageCover'
+import { pageMapper } from '../../mappers/components'
 import { hubMapper, seriesMapper } from '../../mappers/content'
-import { type APIResponseSingle } from '../../types/strapi'
 
 export const Hub = () => {
-  const response = useRouteLoaderData('p:hub') as AxiosResponse< APIResponseSingle<'api::hub.hub'> | undefined>
-  if (response.data === undefined) { return null }
+  const { projectos: rawProjectos, hub: rawHub } = useHubData()
 
-  const data = response.data.data
+  if (rawProjectos === undefined) return
 
-  const hub = hubMapper(data.attributes, 'projects')
+  const parentPage = pageMapper(rawProjectos.data.attributes.Meta)
+
+  const hub = hubMapper(rawHub.data.attributes, parentPage)
   return (
     <Page data={hub}>
       <HubCover data={hub}/>
-      <DynamicZone data={data.attributes.Body} />
-      {data.attributes.Series?.data.map(
+      <DynamicZone data={rawHub.data.attributes.Body} />
+      {rawHub.data.attributes.Series?.data.map(
         (event, i) => (
-          <EventTile key={i} n={i} data={seriesMapper(event.attributes)} />
+          <EventTile key={i} n={i} data={seriesMapper(event.attributes, hub)} />
         ))}
     </Page>
   )

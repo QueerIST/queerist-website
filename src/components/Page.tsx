@@ -1,15 +1,18 @@
 import { type PropsWithChildren } from 'react'
 
 import { Helmet, HelmetData } from 'react-helmet-async'
-import { useLocation } from 'react-router-dom'
 
+import { pagePath } from '../helpers/links'
 import { type PageMeta } from '../types/domain'
 
 const publicFullPath = (path: string) => `${import.meta.env.VITE_FULL_URL}/a${path}`
-const fullPath = (path: string) => `${import.meta.env.VITE_FULL_URL}${path}`
+
+const fullPath = (page: PageMeta) => {
+  const path = pagePath(page)
+  return `${import.meta.env.VITE_FULL_URL}${path === '/' ? '' : path}`
+}
 
 const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home?: boolean }>) => {
-  const location = useLocation()
   const helmetData = new HelmetData({})
   return (
     <div>
@@ -24,7 +27,7 @@ const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home
         <meta name='description' content={data.description} />
         <link
           rel='canonical'
-          href={fullPath(location.pathname)}
+          href={fullPath(data)}
         />
 
         {/* Google / Search Engine Tags */}
@@ -35,7 +38,7 @@ const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home
         {/* Facebook Meta Tags */}
         <meta
           property='og:url'
-          content={fullPath(location.pathname)}
+          content={fullPath(data)}
         />
         <meta property='og:type' content='website' />
         <meta property='og:title' content={data.name} />

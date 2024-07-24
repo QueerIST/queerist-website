@@ -1,9 +1,9 @@
 import { imageMapper, maybeImageMapper } from './components'
 import { notNullish } from '../helpers/types'
-import { type Hub, type Event, type Happening } from '../types/domain'
+import { type Hub, type Event, type Happening, Pages, type PageMeta } from '../types/domain'
 import { type GetValues } from '../types/strapi'
 
-export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: string = 'projects'): Hub {
+export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta): Hub {
   return {
     id: data.Slug,
     name: data.Name,
@@ -14,13 +14,13 @@ export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: string =
     imgBgColor: data.ImageBackgroundColor,
     bgColor: data.BackgroundColor,
     textColor: data.TextColor,
-    seeMoreText: data.SeeMoreText
+    seeMoreText: data.SeeMoreText,
+    type: Pages.Hub
   }
 }
 
-export function seriesMapper (data: GetValues<'api::serie.serie'>): Event {
-  const happenings = data.Events?.data.map(event => eventMapper(event.attributes))
-  return {
+export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: PageMeta): Event {
+  const series: Event = {
     id: data.Slug,
     name: data.Name,
     description: data.Description,
@@ -29,12 +29,19 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>): Event {
     bgColor: data.BackgroundColor,
     textColor: data.TextColor,
     seeMoreText: data.SeeMoreText,
-    happenings: notNullish(happenings) && happenings.length > 0 ? happenings : undefined,
-    parent: notNullish(data.Hub) && notNullish(data.Hub.data) ? hubMapper(data.Hub.data.attributes) : undefined
+    parentPage,
+    type: Pages.Series
   }
+
+  const rawHappenings = data.Events
+  if (rawHappenings !== undefined && notNullish(rawHappenings.data) && rawHappenings.data.length > 0) {
+    series.happenings = rawHappenings.data.map(event => eventMapper(event.attributes, series))
+  }
+
+  return series
 }
 
-export function eventMapper (data: GetValues<'api::event.event'>): Happening {
+export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Event): Happening {
   const description = data.Description?.[0].children[0]
   return {
     id: data.Slug,
@@ -46,6 +53,8 @@ export function eventMapper (data: GetValues<'api::event.event'>): Happening {
     pin: data.Pin,
     link: data.Link,
     longDescription: notNullish(data.Description) ? data.Description : undefined,
-    description: description !== undefined && 'text' in description ? description.text : data.Name
+    description: description !== undefined && 'text' in description ? description.text : data.Name,
+    parentPage,
+    type: Pages.Event
   }
 }

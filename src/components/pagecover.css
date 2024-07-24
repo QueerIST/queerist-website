@@ -61,6 +61,7 @@
 	flex: 1;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .page-image-child:first-child {
@@ -106,7 +107,6 @@
 @media only screen and (min-width: 600px) {
 	/* For tablets and bigger */
 	.page-background {
-		justify-content: unset;
 		padding: 20px 0;
 		min-height: 200px;
 		height: fit-content;

@@ -17,7 +17,7 @@ export const Event = () => {
   const event = eventMapper(data.attributes)
   return (
     <Page data={event}>
-      <EventCover {...event}/>
+      <EventCover data={event}/>
       <EventInfo data={event}/>
       <DynamicZone body={data.attributes.Body} />
     </Page>

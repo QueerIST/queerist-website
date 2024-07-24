@@ -19,7 +19,7 @@ export const Events = () => {
   const page = pageMapper(data.attributes.Meta)
   return (
     <Page data={page}>
-      <PageCover {...page} />
+      <PageCover data={page} />
       <Separator />
       {data.attributes.Series?.data.map((serie, i) => (
         <EventTile key={i} n={i} data={seriesMapper(serie.attributes)} />

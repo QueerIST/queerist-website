@@ -3,8 +3,8 @@ import { type Event, type PageMeta, type Hub, type Happening } from '../types/do
 
 import './pagecover.css'
 
-export const PageCover = (props: PageMeta) => {
-  const { name, imgLink, description, bgColor, textColor } = props
+export const PageCover = ({ data }: { data: PageMeta }) => {
+  const { name, imgLink, description, bgColor, textColor } = data
   return (
     <div className='page-cover'>
       <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
@@ -20,8 +20,8 @@ export const PageCover = (props: PageMeta) => {
   )
 }
 
-export const HubCover = (props: Hub) => {
-  const { name, imgLink, logoLink, description, bgColor, imgBgColor, textColor } = props
+export const HubCover = ({ data }: { data: Hub }) => {
+  const { name, imgLink, logoLink, description, bgColor, imgBgColor, textColor } = data
   return (
     <div className='page-hub'>
       <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
@@ -42,8 +42,8 @@ export const HubCover = (props: Hub) => {
   )
 }
 
-export const SeriesCover = (props: Event) => {
-  const { name, imgLink, description, bgColor, textColor, logoLink } = props
+export const SeriesCover = ({ data }: { data: Event }) => {
+  const { name, imgLink, description, bgColor, textColor, logoLink, parent } = data
   return (
     <div className='page-series'>
       <div className='page-background page-background-series' style={{ backgroundColor: bgColor, color: textColor }}>
@@ -51,7 +51,7 @@ export const SeriesCover = (props: Event) => {
           {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
           <div className='page-series-text-container'>
             <h1>{name}</h1>
-            {props.parent !== undefined && <p>{props.parent.name}</p>}
+            {parent !== undefined && <p>{parent.name}</p>}
           </div>
         </div>
       </div>
@@ -67,8 +67,8 @@ export const SeriesCover = (props: Event) => {
   )
 }
 
-export const EventCover = (props: Happening) => {
-  const { name, imgLink } = props
+export const EventCover = ({ data }: { data: Happening }) => {
+  const { name, imgLink } = data
   return (
     <div className='page-event'>
       <div className='page-image'>

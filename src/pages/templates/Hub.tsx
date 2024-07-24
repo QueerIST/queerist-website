@@ -17,7 +17,7 @@ export const Hub = () => {
   const hub = hubMapper(data.attributes, 'projects')
   return (
     <Page data={hub}>
-      <HubCover {...hub}/>
+      <HubCover data={hub}/>
       <DynamicZone body={data.attributes.Body} />
       {data.attributes.Series?.data.map(
         (event, i) => (

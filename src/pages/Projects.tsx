@@ -19,7 +19,7 @@ export const Projects = () => {
   const page = pageMapper(data.attributes.Meta)
   return (
     <Page data={page}>
-      <PageCover {...page} />
+      <PageCover data={page} />
       <Separator />
       {data.attributes.Hubs?.data.map((hub, i) => (
         <PageTile key={i} data={hubMapper(hub.attributes, 'projetos')} />

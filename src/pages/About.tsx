@@ -16,7 +16,7 @@ export const About = () => {
   const page = pageMapper(data.attributes.Meta)
   return (
     <Page data={page}>
-      <PageCover {...page} />
+      <PageCover data={page} />
       <DynamicZone body={data.attributes.Body} />
     </Page>
   )

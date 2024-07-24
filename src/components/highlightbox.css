@@ -1,6 +1,6 @@
 .highlightbox {
 	display: flex;
-	padding: 10px;
+	padding: 3%;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -13,17 +13,19 @@
 }
 
 .highlightbox-button {
-	padding: 3%;
+	padding: 10px;
 	/* font-size: 20px; */
 }
 
 @media only screen and (min-width: 600px) {
+
 	/* For tablets and desktop */
 	.highlightbox {
 		position: relative;
 		margin: 50px 8%;
 		min-height: 200px;
 	}
+
 	.highlightbox-button {
 		position: absolute;
 		bottom: -20px;

@@ -15,8 +15,8 @@ const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }: Highl
     <Button
       actionComp='HighlightBox'
       actionName={`Clica ${button.linkText}`}
-      backgroundColor={button.linkBackgroundColor}
-      color={button.linkTextColor}
+      backgroundColor={button.linkBackgroundColor ?? textColor}
+      color={button.linkTextColor ?? bgColor}
       block
     >
       {button.linkFile !== undefined

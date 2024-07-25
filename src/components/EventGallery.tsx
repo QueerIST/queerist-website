@@ -26,7 +26,7 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ id, name, open = true, date, place, imgLink, link, parentEvent, path }: Happening & { id: string, open?: boolean, parentEvent?: Event }) => {
+const EventGalleryItem = ({ id, name, open = true, date, location, imgLink, link, parentEvent, path }: Happening & { id: string, open?: boolean, parentEvent?: Event }) => {
   const dateObj = new Date(date)
   return (
     <li className='event-gallery-item' id={id}>
@@ -38,7 +38,7 @@ const EventGalleryItem = ({ id, name, open = true, date, place, imgLink, link, p
       <div className='event-gallery-item-text'>
         <h3>{name}</h3>
         <span className='event-gallery-item-launch'>
-          <p>{format(dateObj, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {place}</p>
+          <p>{format(dateObj, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
           {parentEvent === undefined && <a href={link} target='_blank' rel='noopener noreferrer' onClick={() => { handleClickEventLink(name) }}> <Launch /></a>}
         </span>
         {parentEvent !== undefined && <Button actionComp='EventList' actionName={`Entra ${name} (em ${parentEvent.name})`} color={parentEvent.textColor} backgroundColor={parentEvent.bgColor}>

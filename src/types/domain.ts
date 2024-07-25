@@ -1,5 +1,7 @@
 import { type BlocksContent } from '@strapi/blocks-react-renderer'
 
+import { type PlaceInfo } from '../helpers/location'
+
 export enum Pages {
   Root,
   Hub,
@@ -112,8 +114,7 @@ export interface Event extends PageMeta {
 export interface Happening extends PageMeta {
   date: Date | string
   enddate?: Date | string
-  place: string
-  pin: string
+  location: PlaceInfo
   link: string
   longDescription?: BlocksContent
   parentPage: Event

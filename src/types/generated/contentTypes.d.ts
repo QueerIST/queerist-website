@@ -1169,7 +1169,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     Image: Attribute.Media & Attribute.Required
     Date: Attribute.DateTime & Attribute.Required
     EndDate: Attribute.DateTime
-    Place: Attribute.String & Attribute.Required
+    Place: Attribute.String
     Pin: Attribute.Enumeration<
     [
       'Instituto Superior T\u00E9cnico',

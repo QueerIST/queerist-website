@@ -1,5 +1,6 @@
 import { imageMapper, maybeImageMapper } from './components'
-import { pagePath } from '../helpers/links'
+import { fullPath, pagePath } from '../helpers/links'
+import { isOnline, Places, PLACES_MAP, type PlaceInfo } from '../helpers/location'
 import { notNullish } from '../helpers/types'
 import { type Hub, type Event, type Happening, Pages, type PageMeta } from '../types/domain'
 import { type GetValues } from '../types/strapi'
@@ -58,8 +59,7 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Ev
     imgLink: imageMapper(data.Image),
     date: data.Date,
     enddate: notNullish(data.EndDate) ? data.EndDate : undefined,
-    place: data.Place,
-    pin: data.Pin,
+    location: PLACES_MAP[data.Pin as Places],
     link: data.Link,
     longDescription: notNullish(data.Description) ? data.Description : undefined,
     description: description !== undefined && 'text' in description ? description.text : data.Name,
@@ -69,6 +69,25 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Ev
   }
 
   event.path = pagePath(event)
+  event.location = enrichLocation(event, data.Place !== undefined && data.Place.length !== 0 ? data.Place : undefined)
 
   return event
+}
+
+function enrichLocation (event: Happening, place?: string): PlaceInfo {
+  const location = event.location
+
+  if (isOnline(location)) {
+    location.specific = place
+    location.shortVersion = (place !== undefined ? place + ', ' : '') + location.name
+    if (location.name === Places.Online) {
+      location.link = fullPath(event)
+      location.shortVersion = place ?? location.name
+    }
+  } else {
+    location.specific = place
+    location.shortVersion = (place !== undefined ? place + ', ' : '') + location.name
+  }
+
+  return location
 }

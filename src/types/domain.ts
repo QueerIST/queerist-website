@@ -15,6 +15,7 @@ export interface PageMeta {
   bgColor?: string
   textColor?: string
   parentPage?: PageMeta
+  path: string
   type: Pages
 }
 

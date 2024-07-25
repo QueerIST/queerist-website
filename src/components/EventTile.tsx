@@ -11,7 +11,7 @@ import { type Event } from '../types/domain'
 import './tile.css'
 
 const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline?: boolean }) => {
-  const { id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText } = data
+  const { id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText, path } = data
 
   const [open, setOpen] = useState(false)
   const location = useLocation()
@@ -29,7 +29,7 @@ const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline
       </button>
       : <NavLink
       className='tile-info-b'
-      to={{ pathname: `${id}` }}
+      to={{ pathname: path }}
     >
         {seeMoreText}
       </NavLink>

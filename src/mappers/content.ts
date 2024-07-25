@@ -1,10 +1,11 @@
 import { imageMapper, maybeImageMapper } from './components'
+import { pagePath } from '../helpers/links'
 import { notNullish } from '../helpers/types'
 import { type Hub, type Event, type Happening, Pages, type PageMeta } from '../types/domain'
 import { type GetValues } from '../types/strapi'
 
 export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta): Hub {
-  return {
+  const hub: Hub = {
     id: data.Slug,
     name: data.Name,
     description: data.Description,
@@ -15,8 +16,13 @@ export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta
     bgColor: data.BackgroundColor,
     textColor: data.TextColor,
     seeMoreText: data.SeeMoreText,
+    path: '',
     type: Pages.Hub
   }
+
+  hub.path = pagePath(hub)
+
+  return hub
 }
 
 export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: PageMeta): Event {
@@ -30,8 +36,11 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
     textColor: data.TextColor,
     seeMoreText: data.SeeMoreText,
     parentPage,
+    path: '',
     type: Pages.Series
   }
+
+  series.path = pagePath(series)
 
   const rawHappenings = data.Events
   if (rawHappenings !== undefined && notNullish(rawHappenings.data) && rawHappenings.data.length > 0) {
@@ -43,7 +52,7 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
 
 export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Event): Happening {
   const description = data.Description?.[0].children[0]
-  return {
+  const event: Happening = {
     id: data.Slug,
     name: data.Name,
     imgLink: imageMapper(data.Image),
@@ -55,6 +64,11 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Ev
     longDescription: notNullish(data.Description) ? data.Description : undefined,
     description: description !== undefined && 'text' in description ? description.text : data.Name,
     parentPage,
+    path: '',
     type: Pages.Event
   }
+
+  event.path = pagePath(event)
+
+  return event
 }

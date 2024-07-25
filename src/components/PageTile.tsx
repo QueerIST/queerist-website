@@ -7,11 +7,11 @@ import { type Hub } from '../types/domain'
 import './tile.css'
 
 function PageTile ({ data }: { data: Hub }) {
-  const { id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText } = data
+  const { id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText, path } = data
   const EventTypeInfoButton = (
     <NavLink
       className='tile-info-b'
-      to={{ pathname: `/${parentPage.id}/${id}` }}
+      to={{ pathname: path }}
     >
       {seeMoreText}
     </NavLink>

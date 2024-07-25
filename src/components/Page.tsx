@@ -1,9 +1,16 @@
 import { type PropsWithChildren } from 'react'
 
 import { Helmet, HelmetData } from 'react-helmet-async'
+import { JsonLd } from 'react-schemaorg'
+import { type BreadcrumbList } from 'schema-dts'
 
 import { fullPath, publicPath } from '../helpers/links'
 import { type PageMeta } from '../types/domain'
+
+const buildBreadcrumbs = (page?: PageMeta): PageMeta[] => {
+  if (page === undefined) { return [] }
+  return buildBreadcrumbs(page.parentPage).concat(page)
+}
 
 const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home?: boolean }>) => {
   const helmetData = new HelmetData({})
@@ -43,6 +50,17 @@ const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home
         <meta name='twitter:card' content='summary_large_image' />
         {/* <meta name="twitter:card" content="summary" /> */}
       </Helmet>
+      <JsonLd<BreadcrumbList>
+        item={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: buildBreadcrumbs(data).map((page: PageMeta, index: number) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: page.name,
+            item: fullPath(page)
+          }))
+        }} />
       {children}
     </div>
   )

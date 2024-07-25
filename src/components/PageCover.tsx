@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 import { publicPath } from '../helpers/links'
 import { isHub } from '../helpers/types'
 import { type Event, type PageMeta, type Hub, type Happening } from '../types/domain'
@@ -52,7 +54,7 @@ export const SeriesCover = ({ data }: { data: Event }) => {
           {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
           <div className='page-series-text-container'>
             <h1>{name}</h1>
-            {isHub(parentPage) && <p>{parentPage.name}</p>}
+            {isHub(parentPage) && <p><NavLink style={{ color: textColor }} to={{ pathname: parentPage.path }}>{parentPage.name}</NavLink></p>}
           </div>
         </div>
       </div>

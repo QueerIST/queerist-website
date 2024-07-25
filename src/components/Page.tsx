@@ -2,15 +2,8 @@ import { type PropsWithChildren } from 'react'
 
 import { Helmet, HelmetData } from 'react-helmet-async'
 
-import { pagePath } from '../helpers/links'
+import { fullPath, publicPath } from '../helpers/links'
 import { type PageMeta } from '../types/domain'
-
-const publicFullPath = (path: string) => `${import.meta.env.VITE_FULL_URL}/a${path}`
-
-const fullPath = (page: PageMeta) => {
-  const path = pagePath(page)
-  return `${import.meta.env.VITE_FULL_URL}${path === '/' ? '' : path}`
-}
 
 const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home?: boolean }>) => {
   const helmetData = new HelmetData({})
@@ -33,7 +26,7 @@ const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home
         {/* Google / Search Engine Tags */}
         <meta itemProp='name' content={data.name} />
         <meta itemProp='description' content={data.description} />
-        <meta itemProp='image' content={publicFullPath(data.imgLink)} />
+        <meta itemProp='image' content={publicPath(data.imgLink)} />
 
         {/* Facebook Meta Tags */}
         <meta
@@ -43,7 +36,7 @@ const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home
         <meta property='og:type' content='website' />
         <meta property='og:title' content={data.name} />
         <meta property='og:description' content={data.description} />
-        <meta property='og:image' content={publicFullPath(data.imgLink)} />
+        <meta property='og:image' content={publicPath(data.imgLink)} />
 
         {/* Twitter Meta Tags */}
         <meta name='twitter:site' content='@queerist' />

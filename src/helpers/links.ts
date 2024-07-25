@@ -5,3 +5,8 @@ export const publicPath = (path: string) => `${import.meta.env.VITE_FULL_URL}/a$
 const buildFullPath = (page?: PageMeta): string => page === undefined ? '' : `${buildFullPath(page.parentPage)}/${page.id}`
 
 export const pagePath = (page: PageMeta) => `${page.id === 'home' ? '/' : buildFullPath(page)}`
+
+export const fullPath = (page: PageMeta) => {
+  const path = pagePath(page)
+  return `${import.meta.env.VITE_FULL_URL}${path === '/' ? '' : path}`
+}

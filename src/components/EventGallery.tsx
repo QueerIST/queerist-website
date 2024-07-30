@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 
 import Launch from './../svg/launch.svg?react'
 import Button from './Button'
-import WrapDelayed from '../helpers/async'
+import { WrapDelayed } from '../helpers/async'
 import { publicPath } from '../helpers/links'
 import { type Happenings, type Happening, type PageMeta } from '../types/domain'
 

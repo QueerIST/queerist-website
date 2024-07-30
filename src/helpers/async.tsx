@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-throw-literal */
 import { useState, type PropsWithChildren } from 'react'
 
-function WrapDelayed (props: PropsWithChildren<{ load: boolean }>) {
+import { type AxiosResponse } from 'axios'
+
+export function WrapDelayed (props: PropsWithChildren<{ load: boolean }>) {
   const { load, children } = props
   const [loaded, setLoaded] = useState(false)
 
@@ -9,4 +12,26 @@ function WrapDelayed (props: PropsWithChildren<{ load: boolean }>) {
   return loaded && (children)
 }
 
-export default WrapDelayed
+export function wrapPromise<T> (promise: () => Promise<AxiosResponse<T>>) {
+  let status = 'pending'
+  let result: T
+  const suspend = promise().then(
+    (res) => {
+      status = 'success'
+      result = res.data
+    },
+    (err) => {
+      status = 'error'
+      result = err
+    }
+  )
+  return () => {
+    if (status === 'pending') {
+      throw suspend
+    } else if (status === 'error') {
+      throw result
+    } else if (status === 'success') {
+      return result
+    }
+  }
+}

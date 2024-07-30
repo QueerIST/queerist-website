@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { type Params } from 'react-router-dom'
 
-import { type APIResponseSingle } from '../types/strapi'
+import { type APIResponseCollection, type APIResponseSingle } from '../types/strapi'
 
 const DYNAMIC_ZONE = {
   on: {
@@ -104,6 +104,19 @@ export async function fetchEvent ({ params }: { params: Params<string> }) {
         Image: { populate: '*' },
         Body: DYNAMIC_ZONE
       }
+    }
+  })
+}
+
+export async function fetchAllEvents () {
+  return await axios.get<APIResponseCollection<'api::event.event'>>('https://queerist.tecnico.ulisboa.pt/a/pi/events', {
+    params: {
+      populate: {
+        Image: { populate: '*' },
+        Series: { populate: ['Image', 'Events', 'Events.Image', 'Hub', 'Hub.Image'] }
+      },
+      pagination: { pageSize: 10 },
+      sort: ['Date:desc']
     }
   })
 }

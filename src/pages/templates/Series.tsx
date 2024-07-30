@@ -20,9 +20,9 @@ export const Series = () => {
   const series = seriesMapper(rawSerie.data.attributes, parentPage)
   return (
     <Page data={series}>
-      <SeriesCover data={series}/>
+      <SeriesCover data={series} />
       <Separator />
-      {series.happenings !== undefined && <InlineEventGallery data={series} />}
+      {series.happenings !== undefined && <InlineEventGallery data={series.happenings} />}
       <DynamicZone data={rawSerie.data.attributes.Body} />
     </Page>
   )

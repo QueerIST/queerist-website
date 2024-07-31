@@ -99,25 +99,25 @@ export interface TextBox {
 
 export type Separator = string | undefined
 
-export type Happenings = Happening[]
+export type Events = Event[]
 
-export interface Event extends PageMeta {
+export interface Series extends PageMeta {
   logoLink?: string
   bgColor: string
   textColor: string
   seeMoreText?: string
-  happenings?: Happenings
+  events?: Events
   parentPage: PageMeta
   type: Pages.Series
 }
 
-export interface Happening extends PageMeta {
+export interface Event extends PageMeta {
   date: Date | string
   enddate?: Date | string
   location: PlaceInfo
   link: string
   longDescription?: BlocksContent
-  parentPage: Event
+  parentPage: Series
   type: Pages.Event
 }
 
@@ -127,7 +127,7 @@ export interface Hub extends PageMeta {
   bgColor: string
   textColor: string
   seeMoreText: string
-  events?: Event[]
+  events?: Series[]
   parentPage: PageMeta
   type: Pages.Hub
 }

@@ -5,10 +5,10 @@ import { JsonLd } from 'react-schemaorg'
 import { type Event, type VirtualLocation, type Place } from 'schema-dts'
 
 import { isOnline } from '../helpers/location'
-import { type Happening } from '../types/domain'
+import { type Event } from '../types/domain'
 import './eventinfo.css'
 
-export const EventInfo = ({ data }: { data: Happening }) => {
+export const EventInfo = ({ data }: { data: Event }) => {
   const { name, date, enddate, location, longDescription, description, imgLink } = data
   const dateObj = new Date(date)
 

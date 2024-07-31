@@ -2,7 +2,7 @@ import { imageMapper, maybeImageMapper } from './components'
 import { fullPath, pagePath } from '../helpers/links'
 import { isOnline, Places, PLACES_MAP, type PlaceInfo } from '../helpers/location'
 import { notNullish } from '../helpers/types'
-import { type Hub, type Event, type Happening, Pages, type PageMeta } from '../types/domain'
+import { type Hub, type Series, type Event, Pages, type PageMeta } from '../types/domain'
 import { type GetValues } from '../types/strapi'
 
 export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta): Hub {
@@ -26,8 +26,8 @@ export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta
   return hub
 }
 
-export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: PageMeta): Event {
-  const series: Event = {
+export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: PageMeta): Series {
+  const series: Series = {
     id: data.Slug,
     name: data.Name,
     description: data.Description,
@@ -43,17 +43,17 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
 
   series.path = pagePath(series)
 
-  const rawHappenings = data.Events
-  if (rawHappenings !== undefined && notNullish(rawHappenings.data) && rawHappenings.data.length > 0) {
-    series.happenings = rawHappenings.data.map(event => eventMapper(event.attributes, series))
+  const rawEvents = data.Events
+  if (rawEvents !== undefined && notNullish(rawEvents.data) && rawEvents.data.length > 0) {
+    series.events = rawEvents.data.map(event => eventMapper(event.attributes, series))
   }
 
   return series
 }
 
-export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Event): Happening {
+export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Series): Event {
   const description = data.Description?.[0].children[0]
-  const event: Happening = {
+  const event: Event = {
     id: data.Slug,
     name: data.Name,
     imgLink: imageMapper(data.Image),
@@ -74,7 +74,7 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Ev
   return event
 }
 
-function enrichLocation (event: Happening, place?: string): PlaceInfo {
+function enrichLocation (event: Event, place?: string): PlaceInfo {
   const location = event.location
 
   if (isOnline(location)) {

@@ -10,7 +10,7 @@ import Button from './Button'
 import { usePage } from '../api/use'
 import { WrapDelayed } from '../helpers/async'
 import { publicPath } from '../helpers/links'
-import { type Happenings, type Happening } from '../types/domain'
+import { type Events, type Event } from '../types/domain'
 
 import './eventgallery.css'
 
@@ -27,7 +27,7 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Happening & { id: string, open?: boolean, detached?: boolean }) => {
+const EventGalleryItem = ({ id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Event & { id: string, open?: boolean, detached?: boolean }) => {
   const [page] = usePage()
   const dateObj = new Date(date)
   return (
@@ -53,7 +53,7 @@ const EventGalleryItem = ({ id, name, open = true, detached = false, date, locat
   )
 }
 
-export function EventGallery ({ data, open }: { data: Happenings, open: boolean }) {
+export function EventGallery ({ data, open }: { data: Events, open: boolean }) {
   return (
     <EventGalleryWrap open={open}>
       {data.map((event, i) => (
@@ -67,7 +67,7 @@ export function EventGallery ({ data, open }: { data: Happenings, open: boolean 
   )
 }
 
-export const InlineEventGallery = ({ data }: { data: Happenings }) => (
+export const InlineEventGallery = ({ data }: { data: Events }) => (
   <div className='event-gallery-inline'>
     <ul className='event-gallery'>
       {data.map((event, i) => (

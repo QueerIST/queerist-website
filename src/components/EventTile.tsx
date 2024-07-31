@@ -7,12 +7,12 @@ import Button from './Button'
 import { EventGallery } from './EventGallery'
 import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
-import { type Event } from '../types/domain'
+import { type Series } from '../types/domain'
 
 import './tile.css'
 
-const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline?: boolean }) => {
-  const { id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText, path } = data
+const EventTile = ({ data, n, inline = false }: { data: Series, n: number, inline?: boolean }) => {
+  const { id, name, description, imgLink, logoLink, bgColor, textColor, events, seeMoreText, path } = data
 
   const [open, setOpen] = useState(false)
   const [page] = usePage()
@@ -61,14 +61,14 @@ const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline
           </div>}
           <h3 className='tile-info-text-text'>{name}</h3>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-          {happenings !== undefined &&
+          {events !== undefined &&
           <Button actionComp='EventTile' actionName={actionName} actionLabel={actionLabel} borderColor={textColor} color={textColor}>
             {EventTypeInfoButton(seeMoreText)}
           </Button>}
         </div>
         <div className='tile-info-img'>
           <img className={openClass} src={publicPath(imgLink)} alt={name} />
-          {inline && happenings !== undefined && <EventGallery open={open} data={happenings} />}
+          {inline && events !== undefined && <EventGallery open={open} data={events} />}
         </div>
       </div>
     </div>

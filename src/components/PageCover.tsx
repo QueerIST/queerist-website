@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 import { publicPath } from '../helpers/links'
 import { isHub } from '../helpers/types'
-import { type Event, type PageMeta, type Hub, type Happening } from '../types/domain'
+import { type Series, type PageMeta, type Hub, type Event } from '../types/domain'
 
 import './pagecover.css'
 
@@ -45,7 +45,7 @@ export const HubCover = ({ data }: { data: Hub }) => {
   )
 }
 
-export const SeriesCover = ({ data }: { data: Event }) => {
+export const SeriesCover = ({ data }: { data: Series }) => {
   const { name, imgLink, description, bgColor, textColor, logoLink, parentPage } = data
   return (
     <div className='page-series'>
@@ -70,7 +70,7 @@ export const SeriesCover = ({ data }: { data: Event }) => {
   )
 }
 
-export const EventCover = ({ data }: { data: Happening }) => {
+export const EventCover = ({ data }: { data: Event }) => {
   const { name, imgLink } = data
   return (
     <div className='page-event'>

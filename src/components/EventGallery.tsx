@@ -27,7 +27,7 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Event & { id: string, open?: boolean, detached?: boolean }) => {
+const EventGalleryItem = ({ id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Event & { open?: boolean, detached?: boolean }) => {
   const [page] = usePage()
   const dateObj = new Date(date)
   return (

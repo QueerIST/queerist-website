@@ -3,33 +3,38 @@ import { type PropsWithChildren } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import Button from './Button'
+import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
 import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
 
 import './banners.css'
 
-export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => (
-  <div id={id} className='big-banner banner'>
-    {button !== undefined &&
-    <div className='big-banner-button'>
-      <Button
+export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
+  const [page] = usePage()
+  return (
+    <div id={id} className='big-banner banner'>
+      {button !== undefined &&
+      <div className='big-banner-button'>
+        <Button
             actionComp='BigBanner'
-            actionName={`Entra ${name}`}
+            actionName={`Entra ${name} (em ${page.name})`}
             borderColor={button.linkTextColor}
             color={button.linkTextColor}
           >
-        <NavLink
+          <NavLink
               to={{ pathname: button.linkPage, hash: button.linkId !== undefined ? '' + button.linkId : undefined }}
             >
-          {button.linkText}
-        </NavLink>
-      </Button>
-    </div>}
-    <img src={publicPath(imgLink)} alt={name} />
-  </div>
-)
+            {button.linkText}
+          </NavLink>
+        </Button>
+      </div>}
+      <img src={publicPath(imgLink)} alt={name} />
+    </div>
+  )
+}
 
 function SmallBanner ({ name, label, logoLink, bgColor, textColor, button }: SmallBannerProps) {
+  const [page] = usePage()
   return (
     <div className='small-banner banner' data-aos='zoom-in' style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='small-banner-content'>
@@ -41,7 +46,7 @@ function SmallBanner ({ name, label, logoLink, bgColor, textColor, button }: Sma
         {button !== undefined &&
         <Button
           actionComp='SmallBanner'
-          actionName={`Entra ${name}`}
+          actionName={`Entra ${name} (em ${page.name})`}
           borderColor={button.linkTextColor }
           color={button.linkTextColor}
         >

@@ -5,6 +5,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import Expand from './../svg/expand.svg?react'
 import Button from './Button'
 import { EventGallery } from './EventGallery'
+import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
 import { type Event } from '../types/domain'
 
@@ -14,6 +15,7 @@ const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline
   const { id, name, description, imgLink, logoLink, bgColor, textColor, happenings, seeMoreText, path } = data
 
   const [open, setOpen] = useState(false)
+  const [page] = usePage()
   const location = useLocation()
   const dir = n % 2 !== 0 ? 'left' : 'right'
   const openClass = inline && open ? 'open' : ''
@@ -25,7 +27,7 @@ const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline
       className={`tile-info-b tile-info-button ${openClass}`}
     >
         {seeMoreText ?? 'Ver mais'}
-        { <Expand fill={textColor} />}
+        <Expand fill={textColor} />
       </button>
       : <NavLink
       className='tile-info-b'
@@ -34,6 +36,14 @@ const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline
         {seeMoreText}
       </NavLink>
   )
+
+  let actionName, actionLabel
+  if (inline) {
+    actionName = `Clica ${name}`
+    actionLabel = (open ? 'Close' : 'Open')
+  } else {
+    actionName = `Entra ${name} (em ${page.name})`
+  }
 
   useEffect(() => {
     if (inline && location.hash.split('-')[0] === `#${id}`) { setOpen(true) }
@@ -52,7 +62,7 @@ const EventTile = ({ data, n, inline = false }: { data: Event, n: number, inline
           <h3 className='tile-info-text-text'>{name}</h3>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
           {happenings !== undefined &&
-          <Button actionComp='EventTile' actionName={`Clica ${name}`} actionLabel={inline ? (open ? 'Close' : 'Open') : undefined} borderColor={textColor} color={textColor}>
+          <Button actionComp='EventTile' actionName={actionName} actionLabel={actionLabel} borderColor={textColor} color={textColor}>
             {EventTypeInfoButton(seeMoreText)}
           </Button>}
         </div>

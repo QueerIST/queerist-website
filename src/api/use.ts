@@ -2,6 +2,7 @@
 import { type AxiosResponse } from 'axios'
 import { useRouteLoaderData } from 'react-router-dom'
 
+import { type PageMeta } from '../types/domain'
 import { type APIResponseSingle } from '../types/strapi'
 
 export function useHubData () {
@@ -41,4 +42,10 @@ export function useEventData () {
     return { projectos, hub, serie, event: pevent!.data, eventos: undefined }
   }
   return { eventos, serie, event: eevent!.data, projectos: undefined, hub: undefined }
+}
+
+let page: PageMeta
+
+export function usePage (): [ PageMeta, (p: PageMeta) => void ] {
+  return [page, (p: PageMeta) => { page = p }]
 }

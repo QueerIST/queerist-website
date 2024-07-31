@@ -1,13 +1,15 @@
 import { NavLink } from 'react-router-dom'
 
 import Button from './Button'
+import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
 import { type Hub } from '../types/domain'
 
 import './tile.css'
 
 function PageTile ({ data }: { data: Hub }) {
-  const { id, parentPage, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText, path } = data
+  const [page] = usePage()
+  const { id, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText, path } = data
   const EventTypeInfoButton = (
     <NavLink
       className='tile-info-b'
@@ -30,7 +32,7 @@ function PageTile ({ data }: { data: Hub }) {
           </div>}
           <h2 className='tile-info-text-text'>{name}</h2>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-          <Button actionComp='PageTile' actionName={`Entra ${name} (em ${parentPage.name})`} borderColor={textColor} color={textColor}>
+          <Button actionComp='PageTile' actionName={`Entra ${name} (em ${page.name})`} borderColor={textColor} color={textColor}>
             {EventTypeInfoButton}
           </Button>
         </div>

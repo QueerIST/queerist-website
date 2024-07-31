@@ -4,6 +4,7 @@ import { Helmet, HelmetData } from 'react-helmet-async'
 import { JsonLd } from 'react-schemaorg'
 import { type BreadcrumbList } from 'schema-dts'
 
+import { usePage } from '../api/use'
 import { fullPath, publicPath } from '../helpers/links'
 import { type PageMeta } from '../types/domain'
 
@@ -13,7 +14,9 @@ const buildBreadcrumbs = (page?: PageMeta): PageMeta[] => {
 }
 
 const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home?: boolean }>) => {
+  const [, setPage] = usePage()
   const helmetData = new HelmetData({})
+  setPage(data)
   return (
     <div>
       <Helmet

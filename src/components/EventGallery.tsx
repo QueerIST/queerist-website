@@ -7,9 +7,10 @@ import { NavLink } from 'react-router-dom'
 
 import Launch from './../svg/launch.svg?react'
 import Button from './Button'
+import { usePage } from '../api/use'
 import { WrapDelayed } from '../helpers/async'
 import { publicPath } from '../helpers/links'
-import { type Happenings, type Happening, type PageMeta } from '../types/domain'
+import { type Happenings, type Happening } from '../types/domain'
 
 import './eventgallery.css'
 
@@ -26,7 +27,8 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ id, name, open = true, detached = false, date, location, imgLink, link, parentPage, currentPage, path }: Happening & { id: string, open?: boolean, detached?: boolean, currentPage?: PageMeta }) => {
+const EventGalleryItem = ({ id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Happening & { id: string, open?: boolean, detached?: boolean }) => {
+  const [page] = usePage()
   const dateObj = new Date(date)
   return (
     <li className='event-gallery-item' id={id}>
@@ -41,7 +43,7 @@ const EventGalleryItem = ({ id, name, open = true, detached = false, date, locat
           <p>{format(dateObj, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
           {!detached && <a href={link} target='_blank' rel='noopener noreferrer' onClick={() => { handleClickEventLink(name) }}> <Launch /></a>}
         </span>
-        {<Button actionComp='EventList' actionName={`Entra ${name} (em ${currentPage?.name})`} color={parentPage.textColor} backgroundColor={parentPage.bgColor}>
+        {<Button actionComp='EventList' actionName={`Entra ${name} (em ${page.name})`} color={parentPage.textColor} backgroundColor={parentPage.bgColor}>
           <NavLink to={{ pathname: path }}>
             {'Ver mais'}
           </NavLink>
@@ -56,9 +58,9 @@ export function EventGallery ({ data, open }: { data: Happenings, open: boolean 
     <EventGalleryWrap open={open}>
       {data.map((event, i) => (
         <EventGalleryItem
-        key={i}
-        open={open}
-        {...event}
+          key={i}
+          open={open}
+          {...event}
         />
       ))}
     </EventGalleryWrap>
@@ -73,7 +75,6 @@ export const InlineEventGallery = ({ data }: { data: Happenings }) => (
           key={i}
           detached
           {...event}
-          currentPage={event.parentPage} // TODO
         />
       ))}
     </ul>

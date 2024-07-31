@@ -2,7 +2,7 @@ import { type AxiosResponse } from 'axios'
 import { useLoaderData } from 'react-router-dom'
 
 import { DynamicZone } from '../components/DynamicZone'
-import Page from '../components/Page'
+import { Page } from '../components/Page'
 import { PageCover } from '../components/PageCover'
 import { pageMapper } from '../mappers/components'
 import { type APIResponseSingle } from '../types/strapi'

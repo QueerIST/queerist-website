@@ -1,7 +1,7 @@
 import { useEventData } from '../../api/use'
 import { DynamicZone } from '../../components/DynamicZone'
 import { EventInfo } from '../../components/EventInfo'
-import Page from '../../components/Page'
+import { Page } from '../../components/Page'
 import { EventCover } from '../../components/PageCover'
 import { pageMapper } from '../../mappers/components'
 import { eventMapper, seriesMapper, hubMapper } from '../../mappers/content'

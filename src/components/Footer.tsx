@@ -7,7 +7,7 @@ import Instagram from '../svg/instagram.svg?react'
 import Twiter from '../svg/twitter.svg?react'
 import './footer.css'
 
-export default function Footer () {
+export function Footer () {
   const handleClickLink = (link: string) => {
     ReactGA.event({
       category: 'Footer', // Required

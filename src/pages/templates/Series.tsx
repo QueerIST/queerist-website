@@ -1,9 +1,9 @@
 import { useSeriesData } from '../../api/use'
 import { DynamicZone } from '../../components/DynamicZone'
 import { InlineEventGallery } from '../../components/EventGallery'
-import Page from '../../components/Page'
+import { Page } from '../../components/Page'
 import { SeriesCover } from '../../components/PageCover'
-import Separator from '../../components/Separator'
+import { Separator } from '../../components/Separator'
 import { pageMapper } from '../../mappers/components'
 import { hubMapper, seriesMapper } from '../../mappers/content'
 

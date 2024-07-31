@@ -2,7 +2,7 @@ import { type PropsWithChildren } from 'react'
 
 import { NavLink } from 'react-router-dom'
 
-import Button from './Button'
+import { Button } from './Button'
 import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
 import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'

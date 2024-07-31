@@ -2,7 +2,7 @@ import { type Separator as SeparatorProps } from '../types/domain'
 
 import './separator.css'
 
-const Separator = ({ data }: { data?: SeparatorProps }) => (
+export const Separator = ({ data }: { data?: SeparatorProps }) => (
   <div className='separator'>
     {data !== undefined &&
       <h2>
@@ -12,5 +12,3 @@ const Separator = ({ data }: { data?: SeparatorProps }) => (
     <hr />
   </div>
 )
-
-export default Separator

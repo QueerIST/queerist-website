@@ -8,7 +8,7 @@ import logo from '../img/logo so letras brancas.png'
 import Menu from '../svg/menu.svg?react'
 import './header.css'
 
-export default function Header () {
+export function Header () {
   const [openMenu, setOpenMenu] = useState(false)
 
   const handleClickMenuButton = () => {

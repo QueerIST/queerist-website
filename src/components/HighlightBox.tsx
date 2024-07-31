@@ -1,10 +1,10 @@
-import Button from './Button'
+import { Button } from './Button'
 import { publicPath } from '../helpers/links'
 import { type HighlightBox as HighlightBoxProps } from '../types/domain'
 
 import './highlightbox.css'
 
-const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }: HighlightBoxProps) => (
+export const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }: HighlightBoxProps) => (
   <div
     id={id} className='highlightbox'
     style={{ backgroundColor: bgColor, color: textColor }}
@@ -27,5 +27,3 @@ const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }: Highl
     }
   </div>
 )
-
-export default HighlightBox

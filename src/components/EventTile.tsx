@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
 import Expand from './../svg/expand.svg?react'
-import Button from './Button'
+import { Button } from './Button'
 import { EventGallery } from './EventGallery'
 import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
@@ -11,7 +11,7 @@ import { type Series } from '../types/domain'
 
 import './tile.css'
 
-const EventTile = ({ data, n, inline = false }: { data: Series, n: number, inline?: boolean }) => {
+export const EventTile = ({ data, n, inline = false }: { data: Series, n: number, inline?: boolean }) => {
   const { id, name, description, imgLink, logoLink, bgColor, textColor, events, seeMoreText, path } = data
 
   const [open, setOpen] = useState(false)
@@ -74,5 +74,3 @@ const EventTile = ({ data, n, inline = false }: { data: Series, n: number, inlin
     </div>
   )
 }
-
-export default EventTile

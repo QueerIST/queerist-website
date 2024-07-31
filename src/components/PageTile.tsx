@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom'
 
-import Button from './Button'
+import { Button } from './Button'
 import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
 import { type Hub } from '../types/domain'
 
 import './tile.css'
 
-function PageTile ({ data }: { data: Hub }) {
+export function PageTile ({ data }: { data: Hub }) {
   const [page] = usePage()
   const { id, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText, path } = data
   const EventTypeInfoButton = (
@@ -40,5 +40,3 @@ function PageTile ({ data }: { data: Hub }) {
     </div>
   )
 }
-
-export default PageTile

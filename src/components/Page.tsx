@@ -13,7 +13,7 @@ const buildBreadcrumbs = (page?: PageMeta): PageMeta[] => {
   return buildBreadcrumbs(page.parentPage).concat(page)
 }
 
-const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home?: boolean }>) => {
+export const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home?: boolean }>) => {
   const [, setPage] = usePage()
   const helmetData = new HelmetData({})
   setPage(data)
@@ -68,5 +68,3 @@ const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMeta, home
     </div>
   )
 }
-
-export default Page

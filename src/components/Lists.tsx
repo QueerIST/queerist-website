@@ -54,7 +54,7 @@ const List = ({ id, children }: PropsWithChildren<ListProps>) => (
   </ul>
 )
 
-const IconList = ({ icons, id }: Icons) => (
+export const IconList = ({ icons, id }: Icons) => (
   <List id={id}>
     {icons.map((icon, i) => (
       <Icon
@@ -65,7 +65,7 @@ const IconList = ({ icons, id }: Icons) => (
   </List>
 )
 
-const TextBoxList = ({ id, boxes }: TextBoxListProps) => (
+export const TextBoxList = ({ id, boxes }: TextBoxListProps) => (
   <List id={id}>
     {boxes.map((textbox, i) => (
       <TextBox
@@ -75,5 +75,3 @@ const TextBoxList = ({ id, boxes }: TextBoxListProps) => (
     ))}
   </List>
 )
-
-export { IconList, TextBoxList }

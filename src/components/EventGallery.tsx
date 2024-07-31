@@ -6,7 +6,7 @@ import ReactGA from 'react-ga4'
 import { NavLink } from 'react-router-dom'
 
 import Launch from './../svg/launch.svg?react'
-import Button from './Button'
+import { Button } from './Button'
 import { usePage } from '../api/use'
 import { WrapDelayed } from '../helpers/delay'
 import { publicPath } from '../helpers/links'

@@ -1,6 +1,6 @@
 import { Route, createRoutesFromElements } from 'react-router-dom'
 
-import Layout from './Layout'
+import { Layout } from './Layout'
 import { fetchAboutPage, fetchEvent, fetchEventsPage, fetchHub, fetchMainPage, fetchProjectsPage, fetchSeries } from '../api/loaders'
 import { About } from '../pages/About'
 import { Events } from '../pages/Events'

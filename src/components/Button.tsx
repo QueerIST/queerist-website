@@ -17,7 +17,7 @@ interface ButtonProps {
   actionLabel?: string
 }
 
-export default function Button (props: PropsWithChildren<ButtonProps>) {
+export function Button (props: PropsWithChildren<ButtonProps>) {
   const { children, borderColor, color, backgroundColor, block, actionComp, actionName, actionLabel } = props
 
   const buildClassName = (child: ReactElement<HTMLProps>) => classNames(

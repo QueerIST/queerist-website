@@ -1,10 +1,10 @@
 import type { Attribute } from '@strapi/strapi'
 
 import { BigBanner, SmallBanners } from '../components/Banners'
-import HighlightBox from '../components/HighlightBox'
+import { HighlightBox } from '../components/HighlightBox'
 import { TextBoxList, IconList } from '../components/Lists'
-import Separator from '../components/Separator'
-import TextBlock from '../components/TextBlock'
+import { Separator } from '../components/Separator'
+import { TextBlock } from '../components/TextBlock'
 import { bigBannerMapper, highlightBoxMapper, iconsMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
 import { type GetValue } from '../types/strapi'
 

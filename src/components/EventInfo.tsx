@@ -2,7 +2,7 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 import { differenceInHours, format, isThisYear } from 'date-fns'
 import { pt } from 'date-fns/locale'
 import { JsonLd } from 'react-schemaorg'
-import { type Event, type VirtualLocation, type Place } from 'schema-dts'
+import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema-dts'
 
 import { isOnline } from '../helpers/location'
 import { type Event } from '../types/domain'
@@ -52,7 +52,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
       <h2>{name}</h2>
       <h4><u>{location.shortVersion}</u></h4>
       {longDescription !== undefined && <BlocksRenderer content={longDescription}></BlocksRenderer>}
-      <JsonLd<Event>
+      <JsonLd<EventDTS>
       item={ {
         '@context': 'https://schema.org',
         '@type': 'Event',

@@ -1,7 +1,6 @@
 .event-gallery {
 	top: 0;
 	left: 0;
-	height: 100%;
 	width: 100%;
 	overflow-y: auto;
 	overflow-y: overlay;
@@ -13,7 +12,7 @@
 	padding: 0;
 	align-items: flex-start;
 	transition: left 1s, top 1s;
-	scrollbar-color: #F5F5F5 transparent;
+	scrollbar-color: #ffffff transparent;
 	scrollbar-width: thin;
 }
 
@@ -32,12 +31,22 @@
 	max-width: 700px;
 }
 
+.event-gallery-reduced {
+	max-height: 350px;
+}
+
+.event-gallery-reduced>.event-gallery {
+	max-width: 600px;
+}
+
 @media only screen and (min-width: 600px) {
+
 	/* For tablets and bigger */
 	.left .event-gallery.closed {
 		left: -100%;
 		top: 0;
 	}
+
 	.right .event-gallery.closed {
 		left: 100%;
 		top: 0;
@@ -89,7 +98,8 @@
 	padding-left: 0;
 }
 
-.event-gallery-item-text p, .event-gallery-item-text h3 {
+.event-gallery-item-text p,
+.event-gallery-item-text h3 {
 	margin: 0;
 }
 

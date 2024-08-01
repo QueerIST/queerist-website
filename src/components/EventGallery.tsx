@@ -1,5 +1,6 @@
 import { type PropsWithChildren } from 'react'
 
+import classNames from 'classnames'
 import { format } from 'date-fns'
 import { pt } from 'date-fns/locale'
 import ReactGA from 'react-ga4'
@@ -66,8 +67,8 @@ export function EventGallery ({ data, open }: { data: Events, open: boolean }) {
   )
 }
 
-export const InlineEventGallery = ({ data }: { data: Events }) => (
-  <div className='event-gallery-inline'>
+export const InlineEventGallery = ({ data, reduced = false }: { data: Events, reduced?: boolean }) => (
+  <div className={classNames('event-gallery-inline', reduced && 'event-gallery-reduced')}>
     <ul className='event-gallery'>
       {data.map((event, i) => (
         <EventGalleryItem

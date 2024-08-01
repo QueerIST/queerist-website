@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 
 import { type AxiosResponse } from 'axios'
+import { isAfter, isBefore } from 'date-fns'
 import { useLoaderData } from 'react-router-dom'
 
 import { fetchAllEvents } from '../api/loaders'
@@ -35,7 +36,21 @@ function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.ev
 
     return eventMapper(rawEvent, seriesMapper(rawSeries, seriesParent))
   }).filter((e) => e !== undefined)
-  return <InlineEventGallery data={events} />
+
+  const futureEvents = events.filter((e) => isAfter(e.date, Date.now()))
+  const previousEvents = events.filter((e) => isBefore(e.date, Date.now()))
+
+  return (
+    <>
+      {futureEvents.length !== 0 && <>
+        <br/>
+        <InlineEventGallery data={futureEvents} />
+      </>
+      }
+      <h4 style={{ textAlign: 'center' }}>Eventos anteriores</h4>
+      <InlineEventGallery data={previousEvents} reduced />
+    </>
+  )
 }
 
 export const Home = () => {

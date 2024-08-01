@@ -115,7 +115,7 @@ export async function fetchAllEvents () {
         Image: { populate: '*' },
         Series: { populate: ['Image', 'Events', 'Events.Image', 'Hub', 'Hub.Image'] }
       },
-      pagination: { pageSize: 10 },
+      pagination: { pageSize: 6 },
       sort: ['Date:desc']
     }
   })

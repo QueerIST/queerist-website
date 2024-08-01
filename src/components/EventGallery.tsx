@@ -29,7 +29,6 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
 
 const EventGalleryItem = ({ id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Event & { open?: boolean, detached?: boolean }) => {
   const [page] = usePage()
-  const dateObj = new Date(date)
   return (
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
@@ -40,7 +39,7 @@ const EventGalleryItem = ({ id, name, open = true, detached = false, date, locat
       <div className='event-gallery-item-text'>
         <h3>{name}</h3>
         <span className='event-gallery-item-launch'>
-          <p>{format(dateObj, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
+          <p>{format(date, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
           {!detached && <a href={link} target='_blank' rel='noopener noreferrer' onClick={() => { handleClickEventLink(name) }}> <Launch /></a>}
         </span>
         {<Button actionComp='EventList' actionName={`Entra ${name} (em ${page.name})`} color={parentPage.textColor} backgroundColor={parentPage.bgColor}>

@@ -112,8 +112,8 @@ export interface Series extends PageMeta {
 }
 
 export interface Event extends PageMeta {
-  date: Date | string
-  enddate?: Date | string
+  date: Date
+  enddate?: Date
   location: PlaceInfo
   link: string
   longDescription?: BlocksContent

@@ -10,19 +10,17 @@ import './eventinfo.css'
 
 export const EventInfo = ({ data }: { data: Event }) => {
   const { name, date, enddate, location, longDescription, description, imgLink } = data
-  const dateObj = new Date(date)
 
-  let yearFormat = ''; let timeFormat = "'às' HH'h'mm"; let endDateObj; let endTimeString = ''
+  let yearFormat = ''; let timeFormat = "'às' HH'h'mm"; let endTimeString = ''
 
   if (!isThisYear(date)) { yearFormat = " 'de' yyyy" }
 
   if (enddate !== undefined) {
-    endDateObj = new Date(enddate)
-    if (differenceInHours(endDateObj, dateObj) < 12) {
+    if (differenceInHours(enddate, date) < 12) {
       timeFormat = "'das' HH'h'mm"
-      endTimeString = format(endDateObj, " 'às' HH'h'mm", { locale: pt })
+      endTimeString = format(enddate, " 'às' HH'h'mm", { locale: pt })
     } else {
-      endTimeString = format(endDateObj, ", 'até' d MMMM 'de' yyyy 'às' HH'h'mm", { locale: pt })
+      endTimeString = format(enddate, ", 'até' d MMMM 'de' yyyy 'às' HH'h'mm", { locale: pt })
     }
   }
 
@@ -48,7 +46,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
 
   return (
     <div className='event-info'>
-      <h3>📅 <time dateTime={dateObj.toISOString()}>{format(dateObj, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time></h3>
+      <h3>📅 <time dateTime={date.toISOString()}>{format(date, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time></h3>
       <h2>{name}</h2>
       <h4><u>{location.shortVersion}</u></h4>
       {longDescription !== undefined && <BlocksRenderer content={longDescription}></BlocksRenderer>}
@@ -57,8 +55,8 @@ export const EventInfo = ({ data }: { data: Event }) => {
         '@context': 'https://schema.org',
         '@type': 'Event',
         name,
-        startDate: dateObj.toISOString(),
-        endDate: endDateObj !== undefined ? dateObj.toISOString() : undefined,
+        startDate: date.toISOString(),
+        endDate: enddate !== undefined ? enddate.toISOString() : undefined,
         eventAttendanceMode: online ? 'https://schema.org/OnlineEventAttendanceMode' : 'https://schema.org/OfflineEventAttendanceMode',
         eventStatus: 'https://schema.org/EventScheduled',
         location: locationBlock,

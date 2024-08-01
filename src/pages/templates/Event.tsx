@@ -1,6 +1,7 @@
 import { useEventData } from '../../api/use'
 import { DynamicZone } from '../../components/DynamicZone'
 import { EventInfo } from '../../components/EventInfo'
+import { EventInSeries } from '../../components/EventInSeries'
 import { Page } from '../../components/Page'
 import { EventCover } from '../../components/PageCover'
 import { pageMapper } from '../../mappers/components'
@@ -22,6 +23,7 @@ export const Event = () => {
       <EventCover data={event}/>
       <EventInfo data={event}/>
       <DynamicZone data={rawEvent.data.attributes.Body} />
+      <EventInSeries data={event}/>
     </Page>
   )
 }

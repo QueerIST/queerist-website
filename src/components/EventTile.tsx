@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import classNames from 'classnames'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import Expand from './../svg/expand.svg?react'
 import { Button } from './Button'
@@ -17,7 +17,6 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
 
   const [open, setOpen] = useState(false)
   const [page] = usePage()
-  const location = useLocation()
   const dir = n % 2 !== 0 ? 'left' : 'right'
   const openClass = inline && open && 'open'
 
@@ -45,10 +44,6 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
   } else {
     actionName = `Entra ${name} (em ${page.name})`
   }
-
-  useEffect(() => {
-    if (inline && location.hash.split('-')[0] === `#${id}`) { setOpen(true) }
-  }, [location, id, inline])
 
   return (
     <div id={id}>

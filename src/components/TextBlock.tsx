@@ -1,4 +1,5 @@
 import { BlocksRenderer } from '@strapi/blocks-react-renderer'
+import classNames from 'classnames'
 import { NavLink } from 'react-router-dom'
 
 import { Button } from './Button'
@@ -29,7 +30,7 @@ const TextBlockButton = (props: TextBlockButtonProps) => (
 export function TextBlock (props: TextBlockProps) {
   const { id, title, text, small, bgColor, titleColor, textColor, button } = props
   return (
-    <div id={id} className={`textblock ${small && 'textblock-small'}`} style={{ backgroundColor: bgColor, color: textColor }}>
+    <div id={id} className={classNames('textblock', small && 'textblock-small')} style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='textblock-child'>
         <h2 className='textblock-title' style={{ color: titleColor }}>{title}</h2>
         {button !== undefined &&

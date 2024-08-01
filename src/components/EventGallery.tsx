@@ -23,7 +23,7 @@ const handleClickEventLink = (event: string) => {
 }
 
 const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
-  <ul className={`event-gallery ${props.open ? '' : 'closed'}`}>
+  <ul className={classNames('event-gallery', !props.open && 'closed')}>
     {props.children}
   </ul>
 )

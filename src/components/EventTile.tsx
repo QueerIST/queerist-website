@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+import classNames from 'classnames'
 import { NavLink, useLocation } from 'react-router-dom'
 
 import Expand from './../svg/expand.svg?react'
@@ -18,13 +19,13 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
   const [page] = usePage()
   const location = useLocation()
   const dir = n % 2 !== 0 ? 'left' : 'right'
-  const openClass = inline && open ? 'open' : ''
+  const openClass = inline && open && 'open'
 
   const EventTypeInfoButton = (seeMoreText?: string) => (
     inline
       ? <button
       onClick={() => { setOpen(!open) }}
-      className={`tile-info-b tile-info-button ${openClass}`}
+      className={classNames('tile-info-b', 'tile-info-button', openClass)}
     >
         {seeMoreText ?? 'Ver mais'}
         <Expand fill={textColor} />
@@ -52,9 +53,9 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
   return (
     <div id={id}>
       <div
-      data-aos={`flip-${dir}`} className={`tile-info ${dir} ${inline ? 'tile-info-inline' : ''}`} style={{ backgroundColor: bgColor, color: textColor }}
+      data-aos={`flip-${dir}`} className={classNames('tile-info', dir, inline && 'tile-info-inline')} style={{ backgroundColor: bgColor, color: textColor }}
     >
-        <div className={`tile-info-text ${openClass}`}>
+        <div className={classNames('tile-info-text', openClass)}>
           {logoLink !== undefined &&
           <div className='tile-info-text-img'>
             <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
@@ -67,7 +68,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
           </Button>}
         </div>
         <div className='tile-info-img'>
-          <img className={openClass} src={publicPath(imgLink)} alt={name} />
+          <img className={classNames(openClass)} src={publicPath(imgLink)} alt={name} />
           {inline && events !== undefined && <EventGallery open={open} data={events} />}
         </div>
       </div>

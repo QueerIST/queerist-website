@@ -1,11 +1,13 @@
 import { useState } from 'react'
 
+import classNames from 'classnames'
 import ReactGA from 'react-ga4'
 import Headroom from 'react-headroom'
 import { NavLink } from 'react-router-dom'
 
 import logo from '../img/logo so letras brancas.png'
 import Menu from '../svg/menu.svg?react'
+
 import './header.css'
 
 export function Header () {
@@ -29,7 +31,8 @@ export function Header () {
 
   const handleClickLinkCb = (page: string) => () => { handleClickLink(page) }
 
-  const menustatus = openMenu ? ' navmenu-open' : ''
+  const className = classNames('navlink', openMenu && 'navmenu-open')
+
   return (
     <Headroom>
       <div className='navbar'>
@@ -42,11 +45,11 @@ export function Header () {
               </NavLink>
               <Menu className='navtop-side' onClick={handleClickMenuButton} />
             </div>
-            <NavLink className={'navlink' + menustatus} to='/sobre' onClick={handleClickLinkCb('sobre')}>Sobre</NavLink>
-            <NavLink className={'navlink' + menustatus} to='/eventos' onClick={handleClickLinkCb('eventos')}>Eventos</NavLink>
-            <NavLink className={'navlink' + menustatus} to='/projetos' onClick={handleClickLinkCb('projetos')}>Projetos</NavLink>
-            <a className={'navlink' + menustatus} href='https://queerist.tecnico.ulisboa.pt/blog/' onClick={handleClickLinkCb('blog')}>Blog</a>
-            <a className={'navlink' + menustatus} href='https://eepurl.com/dnApYP' onClick={handleClickLinkCb('newsletter')}>Newsletter</a>
+            <NavLink className={className} to='/sobre' onClick={handleClickLinkCb('sobre')}>Sobre</NavLink>
+            <NavLink className={className} to='/eventos' onClick={handleClickLinkCb('eventos')}>Eventos</NavLink>
+            <NavLink className={className} to='/projetos' onClick={handleClickLinkCb('projetos')}>Projetos</NavLink>
+            <a className={className} href='https://queerist.tecnico.ulisboa.pt/blog/' onClick={handleClickLinkCb('blog')}>Blog</a>
+            <a className={className} href='https://eepurl.com/dnApYP' onClick={handleClickLinkCb('newsletter')}>Newsletter</a>
           </div>
         </div>
       </div>

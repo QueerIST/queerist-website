@@ -1,5 +1,4 @@
-import { NavLink } from 'react-router-dom'
-
+import { LinkButton } from './Button'
 import { type Event } from '../types/domain'
 
 import './eventinseries.css'
@@ -18,21 +17,53 @@ export const EventInSeries = ({ data }: { data: Event }) => {
     <div className='event-in-series'>
       <div className='event-in-series-container' style={{ backgroundColor: series.bgColor, color: series.textColor }}>
         <div className='event-in-series-title'>
-          <h3><NavLink style={{ color: series.textColor }} to={{ pathname: series.path }}>{series.name}</NavLink></h3>
+          <h3>
+            <LinkButton
+                link={{ linkPage: series.path }}
+                button={{ linkTextColor: series.textColor }}
+                action={{
+                  actionComp: 'EventInSeries',
+                  actionName: `Volta para ${series.name}`
+                }}>
+              {series.name}
+            </LinkButton>
+          </h3>
         </div>
         <div className='event-in-series-links'>
           <div className='event-in-series-link'>
             {previous !== undefined &&
             <>
               <h4>Anterior</h4>
-              <p>{'< '}<NavLink style={{ color: series.textColor }} to={{ pathname: previous.path }}>{`${previous.name}`}</NavLink></p>
+              <p>
+                {'< '}
+                <LinkButton
+                  link={{ linkPage: previous.path }}
+                  button={{ linkTextColor: series.textColor }}
+                  action={{
+                    actionComp: 'EventInSeries',
+                    actionName: `Volta para ${previous.name}`
+                  }}>
+                  {previous.name}
+                </LinkButton>
+              </p>
             </>}
           </div>
           <div className='event-in-series-link'>
             {next !== undefined &&
             <>
               <h4>Seguinte</h4>
-              <p><NavLink style={{ color: series.textColor }} to={{ pathname: next.path }}>{`${next.name}`}</NavLink>{' >'}</p>
+              <p>
+                <LinkButton
+                  link={{ linkPage: next.path }}
+                  button={{ linkTextColor: series.textColor }}
+                  action={{
+                    actionComp: 'EventInSeries',
+                    actionName: `Avança para ${next.name}`
+                  }}>
+                  {next.name}
+                </LinkButton>
+                {' >'}
+              </p>
             </>}
           </div>
         </div>

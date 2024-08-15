@@ -3,23 +3,15 @@ import { type PropsWithChildren } from 'react'
 import classNames from 'classnames'
 import { format } from 'date-fns'
 import { pt } from 'date-fns/locale'
-import ReactGA from 'react-ga4'
 
 import Launch from './../svg/launch.svg?react'
-import { BlockButton } from './Button'
+import { BlockButton, LinkButton } from './Button'
 import { usePage } from '../api/use'
 import { WrapDelayed } from '../helpers/delay'
 import { publicPath } from '../helpers/links'
 import { type Events, type Event } from '../types/domain'
 
 import './eventgallery.css'
-
-const handleClickEventLink = (event: string) => {
-  ReactGA.event({
-    category: 'EventGallery', // Required
-    action: `Clica link de ${event}` // Required
-  })
-}
 
 const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   <ul className={classNames('event-gallery', !props.open && 'closed')}>
@@ -40,7 +32,16 @@ const EventGalleryItem = ({ id, name, open = true, detached = false, date, locat
         <h3>{name}</h3>
         <span className='event-gallery-item-launch'>
           <p>{format(date, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
-          {!detached && <a href={link} target='_blank' rel='noopener noreferrer' onClick={() => { handleClickEventLink(name) }}> <Launch /></a>}
+          {!detached &&
+          <LinkButton
+            link={{ linkWeb: link }}
+            action={{
+              actionComp: 'EventGallery',
+              actionName: `Clica link de ${name}`
+            }}>
+            <Launch />
+          </LinkButton>
+          }
         </span>
         <BlockButton
           action={{

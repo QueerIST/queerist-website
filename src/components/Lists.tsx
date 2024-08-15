@@ -1,18 +1,10 @@
 import { type PropsWithChildren } from 'react'
 
-import ReactGA from 'react-ga4'
-
+import { MaybeLinkButton } from './Button'
 import { publicPath } from '../helpers/links'
 import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps, type TextBoxList as TextBoxListProps, type Icons } from '../types/domain'
 
 import './lists.css'
-
-const handleClickLink = (name: string) => {
-  ReactGA.event({
-    category: 'IconList', // Required
-    action: `Clica ${name}` // Required
-  })
-}
 
 const IconImg = ({ name, logoLink }: IconProps) => (
   <>
@@ -27,12 +19,15 @@ const IconImg = ({ name, logoLink }: IconProps) => (
 
 const Icon = ({ name, link, logoLink }: IconProps) => (
   <li className='lists-iconlist-icon'>
-    {link !== undefined
-      ? <a href={link} onClick={() => { handleClickLink(name) }}>
-        <IconImg name={name} logoLink={logoLink} />
-      </a>
-      : <IconImg name={name} logoLink={logoLink} />
-      }
+    <MaybeLinkButton
+      action={{
+        actionComp: 'IconList',
+        actionName: `Clica ${name}`
+      }}
+      link={link !== undefined ? { linkWeb: link } : undefined}
+    >
+      <IconImg name={name} logoLink={logoLink} />
+    </MaybeLinkButton>
   </li>
 )
 

@@ -5,12 +5,14 @@ import { JsonLd } from 'react-schemaorg'
 import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema-dts'
 
 import Launch from './../svg/launch.svg?react'
+import { LinkButton } from './Button'
 import { isOnline } from '../helpers/location'
 import { type Event } from '../types/domain'
+
 import './eventinfo.css'
 
 export const EventInfo = ({ data }: { data: Event }) => {
-  const { name, date, enddate, location, longDescription, description, imgLink, link } = data
+  const { name, date, enddate, location, longDescription, description, imgLink, link, parentPage } = data
 
   let yearFormat = ''; let timeFormat = "'às' HH'h'mm"; let endTimeString = ''
 
@@ -51,7 +53,18 @@ export const EventInfo = ({ data }: { data: Event }) => {
       <h2>{name}</h2>
       <h4><u>{location.shortVersion}</u></h4>
       {longDescription !== undefined && <BlocksRenderer content={longDescription}></BlocksRenderer>}
-      <p> <a style={{ color: 'orange' }} href={link}>Mais informações</a> <Launch /></p>
+      <p>
+        <LinkButton
+            link={{ linkWeb: link }}
+            button={{ linkTextColor: parentPage.bgColor }}
+            action={{
+              actionComp: 'EventInfo',
+              actionName: `Clica link de ${name}`
+            }}>
+          {'Mais informações'}
+        </LinkButton>
+        <Launch />
+      </p>
       <JsonLd<EventDTS>
       item={ {
         '@context': 'https://schema.org',

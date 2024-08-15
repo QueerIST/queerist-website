@@ -1,3 +1,5 @@
+import { type MouseEventHandler } from 'react'
+
 import { type BlocksContent } from '@strapi/blocks-react-renderer'
 
 import { type PlaceInfo } from '../helpers/location'
@@ -32,14 +34,12 @@ export interface TextBlock {
   button?: BlockButtonLink
 }
 
-interface BlockButton {
-  linkText: string
+export interface BlockButtonStyle {
   linkTextColor?: string
   linkBackgroundColor?: string
 }
 
-interface OutlineButton {
-  linkText: string
+export interface OutlineButtonStyle {
   linkTextColor: string
 }
 
@@ -48,11 +48,12 @@ export interface ButtonLink {
   linkId?: string
   linkFile?: string
   linkWeb?: string
+  onClick?: MouseEventHandler
 }
 
-export type BlockButtonLink = BlockButton & ButtonLink
+export type BlockButtonLink = { button: BlockButtonStyle } & { link: ButtonLink } & { text: string }
 
-export type OutlineButtonLink = OutlineButton & ButtonLink
+export type OutlineButtonLink = { button: OutlineButtonStyle } & { link: ButtonLink } & { text: string }
 
 export interface BigBanner {
   id?: string

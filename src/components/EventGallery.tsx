@@ -4,10 +4,9 @@ import classNames from 'classnames'
 import { format } from 'date-fns'
 import { pt } from 'date-fns/locale'
 import ReactGA from 'react-ga4'
-import { NavLink } from 'react-router-dom'
 
 import Launch from './../svg/launch.svg?react'
-import { Button } from './Button'
+import { BlockButton } from './Button'
 import { usePage } from '../api/use'
 import { WrapDelayed } from '../helpers/delay'
 import { publicPath } from '../helpers/links'
@@ -43,11 +42,16 @@ const EventGalleryItem = ({ id, name, open = true, detached = false, date, locat
           <p>{format(date, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
           {!detached && <a href={link} target='_blank' rel='noopener noreferrer' onClick={() => { handleClickEventLink(name) }}> <Launch /></a>}
         </span>
-        {<Button actionComp='EventList' actionName={`Entra ${name} (em ${page.name})`} color={parentPage.textColor} backgroundColor={parentPage.bgColor}>
-          <NavLink to={{ pathname: path }}>
-            {'Ver mais'}
-          </NavLink>
-        </Button>}
+        <BlockButton
+          action={{
+            actionComp: 'EventList',
+            actionName: `Entra ${name} (em ${page.name})`
+          }}
+          link={{ linkPage: path }}
+          button={{ linkBackgroundColor: parentPage.bgColor, linkTextColor: parentPage.textColor }}
+        >
+          {'Ver mais'}
+        </BlockButton>
       </div>
     </li>
   )

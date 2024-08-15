@@ -1,10 +1,9 @@
 import { useState } from 'react'
 
 import classNames from 'classnames'
-import { NavLink } from 'react-router-dom'
 
 import Expand from './../svg/expand.svg?react'
-import { Button } from './Button'
+import { OutlineButton } from './Button'
 import { EventGallery } from './EventGallery'
 import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
@@ -20,29 +19,16 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
   const dir = n % 2 !== 0 ? 'left' : 'right'
   const openClass = inline && open && 'open'
 
-  const EventTypeInfoButton = (seeMoreText?: string) => (
-    inline
-      ? <button
-      onClick={() => { setOpen(!open) }}
-      className={classNames('tile-info-b', 'tile-info-button', openClass)}
-    >
-        {seeMoreText ?? 'Ver mais'}
-        <Expand fill={textColor} />
-      </button>
-      : <NavLink
-      className='tile-info-b'
-      to={{ pathname: path }}
-    >
-        {seeMoreText}
-      </NavLink>
-  )
-
-  let actionName, actionLabel
+  let actionName, actionLabel, link, className
   if (inline) {
     actionName = `Clica ${name}`
     actionLabel = (open ? 'Close' : 'Open')
+    link = { onClick: () => { setOpen(!open) } }
+    className = classNames('tile-info-b', 'tile-info-button', openClass)
   } else {
     actionName = `Entra ${name} (em ${page.name})`
+    link = { linkPage: path }
+    className = 'tile-info-b'
   }
 
   return (
@@ -58,9 +44,20 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
           <h3 className='tile-info-text-text'>{name}</h3>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
           {events !== undefined &&
-          <Button actionComp='EventTile' actionName={actionName} actionLabel={actionLabel} borderColor={textColor} color={textColor}>
-            {EventTypeInfoButton(seeMoreText)}
-          </Button>}
+          <OutlineButton
+            action={{
+              actionComp: 'EventTile',
+              actionName,
+              actionLabel
+            }}
+            link={link}
+            button={{ linkTextColor: textColor }}
+            className={className}
+          >
+            {seeMoreText ?? 'Ver mais'}
+            {inline && <Expand fill={textColor} />}
+          </OutlineButton>
+          }
         </div>
         <div className='tile-info-img'>
           <img className={classNames(openClass)} src={publicPath(imgLink)} alt={name} />

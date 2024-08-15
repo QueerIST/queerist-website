@@ -1,5 +1,4 @@
-import { Button } from './Button'
-import { publicPath } from '../helpers/links'
+import { BlockButton } from './Button'
 import { type HighlightBox as HighlightBoxProps } from '../types/domain'
 
 import './highlightbox.css'
@@ -12,18 +11,18 @@ export const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }
     <h2>{title}</h2>
     <p>{subTitle}</p>
     {button !== undefined &&
-    <Button
-      actionComp='HighlightBox'
-      actionName={`Clica ${button.linkText}`}
-      backgroundColor={button.linkBackgroundColor ?? textColor}
-      color={button.linkTextColor ?? bgColor}
-      block
-    >
-      {button.linkFile !== undefined
-        ? <a href={publicPath(button.linkFile)} className='highlightbox-button'>{button.linkText}</a>
-        : <a href={button.linkWeb} className='highlightbox-button'>{button.linkText}</a>
-      }
-    </Button>
+      <BlockButton
+        action={{
+          actionComp: 'HighlightBox',
+          actionName: `Clica ${button.text}`
+        }}
+        defaults={{ linkBackgroundColor: textColor, linkTextColor: bgColor }}
+        link={button.link}
+        className='highlightbox-button'
+        button={button.button}
+      >
+        {button.text}
+      </BlockButton>
     }
   </div>
 )

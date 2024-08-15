@@ -4,12 +4,13 @@ import { pt } from 'date-fns/locale'
 import { JsonLd } from 'react-schemaorg'
 import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema-dts'
 
+import Launch from './../svg/launch.svg?react'
 import { isOnline } from '../helpers/location'
 import { type Event } from '../types/domain'
 import './eventinfo.css'
 
 export const EventInfo = ({ data }: { data: Event }) => {
-  const { name, date, enddate, location, longDescription, description, imgLink } = data
+  const { name, date, enddate, location, longDescription, description, imgLink, link } = data
 
   let yearFormat = ''; let timeFormat = "'às' HH'h'mm"; let endTimeString = ''
 
@@ -50,6 +51,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
       <h2>{name}</h2>
       <h4><u>{location.shortVersion}</u></h4>
       {longDescription !== undefined && <BlocksRenderer content={longDescription}></BlocksRenderer>}
+      <p> <a style={{ color: 'orange' }} href={link}>Mais informações</a> <Launch /></p>
       <JsonLd<EventDTS>
       item={ {
         '@context': 'https://schema.org',

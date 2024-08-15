@@ -31,8 +31,9 @@ export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
   return page
 }
 
-function enrichWithLink (link: GetValues<'links.button'>, button: ButtonLink
-) {
+function enrichWithLink (link: GetValues<'links.button'>) {
+  const button: ButtonLink = {}
+
   if (notNullish(link.Page)) {
     const [path, hash] = link.Page.split('#')
     button.linkPage = path
@@ -42,16 +43,21 @@ function enrichWithLink (link: GetValues<'links.button'>, button: ButtonLink
   } else if (notNullish(link.File) && notNullish(link.File.data)) {
     button.linkFile = link.File.data.attributes.url
   }
+
+  return button
 }
 
 export function blockButtonMapper (data: GetValues<'links.block-button'>): BlockButtonLink {
   const button: BlockButtonLink = {
-    linkText: data.Text,
-    linkBackgroundColor: data.BackgroundColor,
-    linkTextColor: data.TextColor
+    text: data.Text,
+    button: {
+      linkBackgroundColor: data.BackgroundColor,
+      linkTextColor: data.TextColor
+    },
+    link: {}
   }
 
-  enrichWithLink(data.Link, button)
+  button.link = enrichWithLink(data.Link)
 
   return button
 }
@@ -63,11 +69,12 @@ export function maybeBlockButtonMapper (data?: GetValues<'links.block-button'> |
 
 export function outlineButtonMapper (data: GetValues<'links.outline-link'>): OutlineButtonLink {
   const button: OutlineButtonLink = {
-    linkText: data.Text,
-    linkTextColor: data.TextColor
+    text: data.Text,
+    button: { linkTextColor: data.TextColor },
+    link: {}
   }
 
-  enrichWithLink(data.Link, button)
+  button.link = enrichWithLink(data.Link)
 
   return button
 }

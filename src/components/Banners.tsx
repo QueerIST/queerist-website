@@ -1,8 +1,6 @@
 import { type PropsWithChildren } from 'react'
 
-import { NavLink } from 'react-router-dom'
-
-import { Button } from './Button'
+import { OutlineButton } from './Button'
 import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
 import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
@@ -15,18 +13,16 @@ export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
     <div id={id} className='big-banner banner'>
       {button !== undefined &&
       <div className='big-banner-button'>
-        <Button
-            actionComp='BigBanner'
-            actionName={`Entra ${name} (em ${page.name})`}
-            borderColor={button.linkTextColor}
-            color={button.linkTextColor}
-          >
-          <NavLink
-              to={{ pathname: button.linkPage, hash: button.linkId !== undefined ? '' + button.linkId : undefined }}
-            >
-            {button.linkText}
-          </NavLink>
-        </Button>
+        <OutlineButton
+          action={{
+            actionComp: 'BigBanner',
+            actionName: `Entra ${name} (em ${page.name})`
+          }}
+          link={button.link}
+          button={button.button}
+        >
+          {button.text}
+        </OutlineButton>
       </div>}
       <img src={publicPath(imgLink)} alt={name} />
     </div>
@@ -44,18 +40,16 @@ function SmallBanner ({ name, label, logoLink, bgColor, textColor, button }: Sma
           <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
         </div>
         {button !== undefined &&
-        <Button
-          actionComp='SmallBanner'
-          actionName={`Entra ${name} (em ${page.name})`}
-          borderColor={button.linkTextColor }
-          color={button.linkTextColor}
-        >
-          <NavLink
-            to={{ pathname: button.linkPage, hash: button.linkId !== undefined ? '#' + button.linkId : undefined }}
-          >
-            {button.linkText}
-          </NavLink>
-        </Button>}
+        <OutlineButton
+          action={{
+            actionComp: 'SmallBanner',
+            actionName: `Entra ${name} (em ${page.name})`
+          }}
+          link={button.link}
+          button={button.button}>
+          {button.text}
+        </OutlineButton>
+        }
       </div>
     </div>
   )

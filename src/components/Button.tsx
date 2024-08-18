@@ -1,4 +1,4 @@
-import { type PropsWithChildren, cloneElement, type ReactElement, isValidElement, Children, type HTMLAttributes } from 'react'
+import { type PropsWithChildren, type CSSProperties, type MouseEventHandler } from 'react'
 
 import classNames from 'classnames'
 import ReactGA from 'react-ga4'
@@ -7,8 +7,6 @@ import { NavLink } from 'react-router-dom'
 import { publicPath } from '../helpers/links'
 import { type OutlineButtonStyle, type ButtonLink, type BlockButtonStyle } from '../types/domain'
 import './button.css'
-
-type HTMLProps = HTMLAttributes<HTMLElement>
 
 enum ButtonType {
   Block,
@@ -33,25 +31,38 @@ interface ButtonProps {
   actionLabel?: string
 }
 
-function Link ({ data, children }: PropsWithChildren<{ data: ButtonLink }>) {
+interface ChildrenProps {
+  className?: string
+  style?: CSSProperties
+  onClick?: MouseEventHandler
+}
+
+function Link ({ data, childProps, children }: PropsWithChildren<{ data: ButtonLink, childProps: ChildrenProps }>) {
   return (
     data.linkPage !== undefined
       ? (
-        <NavLink to={{ pathname: data.linkPage, hash: data.linkId !== undefined ? '#' + data.linkId : undefined }}>
+        <NavLink to={{ pathname: data.linkPage, hash: data.linkId !== undefined ? '#' + data.linkId : undefined }} {...childProps}>
           {children}
         </NavLink>
         )
       : data.linkFile !== undefined
         ? (
-          <a href={publicPath(data.linkFile)}>{children}</a>
+          <a href={publicPath(data.linkFile)} {...childProps}>{children}</a>
           )
         : data.linkWeb !== undefined
           ? (
-            <a href={data.linkWeb} target='_blank' rel='noopener noreferrer'>{children}</a>
+            <a href={data.linkWeb} target='_blank' rel='noopener noreferrer' {...childProps}>{children}</a>
             )
           : data.onClick !== undefined
             ? (
-              <button onClick={data.onClick}>{children}</button>
+              <button
+                className={childProps.className}
+                style={childProps.style}
+                onClick={(e) => {
+                  childProps.onClick?.(e)
+                  data.onClick?.(e)
+                }}
+              >{children}</button>
               )
             : (
               <>{children}</>
@@ -68,10 +79,9 @@ export function OutlineButton ({ children, action, className, link, button }: Pr
       className={className}
       color={button.linkTextColor}
       type={ButtonType.Outline}
+      link={link}
     >
-      <Link data={link}>
-        {children}
-      </Link>
+      {children}
     </Button>
   )
 }
@@ -85,10 +95,9 @@ export function BlockButton ({ children, action, className, link, button, defaul
       className={className}
       color={button.linkTextColor ?? defaults?.linkTextColor}
       type={ButtonType.Block}
+      link={link}
     >
-      <Link data={link}>
-        {children}
-      </Link>
+      {children}
     </Button>
   )
 }
@@ -101,10 +110,9 @@ export function LinkButton ({ children, action, className, link, button }: Props
       className={className}
       color={button?.linkTextColor}
       type={ButtonType.Link}
+      link={link}
     >
-      <Link data={link}>
-        {children}
-      </Link>
+      {children}
     </Button>
   )
 }
@@ -126,32 +134,30 @@ export function MaybeLinkButton ({ children, action, className, link, button }: 
   )
 }
 
-function Button (props: PropsWithChildren<ButtonProps>) {
-  const { children, borderColor, color, className, backgroundColor, type, actionComp, actionName, actionLabel } = props
-
-  const buildClassName = (child: ReactElement<HTMLProps>) => classNames(
-    child.props.className,
-    className,
-    {
-      block: type === ButtonType.Block,
-      'block-button': type !== ButtonType.Outline
-    }
+function Button (props: PropsWithChildren<ButtonProps & { link: ButtonLink }>) {
+  const { children, borderColor, color, className, backgroundColor, type, actionComp, actionName, actionLabel, link } = props
+  return (
+    <Link
+      data={link}
+      childProps={{
+        style: { borderColor, color, backgroundColor },
+        className: classNames(
+          className,
+          {
+            block: type === ButtonType.Block,
+            'block-button': type !== ButtonType.Link
+          }
+        ),
+        onClick: () => {
+          ReactGA.event({
+            category: actionComp, // Required
+            action: actionName, // Required
+            label: actionLabel
+          })
+        }
+      }}
+    >
+      {children}
+    </Link>
   )
-  const onClickAnalytics = (child: ReactElement) => {
-    ReactGA.event({
-      category: actionComp, // Required
-      action: actionName, // Required
-      label: actionLabel
-    })
-    child.props.onClick?.()
-  }
-
-  return isValidElement<HTMLProps>(children) &&
-   Children.map(children, (child: ReactElement<HTMLProps>) => (
-     cloneElement(child, {
-       className: buildClassName(child),
-       style: { borderColor, color, backgroundColor },
-       onClick: () => { onClickAnalytics(child) }
-     })
-   ))
 }

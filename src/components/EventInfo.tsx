@@ -12,7 +12,7 @@ import { type Event } from '../types/domain'
 import './eventinfo.css'
 
 export const EventInfo = ({ data }: { data: Event }) => {
-  const { name, date, enddate, location, longDescription, description, imgLink, link, parentPage } = data
+  const { name, date, enddate, location, longDescription, description, imgLink, link } = data
 
   let yearFormat = ''; let timeFormat = "'às' HH'h'mm"; let endTimeString = ''
 
@@ -56,7 +56,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
       <p>
         <LinkButton
             link={{ linkWeb: link }}
-            button={{ linkTextColor: parentPage.bgColor }}
+            button={{ linkTextColor: 'orange' }}
             action={{
               actionComp: 'EventInfo',
               actionName: `Clica link de ${name}`

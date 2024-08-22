@@ -15,9 +15,17 @@ enum ButtonType {
 }
 
 interface Action {
-  actionComp: string
-  actionName: string
-  actionLabel?: string
+  name: string
+  type?: string
+  'content_type'?: string
+  'content_id'?: string
+  'content_action'?: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  items?: any[]
+  item_list_name?: string
+  item_list_id?: string
+  link_page?: string
+  link_text?: string
 }
 
 interface ButtonProps {
@@ -26,9 +34,7 @@ interface ButtonProps {
   borderColor?: string
   backgroundColor?: string
   type: ButtonType
-  actionComp: string
-  actionName: string
-  actionLabel?: string
+  action?: Action
 }
 
 interface ChildrenProps {
@@ -73,8 +79,7 @@ function Link ({ data, childProps, children }: PropsWithChildren<{ data: ButtonL
 export function OutlineButton ({ children, action, className, link, button }: PropsWithChildren<{ className?: string, link: ButtonLink, button: OutlineButtonStyle, action: Action }>) {
   return (
     <Button
-      actionComp={action.actionComp}
-      actionName={action.actionName}
+      action={action}
       borderColor={button.linkTextColor}
       className={className}
       color={button.linkTextColor}
@@ -89,8 +94,7 @@ export function OutlineButton ({ children, action, className, link, button }: Pr
 export function BlockButton ({ children, action, className, link, button, defaults }: PropsWithChildren<{ className?: string, link: ButtonLink, button: BlockButtonStyle, action: Action, defaults?: BlockButtonStyle }>) {
   return (
     <Button
-      actionComp={action.actionComp}
-      actionName={action.actionName}
+      action={action}
       backgroundColor={button.linkBackgroundColor ?? defaults?.linkBackgroundColor}
       className={className}
       color={button.linkTextColor ?? defaults?.linkTextColor}
@@ -102,11 +106,10 @@ export function BlockButton ({ children, action, className, link, button, defaul
   )
 }
 
-export function LinkButton ({ children, action, className, link, button }: PropsWithChildren<{ className?: string, link: ButtonLink, button?: OutlineButtonStyle, action: Action }>) {
+export function LinkButton ({ children, action, className, link, button }: PropsWithChildren<{ className?: string, link: ButtonLink, button?: OutlineButtonStyle, action?: Action }>) {
   return (
     <Button
-      actionComp={action.actionComp}
-      actionName={action.actionName}
+      action={action}
       className={className}
       color={button?.linkTextColor}
       type={ButtonType.Link}
@@ -135,7 +138,7 @@ export function MaybeLinkButton ({ children, action, className, link, button }: 
 }
 
 function Button (props: PropsWithChildren<ButtonProps & { link: ButtonLink }>) {
-  const { children, borderColor, color, className, backgroundColor, type, actionComp, actionName, actionLabel, link } = props
+  const { children, borderColor, color, className, backgroundColor, type, action, link } = props
   return (
     <Link
       data={link}
@@ -149,10 +152,8 @@ function Button (props: PropsWithChildren<ButtonProps & { link: ButtonLink }>) {
           }
         ),
         onClick: () => {
-          ReactGA.event({
-            category: actionComp, // Required
-            action: actionName, // Required
-            label: actionLabel
+          action !== undefined && ReactGA.event(action.name, {
+            ...action
           })
         }
       }}

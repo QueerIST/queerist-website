@@ -15,8 +15,10 @@ export function TextBlock (props: TextBlockProps) {
         {button !== undefined &&
           <BlockButton
             action={{
-              actionComp: 'TextBlock',
-              actionName: `Clica ${button.text}`
+              name: 'navigate_content',
+              type: 'text-block',
+              link_text: button.text,
+              link_page: button.link.linkPage
             }}
             defaults={{ linkBackgroundColor: textColor, linkTextColor: bgColor }}
             link={button.link}

@@ -6,7 +6,6 @@ import { pt } from 'date-fns/locale'
 
 import Launch from './../svg/launch.svg?react'
 import { BlockButton, LinkButton } from './Button'
-import { usePage } from '../api/use'
 import { WrapDelayed } from '../helpers/delay'
 import { publicPath } from '../helpers/links'
 import { type Events, type Event } from '../types/domain'
@@ -19,8 +18,7 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Event & { open?: boolean, detached?: boolean }) => {
-  const [page] = usePage()
+const EventGalleryItem = ({ n, id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Event & { open?: boolean, detached?: boolean, n: number }) => {
   return (
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
@@ -33,20 +31,24 @@ const EventGalleryItem = ({ id, name, open = true, detached = false, date, locat
         <span className='event-gallery-item-launch'>
           <p>{format(date, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
           {!detached &&
-          <LinkButton
-            link={{ linkWeb: link }}
-            action={{
-              actionComp: 'EventGallery',
-              actionName: `Clica link de ${name}`
-            }}>
+          <LinkButton link={{ linkWeb: link }}>
             <Launch />
           </LinkButton>
           }
         </span>
         <BlockButton
           action={{
-            actionComp: 'EventList',
-            actionName: `Entra ${name} (em ${page.name})`
+            type: 'event-list',
+            name: 'navigate_item',
+            item_list_name: parentPage.name,
+            item_list_id: parentPage.id,
+            items: [{
+              index: n,
+              item_id: id,
+              item_name: name,
+              link_text: 'Ver mais',
+              link_page: path
+            }]
           }}
           link={{ linkPage: path }}
           button={{ linkBackgroundColor: parentPage.bgColor, linkTextColor: parentPage.textColor }}
@@ -63,6 +65,7 @@ export function EventGallery ({ data, open }: { data: Events, open: boolean }) {
     <EventGalleryWrap open={open}>
       {data.map((event, i) => (
         <EventGalleryItem
+          n={i}
           key={i}
           open={open}
           {...event}
@@ -77,6 +80,7 @@ export const InlineEventGallery = ({ data, reduced = false }: { data: Events, re
     <ul className='event-gallery'>
       {data.map((event, i) => (
         <EventGalleryItem
+          n={i}
           key={i}
           detached
           {...event}

@@ -58,8 +58,10 @@ export const SeriesCover = ({ data }: { data: Series }) => {
                 link={{ linkPage: parentPage.path }}
                 button={{ linkTextColor: textColor }}
                 action={{
-                  actionComp: 'SeriesCover',
-                  actionName: `Volta para ${parentPage.name}`
+                  name: 'navigate_content',
+                  type: 'series-cover',
+                  link_text: parentPage.name,
+                  link_page: parentPage.path
                 }}>
                 {parentPage.name}
               </LinkButton>

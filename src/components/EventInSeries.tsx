@@ -22,8 +22,10 @@ export const EventInSeries = ({ data }: { data: Event }) => {
                 link={{ linkPage: series.path }}
                 button={{ linkTextColor: series.textColor }}
                 action={{
-                  actionComp: 'EventInSeries',
-                  actionName: `Volta para ${series.name}`
+                  name: 'navigate_content',
+                  type: 'event-in-series',
+                  link_text: series.name,
+                  link_page: series.path
                 }}>
               {series.name}
             </LinkButton>
@@ -40,8 +42,15 @@ export const EventInSeries = ({ data }: { data: Event }) => {
                   link={{ linkPage: previous.path }}
                   button={{ linkTextColor: series.textColor }}
                   action={{
-                    actionComp: 'EventInSeries',
-                    actionName: `Volta para ${previous.name}`
+                    type: 'event-in-series',
+                    name: 'navigate_item',
+                    item_list_name: series.name,
+                    item_list_id: series.id,
+                    items: [{
+                      item_id: 'back',
+                      link_text: previous.name,
+                      link_page: previous.path
+                    }]
                   }}>
                   {previous.name}
                 </LinkButton>
@@ -57,8 +66,15 @@ export const EventInSeries = ({ data }: { data: Event }) => {
                   link={{ linkPage: next.path }}
                   button={{ linkTextColor: series.textColor }}
                   action={{
-                    actionComp: 'EventInSeries',
-                    actionName: `Avança para ${next.name}`
+                    type: 'event-in-series',
+                    name: 'navigate_item',
+                    item_list_name: series.name,
+                    item_list_id: series.id,
+                    items: [{
+                      item_id: 'forward',
+                      link_text: next.name,
+                      link_page: next.path
+                    }]
                   }}>
                   {next.name}
                 </LinkButton>

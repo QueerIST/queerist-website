@@ -20,10 +20,6 @@ const IconImg = ({ name, logoLink }: IconProps) => (
 const Icon = ({ name, link, logoLink }: IconProps) => (
   <li className='lists-iconlist-icon'>
     <MaybeLinkButton
-      action={{
-        actionComp: 'IconList',
-        actionName: `Clica ${name}`
-      }}
       link={link !== undefined ? { linkWeb: link } : undefined}
     >
       <IconImg name={name} logoLink={logoLink} />

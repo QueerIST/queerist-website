@@ -1,22 +1,22 @@
 import { type PropsWithChildren } from 'react'
 
 import { OutlineButton } from './Button'
-import { usePage } from '../api/use'
 import { publicPath } from '../helpers/links'
 import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
 
 import './banners.css'
 
 export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
-  const [page] = usePage()
   return (
     <div id={id} className='big-banner banner'>
       {button !== undefined &&
       <div className='big-banner-button'>
         <OutlineButton
           action={{
-            actionComp: 'BigBanner',
-            actionName: `Entra ${name} (em ${page.name})`
+            name: 'navigate_content',
+            type: 'big_banner',
+            link_text: button.text,
+            link_page: button.link.linkPage
           }}
           link={button.link}
           button={button.button}
@@ -29,8 +29,7 @@ export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
   )
 }
 
-function SmallBanner ({ name, label, logoLink, bgColor, textColor, button }: SmallBannerProps) {
-  const [page] = usePage()
+function SmallBanner ({ n, name, label, logoLink, bgColor, textColor, button }: SmallBannerProps & { n: number }) {
   return (
     <div className='small-banner banner' data-aos='zoom-in' style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='small-banner-content'>
@@ -42,8 +41,14 @@ function SmallBanner ({ name, label, logoLink, bgColor, textColor, button }: Sma
         {button !== undefined &&
         <OutlineButton
           action={{
-            actionComp: 'SmallBanner',
-            actionName: `Entra ${name} (em ${page.name})`
+            type: 'small_banner',
+            name: 'navigate_item',
+            items: [{
+              index: n,
+              item_name: name,
+              link_text: button.text,
+              link_page: button.link.linkPage
+            }]
           }}
           link={button.link}
           button={button.button}>
@@ -66,6 +71,7 @@ export const SmallBanners = ({ id, banners }: SmallBannersProps) => (
     {banners.map((smallBanner, i) => (
       <SmallBanner
         key={i}
+        n={i}
        {...smallBanner}
       />
     ))}

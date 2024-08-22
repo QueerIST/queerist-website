@@ -14,22 +14,24 @@ export function Header () {
   const [openMenu, setOpenMenu] = useState(false)
 
   const handleClickMenuButton = () => {
-    ReactGA.event({
-      category: 'NavMenuToogle', // Required
-      action: `Menu ${openMenu ? 'fecha' : 'abre'}` // Required
+    ReactGA.event('select_content', {
+      'content_type': 'header',
+      'content_id': 'menu',
+      'content_action': !openMenu ? 'open' : 'close'
     })
     setOpenMenu(!openMenu)
   }
 
-  const handleClickLink = (page: string) => {
-    ReactGA.event({
-      category: 'NavMenuLink', // Required
-      action: `Navega ${page}` // Required
+  const handleClickLink = (page: string, text: string) => {
+    ReactGA.event('navigate_item', {
+      type: 'header',
+      link_page: page,
+      link_text: text
     })
     setOpenMenu(false)
   }
 
-  const handleClickLinkCb = (page: string) => () => { handleClickLink(page) }
+  const handleClickLinkCb = (page: string, text: string) => () => { handleClickLink(page, text) }
 
   const className = classNames('navlink', openMenu && 'navmenu-open')
 
@@ -40,16 +42,16 @@ export function Header () {
           <div className='navbar-delimiter'>
             <div className='navtop'>
               <div className='navtop-side' />
-              <NavLink className='navimg' end to='/' onClick={handleClickLinkCb('logo')}>
+              <NavLink className='navimg' end to='/' onClick={handleClickLinkCb('home', 'Logo')}>
                 <img src={logo} alt='QueerIST logo' />
               </NavLink>
               <Menu className='navtop-side' onClick={handleClickMenuButton} />
             </div>
-            <NavLink className={className} to='/sobre' onClick={handleClickLinkCb('sobre')}>Sobre</NavLink>
-            <NavLink className={className} to='/eventos' onClick={handleClickLinkCb('eventos')}>Eventos</NavLink>
-            <NavLink className={className} to='/projetos' onClick={handleClickLinkCb('projetos')}>Projetos</NavLink>
-            <a className={className} href='https://queerist.tecnico.ulisboa.pt/blog/' onClick={handleClickLinkCb('blog')}>Blog</a>
-            <a className={className} href='https://eepurl.com/dnApYP' onClick={handleClickLinkCb('newsletter')}>Newsletter</a>
+            <NavLink className={className} to='/sobre' onClick={handleClickLinkCb('sobre', 'Sobre')}>Sobre</NavLink>
+            <NavLink className={className} to='/eventos' onClick={handleClickLinkCb('eventos', 'Eventos')}>Eventos</NavLink>
+            <NavLink className={className} to='/projetos' onClick={handleClickLinkCb('projetos', 'Projetos')}>Projetos</NavLink>
+            <a className={className} href='https://queerist.tecnico.ulisboa.pt/blog/' onClick={handleClickLinkCb('blog', 'Blog')}>Blog</a>
+            <a id='newsletter-link' className={className} href='https://eepurl.com/dnApYP'>Newsletter</a>
           </div>
         </div>
       </div>

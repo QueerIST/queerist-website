@@ -22,7 +22,7 @@ export const Projects = () => {
       <PageCover data={page} />
       <Separator />
       {data.attributes.Hubs?.data.map((hub, i) => (
-        <PageTile key={i} data={hubMapper(hub.attributes, page)} />
+        <PageTile key={i} n={i} data={hubMapper(hub.attributes, page)} />
       ))}
       <DynamicZone data={data.attributes.Body} />
     </Page>

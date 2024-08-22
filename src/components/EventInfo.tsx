@@ -57,10 +57,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
         <LinkButton
             link={{ linkWeb: link }}
             button={{ linkTextColor: 'orange' }}
-            action={{
-              actionComp: 'EventInfo',
-              actionName: `Clica link de ${name}`
-            }}>
+        >
           {'Mais informações'}
         </LinkButton>
         <Launch />

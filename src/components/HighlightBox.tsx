@@ -13,8 +13,10 @@ export const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }
     {button !== undefined &&
       <BlockButton
         action={{
-          actionComp: 'HighlightBox',
-          actionName: `Clica ${button.text}`
+          name: 'navigate_content',
+          type: 'highlight-box',
+          link_text: button.text,
+          link_page: button.link.linkPage
         }}
         defaults={{ linkBackgroundColor: textColor, linkTextColor: bgColor }}
         link={button.link}

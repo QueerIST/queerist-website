@@ -1,5 +1,3 @@
-import ReactGA from 'react-ga4'
-
 import Email from '../svg/email.svg?react'
 import Facebook from '../svg/facebook.svg?react'
 import GitHub from '../svg/github.svg?react'
@@ -8,23 +6,14 @@ import Twiter from '../svg/twitter.svg?react'
 import './footer.css'
 
 export function Footer () {
-  const handleClickLink = (link: string) => {
-    ReactGA.event({
-      category: 'Footer', // Required
-      action: `Clica ${link}` // Required
-    })
-  }
-
-  const handleClickLinkCb = (page: string) => () => { handleClickLink(page) }
-
   return (
     <footer>
       <div className='footer-logos'>
-        <a href='https://facebook.com/QueerIST' onClick={handleClickLinkCb('facebook')}><Facebook className='footer-logo clickable' /></a>
-        <a href='https://instagram.com/queer.ist' onClick={handleClickLinkCb('instagram')}><Instagram className='footer-logo clickable' /></a>
-        <a href='https://twitter.com/QueerIST' onClick={handleClickLinkCb('twitter')}><Twiter className='footer-logo clickable' /></a>
-        <a href='https://github.com/QueerIST' onClick={handleClickLinkCb('github')}><GitHub className='footer-logo clickable' /></a>
-        <a href='mailto:queerist.sa@aeist.pt' onClick={handleClickLinkCb('email')}><Email className='footer-logo clickable' /></a>
+        <a id='facebook-link' href='https://facebook.com/QueerIST'><Facebook className='footer-logo clickable' /></a>
+        <a id='instagram-link' href='https://instagram.com/queer.ist'><Instagram className='footer-logo clickable' /></a>
+        <a id='twitter-link' href='https://twitter.com/QueerIST'><Twiter className='footer-logo clickable' /></a>
+        <a id='github-link' href='https://github.com/QueerIST'><GitHub className='footer-logo clickable' /></a>
+        <a id='email-link' href='mailto:queerist.sa@aeist.pt'><Email className='footer-logo clickable' /></a>
       </div>
       <div className='footer-text'>
         <address>

@@ -19,14 +19,30 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
   const dir = n % 2 !== 0 ? 'left' : 'right'
   const openClass = inline && open && 'open'
 
-  let actionName, actionLabel, link, className
+  let link, className, action
   if (inline) {
-    actionName = `Clica ${name}`
-    actionLabel = (open ? 'Close' : 'Open')
+    action = {
+      name: 'select_content',
+      'content_type': 'event-tile',
+      'content_id': data.id,
+      'content_action': !open ? 'open' : 'close'
+    }
     link = { onClick: () => { setOpen(!open) } }
     className = classNames('tile-info-b', 'tile-info-button', openClass)
   } else {
-    actionName = `Entra ${name} (em ${page.name})`
+    action = {
+      type: 'event-tile',
+      name: 'navigate_item',
+      item_list_name: page.name,
+      item_list_id: page.id,
+      items: [{
+        index: n,
+        item_id: id,
+        item_name: name,
+        link_text: seeMoreText ?? 'Ver mais',
+        link_page: path
+      }]
+    }
     link = { linkPage: path }
     className = 'tile-info-b'
   }
@@ -45,11 +61,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
           {events !== undefined &&
           <OutlineButton
-            action={{
-              actionComp: 'EventTile',
-              actionName,
-              actionLabel
-            }}
+            action={action}
             link={link}
             button={{ linkTextColor: textColor }}
             className={className}

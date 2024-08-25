@@ -1,4 +1,5 @@
 import { LinkButton } from './Button'
+import { gap } from '../helpers/ga4'
 import { publicPath } from '../helpers/links'
 import { isHub } from '../helpers/types'
 import { type Series, type PageMeta, type Hub, type Event } from '../types/domain'
@@ -57,12 +58,11 @@ export const SeriesCover = ({ data }: { data: Series }) => {
               <LinkButton
                 link={{ linkPage: parentPage.path }}
                 button={{ linkTextColor: textColor }}
-                action={{
-                  name: 'navigate_content',
+                action={gap('navigate_content', {
                   type: 'series-cover',
                   link_text: parentPage.name,
-                  link_page: parentPage.path
-                }}>
+                  link_page: parentPage.id
+                })}>
                 {parentPage.name}
               </LinkButton>
             </p>}

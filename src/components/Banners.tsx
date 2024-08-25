@@ -1,7 +1,9 @@
 import { type PropsWithChildren } from 'react'
 
 import { OutlineButton } from './Button'
-import { publicPath } from '../helpers/links'
+import { usePage } from '../api/use'
+import { gap } from '../helpers/ga4'
+import { pageId, publicPath } from '../helpers/links'
 import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
 
 import './banners.css'
@@ -12,12 +14,11 @@ export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
       {button !== undefined &&
       <div className='big-banner-button'>
         <OutlineButton
-          action={{
-            name: 'navigate_content',
+          action={gap('navigate_content', {
             type: 'big_banner',
             link_text: button.text,
-            link_page: button.link.linkPage
-          }}
+            link_page: pageId(button.link.linkPage)
+          })}
           link={button.link}
           button={button.button}
         >
@@ -30,6 +31,7 @@ export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
 }
 
 function SmallBanner ({ n, name, label, logoLink, bgColor, textColor, button }: SmallBannerProps & { n: number }) {
+  const [page] = usePage()
   return (
     <div className='small-banner banner' data-aos='zoom-in' style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='small-banner-content'>
@@ -40,16 +42,13 @@ function SmallBanner ({ n, name, label, logoLink, bgColor, textColor, button }: 
         </div>
         {button !== undefined &&
         <OutlineButton
-          action={{
+          action={gap('navigate_item', {
             type: 'small_banner',
-            name: 'navigate_item',
-            items: [{
-              index: n,
-              item_name: name,
-              link_text: button.text,
-              link_page: button.link.linkPage
-            }]
-          }}
+            item_index: n,
+            list_id: page.id,
+            link_text: button.text,
+            link_page: pageId(button.link.linkPage)
+          })}
           link={button.link}
           button={button.button}>
           {button.text}

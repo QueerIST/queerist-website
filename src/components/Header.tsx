@@ -15,9 +15,9 @@ export function Header () {
 
   const handleClickMenuButton = () => {
     ReactGA.event('select_content', {
-      'content_type': 'header',
-      'content_id': 'menu',
-      'content_action': !openMenu ? 'open' : 'close'
+      content_type: 'header',
+      content_id: 'menu',
+      content_action: !openMenu ? 'open' : 'close'
     })
     setOpenMenu(!openMenu)
   }

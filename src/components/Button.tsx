@@ -4,28 +4,16 @@ import classNames from 'classnames'
 import ReactGA from 'react-ga4'
 import { NavLink } from 'react-router-dom'
 
+import { type Action } from '../helpers/ga4'
 import { publicPath } from '../helpers/links'
 import { type OutlineButtonStyle, type ButtonLink, type BlockButtonStyle } from '../types/domain'
+
 import './button.css'
 
 enum ButtonType {
   Block,
   Outline,
   Link
-}
-
-interface Action {
-  name: string
-  type?: string
-  'content_type'?: string
-  'content_id'?: string
-  'content_action'?: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  items?: any[]
-  item_list_name?: string
-  item_list_id?: string
-  link_page?: string
-  link_text?: string
 }
 
 interface ButtonProps {
@@ -152,9 +140,7 @@ function Button (props: PropsWithChildren<ButtonProps & { link: ButtonLink }>) {
           }
         ),
         onClick: () => {
-          action !== undefined && ReactGA.event(action.name, {
-            ...action
-          })
+          action !== undefined && ReactGA.event(action.name, action.params)
         }
       }}
     >

@@ -6,6 +6,7 @@ import Expand from './../svg/expand.svg?react'
 import { OutlineButton } from './Button'
 import { EventGallery } from './EventGallery'
 import { usePage } from '../api/use'
+import { gap } from '../helpers/ga4'
 import { publicPath } from '../helpers/links'
 import { type Series } from '../types/domain'
 
@@ -21,28 +22,21 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
 
   let link, className, action
   if (inline) {
-    action = {
-      name: 'select_content',
-      'content_type': 'event-tile',
-      'content_id': data.id,
-      'content_action': !open ? 'open' : 'close'
-    }
+    action = gap('select_content', {
+      content_type: 'event-tile',
+      content_id: id,
+      content_action: !open ? 'open' : 'close'
+    })
     link = { onClick: () => { setOpen(!open) } }
     className = classNames('tile-info-b', 'tile-info-button', openClass)
   } else {
-    action = {
+    action = gap('navigate_item', {
       type: 'event-tile',
-      name: 'navigate_item',
-      item_list_name: page.name,
-      item_list_id: page.id,
-      items: [{
-        index: n,
-        item_id: id,
-        item_name: name,
-        link_text: seeMoreText ?? 'Ver mais',
-        link_page: path
-      }]
-    }
+      list_id: page.id,
+      item_index: n,
+      link_text: seeMoreText ?? 'Ver mais',
+      link_page: id
+    })
     link = { linkPage: path }
     className = 'tile-info-b'
   }

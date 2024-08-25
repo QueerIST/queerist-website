@@ -1,4 +1,5 @@
 import { LinkButton } from './Button'
+import { gap } from '../helpers/ga4'
 import { type Event } from '../types/domain'
 
 import './eventinseries.css'
@@ -21,12 +22,11 @@ export const EventInSeries = ({ data }: { data: Event }) => {
             <LinkButton
                 link={{ linkPage: series.path }}
                 button={{ linkTextColor: series.textColor }}
-                action={{
-                  name: 'navigate_content',
+                action={gap('navigate_content', {
                   type: 'event-in-series',
                   link_text: series.name,
-                  link_page: series.path
-                }}>
+                  link_page: series.id
+                })}>
               {series.name}
             </LinkButton>
           </h3>
@@ -41,17 +41,13 @@ export const EventInSeries = ({ data }: { data: Event }) => {
                 <LinkButton
                   link={{ linkPage: previous.path }}
                   button={{ linkTextColor: series.textColor }}
-                  action={{
+                  action={gap('navigate_item', {
                     type: 'event-in-series',
-                    name: 'navigate_item',
-                    item_list_name: series.name,
-                    item_list_id: series.id,
-                    items: [{
-                      item_id: 'back',
-                      link_text: previous.name,
-                      link_page: previous.path
-                    }]
-                  }}>
+                    list_id: series.id,
+                    item_index: 0,
+                    link_text: previous.name,
+                    link_page: previous.id
+                  })}>
                   {previous.name}
                 </LinkButton>
               </p>
@@ -65,17 +61,13 @@ export const EventInSeries = ({ data }: { data: Event }) => {
                 <LinkButton
                   link={{ linkPage: next.path }}
                   button={{ linkTextColor: series.textColor }}
-                  action={{
+                  action={gap('navigate_item', {
                     type: 'event-in-series',
-                    name: 'navigate_item',
-                    item_list_name: series.name,
-                    item_list_id: series.id,
-                    items: [{
-                      item_id: 'forward',
-                      link_text: next.name,
-                      link_page: next.path
-                    }]
-                  }}>
+                    list_id: series.id,
+                    item_index: 1,
+                    link_text: next.name,
+                    link_page: next.id
+                  })}>
                   {next.name}
                 </LinkButton>
                 {' >'}

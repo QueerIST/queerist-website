@@ -2,6 +2,8 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 import classNames from 'classnames'
 
 import { BlockButton } from './Button'
+import { gap } from '../helpers/ga4'
+import { pageId } from '../helpers/links'
 import { type TextBlock as TextBlockProps } from '../types/domain'
 
 import './textblock.css'
@@ -14,12 +16,11 @@ export function TextBlock (props: TextBlockProps) {
         <h2 className='textblock-title' style={{ color: titleColor }}>{title}</h2>
         {button !== undefined &&
           <BlockButton
-            action={{
-              name: 'navigate_content',
+            action={gap('navigate_content', {
               type: 'text-block',
               link_text: button.text,
-              link_page: button.link.linkPage
-            }}
+              link_page: pageId(button.link.linkPage)
+            })}
             defaults={{ linkBackgroundColor: textColor, linkTextColor: bgColor }}
             link={button.link}
             className='textblock-button'

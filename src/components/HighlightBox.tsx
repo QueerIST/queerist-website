@@ -1,4 +1,6 @@
 import { BlockButton } from './Button'
+import { gap } from '../helpers/ga4'
+import { pageId } from '../helpers/links'
 import { type HighlightBox as HighlightBoxProps } from '../types/domain'
 
 import './highlightbox.css'
@@ -12,12 +14,11 @@ export const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }
     <p>{subTitle}</p>
     {button !== undefined &&
       <BlockButton
-        action={{
-          name: 'navigate_content',
+        action={gap('navigate_content', {
           type: 'highlight-box',
           link_text: button.text,
-          link_page: button.link.linkPage
-        }}
+          link_page: pageId(button.link.linkPage)
+        })}
         defaults={{ linkBackgroundColor: textColor, linkTextColor: bgColor }}
         link={button.link}
         className='highlightbox-button'

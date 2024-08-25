@@ -7,6 +7,7 @@ import { pt } from 'date-fns/locale'
 import Launch from './../svg/launch.svg?react'
 import { BlockButton, LinkButton } from './Button'
 import { WrapDelayed } from '../helpers/delay'
+import { gap } from '../helpers/ga4'
 import { publicPath } from '../helpers/links'
 import { type Events, type Event } from '../types/domain'
 
@@ -37,19 +38,13 @@ const EventGalleryItem = ({ n, id, name, open = true, detached = false, date, lo
           }
         </span>
         <BlockButton
-          action={{
+          action={gap('navigate_item', {
             type: 'event-list',
-            name: 'navigate_item',
-            item_list_name: parentPage.name,
-            item_list_id: parentPage.id,
-            items: [{
-              index: n,
-              item_id: id,
-              item_name: name,
-              link_text: 'Ver mais',
-              link_page: path
-            }]
-          }}
+            list_id: parentPage.id,
+            item_index: n,
+            link_text: 'Ver mais',
+            link_page: id
+          })}
           link={{ linkPage: path }}
           button={{ linkBackgroundColor: parentPage.bgColor, linkTextColor: parentPage.textColor }}
         >

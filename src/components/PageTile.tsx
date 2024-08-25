@@ -1,5 +1,6 @@
 import { OutlineButton } from './Button'
 import { usePage } from '../api/use'
+import { gap } from '../helpers/ga4'
 import { publicPath } from '../helpers/links'
 import { type Hub } from '../types/domain'
 
@@ -24,19 +25,13 @@ export function PageTile ({ data, n }: { data: Hub, n: number }) {
           <h2 className='tile-info-text-text'>{name}</h2>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
           <OutlineButton
-            action={{
+            action={gap('navigate_item', {
               type: 'page-list',
-              name: 'navigate_item',
-              item_list_name: page.name,
-              item_list_id: page.id,
-              items: [{
-                index: n,
-                item_id: id,
-                item_name: name,
-                link_text: seeMoreText,
-                link_page: path
-              }]
-            }}
+              list_id: page.id,
+              item_index: n,
+              link_text: seeMoreText,
+              link_page: id
+            })}
             link={{ linkPage: path }}
             button={{ linkTextColor: textColor }}
             className='tile-info-b'

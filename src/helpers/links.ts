@@ -10,3 +10,10 @@ export const fullPath = (page: PageMeta) => {
   const path = page.path
   return `${import.meta.env.VITE_FULL_URL}${path === '/' ? '' : path}`
 }
+
+export const pageId = (path: string | undefined) => {
+  if (path === undefined) return ''
+  if (path === '/') return 'home'
+  const split = path.split('/')
+  return split[split.length - 1]
+}

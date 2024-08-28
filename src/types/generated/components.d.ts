@@ -4,6 +4,7 @@ export interface BlocksBigBanner extends Schema.Component {
   collectionName: 'components_blocks_big_banners'
   info: {
     displayName: 'BigBanner'
+    icon: 'picture'
   }
   attributes: {
     Slug: Attribute.String
@@ -17,7 +18,7 @@ export interface BlocksHighlightbox extends Schema.Component {
   collectionName: 'components_blocks_highlightboxes'
   info: {
     displayName: 'HighlightBox'
-    icon: 'cube'
+    icon: 'information'
     description: ''
   }
   attributes: {
@@ -51,6 +52,7 @@ export interface BlocksIconsList extends Schema.Component {
   info: {
     displayName: 'IconsList'
     description: ''
+    icon: 'chartBubble'
   }
   attributes: {
     Slug: Attribute.String
@@ -99,6 +101,7 @@ export interface BlocksSmallBannersList extends Schema.Component {
   collectionName: 'components_blocks_small_banners_lists'
   info: {
     displayName: 'SmallBannersList'
+    icon: 'filter'
   }
   attributes: {
     Slug: Attribute.String
@@ -117,6 +120,7 @@ export interface BlocksTextBlock extends Schema.Component {
   collectionName: 'components_blocks_text_blocks'
   info: {
     displayName: 'TextBlock'
+    icon: 'write'
   }
   attributes: {
     Slug: Attribute.String
@@ -130,7 +134,7 @@ export interface BlocksTextBlock extends Schema.Component {
     Attribute.CustomField<'plugin::color-picker.color'>
     TitleColor: Attribute.String &
     Attribute.CustomField<'plugin::color-picker.color'>
-    Small: Attribute.Boolean & Attribute.Required
+    Small: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>
     Button: Attribute.Component<'links.block-button'>
   }
 }
@@ -154,6 +158,7 @@ export interface BlocksTextBoxesList extends Schema.Component {
   info: {
     displayName: 'TextBoxesList'
     description: ''
+    icon: 'grid'
   }
   attributes: {
     Slug: Attribute.String

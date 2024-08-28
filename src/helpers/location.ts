@@ -7,6 +7,7 @@ export enum Places {
   Discord = 'Discord',
   Instagram = 'Instagram',
   IST = 'Instituto Superior Técnico',
+  Taguspark = 'Instituto Superior Técnico - Taguspark',
   LargoCamoes = 'Largo Luís de Camões'
 }
 
@@ -39,6 +40,13 @@ export const PLACES_MAP: Record<Places, PlaceInfo> = {
     name: Places.IST,
     address: 'Avenida Rovisco Pais 1',
     pin: 'https://maps.app.goo.gl/mpvynRuatqFKoXyt7',
+    shortVersion: '',
+    type: LocationType.Physical
+  },
+  [Places.Taguspark]: {
+    name: Places.Taguspark,
+    address: 'Av. Prof. Dr. Cavaco Silva',
+    pin: 'https://maps.app.goo.gl/YUWRV9uWGA1Uw7AW7',
     shortVersion: '',
     type: LocationType.Physical
   },

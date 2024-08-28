@@ -1173,6 +1173,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     Pin: Attribute.Enumeration<
     [
       'Instituto Superior T\u00E9cnico',
+      'Instituto Superior T\u00E9cnico - Taguspark',
       'Discord',
       'Instagram',
       'Largo Lu\u00EDs de Cam\u00F5es',

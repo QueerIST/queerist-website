@@ -53,7 +53,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
           </div>}
           <h3 className='tile-info-text-text'>{name}</h3>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-          {events !== undefined &&
+          {(events !== undefined || !inline) &&
           <OutlineButton
             action={action}
             link={link}

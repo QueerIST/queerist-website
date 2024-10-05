@@ -11,7 +11,7 @@ import './banners.css'
 export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
   return (
     <div id={id} className='big-banner banner'>
-      {button !== undefined &&
+      {button &&
       <div className='big-banner-button'>
         <OutlineButton
           action={gap('navigate_content', {
@@ -40,7 +40,7 @@ function SmallBanner ({ n, name, label, logoLink, bgColor, textColor, button }: 
         <div className='small-banner-img'>
           <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
         </div>
-        {button !== undefined &&
+        {button &&
         <OutlineButton
           action={gap('navigate_item', {
             type: 'small_banner',

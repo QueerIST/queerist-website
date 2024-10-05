@@ -14,7 +14,7 @@ export function TextBlock (props: TextBlockProps) {
     <div id={id} className={classNames('textblock', small && 'textblock-small')} style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='textblock-child'>
         <h2 className='textblock-title' style={{ color: titleColor }}>{title}</h2>
-        {button !== undefined &&
+        {button &&
           <BlockButton
             action={gap('navigate_content', {
               type: 'text-block',

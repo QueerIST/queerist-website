@@ -18,7 +18,7 @@ export function PageTile ({ data, n }: { data: Hub, n: number }) {
         <img src={publicPath(imgLink)} alt={name} />
         <div className='tile-info-text'>
           <div className='page-tile-info-bg' style={{ backgroundColor: bgColor }} />
-          {logoLink !== undefined &&
+          {logoLink &&
           <div className='tile-info-text-img'>
             <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
           </div>}

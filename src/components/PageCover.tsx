@@ -28,7 +28,7 @@ export const HubCover = ({ data }: { data: Hub }) => {
   return (
     <div className='page-hub'>
       <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
-        {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
+        {logoLink && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
         <h1>{name}</h1>
       </div>
       <div className='page-image page-image-margin'>
@@ -51,7 +51,7 @@ export const SeriesCover = ({ data }: { data: Series }) => {
     <div className='page-series'>
       <div className='page-background page-background-series' style={{ backgroundColor: bgColor, color: textColor }}>
         <div className='page-series-text'>
-          {logoLink !== undefined && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
+          {logoLink && <img src={publicPath(logoLink)} alt={`Logo ${name}`} />}
           <div className='page-series-text-container'>
             <h1>{name}</h1>
             {isHub(parentPage) && <p>

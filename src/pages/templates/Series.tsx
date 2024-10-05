@@ -11,7 +11,7 @@ export const Series = () => {
   const { projectos: rawProjectos, eventos: rawEventos, hub: rawHub, serie: rawSerie } = useSeriesData()
   let parentPage
 
-  if (rawProjectos !== undefined) {
+  if (rawProjectos) {
     parentPage = hubMapper(rawHub.data.attributes, pageMapper(rawProjectos.data.attributes.Meta))
   } else {
     parentPage = pageMapper(rawEventos.data.attributes.Meta)
@@ -22,7 +22,7 @@ export const Series = () => {
     <Page data={series}>
       <SeriesCover data={series} />
       <Separator />
-      {series.events !== undefined && <InlineEventGallery data={series.events} />}
+      {series.events && <InlineEventGallery data={series.events} />}
       <DynamicZone data={rawSerie.data.attributes.Body} />
     </Page>
   )

@@ -9,7 +9,7 @@ import { hubMapper, seriesMapper } from '../../mappers/content'
 export const Hub = () => {
   const { projectos: rawProjectos, hub: rawHub } = useHubData()
 
-  if (rawProjectos === undefined) return
+  if (!rawProjectos) return
 
   const parentPage = pageMapper(rawProjectos.data.attributes.Meta)
 

@@ -9,7 +9,7 @@ import { fullPath, publicPath } from '../helpers/links'
 import { type PageMeta } from '../types/domain'
 
 const buildBreadcrumbs = (page?: PageMeta): PageMeta[] => {
-  if (page === undefined) { return [] }
+  if (!page) { return [] }
   return buildBreadcrumbs(page.parentPage).concat(page)
 }
 

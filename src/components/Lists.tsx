@@ -8,7 +8,7 @@ import './lists.css'
 
 const IconImg = ({ name, logoLink }: IconProps) => (
   <>
-    {logoLink !== undefined &&
+    {logoLink &&
     <div className='lists-iconlist-icon-img'>
       <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
     </div>
@@ -20,7 +20,7 @@ const IconImg = ({ name, logoLink }: IconProps) => (
 const Icon = ({ name, link, logoLink }: IconProps) => (
   <li className='lists-iconlist-icon'>
     <MaybeLinkButton
-      link={link !== undefined ? { linkWeb: link } : undefined}
+      link={link ? { linkWeb: link } : undefined}
     >
       <IconImg name={name} logoLink={logoLink} />
     </MaybeLinkButton>

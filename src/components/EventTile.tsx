@@ -47,13 +47,13 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
       data-aos={`flip-${dir}`} className={classNames('tile-info', dir, inline && 'tile-info-inline')} style={{ backgroundColor: bgColor, color: textColor }}
     >
         <div className={classNames('tile-info-text', openClass)}>
-          {logoLink !== undefined &&
+          {logoLink &&
           <div className='tile-info-text-img'>
             <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
           </div>}
           <h3 className='tile-info-text-text'>{name}</h3>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
-          {(events !== undefined || !inline) &&
+          {(!!events || !inline) &&
           <OutlineButton
             action={action}
             link={link}
@@ -67,7 +67,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
         </div>
         <div className='tile-info-img'>
           <img className={classNames(openClass)} src={publicPath(imgLink)} alt={name} />
-          {inline && events !== undefined && <EventGallery open={open} data={events} />}
+          {inline && events && <EventGallery open={open} data={events} />}
         </div>
       </div>
     </div>

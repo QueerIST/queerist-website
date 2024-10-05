@@ -33,21 +33,21 @@ interface ChildrenProps {
 
 function Link ({ data, childProps, children }: PropsWithChildren<{ data: ButtonLink, childProps: ChildrenProps }>) {
   return (
-    data.linkPage !== undefined
+    data.linkPage
       ? (
-        <NavLink to={{ pathname: data.linkPage, hash: data.linkId !== undefined ? '#' + data.linkId : undefined }} {...childProps}>
+        <NavLink to={{ pathname: data.linkPage, hash: data.linkId ? '#' + data.linkId : undefined }} {...childProps}>
           {children}
         </NavLink>
         )
-      : data.linkFile !== undefined
+      : data.linkFile
         ? (
           <a href={publicPath(data.linkFile)} {...childProps}>{children}</a>
           )
-        : data.linkWeb !== undefined
+        : data.linkWeb
           ? (
             <a href={data.linkWeb} target='_blank' rel='noopener noreferrer' {...childProps}>{children}</a>
             )
-          : data.onClick !== undefined
+          : data.onClick
             ? (
               <button
                 className={childProps.className}
@@ -109,7 +109,7 @@ export function LinkButton ({ children, action, className, link, button }: Props
 }
 
 export function MaybeLinkButton ({ children, action, className, link, button }: PropsWithChildren<{ className?: string, link?: ButtonLink, button?: OutlineButtonStyle, action?: Action }>) {
-  if (link === undefined || action === undefined) {
+  if (!link || !action) {
     return <>{children}</>
   }
 
@@ -140,7 +140,7 @@ function Button (props: PropsWithChildren<ButtonProps & { link: ButtonLink }>) {
           }
         ),
         onClick: () => {
-          action !== undefined && ReactGA.event(action.name, action.params)
+          action && ReactGA.event(action.name, action.params)
         }
       }}
     >

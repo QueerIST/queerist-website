@@ -12,7 +12,7 @@ export const HighlightBox = ({ id, title, subTitle, bgColor, textColor, button }
   >
     <h2>{title}</h2>
     <p>{subTitle}</p>
-    {button !== undefined &&
+    {button &&
       <BlockButton
         action={gap('navigate_content', {
           type: 'highlight-box',

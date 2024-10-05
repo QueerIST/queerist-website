@@ -10,7 +10,7 @@ export function useHubData () {
 
   const hub = (useRouteLoaderData('p:hub') as AxiosResponse< APIResponseSingle<'api::hub.hub'>> | undefined)
 
-  if (projectos !== undefined && hub !== undefined) {
+  if (projectos && hub) {
     return { projectos: projectos.data, hub: hub.data }
   }
   return { hub: undefined, projectos: undefined }
@@ -25,7 +25,7 @@ export function useSeriesData () {
 
   const eserie = (useRouteLoaderData('e:serie') as AxiosResponse< APIResponseSingle<'api::serie.serie'>> | undefined)
 
-  if (projectos !== undefined) {
+  if (projectos) {
     return { projectos, hub, serie: pserie!.data, eventos: undefined }
   }
   return { eventos: eventos!.data, serie: eserie!.data, projectos: undefined, hub: undefined }
@@ -38,7 +38,7 @@ export function useEventData () {
 
   const eevent = (useRouteLoaderData('e:event') as AxiosResponse< APIResponseSingle<'api::event.event'>> | undefined)
 
-  if (projectos !== undefined) {
+  if (projectos) {
     return { projectos, hub, serie, event: pevent!.data, eventos: undefined }
   }
   return { eventos, serie, event: eevent!.data, projectos: undefined, hub: undefined }

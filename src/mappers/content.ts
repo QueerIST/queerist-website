@@ -1,7 +1,6 @@
 import { imageMapper, maybeImageMapper } from './components'
 import { fullPath, pagePath } from '../helpers/links'
 import { isOnline, Places, PLACES_MAP, type PlaceInfo } from '../helpers/location'
-import { notNullish } from '../helpers/types'
 import { type Hub, type Series, type Event, Pages, type PageMeta } from '../types/domain'
 import { type GetValues } from '../types/strapi'
 
@@ -44,7 +43,7 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
   series.path = pagePath(series)
 
   const rawEvents = data.Events
-  if (rawEvents !== undefined && notNullish(rawEvents.data) && rawEvents.data.length > 0) {
+  if (rawEvents?.data && rawEvents.data.length > 0) {
     series.events = rawEvents.data.map(event => eventMapper(event.attributes, series))
   }
 
@@ -58,18 +57,18 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Se
     name: data.Name,
     imgLink: imageMapper(data.Image),
     date: new Date(data.Date),
-    enddate: notNullish(data.EndDate) ? new Date(data.EndDate) : undefined,
+    enddate: data.EndDate ? new Date(data.EndDate) : undefined,
     location: PLACES_MAP[data.Pin as Places],
     link: data.Link,
-    longDescription: notNullish(data.Description) ? data.Description : undefined,
-    description: description !== undefined && 'text' in description ? description.text : data.Name,
+    longDescription: data.Description ? data.Description : undefined,
+    description: description && 'text' in description ? description.text : data.Name,
     parentPage,
     path: '',
     type: Pages.Event
   }
 
   event.path = pagePath(event)
-  event.location = enrichLocation(event, data.Place !== undefined && data.Place.length !== 0 ? data.Place : undefined)
+  event.location = enrichLocation(event, data.Place ?? undefined)
 
   return event
 }
@@ -79,14 +78,14 @@ function enrichLocation (event: Event, place?: string): PlaceInfo {
 
   if (isOnline(location)) {
     location.specific = place
-    location.shortVersion = (place !== undefined ? place + ', ' : '') + location.name
+    location.shortVersion = (place ? place + ', ' : '') + location.name
     if (location.name === Places.Online) {
       location.link = fullPath(event)
       location.shortVersion = place ?? location.name
     }
   } else {
     location.specific = place
-    location.shortVersion = (place !== undefined ? place + ', ' : '') + location.name
+    location.shortVersion = (place ? place + ', ' : '') + location.name
   }
 
   return location

@@ -10,7 +10,6 @@ import { InlineEventGallery } from '../components/EventGallery'
 import { MainCover } from '../components/MainCover'
 import { Page } from '../components/Page'
 import { wrapPromise } from '../helpers/async'
-import { notNullish } from '../helpers/types'
 import { pageMapper } from '../mappers/components'
 import { eventMapper, hubMapper, seriesMapper } from '../mappers/content'
 import { type PageMeta } from '../types/domain'
@@ -18,16 +17,16 @@ import { type APIResponseCollection, type APIResponseSingle } from '../types/str
 
 function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.event'> | undefined }) {
   const rawEvents = data()
-  if (rawEvents === undefined) { return undefined }
+  if (!rawEvents) { return undefined }
 
   const events = rawEvents.data.map((e) => {
     const rawEvent = e.attributes
     const rawSeries = rawEvent.Series?.data.attributes
 
-    if (rawSeries === undefined) { return undefined }
+    if (!rawSeries) { return undefined }
 
     let seriesParent
-    if (notNullish(rawSeries.Hub?.data)) {
+    if (rawSeries.Hub?.data) {
       const rawHub = rawSeries.Hub.data.attributes
       seriesParent = hubMapper(rawHub, { id: 'projetos' } as unknown as PageMeta)
     } else {
@@ -35,7 +34,7 @@ function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.ev
     }
 
     return eventMapper(rawEvent, seriesMapper(rawSeries, seriesParent))
-  }).filter((e) => e !== undefined)
+  }).filter((e) => !!e)
 
   const futureEvents = events.filter((e) => isAfter(e.date, Date.now()))
   const previousEvents = events.filter((e) => isBefore(e.date, Date.now()))
@@ -55,7 +54,7 @@ function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.ev
 
 export const Home = () => {
   const response = useLoaderData() as AxiosResponse<APIResponseSingle<'api::main-page.main-page'>> | undefined
-  if (response === undefined) { return null }
+  if (!response) { return null }
 
   const data = response.data.data
 

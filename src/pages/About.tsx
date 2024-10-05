@@ -9,7 +9,7 @@ import { type APIResponseSingle } from '../types/strapi'
 
 export const About = () => {
   const response = useLoaderData() as AxiosResponse< APIResponseSingle<'api::about-page.about-page'>> | undefined
-  if (response === undefined) { return null }
+  if (!response) { return null }
 
   const data = response.data.data
 

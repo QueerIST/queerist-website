@@ -1,12 +1,11 @@
 import { pagePath } from '../helpers/links'
-import { notNullish } from '../helpers/types'
 import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink, Pages } from '../types/domain'
 import { type APIResponse, type GetValues } from '../types/strapi'
 
 export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
-  if (!notNullish(data)) { return }
+  if (!data) { return }
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (data.data === null) { return }
+  if (!data.data) { return }
   return data.data.attributes.url
 }
 
@@ -34,13 +33,13 @@ export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
 function enrichWithLink (link: GetValues<'links.button'>) {
   const button: ButtonLink = {}
 
-  if (notNullish(link.Page)) {
+  if (link.Page) {
     const [path, hash] = link.Page.split('#')
     button.linkPage = path
     button.linkId = hash
-  } else if (notNullish(link.Web)) {
+  } else if (link.Web) {
     button.linkWeb = link.Web
-  } else if (notNullish(link.File) && notNullish(link.File.data)) {
+  } else if (link.File?.data) {
     button.linkFile = link.File.data.attributes.url
   }
 
@@ -62,8 +61,8 @@ export function blockButtonMapper (data: GetValues<'links.block-button'>): Block
   return button
 }
 
-export function maybeBlockButtonMapper (data?: GetValues<'links.block-button'> | null): BlockButtonLink | undefined {
-  if (!notNullish(data)) { return }
+export function maybeBlockButtonMapper (data?: GetValues<'links.block-button'>): BlockButtonLink | undefined {
+  if (!data) { return }
   return blockButtonMapper(data)
 }
 
@@ -79,8 +78,8 @@ export function outlineButtonMapper (data: GetValues<'links.outline-link'>): Out
   return button
 }
 
-export function maybeOutlineButtonMapper (data?: GetValues<'links.outline-link'> | null): OutlineButtonLink | undefined {
-  if (!notNullish(data)) { return }
+export function maybeOutlineButtonMapper (data?: GetValues<'links.outline-link'>): OutlineButtonLink | undefined {
+  if (!data) { return }
   return outlineButtonMapper(data)
 }
 

@@ -8,7 +8,7 @@ export const EventInSeries = ({ data }: { data: Event }) => {
   const series = data.parentPage
   const events = series.events
 
-  if (events === undefined) { return }
+  if (!events) { return }
 
   const eventIndex = events.findIndex((e) => e.id === data.id)
   const previous = events.at(eventIndex + 1)
@@ -33,7 +33,7 @@ export const EventInSeries = ({ data }: { data: Event }) => {
         </div>
         <div className='event-in-series-links'>
           <div className='event-in-series-link'>
-            {previous !== undefined &&
+            {previous &&
             <>
               <h4>Anterior</h4>
               <p>
@@ -54,7 +54,7 @@ export const EventInSeries = ({ data }: { data: Event }) => {
             </>}
           </div>
           <div className='event-in-series-link'>
-            {next !== undefined &&
+            {next &&
             <>
               <h4>Seguinte</h4>
               <p>

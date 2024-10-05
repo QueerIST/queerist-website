@@ -11,7 +11,7 @@ export const Event = () => {
   const { projectos: rawProjectos, eventos: rawEventos, hub: rawHub, serie: rawSerie, event: rawEvent } = useEventData()
   let parentPage
 
-  if (rawProjectos !== undefined) {
+  if (rawProjectos) {
     parentPage = seriesMapper(rawSerie.data.attributes, hubMapper(rawHub.data.attributes, pageMapper(rawProjectos.data.attributes.Meta)))
   } else {
     parentPage = seriesMapper(rawSerie.data.attributes, pageMapper(rawEventos.data.attributes.Meta))

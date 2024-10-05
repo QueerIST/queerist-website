@@ -18,7 +18,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
 
   if (!isThisYear(date)) { yearFormat = " 'de' yyyy" }
 
-  if (enddate !== undefined) {
+  if (enddate) {
     if (differenceInHours(enddate, date) < 12) {
       timeFormat = "'das' HH'h'mm"
       endTimeString = format(enddate, " 'às' HH'h'mm", { locale: pt })
@@ -52,7 +52,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
       <h3>📅 <time dateTime={date.toISOString()}>{format(date, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time></h3>
       <h2>{name}</h2>
       <h4><u>{location.shortVersion}</u></h4>
-      {longDescription !== undefined && <BlocksRenderer content={longDescription}></BlocksRenderer>}
+      {longDescription && <BlocksRenderer content={longDescription}></BlocksRenderer>}
       <p>
         <LinkButton
             link={{ linkWeb: link }}
@@ -68,7 +68,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
         '@type': 'Event',
         name,
         startDate: date.toISOString(),
-        endDate: enddate !== undefined ? enddate.toISOString() : undefined,
+        endDate: enddate ? enddate.toISOString() : undefined,
         eventAttendanceMode: online ? 'https://schema.org/OnlineEventAttendanceMode' : 'https://schema.org/OfflineEventAttendanceMode',
         eventStatus: 'https://schema.org/EventScheduled',
         location: locationBlock,

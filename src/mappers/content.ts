@@ -58,7 +58,7 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Se
     imgLink: imageMapper(data.Image),
     date: new Date(data.Date),
     enddate: data.EndDate ? new Date(data.EndDate) : undefined,
-    location: PLACES_MAP[data.Pin],
+    location: { ...PLACES_MAP[data.Pin] },
     link: data.Link,
     longDescription: data.Description ? data.Description : undefined,
     description: description && 'text' in description ? description.text : data.Name,

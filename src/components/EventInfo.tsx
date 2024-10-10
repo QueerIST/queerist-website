@@ -6,6 +6,7 @@ import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema
 
 import Launch from './../svg/launch.svg?react'
 import { LinkButton } from './Button'
+import { fullPath, fullURL } from '../helpers/links'
 import { isOnline } from '../helpers/location'
 import { type Event } from '../types/domain'
 
@@ -27,12 +28,18 @@ export const EventInfo = ({ data }: { data: Event }) => {
     }
   }
 
+  const moreColor = data.parentPage.bgColor !== 'white' ? data.parentPage.bgColor : data.parentPage.textColor
+
   const online = isOnline(location)
   let locationBlock: Place | VirtualLocation
   if (online) {
+    let url
+    if (location.link.linkWeb) url = location.link.linkWeb
+    else if (location.link.linkPage) url = fullURL(location.link.linkPage)
+    else url = fullPath(data)
     locationBlock = {
       '@type': 'VirtualLocation',
-      url: location.link
+      url
     }
   } else {
     locationBlock = {
@@ -51,16 +58,32 @@ export const EventInfo = ({ data }: { data: Event }) => {
     <div className='event-info'>
       <h3>📅 <time dateTime={date.toISOString()}>{format(date, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time></h3>
       <h2>{name}</h2>
-      <h4><u>{location.shortVersion}</u></h4>
+      {isOnline(location)
+        ? (
+          <LinkButton
+          className='no-link-decoration'
+          link={location.link}
+        >
+            <h4>🌐 <u>{location.shortVersion}</u></h4>
+          </LinkButton>
+          )
+        : (
+          <LinkButton
+            className='no-link-decoration'
+            link={{ linkWeb: location.pin }}
+          >
+            <h4>📍 <u>{location.shortVersion}</u></h4>
+          </LinkButton>
+          )}
       {longDescription && <BlocksRenderer content={longDescription}></BlocksRenderer>}
-      <p>
+      <p className='icon-svg'>
         <LinkButton
             link={{ linkWeb: link }}
-            button={{ linkTextColor: 'orange' }}
+            button={{ linkTextColor: moreColor }}
         >
           {'Mais informações'}
         </LinkButton>
-        <Launch />
+        <Launch fill={moreColor}/>
       </p>
       <JsonLd<EventDTS>
       item={ {

@@ -111,12 +111,15 @@
 	font-size: 16px;
 }
 
-.event-gallery-item-launch {
+.event-gallery-item-launch svg {
+	fill: grey;
+}
+
+.icon-svg {
 	display: flex;
 	align-items: center;
 }
 
-.event-gallery-item-launch svg {
-	fill: grey;
+.icon-svg svg {
 	margin: 2px;
 }

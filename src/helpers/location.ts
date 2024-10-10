@@ -1,3 +1,5 @@
+import { type ButtonLink } from '../types/domain'
+
 export function isOnline (place: PlaceInfo): place is OnlinePlace {
   return place.type === LocationType.Online
 }
@@ -20,7 +22,7 @@ enum LocationType {
 interface OnlinePlace {
   name: string
   specific?: string
-  link?: string
+  link: ButtonLink
   shortVersion: string
   type: LocationType.Online
 }
@@ -67,18 +69,19 @@ export const PLACES_MAP: Record<Places, PlaceInfo> = {
   },
   [Places.Online]: {
     name: Places.Online,
+    link: {},
     shortVersion: '',
     type: LocationType.Online
   },
   [Places.Instagram]: {
     name: 'Instagram do QueerIST',
-    link: 'https://instagram.com/queer.ist',
+    link: { linkWeb: 'https://instagram.com/queer.ist' },
     shortVersion: '',
     type: LocationType.Online
   },
   [Places.Discord]: {
     name: 'Servidor de Discord do QueerIST',
-    link: 'https://queerist.tecnico.ulisboa.pt/projetos/discord',
+    link: { linkPage: '/projetos/discord', linkId: 'link' },
     shortVersion: '',
     type: LocationType.Online
   }

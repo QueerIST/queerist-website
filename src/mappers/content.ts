@@ -1,5 +1,5 @@
 import { imageMapper, maybeImageMapper } from './components'
-import { fullPath, pagePath } from '../helpers/links'
+import { pagePath } from '../helpers/links'
 import { isOnline, Places, PLACES_MAP, type PlaceInfo } from '../helpers/location'
 import { type Hub, type Series, type Event, Pages, type PageMeta } from '../types/domain'
 import { type GetValues } from '../types/strapi'
@@ -80,7 +80,6 @@ function enrichLocation (event: Event, place?: string): PlaceInfo {
     location.specific = place
     location.shortVersion = (place ? place + ', ' : '') + location.name
     if (location.name === Places.Online) {
-      location.link = fullPath(event)
       location.shortVersion = place ?? location.name
     }
   } else {

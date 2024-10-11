@@ -424,9 +424,6 @@ export interface PluginUploadFile extends Schema.CollectionType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -541,9 +538,6 @@ export interface PluginContentReleasesRelease extends Schema.CollectionType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -594,9 +588,6 @@ export interface PluginContentReleasesReleaseAction
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -636,9 +627,6 @@ export interface PluginSlugifySlug extends Schema.CollectionType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -790,316 +778,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginNavigationAudience extends Schema.CollectionType {
-  collectionName: 'audience'
-  info: {
-    singularName: 'audience'
-    pluralName: 'audiences'
-    displayName: 'Audience'
-    name: 'audience'
-  }
-  options: {
-    increments: true
-    comment: 'Audience'
-  }
-  attributes: {
-    name: Attribute.String & Attribute.Required
-    key: Attribute.UID<'plugin::navigation.audience', 'name'>
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::navigation.audience',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::navigation.audience',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginNavigationNavigation extends Schema.CollectionType {
-  collectionName: 'navigations'
-  info: {
-    singularName: 'navigation'
-    pluralName: 'navigations'
-    displayName: 'Navigation'
-    name: 'navigation'
-  }
-  options: {
-    increments: true
-    comment: ''
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    name: Attribute.Text & Attribute.Required
-    slug: Attribute.UID & Attribute.Required
-    visible: Attribute.Boolean & Attribute.DefaultTo<false>
-    items: Attribute.Relation<
-    'plugin::navigation.navigation',
-    'oneToMany',
-    'plugin::navigation.navigation-item'
-    >
-    localizations: Attribute.Relation<
-    'plugin::navigation.navigation',
-    'oneToMany',
-    'plugin::navigation.navigation'
-    >
-    localeCode: Attribute.String
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::navigation.navigation',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::navigation.navigation',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginNavigationNavigationItem extends Schema.CollectionType {
-  collectionName: 'navigations_items'
-  info: {
-    singularName: 'navigation-item'
-    pluralName: 'navigation-items'
-    displayName: 'Navigation Item'
-    name: 'navigation-item'
-  }
-  options: {
-    increments: true
-    timestamps: true
-    comment: 'Navigation Item'
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-    i18n: {
-      localized: false
-    }
-  }
-  attributes: {
-    title: Attribute.Text &
-    Attribute.Required &
-    Attribute.SetPluginOptions<{
-      i18n: {
-        localized: false
-      }
-    }>
-    type: Attribute.Enumeration<['INTERNAL', 'EXTERNAL', 'WRAPPER']> &
-    Attribute.DefaultTo<'INTERNAL'>
-    path: Attribute.Text
-    externalPath: Attribute.Text
-    uiRouterKey: Attribute.String
-    menuAttached: Attribute.Boolean & Attribute.DefaultTo<false>
-    order: Attribute.Integer & Attribute.DefaultTo<0>
-    collapsed: Attribute.Boolean & Attribute.DefaultTo<false>
-    related: Attribute.Relation<
-    'plugin::navigation.navigation-item',
-    'oneToOne',
-    'plugin::navigation.navigations-items-related'
-    >
-    parent: Attribute.Relation<
-    'plugin::navigation.navigation-item',
-    'oneToOne',
-    'plugin::navigation.navigation-item'
-    >
-    master: Attribute.Relation<
-    'plugin::navigation.navigation-item',
-    'manyToOne',
-    'plugin::navigation.navigation'
-    >
-    audience: Attribute.Relation<
-    'plugin::navigation.navigation-item',
-    'oneToMany',
-    'plugin::navigation.audience'
-    >
-    additionalFields: Attribute.JSON & Attribute.DefaultTo<{}>
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::navigation.navigation-item',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::navigation.navigation-item',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginNavigationNavigationsItemsRelated
-  extends Schema.CollectionType {
-  collectionName: 'navigations_items_related'
-  info: {
-    singularName: 'navigations-items-related'
-    pluralName: 'navigations-items-relateds'
-    displayName: 'Navigations Items Related'
-    name: 'navigations_items_related'
-  }
-  options: {
-    increments: true
-    timestamps: false
-    populateCreatorFields: false
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-    i18n: {
-      localized: false
-    }
-  }
-  attributes: {
-    related_id: Attribute.String & Attribute.Required
-    related_type: Attribute.String & Attribute.Required
-    field: Attribute.String & Attribute.Required
-    order: Attribute.Integer & Attribute.Required
-    master: Attribute.String & Attribute.Required
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::navigation.navigations-items-related',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::navigation.navigations-items-related',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
-  }
-}
-
-export interface PluginSitemapSitemap extends Schema.CollectionType {
-  collectionName: 'sitemap'
-  info: {
-    singularName: 'sitemap'
-    pluralName: 'sitemaps'
-    displayName: 'sitemap'
-  }
-  options: {
-    draftAndPublish: false
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    sitemap_string: Attribute.Text & Attribute.Required
-    name: Attribute.String &
-    Attribute.Required &
-    Attribute.DefaultTo<'default'>
-    type: Attribute.Enumeration<['default_hreflang', 'index']> &
-    Attribute.DefaultTo<'default_hreflang'>
-    delta: Attribute.Integer & Attribute.DefaultTo<1>
-    link_count: Attribute.Integer
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::sitemap.sitemap',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::sitemap.sitemap',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-  }
-}
-
-export interface PluginSitemapSitemapCache extends Schema.CollectionType {
-  collectionName: 'sitemap_cache'
-  info: {
-    singularName: 'sitemap-cache'
-    pluralName: 'sitemap-caches'
-    displayName: 'sitemap-cache'
-  }
-  options: {
-    draftAndPublish: false
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    sitemap_json: Attribute.JSON & Attribute.Required
-    name: Attribute.String &
-    Attribute.Required &
-    Attribute.DefaultTo<'default'>
-    sitemap_id: Attribute.Integer & Attribute.Required
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-    'plugin::sitemap.sitemap-cache',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
-    updatedBy: Attribute.Relation<
-    'plugin::sitemap.sitemap-cache',
-    'oneToOne',
-    'admin::user'
-    > &
-    Attribute.Private
   }
 }
 
@@ -1142,9 +820,6 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -1212,9 +887,6 @@ export interface ApiEventEvent extends Schema.CollectionType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -1262,9 +934,6 @@ export interface ApiEventPageEventPage extends Schema.SingleType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -1314,9 +983,6 @@ export interface ApiHubHub extends Schema.CollectionType {
     Attribute.Private
     updatedBy: Attribute.Relation<'api::hub.hub', 'oneToOne', 'admin::user'> &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -1359,9 +1025,6 @@ export interface ApiMainPageMainPage extends Schema.SingleType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -1409,9 +1072,6 @@ export interface ApiProjectPageProjectPage extends Schema.SingleType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -1471,9 +1131,6 @@ export interface ApiSerieSerie extends Schema.CollectionType {
     'admin::user'
     > &
     Attribute.Private
-    sitemap_exclude: Attribute.Boolean &
-    Attribute.Private &
-    Attribute.DefaultTo<false>
   }
 }
 
@@ -1495,12 +1152,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission
       'plugin::users-permissions.role': PluginUsersPermissionsRole
       'plugin::users-permissions.user': PluginUsersPermissionsUser
-      'plugin::navigation.audience': PluginNavigationAudience
-      'plugin::navigation.navigation': PluginNavigationNavigation
-      'plugin::navigation.navigation-item': PluginNavigationNavigationItem
-      'plugin::navigation.navigations-items-related': PluginNavigationNavigationsItemsRelated
-      'plugin::sitemap.sitemap': PluginSitemapSitemap
-      'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache
       'api::about-page.about-page': ApiAboutPageAboutPage
       'api::event.event': ApiEventEvent
       'api::event-page.event-page': ApiEventPageEventPage

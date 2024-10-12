@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react-swc'
 import { loadEnv } from 'vite'
+import checker from 'vite-plugin-checker'
 import svgr from 'vite-plugin-svgr'
 
 export default function defineConfig ({ mode }: { mode: string }) {
@@ -18,6 +19,13 @@ export default function defineConfig ({ mode }: { mode: string }) {
           svgoConfig: {
             floatPrecision: 2
           }
+        }
+      }),
+      checker({
+        typescript: true,
+        eslint: {
+          // for example, lint .ts and .tsx
+          lintCommand: 'eslint . --ext ts,tsx'
         }
       })
     ],

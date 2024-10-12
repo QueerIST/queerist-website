@@ -77,13 +77,17 @@ export const EventInfo = ({ data }: { data: Event }) => {
           )}
       {longDescription && <BlocksRenderer content={longDescription}></BlocksRenderer>}
       <p className='icon-svg'>
-        <LinkButton
-            link={{ linkWeb: link }}
-            button={{ linkTextColor: moreColor }}
-        >
-          {'Mais informações'}
-        </LinkButton>
-        <Launch fill={moreColor}/>
+        {link
+          ? <>
+            <LinkButton
+              link={{ linkWeb: link }}
+              button={{ linkTextColor: moreColor }}
+            >
+              {'Mais informações'}
+            </LinkButton>
+            <Launch fill={moreColor}/>
+          </>
+          : 'Sabe mais nossas redes sociais! 👇'}
       </p>
       <JsonLd<EventDTS>
       item={ {

@@ -116,7 +116,7 @@ export interface Event extends PageMeta {
   date: Date
   enddate?: Date
   location: PlaceInfo
-  link: string
+  link?: string
   longDescription?: BlocksContent
   parentPage: Series
   type: Pages.Event

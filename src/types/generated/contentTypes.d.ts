@@ -859,7 +859,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     Attribute.Required &
     Attribute.DefaultTo<'Instituto Superior T\u00E9cnico'>
     Description: Attribute.Blocks
-    Link: Attribute.String & Attribute.Required
+    Link: Attribute.String
     Slug: Attribute.UID<'api::event.event', 'Name'> & Attribute.Required
     Body: Attribute.DynamicZone<
     [

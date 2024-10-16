@@ -1,13 +1,13 @@
 import { LinkButton } from './Button'
+import { Image } from './Image'
 import { gap } from '../helpers/ga4'
-import { publicPath } from '../helpers/links'
 import { isHub } from '../helpers/types'
 import { type Series, type PageMeta, type Hub, type Event } from '../types/domain'
 
 import './pagecover.css'
 
 export const PageCover = ({ data }: { data: PageMeta }) => {
-  const { name, imgLink, description, bgColor, textColor } = data
+  const { name, description, bgColor, textColor, img } = data
   return (
     <div className='page-cover'>
       <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
@@ -16,7 +16,7 @@ export const PageCover = ({ data }: { data: PageMeta }) => {
       </div>
       <div className='page-image page-image-margin'>
         <div className='page-image-group'>
-          <img src={publicPath(imgLink)} alt={`Capa da página ${name}`} />
+          <Image src={img} alt={`Capa da página ${name}`} />
         </div>
       </div>
     </div>
@@ -24,17 +24,17 @@ export const PageCover = ({ data }: { data: PageMeta }) => {
 }
 
 export const HubCover = ({ data }: { data: Hub }) => {
-  const { name, imgLink, logoLink, description, bgColor, imgBgColor, textColor } = data
+  const { name, img, logo, description, bgColor, imgBgColor, textColor } = data
   return (
     <div className='page-hub'>
       <div className='page-background page-background-margin' style={{ backgroundColor: bgColor, color: textColor }}>
-        {logoLink && <img src={publicPath(logoLink)} alt={`Logo de ${name}`} />}
+        {logo && <Image src={logo} alt={`Logo de ${name}`} />}
         <h1>{name}</h1>
       </div>
       <div className='page-image page-image-margin'>
         <div className='page-image-group'>
           <div className='page-image-child'>
-            <img src={publicPath(imgLink)} alt={`Cartaz de ${name}`} />
+            <Image src={img} alt={`Cartaz de ${name}`} />
           </div>
           <div className='page-image-child'style={{ backgroundColor: imgBgColor, color: textColor }}>
             <p>{description}</p>
@@ -46,12 +46,12 @@ export const HubCover = ({ data }: { data: Hub }) => {
 }
 
 export const SeriesCover = ({ data }: { data: Series }) => {
-  const { name, imgLink, description, bgColor, textColor, logoLink, parentPage } = data
+  const { name, img, description, bgColor, textColor, logo, parentPage } = data
   return (
     <div className='page-series'>
       <div className='page-background page-background-series' style={{ backgroundColor: bgColor, color: textColor }}>
         <div className='page-series-text'>
-          {logoLink && <img src={publicPath(logoLink)} alt={`Logo da série de eventos ${name}`} />}
+          {logo && <Image src={logo} alt={`Logo da série de eventos ${name}`} />}
           <div className='page-series-text-container'>
             <h1>{name}</h1>
             {isHub(parentPage) && <p>
@@ -71,7 +71,7 @@ export const SeriesCover = ({ data }: { data: Series }) => {
       </div>
       <div className='page-image'>
         <div className='page-image-group'>
-          <img src={publicPath(imgLink)} alt={`Cartaz da série de eventos ${name}, parte de ${data.parentPage.name}`} />
+          <Image src={img} alt={`Cartaz da série de eventos ${name}, parte de ${data.parentPage.name}`} />
         </div>
       </div>
       <div className='page-image-child page-background-series' style={{ backgroundColor: bgColor, color: textColor }}>
@@ -82,12 +82,12 @@ export const SeriesCover = ({ data }: { data: Series }) => {
 }
 
 export const EventCover = ({ data }: { data: Event }) => {
-  const { name, imgLink } = data
+  const { name, img } = data
   return (
     <div className='page-event'>
       <div className='page-image'>
         <div className='page-image-group'>
-          <img src={publicPath(imgLink)} alt={`Cartaz do evento ${name}, parte de ${data.parentPage.name}`} />
+          <Image src={img} alt={`Cartaz do evento ${name}, parte de ${data.parentPage.name}`} />
         </div>
       </div>
     </div>

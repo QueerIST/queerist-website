@@ -2,6 +2,7 @@ import { type MouseEventHandler } from 'react'
 
 import { type BlocksContent } from '@strapi/blocks-react-renderer'
 
+import { type GetValues } from './strapi'
 import { type PlaceInfo } from '../helpers/location'
 
 export enum Pages {
@@ -15,7 +16,7 @@ export interface PageMeta {
   id: string
   name: string
   description: string
-  imgLink: string
+  img: GetValues<'plugin::upload.file'>
   bgColor?: string
   textColor?: string
   parentPage?: PageMeta
@@ -58,7 +59,7 @@ export type OutlineButtonLink = { button: OutlineButtonStyle } & { link: ButtonL
 export interface BigBanner {
   id?: string
   name: string
-  imgLink: string
+  img: GetValues<'plugin::upload.file'>
   button?: OutlineButtonLink
 }
 
@@ -67,7 +68,7 @@ export type SmallBanners = { banners: SmallBanner[] } & List
 export interface SmallBanner {
   name: string
   label: string
-  logoLink: string
+  logo: GetValues<'plugin::upload.file'>
   bgColor: string
   textColor: string
   button?: OutlineButtonLink
@@ -103,7 +104,7 @@ export type Separator = string | undefined
 export type Events = Event[]
 
 export interface Series extends PageMeta {
-  logoLink?: string
+  logo?: GetValues<'plugin::upload.file'>
   bgColor: string
   textColor: string
   seeMoreText?: string
@@ -123,7 +124,7 @@ export interface Event extends PageMeta {
 }
 
 export interface Hub extends PageMeta {
-  logoLink?: string
+  logo?: GetValues<'plugin::upload.file'>
   imgBgColor: string
   bgColor: string
   textColor: string
@@ -135,7 +136,7 @@ export interface Hub extends PageMeta {
 
 export interface Icon {
   name: string
-  logoLink?: string
+  logo?: GetValues<'plugin::upload.file'>
   link?: string
 }
 

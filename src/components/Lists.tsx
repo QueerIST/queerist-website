@@ -1,28 +1,28 @@
 import { type PropsWithChildren } from 'react'
 
 import { MaybeLinkButton } from './Button'
-import { publicPath } from '../helpers/links'
+import { Image } from './Image'
 import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps, type TextBoxList as TextBoxListProps, type Icons } from '../types/domain'
 
 import './lists.css'
 
-const IconImg = ({ name, logoLink }: IconProps) => (
+const IconImg = ({ name, logo }: IconProps) => (
   <>
-    {logoLink &&
+    {logo &&
     <div className='lists-iconlist-icon-img'>
-      <img src={publicPath(logoLink)} alt={`Logo de ${name}`} />
+      <Image src={logo} alt={`Logo de ${name}`} />
     </div>
     }
     <h4>{name}</h4>
   </>
 )
 
-const Icon = ({ name, link, logoLink }: IconProps) => (
+const Icon = ({ name, link, logo }: IconProps) => (
   <li className='lists-iconlist-icon'>
     <MaybeLinkButton
       link={link ? { linkWeb: link } : undefined}
     >
-      <IconImg name={name} logoLink={logoLink} />
+      <IconImg name={name} logo={logo} />
     </MaybeLinkButton>
   </li>
 )

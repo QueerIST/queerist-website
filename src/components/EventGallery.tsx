@@ -6,9 +6,9 @@ import { pt } from 'date-fns/locale'
 
 import Launch from './../svg/launch.svg?react'
 import { BlockButton, LinkButton } from './Button'
+import { Image } from './Image'
 import { WrapDelayed } from '../helpers/delay'
 import { gap } from '../helpers/ga4'
-import { publicPath } from '../helpers/links'
 import { type Events, type Event } from '../types/domain'
 
 import './eventgallery.css'
@@ -19,12 +19,12 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ n, id, name, open = true, detached = false, date, location, imgLink, link, parentPage, path }: Event & { open?: boolean, detached?: boolean, n: number }) => {
+const EventGalleryItem = ({ n, id, name, open = true, detached = false, date, location, img, link, parentPage, path }: Event & { open?: boolean, detached?: boolean, n: number }) => {
   return (
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
         <WrapDelayed load={open}>
-          <img src={publicPath(imgLink)} alt={`Thumbnail da capa do evento ${name}`} />
+          <Image src={img} alt={`Thumbnail da capa do evento ${name}`} />
         </WrapDelayed>
       </div>
       <div className='event-gallery-item-text'>

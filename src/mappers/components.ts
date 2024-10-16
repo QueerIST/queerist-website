@@ -6,11 +6,11 @@ export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
   if (!data) { return }
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!data.data) { return }
-  return data.data.attributes.url
+  return imageMapper(data)
 }
 
 export function imageMapper (data: APIResponse<'plugin::upload.file'>) {
-  return data.data.attributes.url
+  return data.data.attributes
 }
 
 export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
@@ -18,7 +18,7 @@ export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
     id: data.Slug,
     name: data.Name,
     description: data.Description,
-    imgLink: imageMapper(data.Image),
+    img: imageMapper(data.Image),
     bgColor: data.BackgroundColor,
     textColor: data.TextColor,
     path: '',
@@ -101,7 +101,7 @@ export function bigBannerMapper (data: GetValues<'blocks.big-banner'>): BigBanne
     id: data.Slug,
     button: maybeOutlineButtonMapper(data.Button),
     name: data.AltName,
-    imgLink: imageMapper(data.Image)
+    img: imageMapper(data.Image)
   }
 }
 
@@ -111,7 +111,7 @@ export function smallBannersMapper (data: GetValues<'blocks.small-banners-list'>
     banners: data.Banners.map((banner: GetValues<'blocks.small-banner'>) => ({
       name: banner.Title,
       label: banner.Subtitle,
-      logoLink: imageMapper(banner.Logo),
+      logo: imageMapper(banner.Logo),
       bgColor: banner.BackgroundColor,
       textColor: banner.TextColor,
       button: maybeOutlineButtonMapper(banner.Button)
@@ -146,7 +146,7 @@ export function iconsMapper (data: GetValues<'blocks.icons-list'>): Icons {
     id: data.Slug,
     icons: data.Icons.map((icon: GetValues<'blocks.icon'>) => ({
       name: icon.Name,
-      logoLink: imageMapper(icon.Logo),
+      logo: imageMapper(icon.Logo),
       link: icon.URL
     }))
   }

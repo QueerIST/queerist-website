@@ -1,14 +1,15 @@
 import { type PropsWithChildren } from 'react'
 
 import { OutlineButton } from './Button'
+import { Image } from './Image'
 import { usePage } from '../api/use'
 import { gap } from '../helpers/ga4'
-import { pageId, publicPath } from '../helpers/links'
+import { pageId } from '../helpers/links'
 import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
 
 import './banners.css'
 
-export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
+export const BigBanner = ({ id, name, img, button }: BigBannerProps) => {
   return (
     <div id={id} className='big-banner banner'>
       {button &&
@@ -25,12 +26,12 @@ export const BigBanner = ({ id, name, imgLink, button }: BigBannerProps) => {
           {button.text}
         </OutlineButton>
       </div>}
-      <img src={publicPath(imgLink)} alt={name} />
+      <Image src={img} alt={name} />
     </div>
   )
 }
 
-function SmallBanner ({ n, name, label, logoLink, bgColor, textColor, button }: SmallBannerProps & { n: number }) {
+function SmallBanner ({ n, name, label, logo, bgColor, textColor, button }: SmallBannerProps & { n: number }) {
   const [page] = usePage()
   return (
     <div className='small-banner banner' data-aos='zoom-in' style={{ backgroundColor: bgColor, color: textColor }}>
@@ -38,7 +39,7 @@ function SmallBanner ({ n, name, label, logoLink, bgColor, textColor, button }: 
         <h2 className='small-banner-text'>{name}</h2>
         <p className='small-banner-text'>{label}</p>
         <div className='small-banner-img'>
-          <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
+          <Image src={logo} alt={`Logo ${name}`} />
         </div>
         {button &&
         <OutlineButton

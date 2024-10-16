@@ -5,15 +5,15 @@ import classNames from 'classnames'
 import Expand from './../svg/expand.svg?react'
 import { OutlineButton } from './Button'
 import { EventGallery } from './EventGallery'
+import { Image } from './Image'
 import { usePage } from '../api/use'
 import { gap } from '../helpers/ga4'
-import { publicPath } from '../helpers/links'
 import { type Series } from '../types/domain'
 
 import './tile.css'
 
 export const EventTile = ({ data, n, inline = false }: { data: Series, n: number, inline?: boolean }) => {
-  const { id, name, description, imgLink, logoLink, bgColor, textColor, events, seeMoreText, path } = data
+  const { id, name, description, img, logo, bgColor, textColor, events, seeMoreText, path } = data
 
   const [open, setOpen] = useState(false)
   const [page] = usePage()
@@ -47,9 +47,9 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
       data-aos={`flip-${dir}`} className={classNames('tile-info', dir, inline && 'tile-info-inline')} style={{ backgroundColor: bgColor, color: textColor }}
     >
         <div className={classNames('tile-info-text', openClass)}>
-          {logoLink &&
+          {logo &&
           <div className='tile-info-text-img'>
-            <img src={publicPath(logoLink)} alt={`Logo da série de eventos ${name}`} />
+            <Image src={logo} alt={`Logo da série de eventos ${name}`} />
           </div>}
           <h3 className='tile-info-text-text'>{name}</h3>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
@@ -66,7 +66,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
           }
         </div>
         <div className='tile-info-img'>
-          <img className={classNames(openClass)} src={publicPath(imgLink)} alt={`Capa da série de eventos ${name}`} />
+          <Image className={classNames(openClass)} src={img} alt={`Capa da série de eventos ${name}`} />
           {inline && events && <EventGallery open={open} data={events} />}
         </div>
       </div>

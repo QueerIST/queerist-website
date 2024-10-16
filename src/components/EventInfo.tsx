@@ -6,14 +6,14 @@ import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema
 
 import Launch from './../svg/launch.svg?react'
 import { LinkButton } from './Button'
-import { fullPath, fullURL } from '../helpers/links'
+import { fullPath, fullURL, publicPath } from '../helpers/links'
 import { isOnline } from '../helpers/location'
 import { type Event } from '../types/domain'
 
 import './eventinfo.css'
 
 export const EventInfo = ({ data }: { data: Event }) => {
-  const { name, date, enddate, location, longDescription, description, imgLink, link } = data
+  const { name, date, enddate, location, longDescription, description, img, link } = data
 
   let yearFormat = ''; let timeFormat = "'às' HH'h'mm"; let endTimeString = ''
 
@@ -99,7 +99,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
         eventAttendanceMode: online ? 'https://schema.org/OnlineEventAttendanceMode' : 'https://schema.org/OfflineEventAttendanceMode',
         eventStatus: 'https://schema.org/EventScheduled',
         location: locationBlock,
-        image: [imgLink],
+        image: [publicPath(img.url)],
         description,
         organizer: {
           '@type': 'Organization',

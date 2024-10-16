@@ -1,26 +1,26 @@
 import { OutlineButton } from './Button'
+import { Image } from './Image'
 import { usePage } from '../api/use'
 import { gap } from '../helpers/ga4'
-import { publicPath } from '../helpers/links'
 import { type Hub } from '../types/domain'
 
 import './tile.css'
 
 export function PageTile ({ data, n }: { data: Hub, n: number }) {
   const [page] = usePage()
-  const { id, name, description, imgLink, logoLink, bgColor, textColor, seeMoreText, path } = data
+  const { id, name, description, img, logo, bgColor, textColor, seeMoreText, path } = data
 
   return (
     <div id={id}>
       <div
       data-aos='zoom-in' className='tile-info page-tile-info' style={{ color: textColor }}
     >
-        <img src={publicPath(imgLink)} alt={`Capa de ${name}`} />
+        <Image src={img} alt={`Capa de ${name}`} />
         <div className='tile-info-text'>
           <div className='page-tile-info-bg' style={{ backgroundColor: bgColor }} />
-          {logoLink &&
+          {logo &&
           <div className='tile-info-text-img'>
-            <img src={publicPath(logoLink)} alt={`Logo de ${name}`} />
+            <Image src={logo} alt={`Logo de ${name}`} />
           </div>}
           <h2 className='tile-info-text-text'>{name}</h2>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>

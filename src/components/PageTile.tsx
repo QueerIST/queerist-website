@@ -15,12 +15,12 @@ export function PageTile ({ data, n }: { data: Hub, n: number }) {
       <div
       data-aos='zoom-in' className='tile-info page-tile-info' style={{ color: textColor }}
     >
-        <img src={publicPath(imgLink)} alt={name} />
+        <img src={publicPath(imgLink)} alt={`Capa de ${name}`} />
         <div className='tile-info-text'>
           <div className='page-tile-info-bg' style={{ backgroundColor: bgColor }} />
           {logoLink &&
           <div className='tile-info-text-img'>
-            <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
+            <img src={publicPath(logoLink)} alt={`Logo de ${name}`} />
           </div>}
           <h2 className='tile-info-text-text'>{name}</h2>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>

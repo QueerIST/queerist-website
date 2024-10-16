@@ -49,7 +49,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
         <div className={classNames('tile-info-text', openClass)}>
           {logoLink &&
           <div className='tile-info-text-img'>
-            <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
+            <img src={publicPath(logoLink)} alt={`Logo da série de eventos ${name}`} />
           </div>}
           <h3 className='tile-info-text-text'>{name}</h3>
           <p className='tile-info-text-desc tile-info-text-text'>{description}</p>
@@ -66,7 +66,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
           }
         </div>
         <div className='tile-info-img'>
-          <img className={classNames(openClass)} src={publicPath(imgLink)} alt={name} />
+          <img className={classNames(openClass)} src={publicPath(imgLink)} alt={`Capa da série de eventos ${name}`} />
           {inline && events && <EventGallery open={open} data={events} />}
         </div>
       </div>

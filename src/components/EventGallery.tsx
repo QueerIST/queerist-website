@@ -24,7 +24,7 @@ const EventGalleryItem = ({ n, id, name, open = true, detached = false, date, lo
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
         <WrapDelayed load={open}>
-          <img src={publicPath(imgLink)} alt={name} />
+          <img src={publicPath(imgLink)} alt={`Thumbnail da capa do evento ${name}`} />
         </WrapDelayed>
       </div>
       <div className='event-gallery-item-text'>

@@ -10,7 +10,7 @@ const IconImg = ({ name, logoLink }: IconProps) => (
   <>
     {logoLink &&
     <div className='lists-iconlist-icon-img'>
-      <img src={publicPath(logoLink)} alt={`Logo ${name}`} />
+      <img src={publicPath(logoLink)} alt={`Logo de ${name}`} />
     </div>
     }
     <h4>{name}</h4>

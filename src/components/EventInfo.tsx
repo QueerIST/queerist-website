@@ -6,7 +6,8 @@ import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema
 
 import Launch from './../svg/launch.svg?react'
 import { LinkButton } from './Button'
-import { fullPath, fullURL, publicPath } from '../helpers/links'
+import { gap } from '../helpers/ga4'
+import { fullPath, fullURL, pageId, publicPath } from '../helpers/links'
 import { isOnline } from '../helpers/location'
 import { type Event } from '../types/domain'
 
@@ -63,6 +64,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
           <LinkButton
           className='no-link-decoration'
           link={location.link}
+          action={gap('navigate_content', { type: 'event-info', link_page: pageId(location.link.linkPage), link_text: location.shortVersion })}
         >
             <h4>🌐 <u>{location.shortVersion}</u></h4>
           </LinkButton>

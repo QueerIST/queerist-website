@@ -41,11 +41,11 @@ function Link ({ data, childProps, children }: PropsWithChildren<{ data: ButtonL
         )
       : data.linkFile
         ? (
-          <a href={publicPath(data.linkFile)} {...childProps}>{children}</a>
+          <a href={publicPath(data.linkFile)} className={childProps.className} style={childProps.style}>{children}</a>
           )
         : data.linkWeb
           ? (
-            <a href={data.linkWeb} target='_blank' rel='noopener noreferrer' {...childProps}>{children}</a>
+            <a href={data.linkWeb} target='_blank' rel='noopener noreferrer' className={childProps.className} style={childProps.style}>{children}</a>
             )
           : data.onClick
             ? (

@@ -1,0 +1,26 @@
+.injected-html {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 250px;
+}
+
+@media only screen and (max-width: 600px) {
+
+	/* For Mobile */
+	.injected-html>* {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+
+	/* For tablets and desktop */
+	.injected-html {
+		position: relative;
+		margin: 50px 8%;
+		min-height: 200px;
+	}
+}

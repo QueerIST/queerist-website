@@ -155,3 +155,7 @@ export function iconsMapper (data: GetValues<'blocks.icons-list'>): Icons {
 export function separatorMapper (data: GetValues<'blocks.separator'>): Separator {
   return data.Text
 }
+
+export function injectedHTMLkMapper (data: GetValues<'blocks.html'>) {
+  return data.Code
+}

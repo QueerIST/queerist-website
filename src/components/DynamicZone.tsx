@@ -2,10 +2,11 @@ import type { Attribute } from '@strapi/strapi'
 
 import { BigBanner, SmallBanners } from '../components/Banners'
 import { HighlightBox } from '../components/HighlightBox'
+import { InjectedHTML } from '../components/InjectedHTML'
 import { TextBoxList, IconList } from '../components/Lists'
 import { Separator } from '../components/Separator'
 import { TextBlock } from '../components/TextBlock'
-import { bigBannerMapper, highlightBoxMapper, iconsMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
+import { bigBannerMapper, highlightBoxMapper, iconsMapper, injectedHTMLkMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
 import { type GetValue } from '../types/strapi'
 
 type DynamicZones = GetValue<Attribute.DynamicZone<
@@ -16,7 +17,8 @@ type DynamicZones = GetValue<Attribute.DynamicZone<
   'blocks.separator',
   'blocks.icons-list',
   'blocks.text-boxes-list',
-  'blocks.small-banners-list'
+  'blocks.small-banners-list',
+  'blocks.html'
 ]
 >>
 
@@ -34,8 +36,12 @@ export const DynamicZone = ({ data }: { data?: DynamicZones }) => {
       return <IconList {...iconsMapper(block)} key={i} />
     } else if (block.__component === 'blocks.highlightbox') {
       return <HighlightBox {...highlightBoxMapper(block)} key={i} />
-    } else {
+    } else if (block.__component === 'blocks.html') {
+      return <InjectedHTML data={injectedHTMLkMapper(block)} key={i} />
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    } else if (block.__component === 'blocks.separator') {
       return <Separator data={separatorMapper(block)} key={i} />
     }
+    return undefined
   })
 }

@@ -19,6 +19,7 @@ const DYNAMIC_ZONE = {
     },
     'blocks.highlightbox': { populate: ['Button', 'Button.Link', 'Button.Link.File'] },
     'blocks.text-boxes-list': { populate: '*' },
+    'blocks.html': { populate: '*' },
     'blocks.separator': { populate: '*' }
   }
 }

@@ -35,6 +35,18 @@ export interface BlocksHighlightbox extends Schema.Component {
   }
 }
 
+export interface BlocksHtml extends Schema.Component {
+  collectionName: 'components_blocks_htmls'
+  info: {
+    displayName: 'HTML'
+    icon: 'hashtag'
+    description: ''
+  }
+  attributes: {
+    Code: Attribute.Text & Attribute.Required
+  }
+}
+
 export interface BlocksIcon extends Schema.Component {
   collectionName: 'components_blocks_icons'
   info: {
@@ -240,6 +252,7 @@ declare module '@strapi/types' {
     export interface Components {
       'blocks.big-banner': BlocksBigBanner
       'blocks.highlightbox': BlocksHighlightbox
+      'blocks.html': BlocksHtml
       'blocks.icon': BlocksIcon
       'blocks.icons-list': BlocksIconsList
       'blocks.separator': BlocksSeparator

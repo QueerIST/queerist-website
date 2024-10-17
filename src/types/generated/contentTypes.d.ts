@@ -802,7 +802,8 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
       'blocks.separator',
       'blocks.text-boxes-list',
       'blocks.highlightbox',
-      'blocks.icons-list'
+      'blocks.icons-list',
+      'blocks.html'
     ]
     >
     createdAt: Attribute.DateTime
@@ -869,7 +870,8 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'blocks.separator',
       'blocks.small-banners-list',
       'blocks.text-block',
-      'blocks.text-boxes-list'
+      'blocks.text-boxes-list',
+      'blocks.html'
     ]
     >
     createdAt: Attribute.DateTime
@@ -916,7 +918,8 @@ export interface ApiEventPageEventPage extends Schema.SingleType {
       'blocks.separator',
       'blocks.small-banners-list',
       'blocks.text-block',
-      'blocks.text-boxes-list'
+      'blocks.text-boxes-list',
+      'blocks.html'
     ]
     >
     createdAt: Attribute.DateTime
@@ -971,7 +974,8 @@ export interface ApiHubHub extends Schema.CollectionType {
       'blocks.separator',
       'blocks.icons-list',
       'blocks.text-boxes-list',
-      'blocks.small-banners-list'
+      'blocks.small-banners-list',
+      'blocks.html'
     ]
     >
     Series: Attribute.Relation<'api::hub.hub', 'oneToMany', 'api::serie.serie'>
@@ -1007,7 +1011,8 @@ export interface ApiMainPageMainPage extends Schema.SingleType {
       'blocks.highlightbox',
       'blocks.icons-list',
       'blocks.separator',
-      'blocks.text-boxes-list'
+      'blocks.text-boxes-list',
+      'blocks.html'
     ]
     >
     createdAt: Attribute.DateTime
@@ -1054,7 +1059,8 @@ export interface ApiProjectPageProjectPage extends Schema.SingleType {
       'blocks.small-banners-list',
       'blocks.text-block',
       'blocks.text-boxes-list',
-      'blocks.icons-list'
+      'blocks.icons-list',
+      'blocks.html'
     ]
     >
     createdAt: Attribute.DateTime
@@ -1113,7 +1119,8 @@ export interface ApiSerieSerie extends Schema.CollectionType {
       'blocks.separator',
       'blocks.small-banners-list',
       'blocks.text-block',
-      'blocks.text-boxes-list'
+      'blocks.text-boxes-list',
+      'blocks.html'
     ]
     >
     createdAt: Attribute.DateTime

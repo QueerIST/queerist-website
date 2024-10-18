@@ -1,8 +1,10 @@
+import { type Attribute } from '@strapi/strapi'
+
 import { imageMapper, maybeImageMapper } from './components'
 import { pagePath } from '../helpers/links'
 import { isOnline, Places, PLACES_MAP, type PlaceInfo } from '../helpers/location'
 import { type Hub, type Series, type Event, Pages, type PageMeta } from '../types/domain'
-import { type GetValues } from '../types/strapi'
+import { type GetValue, type GetValues } from '../types/strapi'
 
 export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta): Hub {
   const hub: Hub = {
@@ -51,7 +53,6 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
 }
 
 export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Series): Event {
-  const description = data.Description?.[0].children[0]
   const event: Event = {
     id: data.Slug,
     name: data.Name,
@@ -61,7 +62,7 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Se
     location: { ...PLACES_MAP[data.Pin] },
     link: data.Link,
     longDescription: data.Description ? data.Description : undefined,
-    description: description && 'text' in description ? description.text : data.Name,
+    description: data.Description ? textBlockFlattener(data.Description) : data.Name,
     parentPage,
     path: '',
     type: Pages.Event
@@ -88,4 +89,18 @@ function enrichLocation (event: Event, place?: string): PlaceInfo {
   }
 
   return location
+}
+
+function textBlockFlattener (data: GetValue<Attribute.Blocks>) {
+  return data.map((block) => {
+    if (block.type === 'paragraph' || block.type === 'heading') {
+      return block.children.map((inline) => {
+        if (inline.type === 'text') {
+          return inline.text
+        }
+        return inline.children.map(link => link.text).join('')
+      }).join('')
+    }
+    return ''
+  }).join(' ')
 }

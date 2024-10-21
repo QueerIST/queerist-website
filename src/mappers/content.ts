@@ -53,6 +53,7 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
 }
 
 export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Series): Event {
+  const description = textBlockFlattener(data.Description)
   const event: Event = {
     id: data.Slug,
     name: data.Name,
@@ -62,7 +63,7 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Se
     location: { ...PLACES_MAP[data.Pin] },
     link: data.Link,
     longDescription: data.Description ? data.Description : undefined,
-    description: data.Description ? textBlockFlattener(data.Description) : data.Name,
+    description: description?.length ? parentPage.description : parentPage.description,
     parentPage,
     path: '',
     type: Pages.Event
@@ -91,8 +92,8 @@ function enrichLocation (event: Event, place?: string): PlaceInfo {
   return location
 }
 
-function textBlockFlattener (data: GetValue<Attribute.Blocks>) {
-  return data.map((block) => {
+function textBlockFlattener (data: GetValue<Attribute.Blocks> | undefined) {
+  return data?.map((block) => {
     if (block.type === 'paragraph' || block.type === 'heading') {
       return block.children.map((inline) => {
         if (inline.type === 'text') {

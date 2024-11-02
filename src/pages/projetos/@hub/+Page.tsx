@@ -1,13 +1,14 @@
-import { useHubData } from '../../api/use'
-import { DynamicZone } from '../../components/DynamicZone'
-import { EventTile } from '../../components/EventTile'
-import { Page } from '../../components/Page'
-import { HubCover } from '../../components/PageCover'
-import { pageMapper } from '../../mappers/components'
-import { hubMapper, seriesMapper } from '../../mappers/content'
+import { useData } from 'vike-react/useData'
+
+import { DynamicZone } from '../../../components/DynamicZone'
+import { EventTile } from '../../../components/EventTile'
+import { Page } from '../../../components/Page'
+import { HubCover } from '../../../components/PageCover'
+import { pageMapper } from '../../../mappers/components'
+import { hubMapper, seriesMapper } from '../../../mappers/content'
 
 export const Hub = () => {
-  const { projectos: rawProjectos, hub: rawHub } = useHubData()
+  const { projectos: rawProjectos, hub: rawHub } = useData()
 
   if (!rawProjectos) return
 
@@ -25,3 +26,5 @@ export const Hub = () => {
     </Page>
   )
 }
+
+export default Hub

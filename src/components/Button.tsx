@@ -35,7 +35,7 @@ function Link ({ data, childProps, children }: PropsWithChildren<{ data: ButtonL
   return (
     data.linkPage
       ? (
-        <NavLink to={{ pathname: data.linkPage, hash: data.linkId ? '#' + data.linkId : undefined }} {...childProps}>
+        <NavLink href={`${data.linkPage}${data.linkId ? `#${data.linkId}` : ''}`} {...childProps}>
           {children}
         </NavLink>
         )

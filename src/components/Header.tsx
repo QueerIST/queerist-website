@@ -42,14 +42,14 @@ export function Header () {
           <div className='navbar-delimiter'>
             <div className='navtop'>
               <div className='navtop-side' />
-              <NavLink className='navimg' to='/' onClick={handleClickLinkCb('home', 'Logo')}>
+              <NavLink className='navimg' href='/' onClick={handleClickLinkCb('home', 'Logo')}>
                 <img src={logo} alt='QueerIST logo' />
               </NavLink>
               <Menu className='navtop-side' onClick={handleClickMenuButton} />
             </div>
-            <NavLink className={className} to='/sobre' onClick={handleClickLinkCb('sobre', 'Sobre')}>Sobre</NavLink>
-            <NavLink className={className} to='/eventos' onClick={handleClickLinkCb('eventos', 'Eventos')}>Eventos</NavLink>
-            <NavLink className={className} to='/projetos' onClick={handleClickLinkCb('projetos', 'Projetos')}>Projetos</NavLink>
+            <NavLink className={className} href='/sobre' onClick={handleClickLinkCb('sobre', 'Sobre')}>Sobre</NavLink>
+            <NavLink className={className} href='/eventos' onClick={handleClickLinkCb('eventos', 'Eventos')}>Eventos</NavLink>
+            <NavLink className={className} href='/projetos' onClick={handleClickLinkCb('projetos', 'Projetos')}>Projetos</NavLink>
             <a className={className} href='https://queerist.tecnico.ulisboa.pt/blog/' onClick={handleClickLinkCb('blog', 'Blog')}>Blog</a>
             <a id='newsletter-link' className={className} href='https://eepurl.com/dnApYP'>Newsletter</a>
           </div>

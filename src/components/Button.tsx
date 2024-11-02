@@ -2,8 +2,8 @@ import { type PropsWithChildren, type CSSProperties, type MouseEventHandler } fr
 
 import classNames from 'classnames'
 import ReactGA from 'react-ga4'
-import { NavLink } from 'react-router-dom'
 
+import { NavLink } from './Link'
 import { type Action } from '../helpers/ga4'
 import { publicPath } from '../helpers/links'
 import { type OutlineButtonStyle, type ButtonLink, type BlockButtonStyle } from '../types/domain'

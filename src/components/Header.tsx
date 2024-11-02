@@ -3,8 +3,8 @@ import { useState } from 'react'
 import classNames from 'classnames'
 import ReactGA from 'react-ga4'
 import Headroom from 'react-headroom'
-import { NavLink } from 'react-router-dom'
 
+import { NavLink } from './Link'
 import logo from '../img/logo so letras brancas.png'
 import Menu from '../svg/menu.svg?react'
 
@@ -42,7 +42,7 @@ export function Header () {
           <div className='navbar-delimiter'>
             <div className='navtop'>
               <div className='navtop-side' />
-              <NavLink className='navimg' end to='/' onClick={handleClickLinkCb('home', 'Logo')}>
+              <NavLink className='navimg' to='/' onClick={handleClickLinkCb('home', 'Logo')}>
                 <img src={logo} alt='QueerIST logo' />
               </NavLink>
               <Menu className='navtop-side' onClick={handleClickMenuButton} />

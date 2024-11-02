@@ -1730,6 +1730,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jridgewell/sourcemap-codec@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@jridgewell/sourcemap-codec@npm:1.5.0"
+  checksum: 10c0/2eb864f276eb1096c3c11da3e9bb518f6d9fc0023c78344cdc037abadc725172c70314bdb360f2d4b7bffec7f5d657ce006816bc5d4ecb35e61b66132db00c18
+  languageName: node
+  linkType: hard
+
 "@jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.9":
   version: 0.3.20
   resolution: "@jridgewell/trace-mapping@npm:0.3.20"
@@ -4786,7 +4793,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.0.0":
+"acorn@npm:^8.0.0, acorn@npm:^8.14.0":
   version: 8.14.0
   resolution: "acorn@npm:8.14.0"
   bin:
@@ -8152,6 +8159,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"estree-walker@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "estree-walker@npm:3.0.3"
+  dependencies:
+    "@types/estree": "npm:^1.0.0"
+  checksum: 10c0/c12e3c2b2642d2bcae7d5aa495c60fa2f299160946535763969a1c83fc74518ffa9c2cd3a8b69ac56aea547df6a8aac25f729a342992ef0bbac5f1c73e78995d
+  languageName: node
+  linkType: hard
+
 "esutils@npm:^2.0.2":
   version: 2.0.3
   resolution: "esutils@npm:2.0.3"
@@ -11275,6 +11291,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"magic-string@npm:^0.30.12":
+  version: 0.30.12
+  resolution: "magic-string@npm:0.30.12"
+  dependencies:
+    "@jridgewell/sourcemap-codec": "npm:^1.5.0"
+  checksum: 10c0/469f457d18af37dfcca8617086ea8a65bcd8b60ba8a1182cb024ce43e470ace3c9d1cb6bee58d3b311768fb16bc27bd50bdeebcaa63dadd0fd46cac4d2e11d5f
+  languageName: node
+  linkType: hard
+
 "mailcomposer@npm:3.12.0":
   version: 3.12.0
   resolution: "mailcomposer@npm:3.12.0"
@@ -11604,6 +11629,15 @@ __metadata:
   dependencies:
     brace-expansion: "npm:^2.0.1"
   checksum: 10c0/85f407dcd38ac3e180f425e86553911d101455ca3ad5544d6a7cec16286657e4f8a9aa6695803025c55e31e35a91a2252b5dc8e7d527211278b8b65b4dbd5eac
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^10.0.1":
+  version: 10.0.1
+  resolution: "minimatch@npm:10.0.1"
+  dependencies:
+    brace-expansion: "npm:^2.0.1"
+  checksum: 10c0/e6c29a81fe83e1877ad51348306be2e8aeca18c88fdee7a99df44322314279e15799e41d7cb274e4e8bb0b451a3bc622d6182e157dfa1717d6cda75e9cd8cd5d
   languageName: node
   linkType: hard
 
@@ -13200,6 +13234,7 @@ __metadata:
     vike-react: "npm:^0.5.7"
     vite: "npm:^5.4.10"
     vite-plugin-checker: "npm:^0.8.0"
+    vite-plugin-cjs-interop: "npm:^2.1.5"
     vite-plugin-svgr: "npm:^4.2.0"
   languageName: unknown
   linkType: soft
@@ -16358,6 +16393,19 @@ __metadata:
     vue-tsc:
       optional: true
   checksum: 10c0/b43729183e2dd86ffd67dac071e0fd99b1ffaab92a5f603d6f61750f6b35736d20cc9c2ec4148fc6124155a0ea8b856d99af1578cb6763a366112add1a94b6e1
+  languageName: node
+  linkType: hard
+
+"vite-plugin-cjs-interop@npm:^2.1.5":
+  version: 2.1.5
+  resolution: "vite-plugin-cjs-interop@npm:2.1.5"
+  dependencies:
+    acorn: "npm:^8.14.0"
+    acorn-import-assertions: "npm:^1.9.0"
+    estree-walker: "npm:^3.0.3"
+    magic-string: "npm:^0.30.12"
+    minimatch: "npm:^10.0.1"
+  checksum: 10c0/51e881c8d6709d5c1b823fa31de807f71d9f1d0f38cdd4ec8f5e5b5e53f19c1482d880b3a74d6a3d8596ffb166f7c2cd27b7eb706ea44d5fe5024663d083fda9
   languageName: node
   linkType: hard
 

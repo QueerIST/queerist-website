@@ -1,7 +1,10 @@
 import axios from 'axios'
-import { type Params } from 'react-router-dom'
 
 import { type APIResponseCollection, type APIResponseSingle } from '../types/strapi'
+
+type Params<Key extends string = string> = {
+  readonly [key in Key]: string | undefined;
+}
 
 const DYNAMIC_ZONE = {
   on: {

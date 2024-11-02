@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import { isAfter, isBefore } from 'date-fns'
 import { useData } from 'vike-react/useData'
 
+import { type Data } from './+data'
 import { fetchAllEvents } from '../../api/loaders'
 import { DynamicZone } from '../../components/DynamicZone'
 import { InlineEventGallery } from '../../components/EventGallery'
@@ -12,7 +13,7 @@ import { wrapPromise } from '../../helpers/async'
 import { pageMapper } from '../../mappers/components'
 import { eventMapper, hubMapper, seriesMapper } from '../../mappers/content'
 import { type PageMeta } from '../../types/domain'
-import { type APIResponseCollection, type APIResponseSingle } from '../../types/strapi'
+import { type APIResponseCollection } from '../../types/strapi'
 
 function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.event'> | undefined }) {
   const rawEvents = data()
@@ -52,7 +53,7 @@ function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.ev
 }
 
 function Home () {
-  const response = useData<APIResponseSingle<'api::main-page.main-page'>>()
+  const response = useData<Data>()
 
   const data = response.data
 

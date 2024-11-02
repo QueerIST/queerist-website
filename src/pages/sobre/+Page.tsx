@@ -1,17 +1,15 @@
-import { type AxiosResponse } from 'axios'
-import { useLoaderData } from 'react-router-dom'
+import { useData } from 'vike-react/useData'
 
+import { type Data } from './+data'
 import { DynamicZone } from '../../components/DynamicZone'
 import { Page } from '../../components/Page'
 import { PageCover } from '../../components/PageCover'
 import { pageMapper } from '../../mappers/components'
-import { type APIResponseSingle } from '../../types/strapi'
 
-export const About = () => {
-  const response = useLoaderData() as AxiosResponse< APIResponseSingle<'api::about-page.about-page'>> | undefined
-  if (!response) { return null }
+const About = () => {
+  const response = useData<Data>()
 
-  const data = response.data.data
+  const data = response.data
 
   const page = pageMapper(data.attributes.Meta)
   return (
@@ -21,3 +19,5 @@ export const About = () => {
     </Page>
   )
 }
+
+export default About

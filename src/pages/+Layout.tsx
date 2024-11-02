@@ -1,12 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference types="vite-plugin-svgr/client" />
 
-import React from 'react'
+import React, { type PropsWithChildren } from 'react'
 
 import AOS from 'aos'
 import ReactGA from 'react-ga4'
 
-import { App } from '../App'
+import { Footer } from '../components/Footer'
+import { Header } from '../components/Header'
+
 import '../components/layout.css'
 import 'aos/dist/aos.css'
 import '../webfontkit/fontstylesheet.css'
@@ -25,10 +27,12 @@ if (import.meta.env.PROD && import.meta.env.MODE !== 'github') {
   }
 }
 
-export function Layout () {
+export function Layout ({ children }: PropsWithChildren) {
   return (
     <React.StrictMode>
-      <App />
+      <Header />
+      {children}
+      <Footer />
     </React.StrictMode>
   )
 }

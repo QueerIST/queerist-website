@@ -1,8 +1,7 @@
 import { Suspense } from 'react'
 
-import { type AxiosResponse } from 'axios'
 import { isAfter, isBefore } from 'date-fns'
-import { useLoaderData } from 'react-router-dom'
+import { useData } from 'vike-react/useData'
 
 import { fetchAllEvents } from '../../api/loaders'
 import { DynamicZone } from '../../components/DynamicZone'
@@ -52,11 +51,10 @@ function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.ev
   )
 }
 
-export const Home = () => {
-  const response = useLoaderData() as AxiosResponse<APIResponseSingle<'api::main-page.main-page'>> | undefined
-  if (!response) { return null }
+function Home () {
+  const response = useData<APIResponseSingle<'api::main-page.main-page'>>()
 
-  const data = response.data.data
+  const data = response.data
 
   const page = pageMapper(data.attributes.Meta)
   const promise = wrapPromise<APIResponseCollection<'api::event.event'>>(fetchAllEvents)
@@ -70,3 +68,5 @@ export const Home = () => {
     </Page>
   )
 }
+
+export default Home

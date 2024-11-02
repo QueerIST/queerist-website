@@ -1,14 +1,15 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference types="vite-plugin-svgr/client" />
+
 import React from 'react'
-import { createRoot } from 'react-dom/client'
 
 import AOS from 'aos'
 import ReactGA from 'react-ga4'
 
-import { App } from './App'
-
-import './index.css'
+import { App } from '../App'
+import '../components/layout.css'
 import 'aos/dist/aos.css'
-import './webfontkit/fontstylesheet.css'
+import '../webfontkit/fontstylesheet.css'
 
 AOS.init({
   once: true
@@ -24,9 +25,10 @@ if (import.meta.env.PROD && import.meta.env.MODE !== 'github') {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+export function Layout () {
+  return (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  )
+}

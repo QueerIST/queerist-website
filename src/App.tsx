@@ -1,12 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference types="vite-plugin-svgr/client" />
+import { type PropsWithChildren } from 'react'
 
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Footer } from './components/Footer'
+import { Header } from './components/Header'
 
-import { Routes } from './components/Routes'
-
-export const App = () => {
-  const router = createBrowserRouter(Routes, { basename: import.meta.env.BASE_URL })
-
-  return <RouterProvider router={router} />
+export const App = ({ children }: PropsWithChildren) => {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  )
 }

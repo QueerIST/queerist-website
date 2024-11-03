@@ -13218,7 +13218,6 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-ga4: "npm:2.1.0"
     react-headroom: "npm:3.2.1"
-    react-helmet-async: "npm:^2.0.4"
     react-schemaorg: "npm:^2.0.0"
     schema-dts: "npm:^1.1.2"
     typescript: "npm:^5.6.2"
@@ -13367,7 +13366,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:^3.1.1, react-fast-compare@npm:^3.2.2":
+"react-fast-compare@npm:^3.1.1":
   version: 3.2.2
   resolution: "react-fast-compare@npm:3.2.2"
   checksum: 10c0/0bbd2f3eb41ab2ff7380daaa55105db698d965c396df73e6874831dbafec8c4b5b08ba36ff09df01526caa3c61595247e3269558c284e37646241cba2b90a367
@@ -13391,20 +13390,6 @@ __metadata:
   peerDependencies:
     react: ^16.3.0 || ^17 || ^18
   checksum: 10c0/4c9ed0b0f2f95ef820def788df3a178f47af7304c99d8df2012cfda9f58075c534a62f3fdd7f6440c7f1eaeeb98958f932cfed9ebec30271bed9b9343a0ec894
-  languageName: node
-  linkType: hard
-
-"react-helmet-async@npm:^2.0.4":
-  version: 2.0.4
-  resolution: "react-helmet-async@npm:2.0.4"
-  dependencies:
-    invariant: "npm:^2.2.4"
-    react-fast-compare: "npm:^3.2.2"
-    shallowequal: "npm:^1.1.0"
-  peerDependencies:
-    react: ^16.6.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/91f99150c0cfb3853fc68658c10ff8e63bde4e635bd8ae5e820b586b2a9e45af78b7f9040d399aae55ab5698a588055549424084b09e482be2031ba7a85dee3e
   languageName: node
   linkType: hard
 

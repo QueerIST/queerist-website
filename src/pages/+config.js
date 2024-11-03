@@ -7,6 +7,5 @@ export default {
   stream: true,
   // https://vike.dev/head-tags
   lang: 'pt',
-  favicon: '/favicon.ico',
   extends: [vikeReact]
 }

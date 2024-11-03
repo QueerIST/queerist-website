@@ -5,7 +5,8 @@ export default {
   // Setting to toggle SSR
   ssr: true,
   stream: true,
-  // https://vike.dev/head
-  favicon: '/vite.svg',
+  // https://vike.dev/head-tags
+  lang: 'pt',
+  favicon: '/favicon.ico',
   extends: [vikeReact]
 }

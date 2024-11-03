@@ -3,7 +3,7 @@ import { type GetValues } from '../types/strapi'
 
 import './textblock.css'
 
-interface Format {
+/* interface Format {
   ext?: string
   hash: string
   height?: number
@@ -24,7 +24,7 @@ enum Types {
 
 type Formats = {
   [key in Types]?: Format
-}
+} */
 
 export function Image ({ src, alt, className }: { src: GetValues<'plugin::upload.file'>, alt: string, className?: string }) {
   return (

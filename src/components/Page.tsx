@@ -18,7 +18,7 @@ export const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMet
   const [, setPage] = usePage()
   setPage(data)
 
-  const title = home ? 'QueerIST - Incluir, informar, dialogar' : `${data.name} - QueerIST`
+  const title = home ? 'QueerIST – Incluir, informar, dialogar' : `${data.name} – QueerIST`
   return (
     <div>
       <Config

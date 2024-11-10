@@ -63,7 +63,7 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Se
     location: { ...PLACES_MAP[data.Pin] },
     link: data.Link,
     longDescription: data.Description ? data.Description : undefined,
-    description: description?.length ? parentPage.description : parentPage.description,
+    description: description?.length ? description : parentPage.description,
     parentPage,
     path: '',
     type: Pages.Event

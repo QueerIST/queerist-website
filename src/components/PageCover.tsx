@@ -1,6 +1,7 @@
 import { LinkButton } from './Button'
 import { Image } from './Image'
 import { gap } from '../helpers/ga4'
+import { SizeTypes } from '../helpers/image'
 import { isHub } from '../helpers/types'
 import { type Series, type PageMeta, type Hub, type Event } from '../types/domain'
 
@@ -16,7 +17,7 @@ export const PageCover = ({ data }: { data: PageMeta }) => {
       </div>
       <div className='page-image page-image-margin'>
         <div className='page-image-group'>
-          <Image src={img} alt={`Capa da página ${name}`} />
+          <Image src={img} alt={`Capa da página ${name}`} sizes={{ mobile: { proportion: 1, height: 600, type: SizeTypes.Fixed }, desktop: { maxWidth: 1000, minHeight: 600, proportion: 1, type: SizeTypes.Limit } }} />
         </div>
       </div>
     </div>
@@ -34,7 +35,7 @@ export const HubCover = ({ data }: { data: Hub }) => {
       <div className='page-image page-image-margin'>
         <div className='page-image-group'>
           <div className='page-image-child'>
-            <Image src={img} alt={`Cartaz de ${name}`} />
+            <Image src={img} alt={`Cartaz de ${name}`} sizes={{ mobile: { proportion: 1, minHeight: 300, type: SizeTypes.Limit }, desktop: { minHeight: 600, maxWidth: 500, proportion: 0.5, type: SizeTypes.Limit } }} />
           </div>
           <div className='page-image-child'style={{ backgroundColor: imgBgColor, color: textColor }}>
             <p>{description}</p>

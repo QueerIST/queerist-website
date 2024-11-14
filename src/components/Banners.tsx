@@ -4,6 +4,7 @@ import { OutlineButton } from './Button'
 import { Image } from './Image'
 import { usePage } from '../api/use'
 import { gap } from '../helpers/ga4'
+import { SizeTypes } from '../helpers/image'
 import { pageId } from '../helpers/links'
 import { type SmallBanners as SmallBannersProps, type BigBanner as BigBannerProps, type SmallBanner as SmallBannerProps } from '../types/domain'
 
@@ -39,7 +40,7 @@ function SmallBanner ({ n, name, label, logo, bgColor, textColor, button }: Smal
         <h2 className='small-banner-text'>{name}</h2>
         <p className='small-banner-text'>{label}</p>
         <div className='small-banner-img'>
-          <Image src={logo} alt={`Logo ${name}`} />
+          <Image src={logo} alt={`Logo ${name}`} sizes={{ mobile: { proportion: 0.8, type: SizeTypes.Proportion }, desktop: { proportion: 0.15, type: SizeTypes.Proportion } }}/>
         </div>
         {button &&
         <OutlineButton

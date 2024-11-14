@@ -9,6 +9,7 @@ import { BlockButton, LinkButton } from './Button'
 import { Image } from './Image'
 import { WrapDelayed } from '../helpers/delay'
 import { gap } from '../helpers/ga4'
+import { SizeTypes } from '../helpers/image'
 import { type Events, type Event } from '../types/domain'
 
 import './eventgallery.css'
@@ -24,7 +25,7 @@ const EventGalleryItem = ({ n, id, name, open = true, detached = false, date, lo
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
         <WrapDelayed load={open}>
-          <Image src={img} alt={`Thumbnail da capa do evento ${name}`} />
+          <Image src={img} alt={`Thumbnail da capa do evento ${name}`} sizes={{ mobile: { proportion: 0.28, height: 80, type: SizeTypes.Fixed }, desktop: { proportion: 0.28, height: 80, type: SizeTypes.Fixed } }} />
         </WrapDelayed>
       </div>
       <div className='event-gallery-item-text'>

@@ -1,6 +1,6 @@
 import { type PageMeta } from '../types/domain'
 
-export const publicPath = (path: string) => `${import.meta.env.VITE_FULL_URL}/a${path}`
+export const publicPath = (path: string) => path.startsWith('http') ? path : `${import.meta.env.VITE_FULL_URL}/a${path}`
 
 export const fullURL = (path: string) => `${import.meta.env.VITE_FULL_URL}${path}`
 

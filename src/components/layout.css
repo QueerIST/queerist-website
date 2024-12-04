@@ -48,3 +48,7 @@ button {
   text-decoration: none;
   color: inherit;
 }
+
+.width100 {
+  width: 100%;
+}

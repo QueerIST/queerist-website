@@ -13,7 +13,7 @@ export const Series = ({ series, rawSerie }: { series: SeriesProps, rawSerie: AP
       <SeriesCover data={series} />
       <Separator />
       {series.events && <InlineEventGallery data={series.events} />}
-      {series.eventMedia?.length && <>
+      {!!series.eventMedia?.length && <>
         <Separator data='Galeria'/>
         <ImageGallery data={series.eventMedia}/>
       </>}

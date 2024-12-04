@@ -14,7 +14,7 @@ export const Event = ({ event, rawEvent }: { event: EventProps, rawEvent: APIRes
       <EventCover data={event}/>
       <EventInfo data={event}/>
       <DynamicZone data={rawEvent.data.attributes.Body} />
-      {event.media?.length && <>
+      {!!event.media?.length && <>
         <Separator data='Galeria'/>
         <ImageGallery data={event.media}/>
       </>}

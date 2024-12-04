@@ -1,11 +1,14 @@
 import { LinkButton } from './Button'
 import { Image } from './Image'
+import { usePage } from '../api/use'
 import { gap } from '../helpers/ga4'
+import { SizeTypes } from '../helpers/image'
 import { type EventMedia } from '../types/domain'
 
 import './imagegallery.css'
 
 export const ImageGallery = ({ data }: { data: EventMedia[] }) => {
+  const [page] = usePage()
   const numberOfCols = 2
   const elsPerCol = Math.ceil(data.length / numberOfCols)
 
@@ -21,20 +24,22 @@ export const ImageGallery = ({ data }: { data: EventMedia[] }) => {
         const { media, event } = data[i]
         col.push(
           <div key={i} className='image-gallery-cell'>
-            <Image src={media}/>
-            {event && <label><LinkButton
+            <Image src={media} sizes={{ mobile: { type: SizeTypes.Proportion, proportion: 1 }, desktop: { type: SizeTypes.Limit, proportion: 0.5, maxWidth: 1000 } }}/>
+            {event && <label>
+              <LinkButton
                 className='no-link-decoration'
                 link={{ linkPage: event.path }}
                 action={gap('navigate_item', {
-                  type: 'event-list',
-                  list_id: '1',
-                  item_index: 1,
-                  link_text: 'Ver mais',
-                  link_page: '1'
+                  type: 'image-gallery',
+                  list_id: page.id,
+                  item_index: i,
+                  link_text: `de ${event.name}`,
+                  link_page: event.id
                 })}
               >
-              de <u>{event.name}</u>
-            </LinkButton></label>}
+                de <u>{event.name}</u>
+              </LinkButton>
+            </label>}
           </div>
         )
       }

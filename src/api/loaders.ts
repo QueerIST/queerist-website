@@ -94,7 +94,7 @@ export async function fetchSeries ({ params }: { params: Params<string> }) {
         Image: { populate: '*' },
         Logo: { populate: '*' },
         Hub: { populate: '*' },
-        Events: { populate: ['Image'], sort: ['Date:desc'] },
+        Events: { populate: ['Image', 'Media'], sort: ['Date:desc'] },
         Body: DYNAMIC_ZONE
       }
     }
@@ -106,6 +106,7 @@ export async function fetchEvent ({ params }: { params: Params<string> }) {
     params: {
       populate: {
         Image: { populate: '*' },
+        Media: { populate: '*' },
         Body: DYNAMIC_ZONE
       }
     }

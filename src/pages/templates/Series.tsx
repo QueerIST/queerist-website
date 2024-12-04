@@ -1,5 +1,6 @@
 import { DynamicZone } from '../../components/DynamicZone'
 import { InlineEventGallery } from '../../components/EventGallery'
+import { ImageGallery } from '../../components/ImageGallery'
 import { Page } from '../../components/Page'
 import { SeriesCover } from '../../components/PageCover'
 import { Separator } from '../../components/Separator'
@@ -12,6 +13,10 @@ export const Series = ({ series, rawSerie }: { series: SeriesProps, rawSerie: AP
       <SeriesCover data={series} />
       <Separator />
       {series.events && <InlineEventGallery data={series.events} />}
+      {series.eventMedia?.length && <>
+        <Separator data='Galeria'/>
+        <ImageGallery data={series.eventMedia}/>
+      </>}
       <DynamicZone data={rawSerie.data.attributes.Body} />
     </Page>
   )

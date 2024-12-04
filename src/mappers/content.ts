@@ -1,9 +1,9 @@
 import { type Attribute } from '@strapi/strapi'
 
-import { imageMapper, maybeImageMapper } from './components'
+import { imageMapper, maybeImageMapper, maybeMediaMapper } from './components'
 import { pagePath } from '../helpers/links'
 import { isOnline, Places, PLACES_MAP, type PlaceInfo } from '../helpers/location'
-import { type Hub, type Series, type Event, Pages, type PageMeta } from '../types/domain'
+import { type Hub, type Series, type Event, Pages, type PageMeta, type EventMedia } from '../types/domain'
 import { type GetValue, type GetValues } from '../types/strapi'
 
 export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta): Hub {
@@ -47,6 +47,7 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
   const rawEvents = data.Events
   if (rawEvents?.data && rawEvents.data.length > 0) {
     series.events = rawEvents.data.map(event => eventMapper(event.attributes, series))
+    series.eventMedia = series.events.reduce((a: EventMedia[], e) => ([...a, ...(e.media?.map((m): EventMedia => ({ event: e, media: m.media })) ?? [])]), [])
   }
 
   return series
@@ -64,6 +65,7 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Se
     link: data.Link,
     longDescription: data.Description ? data.Description : undefined,
     description: description?.length ? description : parentPage.description,
+    media: data.Media ? maybeMediaMapper(data.Media)?.map((m) => ({ media: m })) : undefined,
     parentPage,
     path: '',
     type: Pages.Event

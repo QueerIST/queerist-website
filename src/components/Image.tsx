@@ -57,7 +57,7 @@ interface Sizes {
 
 const sizeNames: Types[] = [Types.Thumbnail, Types.Small, Types.Medium, Types.Large]
 
-export function Image ({ src, alt, className, sizes }: { src: GetValues<'plugin::upload.file'>, alt: string, className?: string, sizes?: Sizes }) {
+export function Image ({ src, alt, className, sizes }: { src: GetValues<'plugin::upload.file'>, alt?: string, className?: string, sizes?: Sizes }) {
   const formats = src.formats as Formats | undefined
   const sizeList: Array<Format | undefined> = sizeNames.map((type) => formats?.[type])
   sizeList.push(src)
@@ -92,7 +92,7 @@ export function Image ({ src, alt, className, sizes }: { src: GetValues<'plugin:
       src={publicPath(src.url)}
       srcSet={srcSet}
       sizes={srcSizes}
-      alt={alt}
+      alt={alt ?? src.alternativeText}
       className={className}
     />
   )

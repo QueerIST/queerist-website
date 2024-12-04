@@ -99,6 +99,11 @@ export interface TextBox {
   text: string
 }
 
+export interface EventMedia {
+  event?: Event
+  media: GetValues<'plugin::upload.file'>
+}
+
 export type Separator = string | undefined
 
 export type Events = Event[]
@@ -109,6 +114,7 @@ export interface Series extends PageMeta {
   textColor: string
   seeMoreText?: string
   events?: Events
+  eventMedia?: EventMedia[]
   parentPage: PageMeta
   type: Pages.Series
 }
@@ -119,6 +125,7 @@ export interface Event extends PageMeta {
   location: PlaceInfo
   link?: string
   longDescription?: BlocksContent
+  media?: EventMedia[]
   parentPage: Series
   type: Pages.Event
 }

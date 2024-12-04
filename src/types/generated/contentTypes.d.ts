@@ -874,6 +874,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'blocks.html'
     ]
     >
+    Media: Attribute.Media<'images' | 'videos', true>
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime

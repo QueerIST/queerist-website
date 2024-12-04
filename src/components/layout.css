@@ -43,3 +43,8 @@ button {
 .non-sel {
   user-select: none;
 }
+
+.no-link-decoration {
+  text-decoration: none;
+  color: inherit;
+}

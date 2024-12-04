@@ -1,6 +1,6 @@
 import { pagePath } from '../helpers/links'
 import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink, Pages } from '../types/domain'
-import { type APIResponse, type GetValues } from '../types/strapi'
+import { type APIResponseCollection, type APIResponse, type GetValues } from '../types/strapi'
 
 export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
   if (!data) { return }
@@ -11,6 +11,17 @@ export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
 
 export function imageMapper (data: APIResponse<'plugin::upload.file'>) {
   return data.data.attributes
+}
+
+export function maybeMediaMapper (data: APIResponseCollection<'plugin::upload.file'> | undefined) {
+  if (!data) { return }
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (!data.data) { return }
+  return mediaMapper(data)
+}
+
+function mediaMapper (data: APIResponseCollection<'plugin::upload.file'>) {
+  return data.data.map((img) => img.attributes)
 }
 
 export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {

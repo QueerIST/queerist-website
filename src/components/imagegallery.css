@@ -1,0 +1,31 @@
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    justify-self: center;
+    max-width: 1000px;
+}
+
+.image-gallery-column {
+    flex: 0 1 90%;
+}
+
+.image-gallery-cell {
+    margin-bottom: 10px;
+}
+
+.image-gallery-cell img {
+    width: 100%;
+}
+
+.image-gallery-cell label {
+    color: grey;
+}
+
+@media only screen and (min-width: 600px) {
+
+    /* For tablets and bigger */
+    .image-gallery-column {
+        flex: 0 1 45%;
+    }
+}

@@ -1,3 +1,8 @@
+.separator {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
 .separator>h2 {
 	padding: 0px 5%;
 	color: #111;

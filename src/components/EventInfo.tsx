@@ -1,4 +1,3 @@
-import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 import { differenceInHours, format, isThisYear } from 'date-fns'
 import { pt } from 'date-fns/locale'
 import { JsonLd } from 'react-schemaorg'
@@ -6,6 +5,7 @@ import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema
 
 import Launch from './../svg/launch.svg?react'
 import { LinkButton } from './Button'
+import { TextRenderer } from './TextRenderer'
 import { gap } from '../helpers/ga4'
 import { fullPath, fullURL, pageId, publicPath } from '../helpers/links'
 import { isOnline } from '../helpers/location'
@@ -77,7 +77,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
             <h4>📍 <u>{location.shortVersion}</u></h4>
           </LinkButton>
           )}
-      {longDescription && <BlocksRenderer content={longDescription}></BlocksRenderer>}
+      {longDescription && <TextRenderer data={longDescription} />}
       <p className='icon-svg'>
         {link
           ? <>

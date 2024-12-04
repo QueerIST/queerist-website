@@ -1,7 +1,7 @@
-import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 import classNames from 'classnames'
 
 import { BlockButton } from './Button'
+import { TextRenderer } from './TextRenderer'
 import { gap } from '../helpers/ga4'
 import { pageId } from '../helpers/links'
 import { type TextBlock as TextBlockProps } from '../types/domain'
@@ -29,11 +29,8 @@ export function TextBlock (props: TextBlockProps) {
           </BlockButton>
           }
       </div>
-      <div className='textblock-child'>
-        <BlocksRenderer content={text}
-        blocks={{
-          paragraph: ({ children }) => <p className='textblock-text'>{children}</p>
-        }} />
+      <div className='textblock-child textblock-text'>
+        <TextRenderer data={text} />
       </div>
     </div>
   )

@@ -1,6 +1,5 @@
 import AOS from 'aos'
 import ReactGA from 'react-ga4'
-import TagManager from 'react-gtm-module'
 
 AOS.init({
   once: true
@@ -13,7 +12,3 @@ if (import.meta.env.PROD && import.meta.env.VITE_GA_CODE !== '') {
     }
   })
 }
-
-TagManager.initialize({
-  gtmId: 'GTM-NVMBPCQ8'
-})

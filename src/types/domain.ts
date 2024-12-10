@@ -106,6 +106,11 @@ export interface EventMedia {
 
 export type Separator = string | undefined
 
+export interface InjectedHTML {
+  id?: string
+  code: string
+}
+
 export type Events = Event[]
 
 export interface Series extends PageMeta {

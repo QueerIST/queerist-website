@@ -6,7 +6,7 @@ import { InjectedHTML } from '../components/InjectedHTML'
 import { TextBoxList, IconList } from '../components/Lists'
 import { Separator } from '../components/Separator'
 import { TextBlock } from '../components/TextBlock'
-import { bigBannerMapper, highlightBoxMapper, iconsMapper, injectedHTMLkMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
+import { bigBannerMapper, highlightBoxMapper, iconsMapper, injectedHTMLMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
 import { type GetValue } from '../types/strapi'
 
 type DynamicZones = GetValue<Attribute.DynamicZone<
@@ -37,7 +37,7 @@ export const DynamicZone = ({ data }: { data?: DynamicZones }) => {
     } else if (block.__component === 'blocks.highlightbox') {
       return <HighlightBox {...highlightBoxMapper(block)} key={i} />
     } else if (block.__component === 'blocks.html') {
-      return <InjectedHTML data={injectedHTMLkMapper(block)} key={i} />
+      return <InjectedHTML data={injectedHTMLMapper(block)} key={i} />
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     } else if (block.__component === 'blocks.separator') {
       return <Separator data={separatorMapper(block)} key={i} />

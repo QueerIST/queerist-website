@@ -44,6 +44,7 @@ export interface BlocksHtml extends Schema.Component {
   }
   attributes: {
     Code: Attribute.Text & Attribute.Required
+    Slug: Attribute.String
   }
 }
 

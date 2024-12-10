@@ -1,5 +1,5 @@
 import { pagePath } from '../helpers/links'
-import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink, Pages } from '../types/domain'
+import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink, Pages, type InjectedHTML } from '../types/domain'
 import { type APIResponseCollection, type APIResponse, type GetValues } from '../types/strapi'
 
 export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
@@ -167,6 +167,9 @@ export function separatorMapper (data: GetValues<'blocks.separator'>): Separator
   return data.Text
 }
 
-export function injectedHTMLkMapper (data: GetValues<'blocks.html'>) {
-  return data.Code
+export function injectedHTMLMapper (data: GetValues<'blocks.html'>): InjectedHTML {
+  return {
+    id: data.Slug,
+    code: data.Code
+  }
 }

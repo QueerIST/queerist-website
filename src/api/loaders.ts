@@ -107,6 +107,7 @@ export async function fetchEvent ({ params }: { params: Params<string> }) {
       populate: {
         Image: { populate: '*' },
         Media: { populate: '*' },
+        Series: { populate: ['Hub'] },
         Body: DYNAMIC_ZONE
       }
     }

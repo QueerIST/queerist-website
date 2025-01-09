@@ -12,10 +12,12 @@ export async function data (pageContext: PageContextServer) {
     throw render(404, `Oops. Não temos nenhuma série de eventos '${pageContext.routeParams.serie}'... 😳`)
   }
 
+  const s = pageContext.urlParsed.searchOriginal ?? ''
+
   const rawSerie = serie.data.attributes
   if (rawSerie.Hub?.data) {
     const rawSerieHub = rawSerie.Hub.data.attributes
-    throw redirect(`/projetos/${rawSerieHub.Slug}/${rawSerie.Slug}`, 301)
+    throw redirect(`/projetos/${rawSerieHub.Slug}/${rawSerie.Slug}${s}`, 301)
   }
 
   const eventos = (await fetchEventsPage()).data

@@ -18,14 +18,16 @@ export async function data (pageContext: PageContextServer) {
     console.warn(`Oops. Não temos nenhum hub '${pageContext.routeParams.hub}' 😳 Redirecionando...`)
   }
 
+  const s = pageContext.urlParsed.searchOriginal ?? ''
+
   const rawSerie = serie.data.attributes
   if (!rawSerie.Hub?.data) {
-    throw redirect(`/eventos/${rawSerie.Slug}`, 301)
+    throw redirect(`/eventos/${rawSerie.Slug}${s}`, 301)
   }
 
   const rawSerieHub = rawSerie.Hub.data.attributes
   if (!hub || hub.data.attributes.Slug !== rawSerieHub.Slug) {
-    throw redirect(`/projetos/${rawSerieHub.Slug}/${rawSerie.Slug}`, 301)
+    throw redirect(`/projetos/${rawSerieHub.Slug}/${rawSerie.Slug}${s}`, 301)
   }
 
   const projectos = (await fetchProjectsPage()).data

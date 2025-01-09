@@ -24,17 +24,19 @@ export async function data (pageContext: PageContextServer) {
     console.warn(`Oops. Não temos nenhum hub '${pageContext.routeParams.hub}' 😳 Redirecionando...`)
   }
 
+  const s = pageContext.urlParsed.searchOriginal ?? ''
+
   const rawEvent = event.data.attributes
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const rawEventSerie = rawEvent.Series!.data.attributes
   if (!rawEventSerie.Hub?.data) {
-    throw redirect(`/eventos/${rawEventSerie.Slug}/${rawEvent.Slug}`, 301)
+    throw redirect(`/eventos/${rawEventSerie.Slug}/${rawEvent.Slug}${s}`, 301)
   }
 
   const rawEventSerieHub = rawEventSerie.Hub.data.attributes
   if ((!serie || serie.data.attributes.Slug !== rawEventSerie.Slug) || (!hub || hub.data.attributes.Slug !== rawEventSerieHub.Slug)) {
-    throw redirect(`/projetos/${rawEventSerieHub.Slug}/${rawEventSerie.Slug}/${rawEvent.Slug}`, 301)
+    throw redirect(`/projetos/${rawEventSerieHub.Slug}/${rawEventSerie.Slug}/${rawEvent.Slug}${s}`, 301)
   }
 
   const projectos = (await fetchProjectsPage()).data

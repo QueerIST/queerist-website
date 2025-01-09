@@ -18,17 +18,18 @@ export async function data (pageContext: PageContextServer) {
     console.warn(`Oops. Não temos nenhuma série de eventos '${pageContext.routeParams.serie}' 😳 Redirecionando...`)
   }
 
+  const s = pageContext.urlParsed.searchOriginal ?? ''
   const rawEvent = event.data.attributes
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const rawEventSerie = rawEvent.Series!.data.attributes
   if (rawEventSerie.Hub?.data) {
     const rawEventSerieHub = rawEventSerie.Hub.data.attributes
-    throw redirect(`/projetos/${rawEventSerieHub.Slug}/${rawEventSerie.Slug}/${rawEvent.Slug}`, 301)
+    throw redirect(`/projetos/${rawEventSerieHub.Slug}/${rawEventSerie.Slug}/${rawEvent.Slug}${s}`, 301)
   }
 
   if (!serie || serie.data.attributes.Slug !== rawEventSerie.Slug) {
-    throw redirect(`/eventos/${rawEventSerie.Slug}/${rawEvent.Slug}`, 301)
+    throw redirect(`/eventos/${rawEventSerie.Slug}/${rawEvent.Slug}${s}`, 301)
   }
 
   const eventos = (await fetchEventsPage()).data

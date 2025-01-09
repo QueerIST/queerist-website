@@ -19,13 +19,11 @@ export async function data (pageContext: PageContextServer) {
   }
 
   const rawSerie = serie.data.attributes
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  const rawSerieHub = rawSerie.Hub?.data?.attributes
-
-  if (!rawSerieHub) {
+  if (!rawSerie.Hub?.data) {
     throw redirect(`/eventos/${rawSerie.Slug}`, 301)
   }
 
+  const rawSerieHub = rawSerie.Hub.data.attributes
   if (!hub || hub.data.attributes.Slug !== rawSerieHub.Slug) {
     throw redirect(`/projetos/${rawSerieHub.Slug}/${rawSerie.Slug}`, 301)
   }

@@ -25,15 +25,14 @@ export async function data (pageContext: PageContextServer) {
   }
 
   const rawEvent = event.data.attributes
+
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const rawEventSerie = rawEvent.Series!.data.attributes
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  const rawEventSerieHub = rawEventSerie.Hub?.data?.attributes
-
-  if (!rawEventSerieHub) {
+  if (!rawEventSerie.Hub?.data) {
     throw redirect(`/eventos/${rawEventSerie.Slug}/${rawEvent.Slug}`, 301)
   }
 
+  const rawEventSerieHub = rawEventSerie.Hub.data.attributes
   if ((!serie || serie.data.attributes.Slug !== rawEventSerie.Slug) || (!hub || hub.data.attributes.Slug !== rawEventSerieHub.Slug)) {
     throw redirect(`/projetos/${rawEventSerieHub.Slug}/${rawEventSerie.Slug}/${rawEvent.Slug}`, 301)
   }

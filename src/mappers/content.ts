@@ -3,7 +3,7 @@ import { type Attribute } from '@strapi/strapi'
 import { imageMapper, maybeImageMapper, maybeMediaMapper } from './components'
 import { pagePath } from '../helpers/links'
 import { isOnline, Places, PLACES_MAP, type PlaceInfo } from '../helpers/location'
-import { type Hub, type Series, type Event, Pages, type PageMeta, type EventMedia } from '../types/domain'
+import { type Hub, type Series, type Event, Pages, type PageMeta, type EventMedia, type SubPage } from '../types/domain'
 import { type GetValue, type GetValues } from '../types/strapi'
 
 export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta): Hub {
@@ -75,6 +75,24 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Se
   event.location = enrichLocation(event, data.Place ?? undefined)
 
   return event
+}
+
+export function subPageMapper (data: GetValues<'api::subpage.subpage'>, parentPage: PageMeta): SubPage {
+  const subpage: SubPage = {
+    id: data.Slug,
+    name: data.Name,
+    description: data.Description,
+    img: imageMapper(data.Image),
+    bgColor: data.BackgroundColor,
+    body: data.Body,
+    parentPage,
+    path: '',
+    type: Pages.SubPage
+  }
+
+  subpage.path = pagePath(subpage)
+
+  return subpage
 }
 
 function enrichLocation (event: Event, place?: string): PlaceInfo {

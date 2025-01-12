@@ -9,7 +9,8 @@ export enum Pages {
   Root,
   Hub,
   Series,
-  Event
+  Event,
+  SubPage
 }
 
 export interface PageMeta {
@@ -144,6 +145,13 @@ export interface Hub extends PageMeta {
   events?: Series[]
   parentPage: PageMeta
   type: Pages.Hub
+}
+
+export interface SubPage extends PageMeta {
+  bgColor: string
+  body: BlocksContent
+  parentPage: PageMeta
+  type: Pages.SubPage
 }
 
 export interface Icon {

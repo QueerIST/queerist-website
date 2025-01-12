@@ -114,6 +114,17 @@ export async function fetchEvent ({ params }: { params: Params<string> }) {
   })
 }
 
+export async function fetchSubPage ({ params }: { params: Params<string> }) {
+  return await axios.get<APIResponseSingle<'api::subpage.subpage'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/subpage/${params.subpage}`, {
+    params: {
+      populate: {
+        Image: { populate: '*' },
+        Parent: { populate: '*' }
+      }
+    }
+  })
+}
+
 export async function fetchAllEvents () {
   return await axios.get<APIResponseCollection<'api::event.event'>>('https://queerist.tecnico.ulisboa.pt/a/pi/events', {
     params: {

@@ -1142,6 +1142,54 @@ export interface ApiSerieSerie extends Schema.CollectionType {
   }
 }
 
+export interface ApiSubpageSubpage extends Schema.CollectionType {
+  collectionName: 'subpages'
+  info: {
+    singularName: 'subpage'
+    pluralName: 'subpages'
+    displayName: 'SubPage'
+    description: ''
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    Name: Attribute.String & Attribute.Required
+    Parent: Attribute.Relation<
+    'api::subpage.subpage',
+    'manyToOne',
+    'api::subpage.subpage'
+    >
+    Image: Attribute.Media & Attribute.Required
+    BackgroundColor: Attribute.String &
+    Attribute.Required &
+    Attribute.CustomField<'plugin::color-picker.color'>
+    Description: Attribute.Text & Attribute.Required
+    Body: Attribute.Blocks & Attribute.Required
+    Slug: Attribute.UID<'api::subpage.subpage', 'Name'> & Attribute.Required
+    Child: Attribute.Relation<
+    'api::subpage.subpage',
+    'oneToMany',
+    'api::subpage.subpage'
+    >
+    createdAt: Attribute.DateTime
+    updatedAt: Attribute.DateTime
+    publishedAt: Attribute.DateTime
+    createdBy: Attribute.Relation<
+    'api::subpage.subpage',
+    'oneToOne',
+    'admin::user'
+    > &
+    Attribute.Private
+    updatedBy: Attribute.Relation<
+    'api::subpage.subpage',
+    'oneToOne',
+    'admin::user'
+    > &
+    Attribute.Private
+  }
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1167,6 +1215,7 @@ declare module '@strapi/types' {
       'api::main-page.main-page': ApiMainPageMainPage
       'api::project-page.project-page': ApiProjectPageProjectPage
       'api::serie.serie': ApiSerieSerie
+      'api::subpage.subpage': ApiSubpageSubpage
     }
   }
 }

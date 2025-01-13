@@ -1,11 +1,11 @@
-.event-info {
-	padding: 3% 5%;
+.body-text {
+	padding: 2% 5%;
 }
 
 @media only screen and (min-width: 600px) {
 
 	/* For tablets and bigger */
-	.event-info {
+	.body-text {
 		max-width: 1000px;
 		margin: auto;
 	}

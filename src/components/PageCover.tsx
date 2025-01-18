@@ -3,7 +3,7 @@ import { Image } from './Image'
 import { gap } from '../helpers/ga4'
 import { SizeTypes } from '../helpers/image'
 import { isHub } from '../helpers/types'
-import { type Series, type PageMeta, type Hub, type Event } from '../types/domain'
+import { type Series, type PageMeta, type Hub, type Event, type SubPage } from '../types/domain'
 
 import './pagecover.css'
 
@@ -89,6 +89,23 @@ export const EventCover = ({ data }: { data: Event }) => {
       <div className='page-image'>
         <div className='page-image-group'>
           <Image src={img} alt={`Cartaz do evento ${name}, parte de ${data.parentPage.name}`} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export const SubPageCover = ({ data }: { data: SubPage }) => {
+  const { name, img, description, bgColor, textColor } = data
+  return (
+    <div className='page-subpage' style={{ backgroundColor: bgColor, color: textColor }}>
+      <div className='page-image-group'>
+        <div className='page-image-child'>
+          <h1>{name}</h1>
+          <p>{description}</p>
+        </div>
+        <div className='page-image-child'>
+          <Image src={img} alt={`Foto de ${name}`} sizes={{ mobile: { proportion: 1, minHeight: 300, type: SizeTypes.Limit }, desktop: { minHeight: 400, proportion: 0.5, type: SizeTypes.Limit } }} />
         </div>
       </div>
     </div>

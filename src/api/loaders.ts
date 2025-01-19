@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { type APIResponseCollection, type APIResponseSingle } from '../types/strapi'
+import { type APIResponseCollection, type APIResponseSingle, type GetValues } from '../types/strapi'
 
 type Params<Key extends string = string> = {
   readonly [key in Key]: string | undefined;
@@ -136,4 +136,8 @@ export async function fetchAllEvents () {
       sort: ['Date:desc']
     }
   })
+}
+
+export async function fetchImage (id: number) {
+  return await axios.get<GetValues<'plugin::upload.file'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/upload/files/${id}`)
 }

@@ -1,11 +1,11 @@
-import { type BlocksContent } from '@strapi/blocks-react-renderer'
+import { type PropsWithChildren } from 'react'
 
-import { TextRenderer } from './TextRenderer'
+import classNames from 'classnames'
 
 import './bodytext.css'
 
-export const BodyText = ({ data }: { data: BlocksContent }) => (
-  <div className='body-text'>
-    <TextRenderer data={data} />
+export const BodyText = ({ children, className }: PropsWithChildren<{ className?: string }>) => (
+  <div className={classNames('body-text', className)}>
+    {children}
   </div>
 )

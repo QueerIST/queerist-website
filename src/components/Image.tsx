@@ -92,7 +92,7 @@ export function Image ({ src, alt, className, sizes }: { src: GetValues<'plugin:
       src={publicPath(src.url)}
       srcSet={srcSet}
       sizes={srcSizes}
-      alt={alt ?? src.alternativeText}
+      alt={src.alternativeText ?? alt}
       className={className}
     />
   )

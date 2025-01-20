@@ -52,3 +52,7 @@ button {
 .width100 {
   width: 100%;
 }
+
+.alignCenter {
+  text-align: center;
+}

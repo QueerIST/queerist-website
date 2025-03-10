@@ -20,7 +20,8 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
   </ul>
 )
 
-const EventGalleryItem = ({ n, id, name, open = true, detached = false, date, location, img, link, parentPage, path }: Event & { open?: boolean, detached?: boolean, n: number }) => {
+const EventGalleryItem = ({ n, id, name, open = true, detached = false, detailed, date, location, img, link, parentPage, path }: Event & { open?: boolean, detached?: boolean, detailed?: boolean, n: number }) => {
+  const nameDetails = detailed ? ` // ${parentPage.name}` : ''
   return (
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
@@ -29,7 +30,7 @@ const EventGalleryItem = ({ n, id, name, open = true, detached = false, date, lo
         </WrapDelayed>
       </div>
       <div className='event-gallery-item-text'>
-        <h3>{name}</h3>
+        <h3>{`${name}${nameDetails}`}</h3>
         <span className='event-gallery-item-launch icon-svg'>
           <p>{format(date, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
           {!detached &&
@@ -71,7 +72,7 @@ export function EventGallery ({ data, open }: { data: Events, open: boolean }) {
   )
 }
 
-export const InlineEventGallery = ({ data, reduced = false }: { data: Events, reduced?: boolean }) => (
+export const InlineEventGallery = ({ data, detailed, reduced = false }: { data: Events, reduced?: boolean, detailed?: boolean }) => (
   <div className={classNames('event-gallery-inline', reduced && 'event-gallery-reduced')}>
     <ul className='event-gallery'>
       {data.map((event, i) => (
@@ -79,6 +80,7 @@ export const InlineEventGallery = ({ data, reduced = false }: { data: Events, re
           n={i}
           key={i}
           detached
+          detailed={detailed}
           {...event}
         />
       ))}

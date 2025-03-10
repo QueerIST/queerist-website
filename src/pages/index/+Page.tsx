@@ -43,11 +43,11 @@ function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.ev
     <>
       {futureEvents.length !== 0 && <>
         <br/>
-        <InlineEventGallery data={futureEvents} />
+        <InlineEventGallery data={futureEvents} detailed />
       </>
       }
       <h4 style={{ textAlign: 'center' }}>Eventos anteriores</h4>
-      <InlineEventGallery data={previousEvents} reduced />
+      <InlineEventGallery data={previousEvents} reduced detailed />
     </>
   )
 }

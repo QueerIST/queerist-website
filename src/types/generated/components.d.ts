@@ -137,7 +137,7 @@ export interface BlocksTextBlock extends Schema.Component {
   }
   attributes: {
     Slug: Attribute.String
-    Title: Attribute.String & Attribute.Required
+    Title: Attribute.String
     Text: Attribute.Blocks & Attribute.Required
     BackgroundColor: Attribute.String &
     Attribute.Required &

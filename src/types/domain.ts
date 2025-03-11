@@ -27,7 +27,7 @@ export interface PageMeta {
 
 export interface TextBlock {
   id?: string
-  title: string
+  title?: string
   text: BlocksContent
   bgColor: string
   titleColor?: string

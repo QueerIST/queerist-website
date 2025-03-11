@@ -32,6 +32,7 @@ interface PhysicalPlace {
   name: string
   address: string
   pin: string
+  link?: ButtonLink
   shortVersion: string
   type: LocationType.Physical
 }
@@ -58,7 +59,8 @@ export const PLACES_MAP: Record<Places, PlaceInfo> = {
     address: 'IST, Avenida Rovisco Pais 1',
     pin: 'https://maps.app.goo.gl/mpvynRuatqFKoXyt7',
     shortVersion: '',
-    type: LocationType.Physical
+    type: LocationType.Physical,
+    link: { linkPage: '/sobre/sala' }
   },
   [Places.LargoCamoes]: {
     name: Places.LargoCamoes,

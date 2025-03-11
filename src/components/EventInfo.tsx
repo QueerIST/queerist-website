@@ -72,7 +72,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
         : (
           <LinkButton
             className='no-link-decoration'
-            link={{ linkWeb: location.pin }}
+            link={{ linkWeb: location.pin, ...location.link }}
           >
             <h4>📍 <u>{location.shortVersion}</u></h4>
           </LinkButton>

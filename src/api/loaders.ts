@@ -119,7 +119,8 @@ export async function fetchSubPage ({ params }: { params: Params<string> }) {
     params: {
       populate: {
         Image: { populate: '*' },
-        Parent: { populate: '*' }
+        Parent: { populate: '*' },
+        Body: DYNAMIC_ZONE
       }
     }
   })

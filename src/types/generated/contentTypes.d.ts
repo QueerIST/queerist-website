@@ -1165,12 +1165,23 @@ export interface ApiSubpageSubpage extends Schema.CollectionType {
     Attribute.Required &
     Attribute.CustomField<'plugin::color-picker.color'>
     Description: Attribute.Text & Attribute.Required
-    Body: Attribute.Blocks & Attribute.Required
     Slug: Attribute.UID<'api::subpage.subpage', 'Name'> & Attribute.Required
     Child: Attribute.Relation<
     'api::subpage.subpage',
     'oneToMany',
     'api::subpage.subpage'
+    >
+    Body: Attribute.DynamicZone<
+    [
+      'blocks.big-banner',
+      'blocks.highlightbox',
+      'blocks.html',
+      'blocks.icons-list',
+      'blocks.separator',
+      'blocks.small-banners-list',
+      'blocks.text-block',
+      'blocks.text-boxes-list'
+    ]
     >
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime

@@ -84,7 +84,6 @@ export function subPageMapper (data: GetValues<'api::subpage.subpage'>, parentPa
     description: data.Description,
     img: imageMapper(data.Image),
     bgColor: data.BackgroundColor,
-    body: data.Body,
     parentPage,
     path: '',
     type: Pages.SubPage

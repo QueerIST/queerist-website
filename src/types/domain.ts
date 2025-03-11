@@ -149,7 +149,6 @@ export interface Hub extends PageMeta {
 
 export interface SubPage extends PageMeta {
   bgColor: string
-  body: BlocksContent
   parentPage: PageMeta
   type: Pages.SubPage
 }

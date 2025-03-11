@@ -12,7 +12,7 @@ const SubPage = () => {
 
   const subPage = subPageMapper(rawSubPage.data.attributes, parentPage)
   return (
-    <SubPageTemplate subPage={subPage} />
+    <SubPageTemplate subPage={subPage} rawSubPage={rawSubPage} />
   )
 }
 

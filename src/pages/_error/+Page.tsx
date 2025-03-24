@@ -1,3 +1,4 @@
+import { Config } from 'vike-react/Config'
 import { useData } from 'vike-react/useData'
 import { usePageContext } from 'vike-react/usePageContext'
 
@@ -5,6 +6,7 @@ import { type Data } from './+data'
 import { BodyText } from '../../components/BodyText'
 import { Image } from '../../components/Image'
 import { SizeTypes } from '../../helpers/image'
+import { publicPath } from '../../helpers/links'
 
 const ErrorPage = () => {
   const response = useData<Data>()
@@ -20,11 +22,19 @@ const ErrorPage = () => {
   }
 
   return (
-    <BodyText className='alignCenter'>
-      <h1>Oh, naurr</h1>
-      <p>{message}</p>
-      {response && <Image src={response} sizes={{ mobile: { type: SizeTypes.Proportion, proportion: 1 }, desktop: { type: SizeTypes.Proportion, proportion: 1 } }} className='width100' />}
-    </BodyText>
+    <>
+      <Config
+        favicon='/favicon.ico'
+        title={`${message} – QueerIST`}
+        description={'Esta página não existe!'}
+        image={response && publicPath(response.url)}
+      />
+      <BodyText className='alignCenter'>
+        <h1>Oh, naurr</h1>
+        <p>{message}</p>
+        {response && <Image src={response} sizes={{ mobile: { type: SizeTypes.Proportion, proportion: 1 }, desktop: { type: SizeTypes.Proportion, proportion: 1 } }} className='width100' />}
+      </BodyText>
+    </>
   )
 }
 

@@ -17,7 +17,7 @@ export const BigBanner = ({ id, name, img, button }: BigBannerProps) => {
       <div className='big-banner-button'>
         <OutlineButton
           action={gap('navigate_content', {
-            type: 'big_banner',
+            type: 'big-banner',
             link_text: button.text,
             link_page: pageId(button.link.linkPage)
           })}
@@ -45,7 +45,7 @@ function SmallBanner ({ n, name, label, logo, bgColor, textColor, button }: Smal
         {button &&
         <OutlineButton
           action={gap('navigate_item', {
-            type: 'small_banner',
+            type: 'small-banner',
             item_index: n,
             list_id: page.id,
             link_text: button.text,

@@ -8,10 +8,16 @@ AOS.init({
 const params = new URLSearchParams(location.search)
 
 if (import.meta.env.PROD && import.meta.env.VITE_GA_CODE !== '') {
+  let debugMode
+
+  if (params.get('debug')) {
+    debugMode = true
+  }
+
   ReactGA.initialize(import.meta.env.VITE_GA_CODE, {
     gaOptions: {
       siteSpeedSampleRate: 100,
-      debug_mode: !!params.get('debug')
+      debug_mode: debugMode
     }
   })
 }

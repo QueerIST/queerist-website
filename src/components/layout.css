@@ -56,3 +56,12 @@ button {
 .alignCenter {
   text-align: center;
 }
+
+.icon-svg {
+  display: flex;
+  align-items: center;
+}
+
+.icon-svg svg {
+  margin: 2px;
+}

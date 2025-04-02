@@ -114,12 +114,3 @@
 .event-gallery-item-launch svg {
 	fill: grey;
 }
-
-.icon-svg {
-	display: flex;
-	align-items: center;
-}
-
-.icon-svg svg {
-	margin: 2px;
-}

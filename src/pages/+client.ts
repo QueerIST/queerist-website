@@ -7,10 +7,10 @@ AOS.init({
 
 const params = new URLSearchParams(location.search)
 
-if (import.meta.env.PROD && import.meta.env.VITE_GA_CODE !== '') {
+if (import.meta.env.VITE_GA_CODE !== '') {
   let debugMode
 
-  if (params.get('debug')) {
+  if (params.get('debug') !== null || import.meta.env.DEV || !import.meta.env.PROD) {
     debugMode = true
   }
 

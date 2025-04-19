@@ -4813,6 +4813,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"add-to-calendar-button-react@npm:^2.8.5":
+  version: 2.8.9
+  resolution: "add-to-calendar-button-react@npm:2.8.9"
+  dependencies:
+    add-to-calendar-button: "npm:^2.8.9"
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  checksum: 10c0/cf2728ddcdfb89e5a4e8bf1c626a81d7316c8c6f00ddf6518168cdd6a0362f200536015af9db971f2ec87416a61abaecf9f6cbe16ccb4b63f18ac3b48d59beda
+  languageName: node
+  linkType: hard
+
+"add-to-calendar-button@npm:^2.8.9":
+  version: 2.8.9
+  resolution: "add-to-calendar-button@npm:2.8.9"
+  dependencies:
+    timezones-ical-library: "npm:^1.9.1"
+  checksum: 10c0/c50a6a8706431fca06cd58d7d4800e4207e46ae4fdd5880359ea9d905e3569dc1f19bf15687ad3124253163aa33c94441deadda2214bc7ea4e6f425bf650d08f
+  languageName: node
+  linkType: hard
+
 "addressparser@npm:1.0.1":
   version: 1.0.1
   resolution: "addressparser@npm:1.0.1"
@@ -13201,6 +13222,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.17.0"
     "@typescript-eslint/parser": "npm:^6.17.0"
     "@vitejs/plugin-react-swc": "npm:^3.5.0"
+    add-to-calendar-button-react: "npm:^2.8.5"
     ajv: "npm:^8.12.0"
     aos: "npm:^2.3.4"
     axios: "npm:^1.6.8"
@@ -15551,6 +15573,13 @@ __metadata:
   version: 2.0.0
   resolution: "tildify@npm:2.0.0"
   checksum: 10c0/57961810a6915f47bdba7da7fa66a5f12597a0495fa016785de197b02e7ba9994ffebb30569294061bbf6d9395c6b1319d830076221e5a3f49f1318bc749565c
+  languageName: node
+  linkType: hard
+
+"timezones-ical-library@npm:^1.9.1":
+  version: 1.9.1
+  resolution: "timezones-ical-library@npm:1.9.1"
+  checksum: 10c0/6d240f930f33764725cb1d2c4a43be02498348dfdecb5732a07130465c6ac4ff4026e8d889551e78a59723c775bff14f618291da331c7f0db4ee813c77a68d8a
   languageName: node
   linkType: hard
 

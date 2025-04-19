@@ -34,11 +34,9 @@ button {
   border: unset;
   background-color: unset;
   font: unset;
-}
-
-.clickable {
   cursor: pointer;
 }
+
 
 .non-sel {
   user-select: none;

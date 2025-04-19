@@ -1,4 +1,5 @@
 import { type Attribute } from '@strapi/strapi'
+import { isAfter } from 'date-fns'
 
 import { imageMapper, maybeImageMapper, maybeMediaMapper } from './components'
 import { pagePath } from '../helpers/links'
@@ -55,12 +56,14 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
 
 export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Series): Event {
   const description = textBlockFlattener(data.Description)
+  const date = new Date(data.Date)
+  const enddate = data.EndDate ? new Date(data.EndDate) : undefined
   const event: Event = {
     id: data.Slug,
     name: data.Name,
     img: imageMapper(data.Image),
-    date: new Date(data.Date),
-    enddate: data.EndDate ? new Date(data.EndDate) : undefined,
+    date,
+    enddate: enddate && isAfter(enddate, date) ? enddate : undefined,
     location: { ...PLACES_MAP[data.Pin] },
     link: data.Link,
     longDescription: data.Description ? data.Description : undefined,
@@ -122,5 +125,5 @@ function textBlockFlattener (data: GetValue<Attribute.Blocks> | undefined) {
       }).join('')
     }
     return ''
-  }).join(' ')
+  }).join('\n')
 }

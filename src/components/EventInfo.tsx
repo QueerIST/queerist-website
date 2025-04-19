@@ -4,6 +4,7 @@ import { JsonLd } from 'react-schemaorg'
 import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema-dts'
 
 import Launch from './../svg/launch.svg?react'
+import { AddToCalendar } from './AddToCalendar'
 import { LinkButton } from './Button'
 import { TextRenderer } from './TextRenderer'
 import { gap } from '../helpers/ga4'
@@ -31,16 +32,16 @@ export const EventInfo = ({ data }: { data: Event }) => {
 
   const moreColor = data.parentPage.bgColor !== 'white' ? data.parentPage.bgColor : data.parentPage.textColor
 
+  let url
+  if (location.link?.linkWeb) url = location.link.linkWeb
+  else if (location.link?.linkPage) url = fullURL(location.link.linkPage)
+
   const online = isOnline(location)
   let locationBlock: Place | VirtualLocation
   if (online) {
-    let url
-    if (location.link.linkWeb) url = location.link.linkWeb
-    else if (location.link.linkPage) url = fullURL(location.link.linkPage)
-    else url = fullPath(data)
     locationBlock = {
       '@type': 'VirtualLocation',
-      url
+      url: url ?? fullPath(data)
     }
   } else {
     locationBlock = {
@@ -57,7 +58,9 @@ export const EventInfo = ({ data }: { data: Event }) => {
 
   return (
     <div className='event-info'>
-      <h3>📅 <time dateTime={date.toISOString()}>{format(date, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time></h3>
+      <h3 className='event-info-date'>📅 <time dateTime={date.toISOString()}>{format(date, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time>
+        <AddToCalendar event={data}/>
+      </h3>
       <h2>{name}</h2>
       {isOnline(location)
         ? (

@@ -2,6 +2,20 @@
 	padding: 3% 5%;
 }
 
+.event-info-date {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 7px;
+}
+
+.event-info-date>button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 5px;
+}
+
 @media only screen and (min-width: 600px) {
 
 	/* For tablets and bigger */

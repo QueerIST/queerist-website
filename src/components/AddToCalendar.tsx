@@ -96,9 +96,9 @@ export const AddToCalendar = ({ event, url }: { event: Event, url?: string }) =>
   const calDescription = ''.concat(
     description.replace('\n', '[br]'),
     '[br]',
-    `[br][url]${url ?? (!online ? location.pin : '')}|⏭️ Chegar a ${location.name}[/url]`,
-    `[br][url]${fullPath(event)}|⌚️ Mais sobre evento ${name}[/url]`,
-    '[br][url]http://bit.ly/CalendarQueerIST|☎️ Subscrever a todos os eventos[/url]'
+    `[br]- [url]${url ?? (!online ? location.pin : '')}|Chegar a ${location.name}[/url]`,
+    `[br]- [url]${fullPath(event)}|Mais sobre evento ${name}[/url]`,
+    '[br]- [url]http://bit.ly/CalendarQueerIST|Subscrever a todos os eventos[/url]'
   )
   const dateAfter2Hours = addHours(date, 2)
   const config: ATCBActionEventConfig = {

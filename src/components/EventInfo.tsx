@@ -32,16 +32,16 @@ export const EventInfo = ({ data }: { data: Event }) => {
 
   const moreColor = data.parentPage.bgColor !== 'white' ? data.parentPage.bgColor : data.parentPage.textColor
 
-  let url
-  if (location.link?.linkWeb) url = location.link.linkWeb
-  else if (location.link?.linkPage) url = fullURL(location.link.linkPage)
+  let locationUrl
+  if (location.link?.linkWeb) locationUrl = location.link.linkWeb
+  else if (location.link?.linkPage) locationUrl = fullURL(location.link.linkPage)
 
   const online = isOnline(location)
   let locationBlock: Place | VirtualLocation
   if (online) {
     locationBlock = {
       '@type': 'VirtualLocation',
-      url: url ?? fullPath(data)
+      url: locationUrl ?? fullPath(data)
     }
   } else {
     locationBlock = {
@@ -59,7 +59,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
   return (
     <div className='event-info'>
       <h3 className='event-info-date'>📅 <time dateTime={date.toISOString()}>{format(date, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time>
-        <AddToCalendar event={data}/>
+        <AddToCalendar event={data} url={locationUrl} />
       </h3>
       <h2>{name}</h2>
       {isOnline(location)

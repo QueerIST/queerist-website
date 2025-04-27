@@ -19,6 +19,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
   const [page] = usePage()
   const dir = n % 2 !== 0 ? 'left' : 'right'
   const openClass = inline && open && 'open'
+  let seeMore = seeMoreText ?? 'Ver mais'
 
   let link, className, action
   if (inline) {
@@ -30,14 +31,20 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
     link = { onClick: () => { setOpen(!open) } }
     className = classNames('tile-info-b', 'tile-info-button', openClass)
   } else {
+    let p = path
+    if (events?.length === 1) {
+      const event = events[0]
+      p = event.path
+      seeMore = `Descobrir ${event.name}`
+    }
     action = gap('navigate_item', {
       type: 'event-tile',
       list_id: page.id,
       item_index: n,
-      link_text: seeMoreText ?? 'Ver mais',
+      link_text: seeMore,
       link_page: id
     })
-    link = { linkPage: path }
+    link = { linkPage: p }
     className = 'tile-info-b'
   }
 
@@ -60,7 +67,7 @@ export const EventTile = ({ data, n, inline = false }: { data: Series, n: number
             button={{ linkTextColor: textColor }}
             className={className}
           >
-            {seeMoreText ?? 'Ver mais'}
+            {seeMore}
             {inline && <Expand fill={textColor} />}
           </OutlineButton>
           }

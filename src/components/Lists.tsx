@@ -2,7 +2,7 @@ import { type PropsWithChildren } from 'react'
 
 import { MaybeLinkButton } from './Button'
 import { Image } from './Image'
-import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps, type TextBoxList as TextBoxListProps, type Icons } from '../types/domain'
+import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps, type TextBoxList as TextBoxListProps, type ImageBox as ImageBoxProps, type ImageBoxList as ImageBoxListProps, type Icons } from '../types/domain'
 
 import './lists.css'
 
@@ -39,6 +39,22 @@ const TextBox = ({ name, text, bgColor }: TextBoxProps) => (
   </li>
 )
 
+const ImageBox = ({ name, text, bgColor, image }: ImageBoxProps) => (
+  <li className='lists-textboxlist-box'>
+    <img
+      src={image}
+      alt={name}
+    />
+    <h3>{name}</h3>
+    <p
+      className='lists-textboxlist-box-text lists-imgboxlist-box-text'
+      style={{ backgroundColor: bgColor, borderColor: bgColor }}
+    >
+      {text}
+    </p>
+  </li>
+)
+
 const List = ({ id, children }: PropsWithChildren<ListProps>) => (
   <ul id={id} className='lists-listwrap'>
     {children}
@@ -62,6 +78,17 @@ export const TextBoxList = ({ id, boxes }: TextBoxListProps) => (
       <TextBox
       key={i}
       {...textbox}
+      />
+    ))}
+  </List>
+)
+
+export const ImageBoxList = ({ id, boxes }: ImageBoxListProps) => (
+  <List id={id}>
+    {boxes.map((imagebox, i) => (
+      <ImageBox
+      key={i}
+      {...imagebox}
       />
     ))}
   </List>

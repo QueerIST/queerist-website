@@ -53,3 +53,11 @@
 	text-align: justify;
 	border: 10px solid;
 }
+
+.lists-imgboxlist-box-text {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 8;
+	line-clamp: 8;
+	overflow: hidden;
+}

@@ -4,14 +4,15 @@ import { isAfter, isBefore } from 'date-fns'
 import { useData } from 'vike-react/useData'
 
 import { type Data } from './+data'
-import { fetchAllEvents } from '../../api/loaders'
+import { fetchAllEvents, type YoastPosts } from '../../api/loaders'
 import { DynamicZone } from '../../components/DynamicZone'
 import { InlineEventGallery } from '../../components/EventGallery'
+import { ImageBoxList } from '../../components/Lists'
 import { MainCover } from '../../components/MainCover'
 import { Page } from '../../components/Page'
 import { wrapPromise } from '../../helpers/async'
 import { pageMapper } from '../../mappers/components'
-import { eventMapper, hubMapper, seriesMapper } from '../../mappers/content'
+import { eventMapper, hubMapper, postMapper, seriesMapper } from '../../mappers/content'
 import { type PageMeta } from '../../types/domain'
 import { type APIResponseCollection } from '../../types/strapi'
 
@@ -48,6 +49,20 @@ function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.ev
       }
       <h4 style={{ textAlign: 'center' }}>Eventos anteriores</h4>
       <InlineEventGallery data={previousEvents} reduced detailed />
+    </>
+  )
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function AllPosts ({ data }: { data: () => YoastPosts | undefined }) {
+  const rawPosts = data()
+  if (!rawPosts) { return undefined }
+
+  const posts = rawPosts.map((e) => postMapper(e)).filter((p) => !p.link.includes('/en/'))
+  return (
+    <>
+      <h4 style={{ textAlign: 'center' }}>Do Blog</h4>
+      <ImageBoxList boxes={posts.map((p) => ({ id: p.id, text: p.text, name: p.title, bgColor: 'white', image: p.img }))} />
     </>
   )
 }

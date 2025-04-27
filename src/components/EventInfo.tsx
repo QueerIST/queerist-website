@@ -6,6 +6,7 @@ import { type Event as EventDTS, type VirtualLocation, type Place } from 'schema
 import Launch from './../svg/launch.svg?react'
 import { AddToCalendar } from './AddToCalendar'
 import { LinkButton } from './Button'
+import { Share } from './Share'
 import { TextRenderer } from './TextRenderer'
 import { gap } from '../helpers/ga4'
 import { fullPath, fullURL, pageId, publicPath } from '../helpers/links'
@@ -60,6 +61,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
     <div className='event-info'>
       <h3 className='event-info-date'>📅 <time dateTime={date.toISOString()}>{format(date, `EEEE, d MMMM${yearFormat}, ${timeFormat}`, { locale: pt }) + endTimeString}</time>
         <AddToCalendar event={data} url={locationUrl} />
+        <Share page={data} />
       </h3>
       <h2>{name}</h2>
       {isOnline(location)

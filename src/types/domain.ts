@@ -84,6 +84,14 @@ export interface HighlightBox {
   button?: BlockButtonLink
 }
 
+export interface Post {
+  id: number
+  title: string
+  img: string
+  text: string
+  link: string
+}
+
 export interface List {
   id?: string
 }
@@ -99,6 +107,19 @@ export interface TextBox {
   bgColor: string
   text: string
 }
+
+export interface ImageBox {
+  name: string
+  bgColor: string
+  text: string
+  image: string
+}
+
+type ImageBoxes = ImageBox[]
+
+export type ImageBoxList = {
+  boxes: ImageBoxes
+} & List
 
 export interface EventMedia {
   event?: Event

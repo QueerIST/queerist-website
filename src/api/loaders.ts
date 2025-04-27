@@ -1,10 +1,32 @@
 import axios from 'axios'
+import type { WP_REST_API_Post } from 'wp-types'
 
 import { type APIResponseCollection, type APIResponseSingle, type GetValues } from '../types/strapi'
 
 type Params<Key extends string = string> = {
   readonly [key in Key]: string | undefined;
 }
+
+export type YoastPost = WP_REST_API_Post & {
+  yoast_head_json: {
+    title: string
+    canonical: string
+    og_title: string
+    og_description: string
+    og_url: string
+    og_site_name: string
+    article_published_time: string
+    article_modified_time: string
+    og_image: Array<{
+      width: number
+      height: number
+      url: string
+      type: string
+    }>
+  }
+}
+
+export type YoastPosts = YoastPost[]
 
 const DYNAMIC_ZONE = {
   on: {
@@ -141,4 +163,8 @@ export async function fetchAllEvents () {
 
 export async function fetchImage (id: number) {
   return await axios.get<GetValues<'plugin::upload.file'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/upload/files/${id}`)
+}
+
+export async function fetchAllWPPosts () {
+  return await axios.get<YoastPosts>('https://queerist.tecnico.ulisboa.pt/blog/wp-json/wp/v2/posts', { params: { context: 'embed' } })
 }

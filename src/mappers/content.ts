@@ -2,9 +2,10 @@ import { type Attribute } from '@strapi/strapi'
 import { isAfter } from 'date-fns'
 
 import { imageMapper, maybeImageMapper, maybeMediaMapper } from './components'
+import { type YoastPost } from '../api/loaders'
 import { pagePath } from '../helpers/links'
 import { isOnline, Places, PLACES_MAP, type PlaceInfo } from '../helpers/location'
-import { type Hub, type Series, type Event, Pages, type PageMeta, type EventMedia, type SubPage } from '../types/domain'
+import { type Hub, type Series, type Event, Pages, type PageMeta, type EventMedia, type SubPage, type Post } from '../types/domain'
 import { type GetValue, type GetValues } from '../types/strapi'
 
 export function hubMapper (data: GetValues<'api::hub.hub'>, parentPage: PageMeta): Hub {
@@ -95,6 +96,18 @@ export function subPageMapper (data: GetValues<'api::subpage.subpage'>, parentPa
   subpage.path = pagePath(subpage)
 
   return subpage
+}
+
+export function postMapper (data: YoastPost): Post {
+  const imageUrl = new URL(data.yoast_head_json.og_image[0].url)
+  imageUrl.search = new URLSearchParams({ fit: '400,400' }).toString()
+  return {
+    id: data.id,
+    title: data.title.rendered,
+    img: imageUrl.toString(),
+    text: data.yoast_head_json.og_description,
+    link: data.link
+  }
 }
 
 function enrichLocation (event: Event, place?: string): PlaceInfo {

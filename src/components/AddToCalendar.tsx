@@ -123,10 +123,7 @@ export const AddToCalendar = ({ event, url }: { event: Event, url?: string }) =>
   }
 
   return (
-    <LinkButton
-          link={{ onClick: () => { void onClick(config) } }}
-          button={{ linkTextColor: 'black' }}
-        >
+    <LinkButton link={{ onClick: () => { void onClick(config) } }}>
       <Bookmark id='bookmark' />
     </LinkButton>
   )

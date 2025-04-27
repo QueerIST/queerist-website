@@ -53,8 +53,7 @@ function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.ev
   )
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function AllPosts ({ data }: { data: () => YoastPosts | undefined }) {
+export function AllPosts ({ data }: { data: () => YoastPosts | undefined }) {
   const rawPosts = data()
   if (!rawPosts) { return undefined }
 

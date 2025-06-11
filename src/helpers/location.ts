@@ -11,7 +11,8 @@ export enum Places {
   Sala = 'Sala do QueerIST',
   IST = 'Instituto Superior Técnico',
   Taguspark = 'Instituto Superior Técnico - Taguspark',
-  LargoCamoes = 'Largo Luís de Camões'
+  LargoCamoes = 'Largo Luís de Camões',
+  Lisboa = 'Lisboa'
 }
 
 enum LocationType {
@@ -66,6 +67,13 @@ export const PLACES_MAP: Record<Places, PlaceInfo> = {
     name: Places.LargoCamoes,
     address: 'Praça de Luís de Camões',
     pin: 'https://maps.app.goo.gl/jfP9sUEHK3DehjQL6',
+    shortVersion: '',
+    type: LocationType.Physical
+  },
+  [Places.Lisboa]: {
+    name: Places.Lisboa,
+    address: 'Lisboa',
+    pin: 'https://maps.app.goo.gl/QH9JEZ52x7FCe8qP8',
     shortVersion: '',
     type: LocationType.Physical
   },

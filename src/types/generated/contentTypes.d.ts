@@ -854,6 +854,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'Discord',
       'Instagram',
       'Largo Lu\u00EDs de Cam\u00F5es',
+      'Lisboa',
       'Online'
     ]
     > &
@@ -1183,6 +1184,7 @@ export interface ApiSubpageSubpage extends Schema.CollectionType {
       'blocks.text-boxes-list'
     ]
     >
+    Date: Attribute.Date
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime

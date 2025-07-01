@@ -157,7 +157,8 @@ export function iconsMapper (data: GetValues<'blocks.icons-list'>): Icons {
     id: data.Slug,
     icons: data.Icons.map((icon: GetValues<'blocks.icon'>) => ({
       name: icon.Name,
-      logo: imageMapper(icon.Logo),
+      label: icon.Label,
+      logo: maybeImageMapper(icon.Logo),
       link: icon.URL
     }))
   }

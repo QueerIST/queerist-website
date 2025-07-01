@@ -6,23 +6,24 @@ import { type List as ListProps, type Icon as IconProps, type TextBox as TextBox
 
 import './lists.css'
 
-const IconImg = ({ name, logo }: IconProps) => (
+const IconImg = ({ name, label, logo }: IconProps) => (
   <>
-    {logo &&
     <div className='lists-iconlist-icon-img'>
-      <Image src={logo} alt={`Logo de ${name}`} />
+      {logo && <Image src={logo} alt={`Logo de ${name}`} />}
     </div>
-    }
-    <h4>{name}</h4>
+    <div>
+      <h4>{name}</h4>
+      {label && <p>{label}</p>}
+    </div>
   </>
 )
 
-const Icon = ({ name, link, logo }: IconProps) => (
+const Icon = ({ name, label, link, logo }: IconProps) => (
   <li className='lists-iconlist-icon'>
     <MaybeLinkButton
       link={link ? { linkWeb: link } : undefined}
     >
-      <IconImg name={name} logo={logo} />
+      <IconImg name={name} label={label} logo={logo} />
     </MaybeLinkButton>
   </li>
 )

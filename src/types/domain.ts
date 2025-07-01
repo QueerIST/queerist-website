@@ -176,6 +176,7 @@ export interface SubPage extends PageMeta {
 
 export interface Icon {
   name: string
+  label?: string
   logo?: GetValues<'plugin::upload.file'>
   link?: string
 }

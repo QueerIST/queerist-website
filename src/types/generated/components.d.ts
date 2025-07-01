@@ -52,10 +52,12 @@ export interface BlocksIcon extends Schema.Component {
   collectionName: 'components_blocks_icons'
   info: {
     displayName: '_Icon'
+    description: ''
   }
   attributes: {
     Name: Attribute.String & Attribute.Required
-    Logo: Attribute.Media & Attribute.Required
+    Label: Attribute.String
+    Logo: Attribute.Media
     URL: Attribute.String
   }
 }

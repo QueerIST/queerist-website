@@ -1,5 +1,7 @@
 {
 	"prettier.enable": false,
+	"eslint.format.enable": true,
+	"editor.formatOnSave": true,
 	"[typescript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
@@ -9,4 +11,16 @@
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"typescript.suggest.includeCompletionsForImportStatements": false,
+	"chat.disableAIFeatures": false,
+	"chat.agent.enabled": false
 }

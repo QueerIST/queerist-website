@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+verbs='Abre|Aceita|Acelera|Acrescenta|Adapta|Adiciona|Adicionar|Ajusta|Alinha|Altera|Alterações|Anima|Animações|Apaga|Aponta|Apresenta|Armazena|Atualiza|Aumenta|Centra|Clica|Coloca|Começa|Comenta|Completa|Configura|Converte|Corrige|Corrigido|Cria|Dá|Define|Deixa|Desliga|Divide|Emancipa|Encaixa|Equilibra|Escurece|Expande|Faz|Fixa|Formata|Gera|Gere|Guarda|Habilita|Inicia|Introduz|Inverte|Junta|Lança|Lançamento|Limita|Limpa|Melhora|Mete|Migra|Mostra|Move|Muda|Optimiza|Ordena|Passa|Permite|Personaliza|Pinta|Popula|Redireciona|Reduz|Refactora|Refactoriza|Refaz|Reformula|Regista|Regra|Regulariza|Remove|Renomeia|Reordena|Reorganiza|Resolve|Restrutura|Retira|Reverte|Separa|Substitui|Tenta|Tipifica|Tira|Torna|Traduz|Transforma|Troca|Unsubscreve|Usa'
+regex="^:([a-z0-9_-]+): ($verbs)\s.*"
+error_msg1="Formato de mensagem errado. Tenta algo parecido a ':bug: Corrige cor do componente botão'."
+error_msg2="Começa com um emoji na sintaxe de dois-pontos do GitHub (ex: \`:bug:\`), de seguida um verbo no presente ele/ela (ex: \`Corrige\`) e depois completa a frase."
+error_msg3="Vê o README para mais exemplos."
+
+if ! grep -qE "$regex" "$1"; then
+    echo "$error_msg1" >&2
+    echo "" >&2
+    echo "$error_msg2" >&2
+    echo "$error_msg3" >&2
+    exit 1
+fi
+

@@ -10,6 +10,7 @@ if ! grep -qE "$regex" "$1"; then
     echo "" >&2
     echo "$error_msg2" >&2
     echo "$error_msg3" >&2
+    echo "" >&2
     exit 1
 fi
 

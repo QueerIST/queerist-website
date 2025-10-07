@@ -5,6 +5,7 @@ import ReactGA from 'react-ga4'
 import Headroom from 'react-headroom'
 
 import { NavLink } from './Link'
+import { gap } from '../helpers/ga4'
 import logo from '../img/logo so letras brancas.png'
 import Menu from '../svg/menu.svg?react'
 
@@ -14,20 +15,22 @@ export function Header () {
   const [openMenu, setOpenMenu] = useState(false)
 
   const handleClickMenuButton = () => {
-    ReactGA.event('select_content', {
+    const ga = gap('select_content', {
       content_type: 'header',
       content_id: 'menu',
       content_action: !openMenu ? 'open' : 'close'
     })
+    ReactGA.event(ga.name, ga.params)
     setOpenMenu(!openMenu)
   }
 
   const handleClickLink = (page: string, text: string) => {
-    ReactGA.event('navigate_content', {
+    const ga = gap('navigate_content', {
       type: 'header',
       link_page: page,
       link_text: text
     })
+    ReactGA.event(ga.name, ga.params)
     setOpenMenu(false)
   }
 

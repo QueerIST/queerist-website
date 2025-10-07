@@ -7,6 +7,7 @@ import { pt } from 'date-fns/locale'
 import Launch from './../svg/launch.svg?react'
 import { BlockButton, LinkButton } from './Button'
 import { Image } from './Image'
+import { usePage } from '../api/use'
 import { WrapDelayed } from '../helpers/delay'
 import { gap } from '../helpers/ga4'
 import { SizeTypes } from '../helpers/image'
@@ -22,6 +23,7 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
 
 const EventGalleryItem = ({ n, id, name, open = true, detached = false, detailed, date, location, img, link, parentPage, path }: Event & { open?: boolean, detached?: boolean, detailed?: boolean, n: number }) => {
   const nameDetails = detailed ? ` // ${parentPage.name}` : ''
+  const [page] = usePage()
   return (
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
@@ -42,7 +44,7 @@ const EventGalleryItem = ({ n, id, name, open = true, detached = false, detailed
         <BlockButton
           action={gap('navigate_item', {
             type: 'event-list',
-            list_id: parentPage.id,
+            list_id: detailed ? page.id : parentPage.id,
             item_index: n,
             link_text: 'Ver mais',
             link_page: id

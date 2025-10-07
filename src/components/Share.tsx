@@ -3,6 +3,7 @@ import { shareOnMobile } from 'react-mobile-share'
 
 import Arrow from './../svg/arrow.svg?react'
 import { LinkButton } from './Button'
+import { gap } from '../helpers/ga4'
 import { fullPath } from '../helpers/links'
 import { type PageMeta } from '../types/domain'
 
@@ -18,7 +19,8 @@ export const Share = ({ page }: { page: PageMeta }) => (
           url: fullPath(page),
           title: `${page.name} | QueerIST`
         })
-        ReactGA.event('share', { method: 'native', item_id: page.id })
+        const ga = gap('share', { method: 'native', item_id: page.id })
+        ReactGA.event(ga.name, ga.params)
       }
     }}>
     <Arrow />

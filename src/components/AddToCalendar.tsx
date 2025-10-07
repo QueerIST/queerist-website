@@ -39,14 +39,11 @@ function reportEvent (id: string, e: string | null) {
       break
     case 'openCalendarLink': {
       const cal = trigger.split('-')[1]
-      ga = {
-        name: 'save',
-        params: {
-          content_type: 'bookmark',
-          method: cal,
-          item_id: id
-        }
-      }
+      ga = gap('save', {
+        content_type: 'bookmark',
+        method: cal,
+        item_id: id
+      })
       break
     }
     case 'initialization':

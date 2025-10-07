@@ -16,6 +16,15 @@ interface LabelWithOptions {
     content_id: string
     content_action: string
   }
+  'save': {
+    content_type: string
+    item_id: string
+    method: string
+  }
+  'share': {
+    item_id: string
+    method: string
+  }
 }
 
 export interface Action {

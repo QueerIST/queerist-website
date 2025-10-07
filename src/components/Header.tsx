@@ -23,7 +23,7 @@ export function Header () {
   }
 
   const handleClickLink = (page: string, text: string) => {
-    ReactGA.event('navigate_item', {
+    ReactGA.event('navigate_content', {
       type: 'header',
       link_page: page,
       link_text: text

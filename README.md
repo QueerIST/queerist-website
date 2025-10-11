@@ -1,68 +1,94 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="src/img/Cores%20fundo%20claro.png" height="150">
+</p>
 
-## Available Scripts
+# Frontend do Website do QueerIST
 
-In the project directory, you can run:
+Este projeto é escrito em [Typescript](https://www.typescriptlang.org/), com a framework [React](https://react.dev/) para os componentes visuais. Engloba apenas o frontend da aplicação, e necessita de comunicar com um backend feito pelo headless CMS [Strapi](https://strapi.io/) para receber e mostrar dados.
 
-### `npm start`
+Usa o package manager [yarn](https://yarnpkg.com/), a ferramenta de construção [vite](https://vite.dev/) com a framework [vike](https://vike.dev/) para funcionalidades adicionais como SSR, gestão de rotas e dados. Erros de lógica e formatação são validados com o [ESLint](https://eslint.org/), inspirando-se nas regras do [Standard](https://standardjs.com/).
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para contribuir para este repositório, ler a secção [Contribuir](#contribuir).
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Instalar o projeto
 
-### `npm test`
+É necessário o `yarn` para correr o projeto, que recomendamos instalar pelo `nvm` (node version manager).
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Começamos por instalar o download do `nvm` pelo [site oficial](https://www.nvmnode.com/guide/download.html#nvm-for-linux-and-macos-nvm-sh).
 
-### `npm run build`
+De seguida, corremos
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+nvm use
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+para instalar a versão recomendada do npm.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install -g corepack
+```
 
-### `npm run eject`
+irá instalar o package manager `yarn`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> :warning: É aconselhado instalar e usar o [Visual Studio Code](https://code.visualstudio.com/) como editor de texto. Há uma lista de extensões recomendadas. Para bom funcionamento do projeto, é necessário instalar também as extensões recomendadas do VS Code, listadas dentro da pasta `.vscode`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para que a app tenha acesso às variáveis de ambiente necessárias, incluindo segredos, copia-se o ficheiro `.env.development` e renomea-se a cópia para `.env.development.local` ou `.env.local` (se for para produção).
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Correr a app
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para instalar as dependencias do projeto, é necessário correr
 
-## Learn More
+```bash
+yarn
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+(equivalente a `yarn install`). Isto deve ser corrido no primeiro clone do projeto, cada vez que se adiciona uma dependência nova ou cada vez que se faz pull de um commit novo através do GitHub. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+yarn dev
+```
+Corre a app em modo de desenvolvimento na porta 3000. Abre [http://localhost:3000](http://localhost:3000) num browser para veres.
+A página irá dar reload sempre que guardares alterações, ao mesmo tempo que valida erros de ESlint e Typescript na consola.
 
-### Code Splitting
+## Contribuir
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Depois de ler atentamente as instruções de [instalação](#instalar-o-projeto), o projeto deverá estar bem configurado localmente.
 
-### Analyzing the Bundle Size
+Este repositório dedica-se exclusivamente à interface em React do site atual do QueerIST.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Qualquer contribuição deverá ser feita através de commits separados mas significativos, sendo que cada deverá ter um propósito objetivo. Não deverá existir commits de merge.
 
-### Making a Progressive Web App
+As mensagens de commit seguem um formato específico, começando por um emoji do github delimitado por dois pontos (alusivo à função deste commit), de seguida um verbo em português no presente da terceira pessoa do singular (com a ação deste commit) de uma lista fechada de verbos, e o resto da frase a explicar em mais detalhe o commit.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Este formato assegura consistencia e concisão nas mensagens de commit.
 
-### Advanced Configuration
+Exemplos de mensagens são:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- :sparkles: Cria Share componente
+- :zap: Melhora add to calender código e svg
+- :bug: Corrige data de fim de evento no futuro
+- :heavy_plus_sign: Adiciona vike e vike-react
 
-### Deployment
+Para encontrar o emoji do github adequado, é possível usar o site [gitmoji.dev](https://gitmoji.dev/), o assistente de terminal [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) ou ainda a extensão do VS Code [Gitmoji Commit](https://marketplace.visualstudio.com/items?itemName=benjaminadk.emojis4git), ajustando-se à preferência do contribuidor.
+As três opções permitem escrever o propósito do commit e receber sugestões do emoji adequado.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+## Lançar a app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Para correr a app no servidor público, é necessário ter o ficheiro `.env.local` com os segredos de produção. De seguida, correr
+
+```bash
+yarn build
+```
+
+para compilar e construir o projeto na pasta `dist/`, e finalmente correr
+
+```bash
+yarn preview
+```
+
+que irá lançar uma instância otimizada da app.
+
+---
+
+Feito com :heart: por [Francisco Sousa](https://github.com/TheMrKiko).

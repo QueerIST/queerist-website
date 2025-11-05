@@ -106,7 +106,7 @@ export const SubPageCover = ({ data }: { data: SubPage }) => {
     <div className='page-subpage' style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='page-image-group'>
         <div className='page-image-child'>
-          {date && <time dateTime={date.toISOString()}>{format(date, `d 'de' MMMM${yearFormat}`, { locale: pt })}</time>}
+          {date && <p><time dateTime={date.toISOString()}>{format(date, `d 'de' MMMM${yearFormat}`, { locale: pt })}</time></p>}
           <h1>{name}</h1>
           <p>{description}</p>
         </div>

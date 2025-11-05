@@ -117,6 +117,14 @@
 	margin-right: 0.5em;
 }
 
+.page-subpage .page-image-child p:first-child {
+	font-size: 18px;
+}
+
+.page-subpage .page-image-group {
+	height: fit-content;
+}
+
 
 @media only screen and (min-width: 600px) {
 
@@ -162,5 +170,17 @@
 
 	.page-subpage .page-image-child {
 		flex: 0 0 45%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+
+	/* For Mobile */
+	.page-subpage .page-image-group {
+		min-height: 600px;
+	}
+
+	.page-subpage .page-image-child:last-child {
+		flex: 0;
 	}
 }

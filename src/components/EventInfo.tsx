@@ -8,6 +8,7 @@ import { AddToCalendar } from './AddToCalendar'
 import { LinkButton } from './Button'
 import { Share } from './Share'
 import { TextRenderer } from './TextRenderer'
+import { getNonWhiteColor } from '../helpers/colors'
 import { gap } from '../helpers/ga4'
 import { fullPath, fullURL, pageId, publicPath } from '../helpers/links'
 import { isOnline } from '../helpers/location'
@@ -30,8 +31,6 @@ export const EventInfo = ({ data }: { data: Event }) => {
       endTimeString = format(enddate, ", 'até' d MMMM 'de' yyyy 'às' HH'h'mm", { locale: pt })
     }
   }
-
-  const moreColor = data.parentPage.bgColor !== 'white' ? data.parentPage.bgColor : data.parentPage.textColor
 
   let locationUrl
   if (location.link?.linkWeb) locationUrl = location.link.linkWeb
@@ -86,13 +85,10 @@ export const EventInfo = ({ data }: { data: Event }) => {
       <p className='icon-svg'>
         {link
           ? <>
-            <LinkButton
-              link={{ linkWeb: link }}
-              button={{ linkTextColor: moreColor }}
-            >
+            <LinkButton link={{ linkWeb: link }}>
               {'Mais informações'}
             </LinkButton>
-            <Launch fill={moreColor}/>
+            <Launch fill={getNonWhiteColor(data)}/>
           </>
           : 'Sabe mais nossas redes sociais! 👇'}
       </p>

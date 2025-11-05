@@ -6,6 +6,7 @@ import { Config } from 'vike-react/Config'
 import { Head } from 'vike-react/Head'
 
 import { usePage } from '../api/use'
+import { getNonWhiteColor } from '../helpers/colors'
 import { fullPath, publicPath } from '../helpers/links'
 import { type PageMeta } from '../types/domain'
 
@@ -19,6 +20,7 @@ export const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMet
   setPage(data)
 
   const title = home ? 'QueerIST – Incluir, informar, dialogar' : `${data.name} – QueerIST`
+  const linkColor = getNonWhiteColor(data)
   return (
     <div>
       <Config
@@ -48,6 +50,7 @@ export const Page = ({ data, children, home }: PropsWithChildren<{ data: PageMet
           }} />
       </Head>
       {children}
+      {linkColor && <style>{`a { color: ${linkColor} }`}</style>}
     </div>
   )
 }

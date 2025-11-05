@@ -1165,6 +1165,9 @@ export interface ApiSubpageSubpage extends Schema.CollectionType {
     BackgroundColor: Attribute.String &
     Attribute.Required &
     Attribute.CustomField<'plugin::color-picker.color'>
+    TextColor: Attribute.String &
+    Attribute.Required &
+    Attribute.CustomField<'plugin::color-picker.color'>
     Description: Attribute.Text & Attribute.Required
     Slug: Attribute.UID<'api::subpage.subpage', 'Name'> & Attribute.Required
     Child: Attribute.Relation<

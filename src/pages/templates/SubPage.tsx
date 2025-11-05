@@ -1,3 +1,6 @@
+import { JsonLd } from 'react-schemaorg'
+import { type BlogPosting } from 'schema-dts'
+
 import { DynamicZone } from '../../components/DynamicZone'
 import { Page } from '../../components/Page'
 import { SubPageCover } from '../../components/PageCover'
@@ -8,6 +11,12 @@ export const SubPage = ({ subPage, rawSubPage }: { subPage: SubPageProps, rawSub
   return (
     <Page data={subPage}>
       <SubPageCover data={subPage}/>
+      <JsonLd<BlogPosting>
+      item={{
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        dateCreated: subPage.date?.toISOString()
+      }}/>
       <DynamicZone data={rawSubPage.data.attributes.Body} />
     </Page>
   )

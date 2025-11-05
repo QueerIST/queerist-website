@@ -169,6 +169,7 @@ export interface Hub extends PageMeta {
 }
 
 export interface SubPage extends PageMeta {
+  date?: Date
   bgColor: string
   textColor: string
   parentPage: PageMeta

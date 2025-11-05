@@ -1169,6 +1169,7 @@ export interface ApiSubpageSubpage extends Schema.CollectionType {
     Attribute.Required &
     Attribute.CustomField<'plugin::color-picker.color'>
     Description: Attribute.Text & Attribute.Required
+    Date: Attribute.Date
     Slug: Attribute.UID<'api::subpage.subpage', 'Name'> & Attribute.Required
     Child: Attribute.Relation<
     'api::subpage.subpage',
@@ -1187,7 +1188,6 @@ export interface ApiSubpageSubpage extends Schema.CollectionType {
       'blocks.text-boxes-list'
     ]
     >
-    Date: Attribute.Date
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     publishedAt: Attribute.DateTime

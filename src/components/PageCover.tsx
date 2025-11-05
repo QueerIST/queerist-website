@@ -1,3 +1,6 @@
+import { format, isThisYear } from 'date-fns'
+import { pt } from 'date-fns/locale'
+
 import { LinkButton } from './Button'
 import { Image } from './Image'
 import { gap } from '../helpers/ga4'
@@ -96,11 +99,14 @@ export const EventCover = ({ data }: { data: Event }) => {
 }
 
 export const SubPageCover = ({ data }: { data: SubPage }) => {
-  const { name, img, description, bgColor, textColor } = data
+  const { name, img, description, date, bgColor, textColor } = data
+  const yearFormat = (date && !isThisYear(date)) ? " 'de' yyyy" : ''
+
   return (
     <div className='page-subpage' style={{ backgroundColor: bgColor, color: textColor }}>
       <div className='page-image-group'>
         <div className='page-image-child'>
+          {date && <time dateTime={date.toISOString()}>{format(date, `d 'de' MMMM${yearFormat}`, { locale: pt })}</time>}
           <h1>{name}</h1>
           <p>{description}</p>
         </div>

@@ -51,6 +51,7 @@ const DYNAMIC_ZONE = {
 
 export async function fetchMainPage () {
   return await axios.get<APIResponseSingle<'api::main-page.main-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/main-page', {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Meta: { populate: '*' },
@@ -62,6 +63,7 @@ export async function fetchMainPage () {
 
 export async function fetchAboutPage () {
   return await axios.get<APIResponseSingle<'api::about-page.about-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/about-page', {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Meta: { populate: '*' },
@@ -74,6 +76,7 @@ export async function fetchAboutPage () {
 
 export async function fetchEventsPage () {
   return await axios.get<APIResponseSingle<'api::event-page.event-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/event-page', {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Meta: { populate: '*' },
@@ -86,6 +89,7 @@ export async function fetchEventsPage () {
 
 export async function fetchProjectsPage () {
   return await axios.get<APIResponseSingle<'api::project-page.project-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/project-page', {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Meta: { populate: '*' },
@@ -98,6 +102,7 @@ export async function fetchProjectsPage () {
 
 export async function fetchHub ({ params }: { params: Params<string> }) {
   return await axios.get<APIResponseSingle<'api::hub.hub'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/hub/${params.hub}`, {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Image: { populate: '*' },
@@ -111,6 +116,7 @@ export async function fetchHub ({ params }: { params: Params<string> }) {
 
 export async function fetchSeries ({ params }: { params: Params<string> }) {
   return await axios.get<APIResponseSingle<'api::serie.serie'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/serie/${params.serie}`, {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Image: { populate: '*' },
@@ -125,6 +131,7 @@ export async function fetchSeries ({ params }: { params: Params<string> }) {
 
 export async function fetchEvent ({ params }: { params: Params<string> }) {
   return await axios.get<APIResponseSingle<'api::event.event'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/event/${params.event}`, {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Image: { populate: '*' },
@@ -138,6 +145,7 @@ export async function fetchEvent ({ params }: { params: Params<string> }) {
 
 export async function fetchSubPage ({ params }: { params: Params<string> }) {
   return await axios.get<APIResponseSingle<'api::subpage.subpage'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/subpage/${params.subpage}`, {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Image: { populate: '*' },
@@ -150,6 +158,7 @@ export async function fetchSubPage ({ params }: { params: Params<string> }) {
 
 export async function fetchAllEvents () {
   return await axios.get<APIResponseCollection<'api::event.event'>>('https://queerist.tecnico.ulisboa.pt/a/pi/events', {
+    headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
         Image: { populate: '*' },
@@ -162,7 +171,7 @@ export async function fetchAllEvents () {
 }
 
 export async function fetchImage (id: number) {
-  return await axios.get<GetValues<'plugin::upload.file'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/upload/files/${id}`)
+  return await axios.get<GetValues<'plugin::upload.file'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/upload/files/${id}`, { headers: { 'Strapi-Response-Format': 'v4' } })
 }
 
 export async function fetchAllWPPosts () {

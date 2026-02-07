@@ -101,7 +101,7 @@ export async function fetchProjectsPage () {
 }
 
 export async function fetchHub ({ params }: { params: Params<string> }) {
-  return await axios.get<APIResponseSingle<'api::hub.hub'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/hub/${params.hub}`, {
+  return await axios.get<APIResponseSingle<'api::hub.hub'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/hub/${params.hub}`, {
     headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
@@ -115,7 +115,7 @@ export async function fetchHub ({ params }: { params: Params<string> }) {
 }
 
 export async function fetchSeries ({ params }: { params: Params<string> }) {
-  return await axios.get<APIResponseSingle<'api::serie.serie'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/serie/${params.serie}`, {
+  return await axios.get<APIResponseSingle<'api::serie.serie'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/serie/${params.serie}`, {
     headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
@@ -130,7 +130,7 @@ export async function fetchSeries ({ params }: { params: Params<string> }) {
 }
 
 export async function fetchEvent ({ params }: { params: Params<string> }) {
-  return await axios.get<APIResponseSingle<'api::event.event'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/event/${params.event}`, {
+  return await axios.get<APIResponseSingle<'api::event.event'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/event/${params.event}`, {
     headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {
@@ -144,7 +144,7 @@ export async function fetchEvent ({ params }: { params: Params<string> }) {
 }
 
 export async function fetchSubPage ({ params }: { params: Params<string> }) {
-  return await axios.get<APIResponseSingle<'api::subpage.subpage'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/slugify/slugs/subpage/${params.subpage}`, {
+  return await axios.get<APIResponseSingle<'api::subpage.subpage'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/subpage/${params.subpage}`, {
     headers: { 'Strapi-Response-Format': 'v4' },
     params: {
       populate: {

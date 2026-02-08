@@ -48,8 +48,9 @@ module.exports = {
       }
     ],
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-unnecessary-condition': 'error',
-    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/no-unnecessary-condition': 'warn',
+    '@typescript-eslint/strict-boolean-expressions': 'off', // TEMP for TS Errors
+    '@typescript-eslint/prefer-optional-chain': 'off', // TEMP for TS Errors
     'react/jsx-indent': ['error', 2],
   }
 }

@@ -1,258 +1,262 @@
-import type { Schema, Attribute } from '@strapi/strapi'
+import type { Schema, Struct } from '@strapi/strapi'
 
-export interface BlocksBigBanner extends Schema.Component {
+export interface BlocksBigBanner extends Struct.ComponentSchema {
   collectionName: 'components_blocks_big_banners'
   info: {
     displayName: 'BigBanner'
     icon: 'picture'
   }
   attributes: {
-    Slug: Attribute.String
-    AltName: Attribute.String & Attribute.Required
-    Image: Attribute.Media & Attribute.Required
-    Button: Attribute.Component<'links.outline-link'>
+    AltName: Schema.Attribute.String & Schema.Attribute.Required
+    Button: Schema.Attribute.Component<'links.outline-link', false>
+    Image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required
+    Slug: Schema.Attribute.String
   }
 }
 
-export interface BlocksHighlightbox extends Schema.Component {
+export interface BlocksHighlightbox extends Struct.ComponentSchema {
   collectionName: 'components_blocks_highlightboxes'
   info: {
+    description: ''
     displayName: 'HighlightBox'
     icon: 'information'
-    description: ''
   }
   attributes: {
-    Slug: Attribute.String
-    Title: Attribute.String & Attribute.Required
-    Subtitle: Attribute.Text & Attribute.Required
-    BackgroundColor: Attribute.String &
-    Attribute.Required &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    TextColor: Attribute.String &
-    Attribute.Required &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    Button: Attribute.Component<'links.block-button'>
+    BackgroundColor: Schema.Attribute.String &
+    Schema.Attribute.Required &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Button: Schema.Attribute.Component<'links.block-button', false>
+    Slug: Schema.Attribute.String
+    Subtitle: Schema.Attribute.Text & Schema.Attribute.Required
+    TextColor: Schema.Attribute.String &
+    Schema.Attribute.Required &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Title: Schema.Attribute.String & Schema.Attribute.Required
   }
 }
 
-export interface BlocksHtml extends Schema.Component {
+export interface BlocksHtml extends Struct.ComponentSchema {
   collectionName: 'components_blocks_htmls'
   info: {
+    description: ''
     displayName: 'HTML'
     icon: 'hashtag'
-    description: ''
   }
   attributes: {
-    Code: Attribute.Text & Attribute.Required
-    Slug: Attribute.String
+    Code: Schema.Attribute.Text & Schema.Attribute.Required
+    Slug: Schema.Attribute.String
   }
 }
 
-export interface BlocksIcon extends Schema.Component {
+export interface BlocksIcon extends Struct.ComponentSchema {
   collectionName: 'components_blocks_icons'
   info: {
-    displayName: '_Icon'
     description: ''
+    displayName: '_Icon'
   }
   attributes: {
-    Name: Attribute.String & Attribute.Required
-    Label: Attribute.String
-    Logo: Attribute.Media
-    URL: Attribute.String
+    Label: Schema.Attribute.String
+    Logo: Schema.Attribute.Media<'images'>
+    Name: Schema.Attribute.String & Schema.Attribute.Required
+    URL: Schema.Attribute.String
   }
 }
 
-export interface BlocksIconsList extends Schema.Component {
+export interface BlocksIconsList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_icons_lists'
   info: {
-    displayName: 'IconsList'
     description: ''
+    displayName: 'IconsList'
     icon: 'chartBubble'
   }
   attributes: {
-    Slug: Attribute.String
-    Icons: Attribute.Component<'blocks.icon', true> &
-    Attribute.Required &
-    Attribute.SetMinMax<
+    Icons: Schema.Attribute.Component<'blocks.icon', true> &
+    Schema.Attribute.Required &
+    Schema.Attribute.SetMinMax<
     {
       min: 1
     },
     number
     >
+    Slug: Schema.Attribute.String
   }
 }
 
-export interface BlocksSeparator extends Schema.Component {
+export interface BlocksSeparator extends Struct.ComponentSchema {
   collectionName: 'components_blocks_separators'
   info: {
     displayName: 'Separator'
     icon: 'code'
   }
   attributes: {
-    Text: Attribute.String
+    Text: Schema.Attribute.String
   }
 }
 
-export interface BlocksSmallBanner extends Schema.Component {
+export interface BlocksSmallBanner extends Struct.ComponentSchema {
   collectionName: 'components_blocks_small_banners'
   info: {
     displayName: '_SmallBanner'
   }
   attributes: {
-    Title: Attribute.String & Attribute.Required
-    Subtitle: Attribute.String & Attribute.Required
-    Logo: Attribute.Media & Attribute.Required
-    BackgroundColor: Attribute.String &
-    Attribute.Required &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    TextColor: Attribute.String &
-    Attribute.Required &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    Button: Attribute.Component<'links.outline-link'>
+    BackgroundColor: Schema.Attribute.String &
+    Schema.Attribute.Required &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Button: Schema.Attribute.Component<'links.outline-link', false>
+    Logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required
+    Subtitle: Schema.Attribute.String & Schema.Attribute.Required
+    TextColor: Schema.Attribute.String &
+    Schema.Attribute.Required &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Title: Schema.Attribute.String & Schema.Attribute.Required
   }
 }
 
-export interface BlocksSmallBannersList extends Schema.Component {
+export interface BlocksSmallBannersList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_small_banners_lists'
   info: {
     displayName: 'SmallBannersList'
     icon: 'filter'
   }
   attributes: {
-    Slug: Attribute.String
-    Banners: Attribute.Component<'blocks.small-banner', true> &
-    Attribute.Required &
-    Attribute.SetMinMax<
+    Banners: Schema.Attribute.Component<'blocks.small-banner', true> &
+    Schema.Attribute.Required &
+    Schema.Attribute.SetMinMax<
     {
       min: 1
     },
     number
     >
+    Slug: Schema.Attribute.String
   }
 }
 
-export interface BlocksTextBlock extends Schema.Component {
+export interface BlocksTextBlock extends Struct.ComponentSchema {
   collectionName: 'components_blocks_text_blocks'
   info: {
     displayName: 'TextBlock'
     icon: 'write'
   }
   attributes: {
-    Slug: Attribute.String
-    Title: Attribute.String
-    Text: Attribute.Blocks & Attribute.Required
-    BackgroundColor: Attribute.String &
-    Attribute.Required &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    TextColor: Attribute.String &
-    Attribute.Required &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    TitleColor: Attribute.String &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    Small: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>
-    Button: Attribute.Component<'links.block-button'>
+    BackgroundColor: Schema.Attribute.String &
+    Schema.Attribute.Required &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Button: Schema.Attribute.Component<'links.block-button', false>
+    Slug: Schema.Attribute.String
+    Small: Schema.Attribute.Boolean &
+    Schema.Attribute.Required &
+    Schema.Attribute.DefaultTo<false>
+    Text: Schema.Attribute.Blocks & Schema.Attribute.Required
+    TextColor: Schema.Attribute.String &
+    Schema.Attribute.Required &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Title: Schema.Attribute.String
+    TitleColor: Schema.Attribute.String &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
   }
 }
 
-export interface BlocksTextBox extends Schema.Component {
+export interface BlocksTextBox extends Struct.ComponentSchema {
   collectionName: 'components_blocks_text_boxes'
   info: {
     displayName: '_TextBox'
   }
   attributes: {
-    Title: Attribute.String & Attribute.Required
-    Text: Attribute.Text & Attribute.Required
-    BackgroundColor: Attribute.String &
-    Attribute.Required &
-    Attribute.CustomField<'plugin::color-picker.color'>
+    BackgroundColor: Schema.Attribute.String &
+    Schema.Attribute.Required &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Text: Schema.Attribute.Text & Schema.Attribute.Required
+    Title: Schema.Attribute.String & Schema.Attribute.Required
   }
 }
 
-export interface BlocksTextBoxesList extends Schema.Component {
+export interface BlocksTextBoxesList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_text_boxes_lists'
   info: {
-    displayName: 'TextBoxesList'
     description: ''
+    displayName: 'TextBoxesList'
     icon: 'grid'
   }
   attributes: {
-    Slug: Attribute.String
-    Boxes: Attribute.Component<'blocks.text-box', true> &
-    Attribute.Required &
-    Attribute.SetMinMax<
+    Boxes: Schema.Attribute.Component<'blocks.text-box', true> &
+    Schema.Attribute.Required &
+    Schema.Attribute.SetMinMax<
     {
       min: 1
     },
     number
     >
+    Slug: Schema.Attribute.String
   }
 }
 
-export interface LinksBlockButton extends Schema.Component {
+export interface LinksBlockButton extends Struct.ComponentSchema {
   collectionName: 'components_links_block_buttons'
   info: {
     displayName: 'BlockButton'
   }
   attributes: {
-    Text: Attribute.String & Attribute.Required
-    TextColor: Attribute.String &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    BackgroundColor: Attribute.String &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    Link: Attribute.Component<'links.button'> & Attribute.Required
+    BackgroundColor: Schema.Attribute.String &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Link: Schema.Attribute.Component<'links.button', false> &
+    Schema.Attribute.Required
+    Text: Schema.Attribute.String & Schema.Attribute.Required
+    TextColor: Schema.Attribute.String &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
   }
 }
 
-export interface LinksButton extends Schema.Component {
+export interface LinksButton extends Struct.ComponentSchema {
   collectionName: 'components_blocks_buttons'
   info: {
-    displayName: '_Link'
     description: ''
+    displayName: '_Link'
   }
   attributes: {
-    File: Attribute.Media
-    Page: Attribute.String
-    Web: Attribute.String
+    File: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>
+    Page: Schema.Attribute.String
+    Web: Schema.Attribute.String
   }
 }
 
-export interface LinksOutlineLink extends Schema.Component {
+export interface LinksOutlineLink extends Struct.ComponentSchema {
   collectionName: 'components_links_outline_links'
   info: {
-    displayName: 'OutlineButton'
     description: ''
+    displayName: 'OutlineButton'
   }
   attributes: {
-    Text: Attribute.String & Attribute.Required
-    TextColor: Attribute.String &
-    Attribute.Required &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    Link: Attribute.Component<'links.button'> & Attribute.Required
+    Link: Schema.Attribute.Component<'links.button', false> &
+    Schema.Attribute.Required
+    Text: Schema.Attribute.String & Schema.Attribute.Required
+    TextColor: Schema.Attribute.String &
+    Schema.Attribute.Required &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
   }
 }
 
-export interface MetaPageMeta extends Schema.Component {
+export interface MetaPageMeta extends Struct.ComponentSchema {
   collectionName: 'components_meta_page_metas'
   info: {
+    description: ''
     displayName: 'Page Meta'
     icon: 'book'
-    description: ''
   }
   attributes: {
-    Name: Attribute.String & Attribute.Required
-    Description: Attribute.Text & Attribute.Required
-    Image: Attribute.Media & Attribute.Required
-    BackgroundColor: Attribute.String &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    TextColor: Attribute.String &
-    Attribute.CustomField<'plugin::color-picker.color'>
-    Slug: Attribute.String & Attribute.Required
+    BackgroundColor: Schema.Attribute.String &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
+    Description: Schema.Attribute.Text & Schema.Attribute.Required
+    Image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required
+    Name: Schema.Attribute.String & Schema.Attribute.Required
+    Slug: Schema.Attribute.String & Schema.Attribute.Required
+    TextColor: Schema.Attribute.String &
+    Schema.Attribute.CustomField<'plugin::color-picker.color'>
   }
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'blocks.big-banner': BlocksBigBanner
       'blocks.highlightbox': BlocksHighlightbox
       'blocks.html': BlocksHtml

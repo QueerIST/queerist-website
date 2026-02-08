@@ -14,15 +14,15 @@ const Events = () => {
 
   const data = response.data
 
-  const page = pageMapper(data.attributes.Meta)
+  const page = pageMapper(data.Meta)
   return (
     <Page data={page}>
       <PageCover data={page} />
       <Separator />
-      {data.attributes.Series?.data.map((serie, i) => (
-        <EventTile key={i} n={i} data={seriesMapper(serie.attributes, page)} />
+      {data.Series && data.Series.map((serie, i) => (
+        <EventTile key={i} n={i} data={seriesMapper(serie, page)} />
       ))}
-      <DynamicZone data={data.attributes.Body} />
+      <DynamicZone data={data.Body} />
     </Page>
   )
 }

@@ -5,9 +5,9 @@ import { Page } from '../../components/Page'
 import { SeriesCover } from '../../components/PageCover'
 import { Separator } from '../../components/Separator'
 import { type Series as SeriesProps } from '../../types/domain'
-import { type APIResponseSingle } from '../../types/strapi'
+import { type SingleTypeResponse } from '../../types/strapi'
 
-export const Series = ({ series, rawSerie }: { series: SeriesProps, rawSerie: APIResponseSingle<'api::serie.serie'> }) => {
+export const Series = ({ series, rawSerie }: { series: SeriesProps, rawSerie: SingleTypeResponse<'api::serie.serie'> }) => {
   return (
     <Page data={series}>
       <SeriesCover data={series} />
@@ -17,7 +17,7 @@ export const Series = ({ series, rawSerie }: { series: SeriesProps, rawSerie: AP
         <Separator data='Galeria'/>
         <ImageGallery data={series.eventMedia}/>
       </>}
-      <DynamicZone data={rawSerie.data.attributes.Body} />
+      <DynamicZone data={rawSerie.data.Body} />
     </Page>
   )
 }

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import type { WP_REST_API_Post } from 'wp-types'
 
-import { type APIResponseCollection, type APIResponseSingle, type GetValues } from '../types/strapi'
+import { type CollectionTypeResponse, type SingleTypeResponse, type GetValues } from '../types/strapi'
 
 type Params<Key extends string = string> = {
   readonly [key in Key]: string | undefined;
@@ -50,8 +50,7 @@ const DYNAMIC_ZONE = {
 }
 
 export async function fetchMainPage () {
-  return await axios.get<APIResponseSingle<'api::main-page.main-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/main-page', {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<SingleTypeResponse<'api::main-page.main-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/main-page', {
     params: {
       populate: {
         Meta: { populate: '*' },
@@ -62,12 +61,10 @@ export async function fetchMainPage () {
 }
 
 export async function fetchAboutPage () {
-  return await axios.get<APIResponseSingle<'api::about-page.about-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/about-page', {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<SingleTypeResponse<'api::about-page.about-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/about-page', {
     params: {
       populate: {
         Meta: { populate: '*' },
-        Separator: { populate: '*' },
         Body: DYNAMIC_ZONE
       }
     }
@@ -75,8 +72,7 @@ export async function fetchAboutPage () {
 }
 
 export async function fetchEventsPage () {
-  return await axios.get<APIResponseSingle<'api::event-page.event-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/event-page', {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<SingleTypeResponse<'api::event-page.event-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/event-page', {
     params: {
       populate: {
         Meta: { populate: '*' },
@@ -88,12 +84,11 @@ export async function fetchEventsPage () {
 }
 
 export async function fetchProjectsPage () {
-  return await axios.get<APIResponseSingle<'api::project-page.project-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/project-page', {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<SingleTypeResponse<'api::project-page.project-page'>>('https://queerist.tecnico.ulisboa.pt/a/pi/project-page', {
     params: {
       populate: {
         Meta: { populate: '*' },
-        Hubs: { populate: ['Image', 'Logo', 'Events', 'Events.Image'] },
+        Hubs: { populate: ['Image', 'Logo', 'Series', 'Series.Image'] },
         Body: DYNAMIC_ZONE
       }
     }
@@ -101,8 +96,7 @@ export async function fetchProjectsPage () {
 }
 
 export async function fetchHub ({ params }: { params: Params<string> }) {
-  return await axios.get<APIResponseSingle<'api::hub.hub'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/hub/${params.hub}`, {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<SingleTypeResponse<'api::hub.hub'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/hub/${params.hub}`, {
     params: {
       populate: {
         Image: { populate: '*' },
@@ -115,8 +109,7 @@ export async function fetchHub ({ params }: { params: Params<string> }) {
 }
 
 export async function fetchSeries ({ params }: { params: Params<string> }) {
-  return await axios.get<APIResponseSingle<'api::serie.serie'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/serie/${params.serie}`, {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<SingleTypeResponse<'api::serie.serie'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/serie/${params.serie}`, {
     params: {
       populate: {
         Image: { populate: '*' },
@@ -130,8 +123,7 @@ export async function fetchSeries ({ params }: { params: Params<string> }) {
 }
 
 export async function fetchEvent ({ params }: { params: Params<string> }) {
-  return await axios.get<APIResponseSingle<'api::event.event'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/event/${params.event}`, {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<SingleTypeResponse<'api::event.event'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/event/${params.event}`, {
     params: {
       populate: {
         Image: { populate: '*' },
@@ -144,8 +136,7 @@ export async function fetchEvent ({ params }: { params: Params<string> }) {
 }
 
 export async function fetchSubPage ({ params }: { params: Params<string> }) {
-  return await axios.get<APIResponseSingle<'api::subpage.subpage'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/subpage/${params.subpage}`, {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<SingleTypeResponse<'api::subpage.subpage'>>(`https://queerist.tecnico.ulisboa.pt/a/pi/webtools/router?path=/subpage/${params.subpage}`, {
     params: {
       populate: {
         Image: { populate: '*' },
@@ -157,8 +148,7 @@ export async function fetchSubPage ({ params }: { params: Params<string> }) {
 }
 
 export async function fetchAllEvents () {
-  return await axios.get<APIResponseCollection<'api::event.event'>>('https://queerist.tecnico.ulisboa.pt/a/pi/events', {
-    headers: { 'Strapi-Response-Format': 'v4' },
+  return await axios.get<CollectionTypeResponse<'api::event.event'>>('https://queerist.tecnico.ulisboa.pt/a/pi/events', {
     params: {
       populate: {
         Image: { populate: '*' },

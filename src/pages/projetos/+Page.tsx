@@ -14,15 +14,15 @@ const Projects = () => {
 
   const data = response.data
 
-  const page = pageMapper(data.attributes.Meta)
+  const page = pageMapper(data.Meta)
   return (
     <Page data={page}>
       <PageCover data={page} />
       <Separator />
-      {data.attributes.Hubs?.data.map((hub, i) => (
-        <PageTile key={i} n={i} data={hubMapper(hub.attributes, page)} />
+      {data.Hubs && data.Hubs.map((hub, i) => (
+        <PageTile key={i} n={i} data={hubMapper(hub, page)} />
       ))}
-      <DynamicZone data={data.attributes.Body} />
+      <DynamicZone data={data.Body} />
     </Page>
   )
 }

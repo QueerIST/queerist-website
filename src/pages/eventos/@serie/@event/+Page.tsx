@@ -8,9 +8,9 @@ import { Event as EventTemplate } from '../../../templates/Event'
 const Event = () => {
   const { eventos: rawEventos, serie: rawSerie, event: rawEvent } = useData<Data>()
 
-  const parentPage = seriesMapper(rawSerie.data.attributes, pageMapper(rawEventos.data.attributes.Meta))
+  const parentPage = seriesMapper(rawSerie.data, pageMapper(rawEventos.data.Meta))
 
-  const event = eventMapper(rawEvent.data.attributes, parentPage)
+  const event = eventMapper(rawEvent.data, parentPage)
   return (
     <EventTemplate event={event} rawEvent={rawEvent}/>
   )

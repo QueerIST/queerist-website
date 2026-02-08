@@ -7,11 +7,11 @@ import { SubPage as SubPageTemplate } from '../../../templates/SubPage'
 const SubPage = () => {
   const { sobre: rawSobre, page: rawSubPage, subPage: rawSubSubPage } = useData<Data>()
 
-  const parentPage = pageMapper(rawSobre.data.attributes.Meta)
+  const parentPage = pageMapper(rawSobre.data.Meta)
 
-  const subPage = subPageMapper(rawSubPage.data.attributes, parentPage)
+  const subPage = subPageMapper(rawSubPage.data, parentPage)
 
-  const subSubPage = subPageMapper(rawSubSubPage.data.attributes, subPage)
+  const subSubPage = subPageMapper(rawSubSubPage.data, subPage)
 
   return (
     <SubPageTemplate subPage={subSubPage} rawSubPage={rawSubSubPage} />

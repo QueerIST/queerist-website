@@ -2,6 +2,7 @@ import { redirect, render } from 'vike/abort'
 import type { PageContextServer } from 'vike/types'
 
 import { fetchAboutPage, fetchSubPage } from '../../../api/loaders'
+import { slug } from '../../../helpers/types'
 
 export async function data (pageContext: PageContextServer) {
   let subPage
@@ -14,10 +15,10 @@ export async function data (pageContext: PageContextServer) {
 
   const s = pageContext.urlParsed.searchOriginal ?? ''
 
-  const rawSubPage = subPage.data.attributes
-  if (rawSubPage.Parent?.data) {
-    const rawSubPagePage = rawSubPage.Parent.data.attributes
-    throw redirect(`/sobre/${rawSubPagePage.Slug}/${rawSubPage.Slug}${s}`, 301)
+  const rawSubPage = subPage.data
+  if (rawSubPage.Parent) {
+    const rawSubPagePage = rawSubPage.Parent
+    throw redirect(`/sobre/${rawSubPagePage.Slug}/${slug(rawSubPage)}${s}`, 301)
   }
 
   const sobre = (await fetchAboutPage()).data

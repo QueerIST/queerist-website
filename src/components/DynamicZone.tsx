@@ -1,4 +1,4 @@
-import type { Attribute } from '@strapi/strapi'
+import type { Schema } from '@strapi/types'
 
 import { BigBanner, SmallBanners } from '../components/Banners'
 import { HighlightBox } from '../components/HighlightBox'
@@ -9,7 +9,7 @@ import { TextBlock } from '../components/TextBlock'
 import { bigBannerMapper, highlightBoxMapper, iconsMapper, injectedHTMLMapper, separatorMapper, smallBannersMapper, textBlockMapper, textBoxesMapper } from '../mappers/components'
 import { type GetValue } from '../types/strapi'
 
-type DynamicZones = GetValue<Attribute.DynamicZone<
+type DynamicZones = GetValue<Schema.Attribute.DynamicZone<
 [
   'blocks.big-banner',
   'blocks.text-block',

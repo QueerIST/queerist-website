@@ -14,27 +14,26 @@ import { wrapPromise } from '../../helpers/async'
 import { pageMapper } from '../../mappers/components'
 import { eventMapper, hubMapper, postMapper, seriesMapper } from '../../mappers/content'
 import { type PageMeta } from '../../types/domain'
-import { type APIResponseCollection } from '../../types/strapi'
+import { type GetValues, type CollectionTypeResponse } from '../../types/strapi'
 
-function AllEvents ({ data }: { data: () => APIResponseCollection<'api::event.event'> | undefined }) {
+function AllEvents ({ data }: { data: () => CollectionTypeResponse<'api::event.event'> | undefined }) {
   const rawEvents = data()
   if (!rawEvents) { return undefined }
 
   const events = rawEvents.data.map((e) => {
-    const rawEvent = e.attributes
-    const rawSeries = rawEvent.Series?.data.attributes
+    const rawSeries = e.Series
 
     if (!rawSeries) { return undefined }
 
     let seriesParent
-    if (rawSeries.Hub?.data) {
-      const rawHub = rawSeries.Hub.data.attributes
+    if (rawSeries.Hub) {
+      const rawHub: GetValues<'api::hub.hub'> = rawSeries.Hub
       seriesParent = hubMapper(rawHub, { id: 'projetos' } as unknown as PageMeta)
     } else {
       seriesParent = { id: 'eventos' } as unknown as PageMeta
     }
 
-    return eventMapper(rawEvent, seriesMapper(rawSeries, seriesParent))
+    return eventMapper(e, seriesMapper(rawSeries, seriesParent))
   }).filter((e) => !!e)
 
   const futureEvents = events.filter((e) => isAfter(e.date, Date.now()))
@@ -71,12 +70,12 @@ function Home () {
 
   const data = response.data
 
-  const page = pageMapper(data.attributes.Meta)
-  const promise = wrapPromise<APIResponseCollection<'api::event.event'>>(fetchAllEvents)
+  const page = pageMapper(data.Meta)
+  const promise = wrapPromise<CollectionTypeResponse<'api::event.event'>>(fetchAllEvents)
   return (
     <Page data={page} home>
       <MainCover />
-      <DynamicZone data={data.attributes.Body} />
+      <DynamicZone data={data.Body} />
       <Suspense>
         <AllEvents data={promise}/>
       </Suspense>

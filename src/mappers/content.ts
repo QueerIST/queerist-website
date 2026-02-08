@@ -1,4 +1,4 @@
-import { type Attribute } from '@strapi/strapi'
+import { type Schema } from '@strapi/types'
 import { isAfter } from 'date-fns'
 
 import { imageMapper, maybeImageMapper, maybeMediaMapper } from './components'
@@ -47,8 +47,8 @@ export function seriesMapper (data: GetValues<'api::serie.serie'>, parentPage: P
   series.path = pagePath(series)
 
   const rawEvents = data.Events
-  if (rawEvents?.data && rawEvents.data.length > 0) {
-    series.events = rawEvents.data.map(event => eventMapper(event.attributes, series))
+  if (rawEvents && rawEvents.length > 0) {
+    series.events = rawEvents.map(event => eventMapper(event, series))
     series.eventMedia = series.events.reduce((a: EventMedia[], e) => ([...a, ...(e.media?.map((m): EventMedia => ({ event: e, media: m.media })) ?? [])]), [])
   }
 
@@ -76,7 +76,7 @@ export function eventMapper (data: GetValues<'api::event.event'>, parentPage: Se
   }
 
   event.path = pagePath(event)
-  event.location = enrichLocation(event, data.Place ?? undefined)
+  event.location = enrichLocation(event, data.Place)
 
   return event
 }
@@ -112,7 +112,7 @@ export function postMapper (data: YoastPost): Post {
   }
 }
 
-function enrichLocation (event: Event, place?: string): PlaceInfo {
+function enrichLocation (event: Event, place: string | undefined): PlaceInfo {
   const location = event.location
 
   if (isOnline(location)) {
@@ -129,7 +129,7 @@ function enrichLocation (event: Event, place?: string): PlaceInfo {
   return location
 }
 
-function textBlockFlattener (data: GetValue<Attribute.Blocks> | undefined) {
+function textBlockFlattener (data: GetValue<Schema.Attribute.Blocks> | undefined) {
   return data?.map((block) => {
     if (block.type === 'paragraph' || block.type === 'heading') {
       return block.children.map((inline) => {

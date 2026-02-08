@@ -1,27 +1,23 @@
 import { pagePath } from '../helpers/links'
 import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink, Pages, type InjectedHTML } from '../types/domain'
-import { type APIResponseCollection, type APIResponse, type GetValues } from '../types/strapi'
+import { type GetValues } from '../types/strapi'
 
-export function maybeImageMapper (data?: APIResponse<'plugin::upload.file'>) {
+export function maybeImageMapper (data?: GetValues<'plugin::upload.file'>) {
   if (!data) { return }
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (!data.data) { return }
   return imageMapper(data)
 }
 
-export function imageMapper (data: APIResponse<'plugin::upload.file'>) {
-  return data.data.attributes
+export function imageMapper (data: GetValues<'plugin::upload.file'>) {
+  return data
 }
 
-export function maybeMediaMapper (data: APIResponseCollection<'plugin::upload.file'> | undefined) {
+export function maybeMediaMapper (data: Array<GetValues<'plugin::upload.file'>> | undefined) {
   if (!data) { return }
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (!data.data) { return }
   return mediaMapper(data)
 }
 
-function mediaMapper (data: APIResponseCollection<'plugin::upload.file'>) {
-  return data.data.map((img) => img.attributes)
+function mediaMapper (data: Array<GetValues<'plugin::upload.file'>>) {
+  return data.map((img) => img)
 }
 
 export function pageMapper (data: GetValues<'meta.page-meta'>): PageMeta {
@@ -50,8 +46,8 @@ function enrichWithLink (link: GetValues<'links.button'>) {
     button.linkId = hash
   } else if (link.Web) {
     button.linkWeb = link.Web
-  } else if (link.File?.data) {
-    button.linkFile = link.File.data.attributes.url
+  } else if (link.File) {
+    button.linkFile = link.File.url
   }
 
   return button

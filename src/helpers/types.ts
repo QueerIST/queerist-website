@@ -11,3 +11,7 @@ export function isSeries (page: PageMeta): page is Series {
 export function isEvent (page: PageMeta): page is Event {
   return page.type === Pages.Event
 }
+
+export function slug (page: { Slug: string }) {
+  return page.Slug
+}

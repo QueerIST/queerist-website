@@ -8,9 +8,9 @@ import { Series as SeriesTemplate } from '../../templates/Series'
 const Series = () => {
   const { eventos: rawEventos, serie: rawSerie } = useData<Data>()
 
-  const parentPage = pageMapper(rawEventos.data.attributes.Meta)
+  const parentPage = pageMapper(rawEventos.data.Meta)
 
-  const series = seriesMapper(rawSerie.data.attributes, parentPage)
+  const series = seriesMapper(rawSerie.data, parentPage)
   return (
     <SeriesTemplate series={series} rawSerie={rawSerie} />
   )

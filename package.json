@@ -34,7 +34,7 @@
     "*.{js,mjs,jsx,ts,tsx}": "eslint --fix"
   },
   "devDependencies": {
-    "@strapi/strapi": "^4.21.0",
+    "@strapi/strapi": "^5.35.0",
     "@svgr/plugin-svgo": "^8.1.0",
     "@types/aos": "^3.0.7",
     "@types/node": "^20.11.30",

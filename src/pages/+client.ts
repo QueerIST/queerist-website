@@ -1,6 +1,8 @@
 import AOS from 'aos'
 import ReactGA from 'react-ga4'
 
+import { initJotFormTracking } from '../helpers/jotform'
+
 AOS.init({
   once: true
 })
@@ -44,3 +46,6 @@ if (import.meta.env.VITE_GA_CODE !== '') {
     }
   })
 }
+
+// Initialize JotForm tracking
+initJotFormTracking()

@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import ReactGA from 'react-ga4'
 import Headroom from 'react-headroom'
 
+import { LinkButton } from './Button'
 import { NavLink } from './Link'
 import { gap } from '../helpers/ga4'
 import logo from '../img/logo so letras brancas.png'
@@ -54,7 +55,7 @@ export function Header () {
             <NavLink className={className} href='/eventos' onClick={handleClickLinkCb('eventos', 'Eventos')}>Eventos</NavLink>
             <NavLink className={className} href='/projetos' onClick={handleClickLinkCb('projetos', 'Projetos')}>Projetos</NavLink>
             <a className={className} href='https://queerist.tecnico.ulisboa.pt/blog/' onClick={handleClickLinkCb('blog', 'Blog')}>Blog</a>
-            <a id='newsletter-link' className={className} href='https://eepurl.com/dnApYP'>Newsletter</a>
+            <LinkButton link={{ linkWeb: 'https://eepurl.com/dnApYP' }} id='newsletter-link' className={className}>Newsletter</LinkButton>
           </div>
         </div>
       </div>

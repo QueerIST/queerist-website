@@ -22,6 +22,7 @@ const Icon = ({ name, label, link, logo }: IconProps) => (
   <li className='lists-iconlist-icon'>
     <MaybeLinkButton
       link={link ? { linkWeb: link } : undefined}
+      className='icon-list-link'
     >
       <IconImg name={name} label={label} logo={logo} />
     </MaybeLinkButton>

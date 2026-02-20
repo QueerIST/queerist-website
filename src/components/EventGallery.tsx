@@ -35,8 +35,8 @@ const EventGalleryItem = ({ n, id, name, open = true, detached = false, detailed
         <h3>{`${name}${nameDetails}`}</h3>
         <span className='event-gallery-item-launch icon-svg'>
           <p>{format(date, 'dd MMM yyyy, HH\'h\'mm', { locale: pt })} @ {location.specific ?? location.name}</p>
-          {!detached &&
-          <LinkButton link={{ linkWeb: link }}>
+          {!detached && link &&
+          <LinkButton link={{ linkWeb: link }} className='event-launch-link'>
             <Launch />
           </LinkButton>
           }

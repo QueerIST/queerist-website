@@ -19,6 +19,7 @@ enum ButtonType {
 interface ButtonProps {
   color?: string
   className?: string
+  id?: string
   borderColor?: string
   backgroundColor?: string
   type: ButtonType
@@ -27,46 +28,52 @@ interface ButtonProps {
 
 interface ChildrenProps {
   className?: string
+  id?: string
   style?: CSSProperties
   onClick?: MouseEventHandler
 }
 
 function Link ({ data, childProps, children }: PropsWithChildren<{ data: ButtonLink, childProps: ChildrenProps }>) {
-  return (
-    data.linkPage
-      ? (
-        <NavLink href={`${data.linkPage}${data.linkId ? `#${data.linkId}` : ''}`} {...childProps}>
-          {children}
-        </NavLink>
-        )
-      : data.linkFile
-        ? (
-          <a href={publicPath(data.linkFile)} className={childProps.className} style={childProps.style}>{children}</a>
-          )
-        : data.linkWeb
-          ? (
-            <a href={data.linkWeb} target='_blank' rel='noopener noreferrer' className={childProps.className} style={childProps.style}>{children}</a>
-            )
-          : data.onClick
-            ? (
-              <button
-                className={childProps.className}
-                style={childProps.style}
-                onClick={(e) => {
-                  childProps.onClick?.(e)
-                  data.onClick?.(e)
-                }}
-              >{children}</button>
-              )
-            : (
-              <>{children}</>
-              )
-  )
+  if (data.linkPage) {
+    if (!childProps.onClick) {
+      console.warn('GA Tracking: No custom event defined for inbound navigation!')
+    }
+
+    return <NavLink href={`${data.linkPage}${data.linkId ? `#${data.linkId}` : ''}`} {...childProps}>{children}</NavLink>
+  }
+
+  if (data.linkFile) {
+    return <a href={publicPath(data.linkFile)} className={childProps.className} id={childProps.id} style={childProps.style}>{children}</a>
+  }
+
+  if (data.linkWeb) {
+    if (!childProps.className && !childProps.id) {
+      console.warn('GA Tracking: No id or className defined for outbound navigation!')
+    }
+    return <a href={data.linkWeb} target='_blank' rel='noopener noreferrer' className={childProps.className} id={childProps.id} style={childProps.style}>{children}</a>
+  }
+
+  if (data.onClick) {
+    return (
+      <button
+        className={childProps.className}
+        id={childProps.id}
+        style={childProps.style}
+        onClick={(e) => {
+          childProps.onClick?.(e)
+          data.onClick?.(e)
+        }}
+        >{children}</button>
+    )
+  }
+
+  return <>{children}</>
 }
 
-export function OutlineButton ({ children, action, className, link, button }: PropsWithChildren<{ className?: string, link: ButtonLink, button: OutlineButtonStyle, action: Action }>) {
+export function OutlineButton ({ id, children, action, className, link, button }: PropsWithChildren<{ className?: string, id?: string, link: ButtonLink, button: OutlineButtonStyle, action: Action }>) {
   return (
     <Button
+      id={id}
       action={action}
       borderColor={button.linkTextColor}
       className={className}
@@ -79,9 +86,10 @@ export function OutlineButton ({ children, action, className, link, button }: Pr
   )
 }
 
-export function BlockButton ({ children, action, className, link, button, defaults }: PropsWithChildren<{ className?: string, link: ButtonLink, button: BlockButtonStyle, action: Action, defaults?: BlockButtonStyle }>) {
+export function BlockButton ({ id, children, action, className, link, button, defaults }: PropsWithChildren<{ className?: string, id?: string, link: ButtonLink, button: BlockButtonStyle, action: Action, defaults?: BlockButtonStyle }>) {
   return (
     <Button
+      id={id}
       action={action}
       backgroundColor={button.linkBackgroundColor ?? defaults?.linkBackgroundColor}
       className={className}
@@ -94,9 +102,10 @@ export function BlockButton ({ children, action, className, link, button, defaul
   )
 }
 
-export function LinkButton ({ children, action, className, link, button }: PropsWithChildren<{ className?: string, link: ButtonLink, button?: OutlineButtonStyle, action?: Action }>) {
+export function LinkButton ({ id, children, action, className, link, button }: PropsWithChildren<{ className?: string, id?: string, link: ButtonLink, button?: OutlineButtonStyle, action?: Action }>) {
   return (
     <Button
+      id={id}
       action={action}
       className={className}
       color={button?.linkTextColor}
@@ -108,13 +117,14 @@ export function LinkButton ({ children, action, className, link, button }: Props
   )
 }
 
-export function MaybeLinkButton ({ children, action, className, link, button }: PropsWithChildren<{ className?: string, link?: ButtonLink, button?: OutlineButtonStyle, action?: Action }>) {
+export function MaybeLinkButton ({ id, children, action, className, link, button }: PropsWithChildren<{ className?: string, id?: string, link?: ButtonLink, button?: OutlineButtonStyle, action?: Action }>) {
   if (!link || !action) {
     return <>{children}</>
   }
 
   return (
     <LinkButton
+      id={id}
       action={action}
       className={className}
       link={link}
@@ -126,11 +136,12 @@ export function MaybeLinkButton ({ children, action, className, link, button }: 
 }
 
 function Button (props: PropsWithChildren<ButtonProps & { link: ButtonLink }>) {
-  const { children, borderColor, color, className, backgroundColor, type, action, link } = props
+  const { children, borderColor, color, className, id, backgroundColor, type, action, link } = props
   return (
     <Link
       data={link}
       childProps={{
+        id,
         style: { borderColor, color, backgroundColor },
         className: classNames(
           className,

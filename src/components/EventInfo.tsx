@@ -66,15 +66,17 @@ export const EventInfo = ({ data }: { data: Event }) => {
       {isOnline(location)
         ? (
           <LinkButton
-          className='no-link-decoration'
-          link={location.link}
-          action={gap('navigate_content', { type: 'event-info', link_page: pageId(location.link.linkPage), link_text: location.shortVersion })}
-        >
+            id='event-location-link'
+            className='no-link-decoration'
+            link={location.link}
+            action={gap('navigate_content', { type: 'event-info', link_page: pageId(location.link.linkPage), link_text: location.shortVersion })}
+          >
             <h4>🌐 <u>{location.shortVersion}</u></h4>
           </LinkButton>
           )
         : (
           <LinkButton
+            id='event-location-link'
             className='no-link-decoration'
             link={{ linkWeb: location.pin, ...location.link }}
           >
@@ -85,7 +87,7 @@ export const EventInfo = ({ data }: { data: Event }) => {
       <p className='icon-svg'>
         {link
           ? <>
-            <LinkButton link={{ linkWeb: link }}>
+            <LinkButton link={{ linkWeb: link }} id='event-more-info-link'>
               {'Mais informações'}
             </LinkButton>
             <Launch fill={getNonWhiteColor(data)}/>

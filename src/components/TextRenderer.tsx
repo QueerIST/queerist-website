@@ -39,7 +39,7 @@ export const TextRenderer = ({ data }: { data: BlocksContent }) => {
             action = gap('navigate_content', { type: 'text-renderer', link_page: pageId(link.linkPage), link_text: children?.toString() ?? '' })
           }
 
-          return <LinkButton link={link} action={action}>{children}</LinkButton>
+          return <LinkButton link={link} action={action} className='text-renderer-link'>{children}</LinkButton>
         }
       }}
     />

@@ -13,10 +13,12 @@ const params = new URLSearchParams(location.search)
 normalizeUTMParameters()
 
 if (import.meta.env.VITE_GA_CODE !== '') {
+  const isDebugUser = localStorage.getItem('ga_debug_mode')
   let debugMode
 
-  if (params.get('debug') !== null || import.meta.env.DEV || !import.meta.env.PROD) {
+  if (isDebugUser === 'true' || params.get('debug') !== null || import.meta.env.DEV || !import.meta.env.PROD) {
     debugMode = true
+    localStorage.setItem('ga_debug_mode', 'true')
   }
 
   ReactGA.initialize(import.meta.env.VITE_GA_CODE, {
@@ -27,5 +29,4 @@ if (import.meta.env.VITE_GA_CODE !== '') {
   })
 }
 
-// Initialize JotForm tracking
 initJotFormTracking()

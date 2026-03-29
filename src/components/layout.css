@@ -63,3 +63,7 @@ button {
 .icon-svg svg {
   margin: 2px;
 }
+
+#hide {
+  display: none !important;
+}

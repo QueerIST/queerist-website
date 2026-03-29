@@ -1,7 +1,11 @@
 import { type PageMeta } from '../types/domain'
 
+export function isWhite (color: string | undefined) {
+  return (color === 'white' || color === '#ffffff')
+}
+
 function ensureNotWhite (color: string | undefined) {
-  if (color !== 'white' && color !== '#ffffff') return color
+  if (!color || !isWhite(color)) return color
 }
 
 export function getNonWhiteColor (page: PageMeta) {

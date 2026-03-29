@@ -5,9 +5,10 @@ import { format } from 'date-fns'
 import { pt } from 'date-fns/locale'
 
 import Launch from './../svg/launch.svg?react'
-import { BlockButton, LinkButton } from './Button'
+import { BlockButton, LinkButton, OutlineButton } from './Button'
 import { Image } from './Image'
 import { usePage } from '../api/use'
+import { isWhite } from '../helpers/colors'
 import { WrapDelayed } from '../helpers/delay'
 import { gap } from '../helpers/ga4'
 import { SizeTypes } from '../helpers/image'
@@ -24,6 +25,9 @@ const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
 const EventGalleryItem = ({ n, id, name, open = true, detached = false, detailed, date, location, img, link, parentPage, path }: Event & { open?: boolean, detached?: boolean, detailed?: boolean, n: number }) => {
   const nameDetails = detailed ? ` // ${parentPage.name}` : ''
   const [page] = usePage()
+
+  const ButtonClass = !isWhite(parentPage.bgColor) ? BlockButton : OutlineButton
+
   return (
     <li className='event-gallery-item' id={id}>
       <div className='event-gallery-item-img'>
@@ -41,7 +45,7 @@ const EventGalleryItem = ({ n, id, name, open = true, detached = false, detailed
           </LinkButton>
           }
         </span>
-        <BlockButton
+        <ButtonClass
           action={gap('navigate_item', {
             type: 'event-list',
             list_id: detailed ? page.id : parentPage.id,
@@ -53,7 +57,7 @@ const EventGalleryItem = ({ n, id, name, open = true, detached = false, detailed
           button={{ linkBackgroundColor: parentPage.bgColor, linkTextColor: parentPage.textColor }}
         >
           {'Ver mais'}
-        </BlockButton>
+        </ButtonClass>
       </div>
     </li>
   )

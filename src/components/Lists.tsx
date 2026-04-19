@@ -95,7 +95,7 @@ export const TextBoxList = ({ id, boxes }: TextBoxListProps) => (
 )
 
 export const ImageBoxList = ({ id, boxes }: ImageBoxListProps) => (
-  <List id={id} className='lists-imgboxlist'>
+  <List id={id} className='lists-imgboxlist custom-scrollbar'>
     {boxes.map((imagebox, i) => (
       <ImageBox
       key={i}

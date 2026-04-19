@@ -163,9 +163,9 @@ export function iconsMapper (data: GetValues<'blocks.icons-list'>): Icons {
   }
 }
 
-export function postsMapper (data: Post[]): ImageBoxList {
+export function postsMapper (id: string, data: Post[]): ImageBoxList {
   return {
-    id: data.Slug,
+    id,
     boxes: data.map((p): ImageBox => ({
       text: p.text,
       name: p.title,

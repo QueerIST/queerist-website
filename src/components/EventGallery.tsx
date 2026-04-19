@@ -17,7 +17,7 @@ import { type Events, type Event } from '../types/domain'
 import './eventgallery.css'
 
 const EventGalleryWrap = (props: PropsWithChildren<{ open: boolean }>) => (
-  <ul className={classNames('event-gallery', !props.open && 'closed')}>
+  <ul className={classNames('event-gallery custom-scrollbar', !props.open && 'closed')}>
     {props.children}
   </ul>
 )
@@ -80,7 +80,7 @@ export function EventGallery ({ data, open }: { data: Events, open: boolean }) {
 
 export const InlineEventGallery = ({ data, detailed, reduced = false }: { data: Events, reduced?: boolean, detailed?: boolean }) => (
   <div className={classNames('event-gallery-inline', reduced && 'event-gallery-reduced')}>
-    <ul className='event-gallery'>
+    <ul className='event-gallery custom-scrollbar'>
       {data.map((event, i) => (
         <EventGalleryItem
           n={i}

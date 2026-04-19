@@ -16,6 +16,7 @@ export const fullPath = (page: PageMeta) => {
 export const pageId = (path: string | undefined) => {
   if (path === undefined) return ''
   if (path === '/') return 'home'
+  if (path[path.length - 1] === '/') path = path.slice(0, -1)
   const split = path.split('/')
   return split[split.length - 1]
 }

@@ -44,7 +44,7 @@ const TextBox = ({ name, text, bgColor }: TextBoxProps) => (
   </li>
 )
 
-const ImageBox = ({ name, subtitle, text, image, link }: ImageBoxProps) => (
+const ImageBox = ({ name, subtitle, text, image, link, className }: ImageBoxProps & { className?: string }) => (
   <li className='lists-imgboxlist-box'>
     <img
       src={image}
@@ -57,7 +57,7 @@ const ImageBox = ({ name, subtitle, text, image, link }: ImageBoxProps) => (
     </p>
     <BlockButton
       id={pageId(link)}
-      className='blog-post-list'
+      className={className}
       link={{ linkWeb: link }}
       button={{ linkBackgroundColor: 'black', linkTextColor: 'white' }}
     >
@@ -99,6 +99,7 @@ export const ImageBoxList = ({ id, boxes }: ImageBoxListProps) => (
     {boxes.map((imagebox, i) => (
       <ImageBox
       key={i}
+      className={id}
       {...imagebox}
       />
     ))}

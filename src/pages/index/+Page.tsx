@@ -1,7 +1,6 @@
 import { Suspense } from 'react'
 
-import { isAfter, isBefore, format } from 'date-fns'
-import { pt } from 'date-fns/locale'
+import { isAfter, isBefore } from 'date-fns'
 import { useData } from 'vike-react/useData'
 
 import { type Data } from './+data'
@@ -12,9 +11,9 @@ import { ImageBoxList } from '../../components/Lists'
 import { MainCover } from '../../components/MainCover'
 import { Page } from '../../components/Page'
 import { wrapPromise } from '../../helpers/async'
-import { pageMapper } from '../../mappers/components'
+import { pageMapper, postsMapper } from '../../mappers/components'
 import { eventMapper, hubMapper, postMapper, seriesMapper } from '../../mappers/content'
-import { type ImageBox, type PageMeta } from '../../types/domain'
+import { type PageMeta } from '../../types/domain'
 import { type GetValues, type CollectionTypeResponse } from '../../types/strapi'
 
 function AllEvents ({ data }: { data: () => CollectionTypeResponse<'api::event.event'> | undefined }) {
@@ -57,11 +56,12 @@ function AllPosts ({ data }: { data: () => YoastPosts | undefined }) {
   const rawPosts = data()
   if (!rawPosts) { return undefined }
 
-  const posts = rawPosts.map((e) => postMapper(e)).filter((p) => !p.link.includes('/en/'))
+  const posts = postsMapper('blog-post-list', rawPosts.map((e) => postMapper(e)).filter((p) => !p.link.includes('/en/')))
+
   return (
     <>
       <h4 style={{ textAlign: 'center' }}>Do Blog</h4>
-      <ImageBoxList id='' boxes={posts.map((p): ImageBox => ({ text: p.text, name: p.title, subtitle: format(p.date, 'dd MMMM yyyy', { locale: pt }), link: p.link, image: p.img }))} />
+      <ImageBoxList id={posts.id} boxes={posts.boxes} />
     </>
   )
 }

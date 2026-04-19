@@ -1,5 +1,8 @@
+import { format } from 'date-fns'
+import { pt } from 'date-fns/locale'
+
 import { pagePath } from '../helpers/links'
-import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink, Pages, type InjectedHTML } from '../types/domain'
+import { type TextBlock, type BigBanner, type BlockButtonLink, type SmallBanners, type OutlineButtonLink, type HighlightBox, type PageMeta, type TextBoxList, type Separator, type Icons, type ButtonLink, Pages, type InjectedHTML, type ImageBoxList, type Post, type ImageBox } from '../types/domain'
 import { type GetValues } from '../types/strapi'
 
 export function maybeImageMapper (data?: GetValues<'plugin::upload.file'>) {
@@ -156,6 +159,19 @@ export function iconsMapper (data: GetValues<'blocks.icons-list'>): Icons {
       label: icon.Label,
       logo: maybeImageMapper(icon.Logo),
       link: icon.URL
+    }))
+  }
+}
+
+export function postsMapper (data: Post[]): ImageBoxList {
+  return {
+    id: data.Slug,
+    boxes: data.map((p): ImageBox => ({
+      text: p.text,
+      name: p.title,
+      subtitle: format(p.date, 'dd MMMM yyyy', { locale: pt }),
+      link: p.link,
+      image: p.img
     }))
   }
 }

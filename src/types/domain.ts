@@ -85,8 +85,8 @@ export interface HighlightBox {
 }
 
 export interface Post {
-  id: number
   title: string
+  date: Date
   img: string
   text: string
   link: string
@@ -110,7 +110,8 @@ export interface TextBox {
 
 export interface ImageBox {
   name: string
-  bgColor: string
+  subtitle: string
+  link: string
   text: string
   image: string
 }

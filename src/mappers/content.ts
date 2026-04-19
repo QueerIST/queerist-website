@@ -104,8 +104,8 @@ export function postMapper (data: YoastPost): Post {
   const imageUrl = new URL(data.yoast_head_json.og_image[0].url)
   imageUrl.search = new URLSearchParams({ fit: '400,400' }).toString()
   return {
-    id: data.id,
     title: data.title.rendered,
+    date: new Date(data.date),
     img: imageUrl.toString(),
     text: data.yoast_head_json.og_description,
     link: data.link

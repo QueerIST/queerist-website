@@ -1,10 +1,11 @@
 import { Suspense } from 'react'
 
-import { isAfter, isBefore } from 'date-fns'
+import { isAfter, isBefore, format } from 'date-fns'
+import { pt } from 'date-fns/locale'
 import { useData } from 'vike-react/useData'
 
 import { type Data } from './+data'
-import { fetchAllEvents, type YoastPosts } from '../../api/loaders'
+import { fetchAllEvents, fetchAllWPPosts, type YoastPosts } from '../../api/loaders'
 import { DynamicZone } from '../../components/DynamicZone'
 import { InlineEventGallery } from '../../components/EventGallery'
 import { ImageBoxList } from '../../components/Lists'
@@ -13,7 +14,7 @@ import { Page } from '../../components/Page'
 import { wrapPromise } from '../../helpers/async'
 import { pageMapper } from '../../mappers/components'
 import { eventMapper, hubMapper, postMapper, seriesMapper } from '../../mappers/content'
-import { type PageMeta } from '../../types/domain'
+import { type ImageBox, type PageMeta } from '../../types/domain'
 import { type GetValues, type CollectionTypeResponse } from '../../types/strapi'
 
 function AllEvents ({ data }: { data: () => CollectionTypeResponse<'api::event.event'> | undefined }) {
@@ -52,7 +53,7 @@ function AllEvents ({ data }: { data: () => CollectionTypeResponse<'api::event.e
   )
 }
 
-export function AllPosts ({ data }: { data: () => YoastPosts | undefined }) {
+function AllPosts ({ data }: { data: () => YoastPosts | undefined }) {
   const rawPosts = data()
   if (!rawPosts) { return undefined }
 
@@ -60,7 +61,7 @@ export function AllPosts ({ data }: { data: () => YoastPosts | undefined }) {
   return (
     <>
       <h4 style={{ textAlign: 'center' }}>Do Blog</h4>
-      <ImageBoxList boxes={posts.map((p) => ({ id: p.id, text: p.text, name: p.title, bgColor: 'white', image: p.img }))} />
+      <ImageBoxList id='' boxes={posts.map((p): ImageBox => ({ text: p.text, name: p.title, subtitle: format(p.date, 'dd MMMM yyyy', { locale: pt }), link: p.link, image: p.img }))} />
     </>
   )
 }
@@ -71,13 +72,17 @@ function Home () {
   const data = response.data
 
   const page = pageMapper(data.Meta)
-  const promise = wrapPromise<CollectionTypeResponse<'api::event.event'>>(fetchAllEvents)
+  const eventsPromise = wrapPromise<CollectionTypeResponse<'api::event.event'>>(fetchAllEvents)
+  const postsPromise = wrapPromise<YoastPosts>(fetchAllWPPosts)
   return (
     <Page data={page} home>
       <MainCover />
       <DynamicZone data={data.Body} />
       <Suspense>
-        <AllEvents data={promise}/>
+        <AllEvents data={eventsPromise}/>
+      </Suspense>
+      <Suspense>
+        <AllPosts data={postsPromise}/>
       </Suspense>
     </Page>
   )

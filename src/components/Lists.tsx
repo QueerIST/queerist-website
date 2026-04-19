@@ -1,7 +1,10 @@
 import { type PropsWithChildren } from 'react'
 
-import { MaybeLinkButton } from './Button'
+import classNames from 'classnames'
+
+import { BlockButton, MaybeLinkButton } from './Button'
 import { Image } from './Image'
+import { pageId } from '../helpers/links'
 import { type List as ListProps, type Icon as IconProps, type TextBox as TextBoxProps, type TextBoxList as TextBoxListProps, type ImageBox as ImageBoxProps, type ImageBoxList as ImageBoxListProps, type Icons } from '../types/domain'
 
 import './lists.css'
@@ -41,24 +44,30 @@ const TextBox = ({ name, text, bgColor }: TextBoxProps) => (
   </li>
 )
 
-const ImageBox = ({ name, text, bgColor, image }: ImageBoxProps) => (
-  <li className='lists-textboxlist-box'>
+const ImageBox = ({ name, subtitle, text, image, link }: ImageBoxProps) => (
+  <li className='lists-imgboxlist-box'>
     <img
       src={image}
       alt={name}
     />
-    <h3>{name}</h3>
-    <p
-      className='lists-textboxlist-box-text lists-imgboxlist-box-text'
-      style={{ backgroundColor: bgColor, borderColor: bgColor }}
-    >
+    <h4>{name}</h4>
+    <label>{subtitle}</label>
+    <p className='lists-imgboxlist-box-text lists-imgboxlist-box-text'>
       {text}
     </p>
+    <BlockButton
+      id={pageId(link)}
+      className='blog-post-list'
+      link={{ linkWeb: link }}
+      button={{ linkBackgroundColor: 'black', linkTextColor: 'white' }}
+    >
+      {'Ler mais'}
+    </BlockButton>
   </li>
 )
 
-const List = ({ id, children }: PropsWithChildren<ListProps>) => (
-  <ul id={id} className='lists-listwrap'>
+const List = ({ id, children, className }: PropsWithChildren<ListProps & { className?: string }>) => (
+  <ul id={id} className={classNames('lists-listwrap', className)}>
     {children}
   </ul>
 )
@@ -86,7 +95,7 @@ export const TextBoxList = ({ id, boxes }: TextBoxListProps) => (
 )
 
 export const ImageBoxList = ({ id, boxes }: ImageBoxListProps) => (
-  <List id={id}>
+  <List id={id} className='lists-imgboxlist'>
     {boxes.map((imagebox, i) => (
       <ImageBox
       key={i}

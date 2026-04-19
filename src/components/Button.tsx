@@ -33,30 +33,31 @@ interface ChildrenProps {
   onClick?: MouseEventHandler
 }
 
-function Link ({ data, childProps, children }: PropsWithChildren<{ data: ButtonLink, childProps: ChildrenProps }>) {
+function Link ({ data, childProps, children, className }: PropsWithChildren<{ data: ButtonLink, childProps: ChildrenProps, className: string }>) {
+  const cn = classNames(childProps.className, className)
   if (data.linkPage) {
     if (!childProps.onClick) {
       console.warn('GA Tracking: No custom event defined for inbound navigation!')
     }
 
-    return <NavLink href={`${data.linkPage}${data.linkId ? `#${data.linkId}` : ''}`} {...childProps}>{children}</NavLink>
+    return <NavLink href={`${data.linkPage}${data.linkId ? `#${data.linkId}` : ''}`} {...{ ...childProps, className: cn }}>{children}</NavLink>
   }
 
   if (data.linkFile) {
-    return <a href={publicPath(data.linkFile)} className={childProps.className} id={childProps.id} style={childProps.style}>{children}</a>
+    return <a href={publicPath(data.linkFile)} className={cn} id={childProps.id} style={childProps.style}>{children}</a>
   }
 
   if (data.linkWeb) {
     if (!childProps.className && !childProps.id) {
       console.warn('GA Tracking: No id or className defined for outbound navigation!')
     }
-    return <a href={data.linkWeb} target='_blank' rel='noopener noreferrer' className={childProps.className} id={childProps.id} style={childProps.style}>{children}</a>
+    return <a href={data.linkWeb} target='_blank' rel='noopener noreferrer' className={cn} id={childProps.id} style={childProps.style}>{children}</a>
   }
 
   if (data.onClick) {
     return (
       <button
-        className={childProps.className}
+        className={cn}
         id={childProps.id}
         style={childProps.style}
         onClick={(e) => {
@@ -70,7 +71,7 @@ function Link ({ data, childProps, children }: PropsWithChildren<{ data: ButtonL
   return <>{children}</>
 }
 
-export function OutlineButton ({ id, children, action, className, link, button }: PropsWithChildren<{ className?: string, id?: string, link: ButtonLink, button: OutlineButtonStyle, action: Action }>) {
+export function OutlineButton ({ id, children, action, className, link, button }: PropsWithChildren<{ className?: string, id?: string, link: ButtonLink, button: OutlineButtonStyle, action?: Action }>) {
   return (
     <Button
       id={id}
@@ -86,7 +87,7 @@ export function OutlineButton ({ id, children, action, className, link, button }
   )
 }
 
-export function BlockButton ({ id, children, action, className, link, button, defaults }: PropsWithChildren<{ className?: string, id?: string, link: ButtonLink, button: BlockButtonStyle, action: Action, defaults?: BlockButtonStyle }>) {
+export function BlockButton ({ id, children, action, className, link, button, defaults }: PropsWithChildren<{ className?: string, id?: string, link: ButtonLink, button: BlockButtonStyle, action?: Action, defaults?: BlockButtonStyle }>) {
   return (
     <Button
       id={id}
@@ -143,18 +144,15 @@ function Button (props: PropsWithChildren<ButtonProps & { link: ButtonLink }>) {
       childProps={{
         id,
         style: { borderColor, color, backgroundColor },
-        className: classNames(
-          className,
-          {
-            block: type === ButtonType.Block,
-            'block-button': type !== ButtonType.Link
-          }
-        ),
+        className,
         onClick: () => {
           action && ReactGA.event(action.name, action.params)
         }
       }}
-    >
+      className={classNames({
+        block: type === ButtonType.Block,
+        'block-button': type !== ButtonType.Link
+      })}>
       {children}
     </Link>
   )
